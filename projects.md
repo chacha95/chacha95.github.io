@@ -21,7 +21,7 @@ subtitle: awesome projects!
 - OpenPose
 - Window
 
-
+<br>
 
 #### 프로젝트 페이지
 
@@ -77,7 +77,7 @@ CycleGAN은 Unpaired Dataset에 대한 Style transfer 기술이다.
 - Python 3.6
 - Window
 
-
+<br>
 
 #### 프로젝트 페이지
 
@@ -147,7 +147,7 @@ work flow
 - SVMLight
 - Window
 
-
+<br>
 
 #### 프로젝트 페이지
 
@@ -168,6 +168,8 @@ work flow
 - Python
 - Numpy
 - Window
+
+<br>
 
 #### 프로젝트 페이지
 
