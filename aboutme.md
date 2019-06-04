@@ -40,7 +40,8 @@ subtitle:
 <br>
 
 ## 논문
-#### 국내
+> <b>국내</b>
+
 - 차진혁, 정승원,  "2D Human Pose Estimation 기술 분석", 한국정보처리학회 추계학술대회, (2018.10)  [PDF](https://drive.google.com/uc?id=1fLyLf3TFNEJOxF2jvZt6tugKaW-W-t5T)
 - 차진혁, 이그은, 남재승, 정승원 , "CycleGAN을 이용한 불교 미술 채색 연구", 한국멀티미디어학회 춘계학술발표대회,  (2018.05) [PDF](https://drive.google.com/uc?id=13Q_EqJoBJK5yIl895Yq2PdzVaxFZtbyM)
 - 차진혁, 정승원 , "딥러닝을 이용한 불교미술 채색연구", 한국정보처리학회 춘계학술발표대회,  (2018.05) [PDF](https://drive.google.com/uc?id=1k-AyQqhxTyqAOAxErE58OIZL5yb5AFmo)
@@ -48,7 +49,7 @@ subtitle:
 
 <br>
 
-#### 해외
+> <b> 해외 </b>
 
 <br>
 
