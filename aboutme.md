@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About me
+subtitle: 
 ---
 
 ## 자기소개서
