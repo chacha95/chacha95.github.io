@@ -36,34 +36,34 @@ subtitle: Blogs, presentations, open knowledege, research.
 - 기존에 사람이 수작업으로 채색하던 불교미술 그림에 대해, 딥러닝을 이용해 채색을 하는 프로젝트입니다.
 - 핵심 채색 기능은 CycleGAN을 이용해 채색을 하였습니다.
 
-![](https://drive.google.com/uc?id=1QgoQBawat-XlDL5Ik18XC5gT8t_M8j8X)
+![](https://user-images.githubusercontent.com/31475037/58854545-a2914c80-86d8-11e9-9d33-c3ce496a6abf.PNG)
 
 
 
 # CycleGAN
 - CycleGAN은 Unpaired Dataset에 대한 Style transfer 기술이다. 
-![](https://drive.google.com/uc?id=1U5ihYxB3T5LYUVcppNaFHT8rVP1vv0Jp)
+![](https://user-images.githubusercontent.com/31475037/58854667-f56b0400-86d8-11e9-9ed1-5ec3fc49445f.PNG)
 ###### 1.  전처리
 여러 실험 결과 딥러닝 네트워크에 들어갈 이미지를 이진화 및 노이즈 제거 연산을 하면 더 나은 결과를 보여줬다.
-![](https://drive.google.com/uc?id=1ZLVjkA0RRdH2b7mvYAsMSsPg6YZmUeNT)
+![](https://user-images.githubusercontent.com/31475037/58854670-f69c3100-86d8-11e9-9b36-4d64f5071d9e.PNG)
 
 ###### 2. 딥러닝 채색
 사이클 겐 모델을 사용하였으며,  불교 학술 문화원으로 받은 데이터를 input으로, Discriminator에 훈련시킬 이미지 데이터셋(실제 탱화)은 구글에 쿼리를 날려 수집하였다.
 
-![](https://drive.google.com/uc?id=1p8P-mCKf4gY18gJo53U3J6wsm2WeWLCq)
+![](https://user-images.githubusercontent.com/31475037/58854783-4549cb00-86d9-11e9-8e2c-f866b4df6c7c.png)
 
 ###### 3.  후보정
 후보정은 PyQt 및 OpenCV를 이용해 FMM 알고리즘 및 페인팅 툴을 이용해 보정을 하였다.
 
-![](https://drive.google.com/uc?id=1VHmX04Dz2gKFk1B246tnHDssrg3TH7JG)
+![](https://user-images.githubusercontent.com/31475037/58854785-467af800-86d9-11e9-89ff-8625988b6c49.png)
 
 
 
 # 최종 결과물
 
-![](https://drive.google.com/uc?id=1iqT8m4XjDdL6ZPimtw9e1PeB7tmTtMsW)
+![](https://user-images.githubusercontent.com/31475037/58854671-f734c780-86d8-11e9-92f2-5738c133b815.PNG)
 
-![](https://drive.google.com/uc?id=1Mo_gb977qhqe3ijCp67BRqqtuPbYiVyu)
+![](https://user-images.githubusercontent.com/31475037/58854672-f7cd5e00-86d8-11e9-954b-507ff4a61a96.PNG)
 
 ### 개발환경
 
