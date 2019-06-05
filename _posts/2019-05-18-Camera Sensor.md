@@ -14,6 +14,8 @@ tags: [영상처리, Raw]
 
 ![](https://user-images.githubusercontent.com/31475037/58936192-2c5d1a80-87aa-11e9-8005-60ebf39de61a.png)
 
+<br>
+
 > 카메라의 필름 역할을 하는 '이미지 센서'
 
 이미지 센서는 피사체 정보를 읽어 전기적인 영상신호로 변환해 주는 장치입니다. 즉 빛 에너지를 전기적 어네지로 변환해 영상으로 만드는데 카메라의 필름과 같은 역할을 합니다.
@@ -32,7 +34,7 @@ tags: [영상처리, Raw]
 
 > 포베온 패턴(좌), 베이어 패턴(우)
 
-![](https://user-images.githubusercontent.com/31475037/58937564-bc509380-87ad-11e9-90a0-8da5daf54d65.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/58937564-bc509380-87ad-11e9-90a0-8da5daf54d65.png"> </center>
 
 <br>
 
@@ -50,6 +52,8 @@ tags: [영상처리, Raw]
 
 > 베이어 패턴 필터로 생성된 raw image 데이터
 
-![](https://user-images.githubusercontent.com/31475037/58937958-ccb53e00-87ae-11e9-9272-84353e91bc8d.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/58937958-ccb53e00-87ae-11e9-9272-84353e91bc8d.png"> </center>
+
+
 
 베이어 필터 패턴를 쓰는 이미지 센서는 각 화소에서 R, G, B 중 어느 한 색만을 감지할 수 있지만, 우리가 보는 카메라 영상에선는 각 화소마다 R, G, B 전체 색상을 보여줍니다. 이것이 가능한 이유는 카메라 ISP에서 각 화소마다 주변 셀들의 색상값을 interpolation(보간)해주기 때문입니다.
