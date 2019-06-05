@@ -47,8 +47,6 @@ subtitle:
 - 차진혁, 정승원 , "딥러닝을 이용한 불교미술 채색연구", 한국정보처리학회 춘계학술발표대회,  (2018.05) [PDF](https://drive.google.com/uc?id=1k-AyQqhxTyqAOAxErE58OIZL5yb5AFmo)
 - 차진혁, 백민주, 홍성빈, 박미화, 두일철, "무인 편의점을 위한 스마트 레이아웃 시스템 설계",한국멀티미디어학회 춘계학술발표대회,  (2018.05) [PDF](https://drive.google.com/uc?id=1jDWaxMR-k3HUGv2Qjy9NrMhTw5VVCOix)
 
-<br>
-
 > <b> 해외 </b>
 
 <br>

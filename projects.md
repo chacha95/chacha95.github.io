@@ -195,7 +195,7 @@ Scene2에서는 선택된 행성의 상세 정보를 표시해줍니다.
 
 > Scene1에서 Scene2로
 
-화면안의 빨간색 박스 안을 마우스로 클릭시 scene2로 넘어가게 설정 해놓았고, scene2에서 esc를 누를시 종료가 되도록 했습니다.
+화면안의 빨간색 박스 안을 마우스로 클릭시 scene2로 넘어가게 설정 해놓았고, scene2에서 esc를 누를시 Scene1으로 되돌아 오도록 했습니다.
 
 ![](https://user-images.githubusercontent.com/31475037/58870791-d0d45380-86fb-11e9-8bc7-93bf14b3ccce.PNG)
 
