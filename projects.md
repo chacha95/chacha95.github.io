@@ -12,6 +12,8 @@ subtitle: awesome projects!
 
 ## OpenPose와  Unity를 활용한 Interative Art
 
+### OpenPose
+
 
 
 #### 개발환경
@@ -20,14 +22,9 @@ subtitle: awesome projects!
 - Caffe
 - OpenPose
 - Window
+- 
 
 <br>
-
-#### 프로젝트 페이지
-
-[Slide](https://drive.google.com/uc?id=1Wcu35Fp16rrOiOjuFCLs2BohZsKtxlLx) 
-
-
 
 ## 딥러닝을 이용한 불교미술 채색
 
@@ -159,15 +156,18 @@ work flow
 
 이 프로젝트는 워터파크 이용객 재현 어플리케이션입니다. 워터파크 이용객의 위치 정보를 비콘에서 수신하여 중앙 서버에서 해당 정보를 받아 저장해 놓습니다. 
 
+> 워터파크 미니 맵
+
 <center><img src = "https://user-images.githubusercontent.com/31475037/58927389-505c3400-8789-11e9-92f9-0edaa9e32d92.png" width="70%">
-    <br><caption>[워터파크 맵]</caption>
 </center>
 
 워터파크가 폐장 한 뒤 어플리케이션(클라이언트)에서 서버에 TCP/IP 연결을 요청하고, 현재 어플리케이션 상의 시간과 방위값을 서버에 보내줍니다.
 
+> 서버 클라이언트 통신
+
 <center><img src = "https://user-images.githubusercontent.com/31475037/58927382-489c8f80-8789-11e9-9bb2-cb7583d41e2e.png" width="90%" height="80%">
-    <br><caption>[서버-클라이언트 통신]</caption>
 </center>
+
 
  서버는 해당 시간대에 해당하는 사용자의 위치 정보 데이터를 클라이언트에 보내주게 됩니다. 
 
