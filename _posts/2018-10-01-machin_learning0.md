@@ -137,4 +137,14 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 보통 데이터의 80%는 훈련에 사용하고 20%는 test용으로 떼어 놓습니다.
 
+
+
+### Deeplearning과 MachineLearning
+
+최근들어 deeplearning의 성능이 기존 사람이 만들던 알고리즘(hand-crafted algorithm)들의 성능을 월등히 뛰어넘으면서 굉장히 주목받고 있습니다. 
+
+deeplearning은 machinelearning의 한 분야이며 deeplearning의 많은 기법들이 machinelearning의 기술로 부터 나왔습니다.(ensemble, boosting...)
+
+<center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="60%"></center>
+
 <br>
