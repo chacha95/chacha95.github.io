@@ -36,7 +36,9 @@ Hard margin classification 보다 robust 합니다.
 
 C는 margin을 의미하며 모델이 overfitting(과적합)된거 같으면 C를 감소시켜 margin을 넓혀주면 됩니다.
 
-> Nonlinear SVM classification
+<br>
+
+### Nonlinear SVM classification
 
 이처럼 SVM의 분류하고자하는 데이터가 linearly separable하다면 좋겠지만, 대다수의 분류문제에서 클래스의 데이터들은 linearly separable하지 않습니다.
 
