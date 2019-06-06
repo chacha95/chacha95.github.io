@@ -30,7 +30,7 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 > 머신러닝은 자동으로 변화에 대응할 수도 있음
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59028455-9521c100-8896-11e9-9b8e-d972f93f054b.png" width=80%></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/59028455-9521c100-8896-11e9-9b8e-d972f93f054b.png" width="80%"></center>
 
 <br>
 
