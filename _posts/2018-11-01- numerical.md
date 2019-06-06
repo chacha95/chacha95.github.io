@@ -1,0 +1,76 @@
+---
+layout: post
+title: Numerical Differentiation
+tags: [machine learning]
+---
+
+## numerical differentiation(수치미분)
+
+### 미분(differentiation)
+
+당신이 마라톤 선수고 처음부터 10분에 2km씩 달렸다고 가정해봅시다.
+
+이 때 속도는 2/10 = 0.2(km/분)입니다.
+
+<span style="color:red">달린거리</span>가 <span style="color:blue">시간</span>에 대해 얼마나 변화 했는가를 계산했습니다.
+
+그런데 10분이라는 시간을 특정 순가까지 줄인다면?
+
+미분은 이런 **특정순간**의 변화량을 의미합니다.
+
+X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입니다.
+
+> 미분 공식
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59031273-2b0d1a00-889e-11e9-89bd-77c24644d0cc.png" width="40%"></center>
+
+<br>
+
+### 수치 미분(numerical differentiation)
+
+수치 미분은 현실세계에 미분을 적용하기 위한 실용적인 학문으로 수치해석과목에서 자세하게 배울 수 있습니다.
+
+수치 미분은 아주 작은 차분으로 미분함으로써, 미분 공식과 근사적으로 가까운 결과를 낼 수 있게 해줍니다.
+
+예를들어 변화량 dx를 dx = 0.000001로 놓고 미분값을 구하는 것입니다.
+
+> 파이썬에서의 수치 미분 구현
+
+파이썬에서 구현을 할 시 주의해야할 사항은 변화량인 dx(h) 변수값을 소숫점 8자리 이하로 내리면 안된다는것입니다.
+
+그렇게 되면 반올림 오차 문제로 작은값이 생략되어 잘못된 계산결과가 도출되기 때문입니다.
+
+다음과 같이 중앙 차분을 이용해 구현을 해야 됩니다.
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59032086-63155c80-88a0-11e9-8fc6-454a7f889adf.png"></center>
+
+> 중앙 차분
+
+중앙 차분이란 수치미분의 한 종류로, 다른 종류인 전향차분 후향차분보다 더 정확하며, 대다수의 경우 중앙차분을 씁니다.
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59031364-6c052e80-889e-11e9-88b3-8cae50e7ac7d.jpg"></center>
+
+> 편미분
+
+편미분은 변수가 여러개일 때 어떻게 미분을 해야하는가와 각 변수가 함수에 얼마나 영향을 미치는가를 어떻게 구하는가에 대한 방법입니다.
+
+다음과 같이 미분하고 싶은 하나의 변수만 집중하고, 나머진 상수취급해버립니다.
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59032468-59402900-88a1-11e9-8029-b0e8b31a1ea4.png" width="30%"></center>
+
+>  gradient
+
+편미분을 변수별로 따로 계산하는게 아니라 동시에 계산하는 방식입니다.
+
+각 점에서의 기울기를 계산하고, 기울기 결과에 마이너스를 곱한 벡터(기울기의 반대방향)로 그림을 그려보면 다음과 같습니다.
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59031365-6c052e80-889e-11e9-8b51-e8d7b111d797.png"></center>
+
+기울기의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향입니다.
+
+<br>
+
+
+
+
+

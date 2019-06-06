@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SVM
-tags: [machin learning]
+tags: [machine learning]
 ---
 
 ## SVM(Support Vector Machine)
