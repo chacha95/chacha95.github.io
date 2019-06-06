@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Normalization
+title: Attention
 tags: [deeplearning, machine learning]
 ---
 
-## Review about Efficient Backprop
+## Attention
 
->  Ensemble(앙상블) Learning이란?
+>  Attention이란?
 
 
 

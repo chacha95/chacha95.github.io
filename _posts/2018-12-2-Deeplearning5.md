@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Convolutional Neural Network
+title: CNN(Convolutional Neural Network)
 tags: [deeplearning, machine learning]
 ---
 
-## Convolutional Neural Network
+## CNN
 
 >  Ensemble(앙상블) Learning이란?
 

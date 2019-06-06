@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Famous Architecture
+title: Deeplearning Architecture
 tags: [deeplearning, machine learning]
 ---
 
-## Review about Efficient Backprop
+## Deeplearning Architecture
 
 >  Ensemble(앙상블) Learning이란?
 

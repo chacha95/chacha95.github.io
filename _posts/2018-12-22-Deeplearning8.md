@@ -1,10 +1,10 @@
 ---
 layout: post
-title: RNN
+title: RNN(Recurrent Neural Network)
 tags: [deeplearning, machine learning]
 ---
 
-## Review about Efficient Backprop
+## RNN
 
 >  Ensemble(앙상블) Learning이란?
 
