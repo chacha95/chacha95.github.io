@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Image Classification
-tags: [deeplearning]
+tags: [deeplearning, machine learning]
 ---
 
 ## Image Classification
