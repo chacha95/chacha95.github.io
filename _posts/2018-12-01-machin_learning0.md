@@ -18,22 +18,26 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 전통적인 접근 방법으로 문제를 풀려하면, 문제가 단순치 않아 규칙이 점점 길고 복잡해져 유지 보수하기가 굉장히 힘들어 집니다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59012157-c2a84380-8871-11e9-8e05-8f52f67da8a2.png" width="70%"></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/59028100-a9b18980-8895-11e9-8dbd-34105da26ad8.png" width="70%"></center>
 
 **machine learning 접근 방법**
 
 프로그램이 훨씬 짧아지고 유지보수하기 쉬우며 대부분 정확도가 더 높습니다. 또한 machine learning은 데이터 업데이트만 잘 해준다면 자동으로 변화에 대응합니다. 복잡한 문제와 대량의 데이터로부터 패턴을 분석 할 수 있습니다.
 
-<center><figure class="second">
-	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Interpolation-bilinear.svg/220px-Interpolation-bilinear.svg.png">
-	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/BilinearInterpolation.svg/220px-BilinearInterpolation.svg.png">
-</figure></center>
+> machine learning을 이용한 시스템
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59028106-ab7b4d00-8895-11e9-9a5d-9c85406c9302.png" width="70%"></center>
+
+> 머신러닝은 자동으로 변화에 대응할 수도 있음
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59028455-9521c100-8896-11e9-9b8e-d972f93f054b.png" width=80%></center>
+
 <br>
 
 
 ### machine learning 시스템의 종류
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59012157-c2a84380-8871-11e9-8e05-8f52f67da8a2.png" width="90%"></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
 
 > 사람 감독 유무에 따라
 
@@ -79,11 +83,15 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 **Batch Learning**
 
+전체 데이터를 한번에 학습시키는 방식입니다.
+
 시스템을 훈련시키고 제품 시스템에 적용할시 더 이상의 학습 없이 실행됩니다. 
 
 새로운 데이터를 사용하려면 기존 데이터도 모두 처음부터 다시 훈련 시켜야 합니다. 
 
 일반적으로 시간과 자원을 많이 소모하며, 보통 오프라인에서 수행됩니다.
+
+
 
 **Online Learining**
 
