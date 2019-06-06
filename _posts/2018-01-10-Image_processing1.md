@@ -20,6 +20,8 @@ tags: [영상처리]
 
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Interpolation-nearest.svg/220px-Interpolation-nearest.svg.png"></center>
 
+<br>
+
 > Bilinear Interpolation
 
 인접한 4개 화소의 화소값과 거리비를 사용하여 결정해주는 방식입니다.
@@ -28,6 +30,8 @@ tags: [영상처리]
 	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Interpolation-bilinear.svg/220px-Interpolation-bilinear.svg.png">
 	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/BilinearInterpolation.svg/220px-BilinearInterpolation.svg.png">
 </figure></center>
+<br>
+
 
 > Bicubic Interpolation
 
@@ -35,9 +39,9 @@ tags: [영상처리]
 
 <center><img src="https://user-images.githubusercontent.com/31475037/58941486-db075800-87b6-11e9-9c7d-43c790525a52.png" width="50%"></center>
 
-<br>
-
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Interpolation-bicubic.svg/220px-Interpolation-bicubic.svg.png"></center>
+
+<br>
 
 > 그래프 모형
 
