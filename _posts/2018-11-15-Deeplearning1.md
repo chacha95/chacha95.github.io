@@ -1,30 +1,64 @@
 ---
 layout: post
-title: Image Classification
+title: Neural Network
 tags: [deeplearning, machine learning]
+
 ---
 
-## Image Classification
+## Neural Network
 
-컴퓨터에서는 이미지는 R, G, B 3차원의 array(행렬)로 표현됩니다.
+### Perceptron
 
-각 pixels는 0(black)-255(white)사이의 한 값으로 표현됩니다.
+> 어떻게 하면 And Or 문제를 기계가 학습해서 풀 수 있게 할까?
 
-아래 고양이 사진에서 height가 400 pixels, width가 248 pixels이고 R, G, B 3 channel을 가진 3차원 행렬로 표현됩니다.
-
-이렇게 행렬로 표현된 고양이를 image classification을 통해 어떤 동물인지 확률 값으로 추정합니다.
-
->행렬로 표현된 고양이
-
-<center><img src="http://cs231n.github.io/assets/classify.png" width="60%"></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/59157944-5d14bb00-8aee-11e9-82f8-b4d35b94d5cb.png" width="40%"></center>
 
 
 
+<center><img src="https://user-images.githubusercontent.com/31475037/59157945-5d14bb00-8aee-11e9-991e-a8606ecf38f0.png" width="80%"></center>
+
+
+
+<center><figure class="second">
+	<img src="https://user-images.githubusercontent.com/31475037/59157947-5d14bb00-8aee-11e9-80d3-82c4822d3616.png">
+	<img src="https://user-images.githubusercontent.com/31475037/59157948-5dad5180-8aee-11e9-8ef9-54d6131650eb.png">
+</figure></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59157949-5dad5180-8aee-11e9-861f-1b07de6e436d.png" width="90%"></center>
+
+### MLP
+
+> XOR 문제를 풀 수 있음
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59157950-5dad5180-8aee-11e9-8dde-bf5e6d623d37.png" width="80%"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59157951-5dad5180-8aee-11e9-8bef-b367921c7343.png" width="80%"></center>
 
 
 
 
 
+### Universal Approximation Function
 
-<br>
+> 왜 딥러닝이 각광을 받는가?
+
+Neural Network는  Universal Approximation(만능 근사)를 할 수 있습니다.
+
+[Universal approximation](http://neuralnetworksanddeeplearning.com/chap4.html)
+
+
+
+Non-Linear
+
+### Neural Network
+
+<center><img src="" width="40%"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59157952-5e45e800-8aee-11e9-9102-c80a1ba536af.png" width="40%"></center>
+
+### Activation Function
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59157953-5e45e800-8aee-11e9-8691-495bcb31db43.png" width="90%"></center>
+
+
 

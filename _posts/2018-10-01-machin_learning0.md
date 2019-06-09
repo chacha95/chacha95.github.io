@@ -39,7 +39,11 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
 
-> 사람 감독 유무에 따라
+
+
+> 사람 감독 유무에 따른 종류
+
+<center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
 
 **Supervised Learning(지도 학습)**
 
@@ -47,12 +51,18 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 전형적인 지도학습으로는 분류가 있습니다.
 
-<center><img src="" width="90%"></center>
+지도학습은 Classification(분류)와 Regression(회귀)로 나뉘어집니다. 먼저, **Classification**은 주어진 데이터를 정해진 카테고리에 따라 분류하는 문제를 말합니다.
+
+예를 들어, 이메일이 스팸메일인지 아닌지를 예측한다고 하면 이메일은 스팸메일 / 정상적인 메일로 라벨링 될 수 있을 것입니다. 비슷한 예시로 암을 예측한다고 가정했을 때 이 종양이 악성종양인지 / 아닌지로 구분할 수 있습니다. 이처럼 맞다 / 아니다로 구분되는 문제를 Binary Classification 이라고 부릅니다.
+
+분류 문제가 모두 맞다 / 아니다로 구분되지는 않습니다. 예를 들어, 공부시간에 따른 전공 Pass / Fail 을 예측한다고 하면 이는 Binary Classifiaction 으로 볼 수 있습니다. 반면에, 수능 공부시간에 따른 전공 학점을 A / B / C / D / F 으로 예측하는 경우도 있습니다. 이러한 분류를 Multi-label Classification이라고 합니다.
+
+**Regression**은 연속된 값을 예측하는 문제를 말합니다. 주로 어떤 패턴이나 트렌드, 경향을 예측할 때 사용됩니다. Regression을 설명할 때 항상 집의 크기에 따른 매매가격을 예로 듭니다. 아까와 유사한 예를 들자면, 공부시간에 따른 전공 시험 점수를 예측하는 문제를 예로 들 수 있습니다.
 
 대표적 supervised learning 방식은 다음과 같습니다
 
-* Linear Regression
-* Logistic Regression
+* Linear Regression(회귀)
+* Logistic Regression(분류)
 * Support Vector Machine
 * Decision Tree and Random Forests
 * Neural Network
@@ -68,7 +78,9 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 **Semi-Supervised Learning(준지도 학습)**
 
-레이블이 있는 데이터와 레이블이 없는 데이터를 훈련 데이터로 함께 사용해 모델의 성능을 높이는 학습 방식을 말합니다.
+지도학습은 앞에서 언급한 것 처럼 라벨링이 되어 있지 않은 데이터로부터 미래를 예측하는 학습방법입니다. 평가되어 있지 않은 데이터로부터 숨어있는 패턴이나 형태를 찾아야 하기 때문에 당연히 더 어렵습니다. 비지도학습도 데이터가 분리되어 있는지 (Categorial data) 연속적인지 (Continuous data)로 나누어 생각할 수 있습니다.
+
+대표적으로 클러스터링 (Clustering) 이 있습니다. 실제로는 그 데이터의 label이나 category가 무엇인지 알 수 없는 경우가 많기 때문에 이러한 방법이 중요하다고 볼 수 있습니다. 이외에도 차원축소(Dimentionality Reduction), Hidden Markov Model 등이 있습니다.
 
 **Reinforcemence Learning(강화 학습)**
 
@@ -143,8 +155,15 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 최근들어 deeplearning의 성능이 기존 사람이 만들던 알고리즘(hand-crafted algorithm)들의 성능을 월등히 뛰어넘으면서 굉장히 주목받고 있습니다. 
 
-deeplearning은 machinelearning의 한 분야이며 deeplearning의 많은 기법들이 machinelearning의 기술로 부터 나왔습니다.(ensemble, boosting...)
+deeplearning은 machinelearning의 한 분야이며 deeplearning의 여러 기법들이 machinelearning의 기술로 부터 나오고 있습니다..(ensemble, boosting...)
 
 <center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="60%"></center>
 
 <br>
+
+[회귀와 분류](https://nexablue.tistory.com/entry/ML-%EB%B6%84%EB%A5%98Classification%EC%99%80-%ED%9A%8C%EA%B7%80Regression?category=728962)
+
+<br>
+
+
+

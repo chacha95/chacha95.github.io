@@ -1,10 +1,32 @@
 ---
 layout: post
-title: Linear Classification
+title: Optimization
 tags: [deeplearning, machine learning]
 ---
 
-## Linear Classification
+## Optimization
 
->  <br>
+### Loss function
+
+
+
+### How to optimize loss fuction?
+
+
+
+### Gradient, Tensor
+
+
+
+### Backpropagation
+
+
+
+### Optimizer
+
+
+
+
+
+
 
