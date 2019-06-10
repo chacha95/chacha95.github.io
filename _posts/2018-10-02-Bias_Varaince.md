@@ -8,7 +8,11 @@ tags: [machine learning, statistic]
 
 >
 
+아래 그림은 train data 또는 test data에 대한 결과를 bias와 variance 관점에서 해석한 그림입니다.
 
+붉은색 영역은 target, 즉 참 값을 의미하고, 파란 점은 추정값을 의미합니다. 여기서 bias는 참 값들과 추정값들의 차이(or 평균값의 거리)를 의미
+
+<center><img src="https://miro.medium.com/max/494/1*0kwrZw8heXmI2Iq5l5oTQQ.png" width="80%"></center>
 
 
 
@@ -20,8 +24,6 @@ tags: [machine learning, statistic]
 
 ##### 읽어볼만한 글
 
-[medium](https://medium.com/mighty-data-science-bootcamp/%EC%B5%9C%EC%84%A0%EC%9D%98-%EB%AA%A8%EB%8D%B8%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C-%EB%B6%80%EC%A0%9C-bias%EC%99%80-variance-%EB%AC%B8%EC%A0%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-eccbaa9e0f50)
-
-[모두연](https://modulabs-biomedical.github.io/Bias_vs_Variance)
+##### [모두연](https://modulabs-biomedical.github.io/Bias_vs_Variance)
 
 <br>

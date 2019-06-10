@@ -11,30 +11,39 @@ tags: [deeplearning, machine learning]
 
 > 어떻게 하면 And Or 문제를 기계가 학습해서 풀 수 있게 할까?
 
+
+
 <center><img src="https://user-images.githubusercontent.com/31475037/59157944-5d14bb00-8aee-11e9-82f8-b4d35b94d5cb.png" width="40%"></center>
 
+> Perceptron
+
+퍼셉트론은 인공신경망의 한 종류료서, 1957년에 코넬 항공 연구소의 Rosenblatt에의해 만들어졌습니다. 이것은 가장 간단한 feedfoward 네트워크로 볼 수 있습니다.
+
+feedforward는 앞으로 순차적으로 feed를 주는 시스템을 말합니다.
 
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59157945-5d14bb00-8aee-11e9-991e-a8606ecf38f0.png" width="80%"></center>
+
+Perceptron은 
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59171562-651c3b80-8b7e-11e9-9ede-2b6bfd8e67e6.png" width="100%"></center>
 
 
 
-<center><figure class="second">
-	<img src="https://user-images.githubusercontent.com/31475037/59157947-5d14bb00-8aee-11e9-80d3-82c4822d3616.png">
-	<img src="https://user-images.githubusercontent.com/31475037/59157948-5dad5180-8aee-11e9-8ef9-54d6131650eb.png">
-</figure></center>
+
+> 그렇다면 XOR문제를 Perceptron이 해결 가능할까요?
+
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59157949-5dad5180-8aee-11e9-861f-1b07de6e436d.png" width="90%"></center>
 
-### MLP
+### MLP(Multi Layer Perceptron)
+
+그렇게 나온 모델이 바로 MLP입니다.
 
 > XOR 문제를 풀 수 있음
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59157950-5dad5180-8aee-11e9-8dde-bf5e6d623d37.png" width="80%"></center>
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59157951-5dad5180-8aee-11e9-8bef-b367921c7343.png" width="80%"></center>
-
-
 
 
 
@@ -62,3 +71,14 @@ Non-Linear
 
 
 
+<br>
+
+**읽어볼만한 글**
+
+[Perceptron](https://www.youtube.com/watch?v=xMRKQBbHOzA&list=PL6ip5tgLI7PcStXTz8CRMhNWmT8M0dAWO&index=2)
+
+[Neural Net의 역사](http://solarisailab.com/archives/1206)
+
+[Neural Net의 역사2](https://jinseob2kim.github.io/deep_learning.html)
+
+<br>
