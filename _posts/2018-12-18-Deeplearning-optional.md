@@ -1,12 +1,18 @@
 ---
 layout: post
-title: Deeplearing optional
+title: Efficient Backprop
 tags: [deeplearning, machine learning]
 ---
 
 ## Review about Efficient Backprop
 
->  Ensemble(앙상블) Learning이란?
+얀 르쿤 교수님이 1998년에 쓰신 해당 논문에 대한 리뷰입니다.
+
+### Gradient-based learning methods
+
+
+
+**Generalize**
 
 
 

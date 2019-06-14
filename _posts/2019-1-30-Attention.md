@@ -4,11 +4,19 @@ title: Attention
 tags: [deeplearning, machine learning]
 ---
 
-## Attention
+## CNN-based Attention
 
->  Attention이란?
+ --- 정지훈 강의 + icml 발표 참조 ----
+
+### Attention?
 
 
+
+### CNN-based Attention
+
+
+
+### Self attention GAN
 
 
 
