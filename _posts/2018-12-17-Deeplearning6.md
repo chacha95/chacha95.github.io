@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RNN(Recurrent Neural Network)
-tags: [deeplearning, machine learning]
+tags: [deeplearning]
 ---
 
 ## RNN

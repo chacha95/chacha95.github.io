@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Activation Function
-tags: [deeplearning, machine learning]
+tags: [deeplearning]
 ---
 
 ## Activation Function

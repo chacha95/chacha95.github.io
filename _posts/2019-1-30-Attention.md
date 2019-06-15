@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Attention
-tags: [deeplearning, machine learning]
+tags: [deeplearning]
 ---
 
 ## CNN-based Attention

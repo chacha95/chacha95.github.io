@@ -1,7 +1,7 @@
 ---
 llayout: post
 title: Normalization
-tags: [deeplearning, machine learning]
+tags: [deeplearning]
 ---
 
 ## Normalization

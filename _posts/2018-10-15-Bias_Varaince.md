@@ -8,7 +8,7 @@ tags: [machine learning, deeplearning, statistic]
 
 ### Bias variance trade-off?
 
-머신러닝의 학습에 쓰이는 error(loss) 함수는 다음과 같이 분리 될 수 있습니다.
+machine learning의 학습에 쓰이는 error(loss) 함수는 다음과 같이 분리 될 수 있습니다.
 
 <center><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile6.uf.tistory.com%2Fimage%2F991B6333599AEF3D1349E8"></center>
 

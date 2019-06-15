@@ -4,7 +4,7 @@ title: What is machine learning
 tags: [machine learning]
 ---
 
-## Machin Learning
+## Machine Learning
 
 > machine learning이란?
 
