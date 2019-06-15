@@ -67,7 +67,7 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 * Decision Tree and Random Forests
 * Neural Network
 
-**Unsupervised Learning or Self-Supervised Learning(비지도 학습)**
+**Unsupervised Learning(비지도 학습)**
 
 훈련 데이터에 레이블이 없습니다. 시스템이 아무런 도움도 없이 학습을 해야 합니다.
 
@@ -141,13 +141,13 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 <br>
 
-### Test와 Validation
+### Test Set과 Training Set
 
 모델이 새로운 샘플에 얼마나 잘 일반화될지 아는 방법은 새로운 샘플에 실제로 적용해 보는 것입니다.
 
-훈련 오차는 낮지만 test 오차가 높다면 이는 모델이 overfitting되있다는 것을 알 수 있습니다.
+Training 오차는 낮지만 Test 오차가 높다면 이는 모델이 overfitting되있다는 것을 알 수 있습니다.
 
-보통 데이터의 80%는 훈련에 사용하고 20%는 test용으로 떼어 놓습니다.
+보통 데이터의 80%는 Training에 사용하고 20%는 Test용으로 떼어 놓습니다.
 
 
 
