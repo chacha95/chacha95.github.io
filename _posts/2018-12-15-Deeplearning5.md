@@ -6,6 +6,18 @@ tags: [deeplearning]
 
 ## Training Neural Network
 
+<center><img src="https://user-images.githubusercontent.com/31475037/59672848-401d6d80-91fb-11e9-850e-133d03da1fba.png"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672849-40b60400-91fb-11e9-9ddd-9ff58873bf03.png"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672850-40b60400-91fb-11e9-9be7-87a08c550fe3.png"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672851-40b60400-91fb-11e9-853b-9ba69cb1ef61.png"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672852-40b60400-91fb-11e9-9748-c527e54d1ff8.png"></center>
+
+
+
 ### Loss 종류
 
 **L1**
