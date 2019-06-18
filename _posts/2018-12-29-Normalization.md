@@ -41,10 +41,6 @@ Regularization 기법
 - drop-out
 - emsemble
 
-
-
-
-
 <br>
 
 ### Batch Norm
