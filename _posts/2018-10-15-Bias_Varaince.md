@@ -32,7 +32,7 @@ bias는 트레이닝 데이터를 바꿈에 따라서 알고리즘의 평균 정
 
 이상적인 모델은 트레이닝 데이터에서 반복되는 규칙성을 정확하게 잡아내면서도 학습되지 않은(unseen) 데이터를 잘 일반화 할 수 있는 모델입니다. 위 문장의 의미를 이해하기 위해, 같은 데이터에 다른 모델을 이용해 학습시킨 아래의 그림을 봅시다.
 
-<center><img src="https://qpho2.fs.quoracdn.net/main-qimg-7945a8dba7fa07be31d9b7ebde3886a0.webp"></center>
+![](https://qpho2.fs.quoracdn.net/main-qimg-7945a8dba7fa07be31d9b7ebde3886a0.webp)
 
 **선형 모델(degree=1)은 under-fit이다**
 

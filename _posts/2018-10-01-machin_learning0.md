@@ -157,7 +157,7 @@ Training 오차는 낮지만 Test 오차가 높다면 이는 모델이 overfitti
 
 deeplearning은 machinelearning의 한 분야이며 deeplearning의 여러 기법들이 machinelearning의 기술로 부터 나오고 있습니다..(ensemble, boosting...)
 
-<center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="60%"></center>
+<center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="90%"></center>
 
 <br>
 

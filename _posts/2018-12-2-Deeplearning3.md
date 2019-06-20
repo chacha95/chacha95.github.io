@@ -24,31 +24,37 @@ tags: [deeplearning]
 
   같은 물체 일지라도 다른 각도에서 찍을 시 인식이 어려움
 
-- Illumination conditions
-
-  조명에 따라 인식이 달라짐
-
-- Scale variation
-
-  같은 물체일지라도 사진에 찍힌 크기에 따라 인식이 달라짐
+  ![](https://user-images.githubusercontent.com/31475037/59824788-22701580-936d-11e9-92d9-ed4f3eefbd2d.png)
 
 - Deformation
 
   물체가 변형되어 있으면 인식이 어려움
+  
+  ![](https://user-images.githubusercontent.com/31475037/59824759-07050a80-936d-11e9-8235-0a0c2f544789.png)
+
+- Illumination conditions
+
+  조명에 따라 인식이 달라짐
+
+  ![](https://user-images.githubusercontent.com/31475037/59824758-07050a80-936d-11e9-9de5-0eb1a7fd3027.png)
 
 - Occlusion
 
   다른 물체에 가려져 알고자 하는 물체를 인식하기 어려움
 
-- Background clutter
+  ![](https://user-images.githubusercontent.com/31475037/59824760-07050a80-936d-11e9-8585-f984d0a7ab94.png)
+
+- Background Clutter
 
   배경과 물체가 비슷해서 구분이 어려워 인식하기 어려움
+
+  ![](https://user-images.githubusercontent.com/31475037/59824761-07050a80-936d-11e9-8179-8393f0568ba5.png)
 
 - Intra-class variation
 
   같은 클래스 내에서도 여러 모양이나 색이 나올 수 있음
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59647668-0b87c280-91b7-11e9-8f95-b2b7978da17a.png"></center>
+  
+  ![](https://user-images.githubusercontent.com/31475037/59824762-079da100-936d-11e9-95cd-f4d3cfd84112.png)
 
 <br>
 

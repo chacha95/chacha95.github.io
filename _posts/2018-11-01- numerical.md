@@ -48,7 +48,7 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 중앙 차분이란 수치미분의 한 종류로, 다른 종류인 전향차분 후향차분보다 더 정확하며, 대다수의 경우 중앙차분을 씁니다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59031364-6c052e80-889e-11e9-88b3-8cae50e7ac7d.jpg"></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/59031364-6c052e80-889e-11e9-88b3-8cae50e7ac7d.jpg" width="80%"></center>
 
 > 편미분
 
@@ -66,7 +66,7 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59031365-6c052e80-889e-11e9-8b51-e8d7b111d797.png"></center>
 
-기울기의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향입니다.
+기울기의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향입니다. (The direction of steepest descent is the negative gradient!)
 
 <br>
 

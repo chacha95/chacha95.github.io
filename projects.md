@@ -10,25 +10,29 @@ subtitle: awesome projects!
 
 <br>
 
-## OpenPose와  Unity를 활용한 Interative Art
+## Single Image Super Resolution
 
-### OpenPose
+#### Single Image Super Resolution
+
+
+
+#### 결과
+
+
 
 
 
 #### 개발환경
 
-- Unity
-- Caffe
-- OpenPose
-- Window
-- 
+- Pytorch 1.0
+- Python 3.6
+- Linux 18.04
 
 <br>
 
 ## 딥러닝을 이용한 불교미술 채색
 
-### 불교미술 채색
+#### 불교미술 채색
 
 기존에 사람이 수작업으로 채색하던 불교미술 그림에 대해, 딥러닝을 이용해 채색을 하는 프로젝트입니다.
 

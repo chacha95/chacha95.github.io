@@ -48,6 +48,8 @@ activation function은 대게 non-linear function을 씁니다. 활성화 함수
 
 > zero-centerd 되있지 않아서 weight 업데이트가 느리다.
 
+이상적으로 weight가 업데이트 된다면 아래 그림의 파란색 선과 같이 업데이트 되야 하나, zero-centerd 되 있지 않으면, weight가 빨간색과 같이 zig-zag로 업데이트됩니다.
+
 <center><img src="https://user-images.githubusercontent.com/31475037/59671601-ec118980-91f8-11e9-90d3-acf6eed9bbce.png"></center>
 
 <br>
