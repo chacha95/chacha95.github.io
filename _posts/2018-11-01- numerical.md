@@ -4,9 +4,7 @@ title:Differentiation
 tags: [machine learning]
 ---
 
-## Differentiation(수치미분)
-
-### 미분(differentiation)
+## Differentiation(미분)
 
 당신이 마라톤 선수고 처음부터 10분에 2km씩 달렸다고 가정해봅시다.
 
