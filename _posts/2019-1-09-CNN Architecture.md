@@ -54,3 +54,9 @@ feature 재사용 촉진
 
 <br>
 
+**참고 강의**
+
+[CS231n](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
+
+<br>
+

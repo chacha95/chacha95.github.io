@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Numerical Differentiation
+title:Differentiation
 tags: [machine learning]
 ---
 
-## numerical differentiation(수치미분)
+## Differentiation(수치미분)
 
 ### 미분(differentiation)
 
@@ -23,6 +23,18 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 > 미분 공식
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59031273-2b0d1a00-889e-11e9-89bd-77c24644d0cc.png" width="40%"></center>
+
+
+
+여기서 미분 방식이 크게 두 갈래로 나뉩니다.
+
+**해석 미분(Analytical Differentiation)**
+
+해석적 미분 방식은 종이와 펜을 이용해 논리적인 전개로 풀 수 있는 문제를 말합니다.
+
+**수치 미분(Numerical Differentiation)**
+
+수치적 미분은 해석적 미분 방식으로는 풀 수 없는 문제가 있을 때 수치적 접근을 통해 근사 값을 찾는 방식입니다.
 
 <br>
 
@@ -50,7 +62,9 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59031364-6c052e80-889e-11e9-88b3-8cae50e7ac7d.jpg" width="80%"></center>
 
-> 편미분
+<br>
+
+### 편미분
 
 편미분은 변수가 여러개일 때 어떻게 미분을 해야하는가와 각 변수가 함수에 얼마나 영향을 미치는가를 어떻게 구하는가에 대한 방법입니다.
 
@@ -58,7 +72,9 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59032468-59402900-88a1-11e9-8029-b0e8b31a1ea4.png" width="30%"></center>
 
->  gradient
+<br>
+
+### gradient
 
 편미분을 변수별로 따로 계산하는게 아니라 동시에 계산하는 방식입니다.
 
@@ -67,6 +83,10 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 <center><img src="https://user-images.githubusercontent.com/31475037/59031365-6c052e80-889e-11e9-8b51-e8d7b111d797.png"></center>
 
 기울기의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향입니다. (The direction of steepest descent is the negative gradient!)
+
+즉, gradient는 공간에 대한 기울기(slope)를 말합니다.
+
+multiple dimension 벡터에서 gradient를 구하면, 각 dimension마다 gradient가 추출됩니다.
 
 <br>
 

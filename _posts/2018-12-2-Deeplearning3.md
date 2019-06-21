@@ -205,9 +205,23 @@ pooling 기법은 영상의 width와 hight를 절반으로 줄여주며, 가장 
 
 <br>
 
-읽어볼만한 글
+### Classification
+
+CNN이 학습을 통해 Classification 문제를 해결하는 모습은 다음과 같이 요약되어 나타낼 수 있습니다.
+
+![](https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/61902071_328557711158298_181285961064251392_n.png?_nc_cat=103&_nc_eui2=AeGBO-zPUE4Xi9_jur050hRO_8ncltL-ANNTP3PQhMLUEIgQzWx1izLeAaO8iZsqBIEJsiUaJ3n1frTqF9sU1kCEGWREVK4AOyAuo9hHyg6I6Q&_nc_oc=AQkp-QVCjS1hi8Gw1q72utZQMM9e7jk8dxIjzNnez_bfcqGxSt80OeRpAfCcW7cZqp8&_nc_ht=scontent-icn1-1.xx&oh=3978f86aafc4c62efdc1fee38c1c1668&oe=5D877262)
+
+
+
+<br>
+
+**읽어볼만한 글**
 
 [CNN](https://excelsior-cjh.tistory.com/180)
+
+**참고 강의**
+
+[CS231n](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 
 <br>
 

@@ -8,6 +8,8 @@ tags: [deeplearning]
 
 이번 포스트에서는 weight들이 어떻게 조정 되는지 알아 봅시다.
 
+편의상 weight와 bias를 weight라고 묶어서 말하겠습니다.
+
 [미분](https://chacha95.github.io/2018-11-01-numerical/)포스트를 읽고 읽으시는 걸 추천드립니다!
 
 ### Loss function
@@ -22,27 +24,95 @@ tags: [deeplearning]
 
 그렇다면 어떻게 하면 loss 함수를 통해 weight들을 업데이트 할 수 있을까요?
 
+보통 weight를 업데이트 한다고 할 때 드는 비유로, 경사진 산 길을 따라 내려간다고 비유합니다.
+
+왜냐하면 Loss함수가 Convex하다고 가정을 하고 Loss 함수를 따라 global minima에 도달하는 것이 비슷하기 때문입니다.
+
+가장 먼저 간단하게 생각해 볼 수 있는 것은 random하게 weight를 업데이트 해나가는 것입니다. 하지만 이 방식은 결과가 굉장히 안좋습니다. 이는 경사진 산 길을 따라 내려갈 때 눈을 가리고 내려가는 것과 비슷한 것입니다.
+
+두번째로 생각해 볼 방법은 Slop를 따라가는 방식입니다. 여기서 Slop란 gradient를 의미하며, gradient를 따라 간다는 의미입니다.
+
+왜냐하면 gradient의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향이기 때문입니다.
+
+즉, Loss 함수를 최소로 만들기 위해서 각 지점에서의 gradient의 반대 방향으로 가는것이 최선의 선택입니다.
+
 <center><img src="https://user-images.githubusercontent.com/31475037/59837836-e2b72700-9388-11e9-8cc3-60686431b782.png" width="80%"></center>
 
+> 1차원 gradient 계산
 
+1차원의 gradinet를 구하는 식은 다음과 같습니다.
 
 ![](https://user-images.githubusercontent.com/31475037/59837838-e2b72700-9388-11e9-9ac5-d8e48c31a0a1.png)
 
+1차원 gradient 식을 이용해 W를 업데이트 해볼까요?
 
+> numerical gradient
+
+numerical한 방식을 사용해 gradient를 구하면 다음과 같습니다. 
+
+엄청 작은 h값(0.0001)을 설정, 그만큼의 값을 업데이트 해 numerical한 gradient를 구합니다. 
 
 ![](https://user-images.githubusercontent.com/31475037/59837840-e2b72700-9388-11e9-8c44-8615ca1de2d6.png)
 
+> analytic gradient 
+
+analytic gradient는 실제로 미분공식을 이용하여 편미분 값을 바로 구할 수 있게 해줍니다.
+
+![](https://user-images.githubusercontent.com/31475037/59913237-bf58ae80-9452-11e9-9978-71111e0ebfea.png)
 
 
-![](https://user-images.githubusercontent.com/31475037/59837842-e2b72700-9388-11e9-80ea-3b90e7343425.png)
 
+두 기법을 비교한다면 다음과 같습니다.
 
+정리해서 말하자면 numerical은 근사치이고 느리다. 반면에 코드로 작성하기 쉽습니다.
 
+그리고 analytic은 빠르고 정확한데 에러가 늘어날 경우가 많습니다.
 
+결론적으로 말하면 다 analytic  gradient를 쓰면 됩니다.
+
+그리고 중간중간에 gradient 계산이 잘 되고 있는지 numerical gradient를 이용해 확인해줍니다.(이를 gradient check라고 부름)
+
+<br>
+
+### Stochastic Gradient Descent
+
+이렇게 구해진 gradient를 따라 weight들을 업데이트해 나가면 loss 함수의 global minima에 도달 할 수 있게 됩니다.
+
+아래 그림에서 흰색 부분이 처음 주어진 weight 벡터이고, 해당 지점에서 gradient를 구한 뒤 gradient를 따라 내려가는 모습입니다. 
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59034488-1af93880-88a6-11e9-8c01-5d7972ea642d.png" width="90%"></center>
+
+**Stochastic Gradient Descent**
+
+이 때 까지 우리가 봤던 방식은 training set 전체를 이용해 학습을 하는 full gradient descent 였다면, 앞으로 우리가 사용할 방식은 mini-batch를 이용한 Stochastic Gradient Descent입니다.
+
+training set 전체를 batch라고 했을 때, training set 일부를 가져온 것을 mini-batch라고 합니다. 이 mini-batch만을 이용해 gradient를 계산하고 이를 통해 weight를 업데이트 해줍니다.
+
+이 과정이 끝나면 이전 mini-batch와 겹치지 않는 mini-batch를 하나 가져와 다시 학습합니다.
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59914868-4c513700-9456-11e9-9e24-8247ff49d458.png" width="90%"></center>
+
+<br>
 
 ### Backpropagation
 
 
+
+<br>
+
+**읽어볼만한 글**
+
+[Backpropagation](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b?fbclid=IwAR0pB_YOUdMvXoLWsYyEwMp3MWxRZyadd24zxorvnAPkKXK7flbkGWaQyh8)
+
+[Backpropagation2](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b?fbclid=IwAR0pB_YOUdMvXoLWsYyEwMp3MWxRZyadd24zxorvnAPkKXK7flbkGWaQyh8)
+
+**참고 강의**
+
+[CS231n](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
+
+[Optimization](http://cs231n.github.io/optimization-1/)
+
+<br>
 
 
 
