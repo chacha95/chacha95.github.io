@@ -118,6 +118,10 @@ Weight가 gradient를 따라 update 되면서 학습이 된다 하는데, 그렇
 입력 값이 x, y, z 세 개이고, 결과값이 f인 예시입니다. 우리가 원하는 것은 x, y, z가 f에 미치는 변화율 입니다. 따라서 각 변수 별로의 편미분을 통해 값을 구해줍니다. 
 
 $\frac {\partial f} {\partial x}  $ 
+$$
+\partial x
+$$
+
 
  
 
