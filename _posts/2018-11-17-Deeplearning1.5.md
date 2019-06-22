@@ -15,6 +15,8 @@ use_math: true
 
 (Nerual Network에 있어 가장 중요한 부분입니다)
 
+<br>
+
 ### Loss function
 
 일반적으로 Loss 함수는 다음과 같이 정의됩니다.
@@ -111,21 +113,25 @@ Weight가 gradient를 따라 update 되면서 학습이 된다 하는데, 그렇
 
 그 gradient를 구하는 방법으로 Backpropagation이 제안되었습니다.
 
-> 간단한 예시
+
+
+**간단한 예시**
 
 다음과 같은 간단한 예시를 들어 봅시다.
 
-입력 값이 x, y, z 세 개이고, 결과값이 f인 예시입니다. 우리가 원하는 것은 x, y, z가 f에 미치는 변화율 입니다. 따라서 각 변수 별로의 편미분을 통해 값을 구해줍니다. 
-
-$\frac {\partial f} {\partial x}  $ 
+입력 값이 x, y, z 세 개이고, 결과값이 f인 예시입니다. 우리가 원하는 것은 x, y, z가 f에 미치는 변화율 입니다. 따라서 각 변수 별로의 편미분을 통해 값을 구해줍니다.  
 $$
-\partial x
+\frac {\partial f} {\partial x}, \ \frac {\partial f} {\partial y},\ \frac {\partial f} {\partial z}\ 를 구하는\ 것이 \ 최종 목표입니다.
 $$
-
-
- 
-
 ![](https://user-images.githubusercontent.com/31475037/59961339-61d76700-9511-11e9-899c-66046a1172de.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964083-dc66ad80-9536-11e9-8328-275b6c3e66fc.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964084-dc66ad80-9536-11e9-83b0-48d6352b9a1c.png)
 
 
 
