@@ -2,6 +2,7 @@
 layout: post
 title: CNN Architecture
 tags: [deeplearning]
+use_math: true
 ---
 
 ## CNN Architecture

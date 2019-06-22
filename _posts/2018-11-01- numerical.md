@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Differentiation
-tags: [machine learning]
+tags: [math]
 ---
 
 ## Differentiation(미분)

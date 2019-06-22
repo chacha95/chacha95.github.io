@@ -1,13 +1,15 @@
 ---
 layout: post
-title: Training Neural Net2
+title: RNN(Recurrent Neural Network)
 tags: [deeplearning]
 use_math: true
 ---
 
-## Training Neural Network
+## RNN
 
-### Optimizer
+ -- cs231n 강의 참조 ----
+
+>  Ensemble(앙상블) Learning이란?
 
 
 

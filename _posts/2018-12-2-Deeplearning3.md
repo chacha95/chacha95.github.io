@@ -2,6 +2,7 @@
 layout: post
 title: CNN(Convolutional Neural Network)
 tags: [deeplearning]
+use_math: true
 ---
 
 ## CNN
@@ -200,6 +201,22 @@ pooling 기법은 영상의 width와 hight를 절반으로 줄여주며, 가장 
 ![](https://user-images.githubusercontent.com/31475037/59670832-8c66ae80-91f7-11e9-9615-9a55adcb6bfd.png)
 
 위의 그림과 같이 parameter 수가 5배 정도 차이가 납니다.
+
+<br>
+
+### Neuron 관점에서의 Conv Layer
+
+Fully Cunnected Layer에서는 dot product가 이루어지는 각 노드가 각 뉴런입니다.
+
+그렇다면 Conv Layer에서는 어떤가요?
+
+바로 Conv Layer에서는 각 필터가 각 뉴런을 의미합니다.
+
+> 5개의 필터를 이용한 Conv
+
+다음과 같이 입력에 대해 Conv를 5개를 썼다면, 뉴런이 5개 있다는 것과 동일한 의미입니다. 
+
+![](https://user-images.githubusercontent.com/31475037/59965152-45552200-9545-11e9-9547-a12d8a66aef2.png)
 
 <br>
 

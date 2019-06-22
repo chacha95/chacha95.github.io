@@ -123,21 +123,99 @@ Weight가 gradient를 따라 update 되면서 학습이 된다 하는데, 그렇
 $$
 \frac {\partial f} {\partial x}, \ \frac {\partial f} {\partial y},\ \frac {\partial f} {\partial z}\ 를 구하는\ 것이 \ 최종 목표입니다.
 $$
+> 예시
+
 ![](https://user-images.githubusercontent.com/31475037/59961339-61d76700-9511-11e9-899c-66046a1172de.png)
 
 
+
+먼저 z가 함수 f에 대한 영향을 알기 위해서 편미분을 해봅시다. 
+
+f와 z 함수는 직접적으로 연결되어 있기 때문에 f를 z에 대해서 편미분을 하면 바로 구할 수 있습니다. 결과적으로는 3의 값이 나오게 됬습니다.
+
+> f와 직접적으로 연결되어 있어 바로 f를 z로 편미분한 값을 구할 수 있음
 
 ![](https://user-images.githubusercontent.com/31475037/59964083-dc66ad80-9536-11e9-8328-275b6c3e66fc.png)
 
 
 
+그렇다면 f를 x와 y로 편미분 하려면 어떻게 해야 할까요?
+
+먼저 f와 x, y는 직접적으로 연결되어 있지 않기 때문에 두번의 편미분을 거쳐야 합니다.
+
+q = x + y이기에, f를 q에 대해서 편미분 한 값을 먼저 구해봅시다.
+
+> f를 q로 편미분한 값을 먼저 구함
+
+편미분을 통해 f를 q로 편미분한 값이 -4인 것을 알아냈습니다!
+
 ![](https://user-images.githubusercontent.com/31475037/59964084-dc66ad80-9536-11e9-83b0-48d6352b9a1c.png)
 
+구해진 편미분 값에 대해서 어떤 방법을 통해서 우리가 원하는 값을 얻을 수 있을까요?
 
+바로 chain rule이라는 법칙을 이용해 구할 수 있습니다.
+
+> chain rule의 적용
+
+$$
+\frac {\partial f} {\partial x} = \frac {\partial f} {\partial q} \frac {\partial q} {\partial x}
+$$
+
+$$
+\frac {\partial q} {\partial x}은 \ q=x+y를 \ 편미분하면 \ \frac {\partial q} {\partial x}이 \ 1인것을 \ 알 \ 수 \ 있습니다.
+$$
+
+이를 chain rule에 적용해 보면 우리가 원하는 값을 얻을 수 있습니다.
+
+> q를 x와 y로 편미분한 값을 구함
 
 ![](https://user-images.githubusercontent.com/31475037/59961340-61d76700-9511-11e9-9a9a-a83cca42ca09.png)
 
+chain rule을 적용함으로써 우리가 원하는 f를 특정 변수로 편미분한 값, 즉 f의 결과값에 특정 변수가 얼마나 영향을 미치는지에 대해 알게 되었죠?
 
+예를 들어 loss함수 f가 있을 때 f에 특정 변수 x가 얼마나 영향을 미치는지 알기 위해서 loss 함수로부터 backpropagation를 통해 거슬러 올라가 계산하면 알 수 있습니다. 
+
+이를 기반으로 weight를 업데이트 합니다.
+
+그렇다면 실제 Sigmoid가 들어간 예시를 풀어볼까요?
+
+**Sigmoid가 들어간 예시**
+
+편의상 p1, p2와 같은 예비 변수명을 붙였습니다.
+
+아래 그림의 빨간 박스친 부분이 해당 노드의 미분 공식입니다.
+
+> backpropagation 진행
+
+간단한 예시에서 쓰였던 방법을 그대로 따라 진행하시면 됩니다!
+
+![](https://user-images.githubusercontent.com/31475037/59964859-821f1a00-9541-11e9-815c-14cca540b542.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964860-821f1a00-9541-11e9-89a3-036934d9ca8f.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964861-821f1a00-9541-11e9-964e-45e1d501772a.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964862-82b7b080-9541-11e9-94d9-7fb64592ec96.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964863-82b7b080-9541-11e9-8dee-07eb6f332660.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59964864-82b7b080-9541-11e9-8e54-3256aa6e94ab.png)
+
+
+
+> gradient를 거슬러 올라가 weight들을 업데이트 해준다!
+
+결국 weight는 [local gradient] x [(upstream) gradient] 연산에 의해 업데이트 됩니다.
 
 ![](https://user-images.githubusercontent.com/31475037/59961352-76b3fa80-9511-11e9-94c1-86c98d34c020.png)
 

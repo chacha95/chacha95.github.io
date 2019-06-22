@@ -2,6 +2,7 @@
 layout: post
 title: Normalization
 tags: [deeplearning]
+use_math: true
 ---
 
 ## Normalization
@@ -11,6 +12,10 @@ tags: [deeplearning]
 ### Feature Scaling
 
 **Norm**
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672851-40b60400-91fb-11e9-853b-9ba69cb1ef61.png"></center>
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672852-40b60400-91fb-11e9-9748-c527e54d1ff8.png"></center>
 
 Norm(Normalization)의 목표는 입력 값의 범위의 차이를 왜곡시키지 않기 위해서 사용하는 방법입니다.
 
@@ -33,15 +38,6 @@ scale의 범위가 너무 크면 노이즈 데이터가 생성되거나 overfitt
 activation function을 거치는 의미가 사라집니다 -> 값이 너무 커지게 되면 활성화 함수를 거친다고 하여도 한쪽으로 값이 쏠릴 가능성이 높기 때문입니다.
 
 weight 초기화 방법으로 정규분포로 부터 값을 생성하는 방법을 자주 사용하는데, 정규 분포의 값은 +=2.58 내에 99%가 존재합니다. 따라서, scale이 너무 커서 값의 분포 범위가 넓으면 값을 정하기가 힘듭니다.
-
-### Regularization
-
-Regularization 기법
-
-- Early stopping
-- Noisy input
-- drop-out
-- emsemble
 
 <br>
 
@@ -141,11 +137,11 @@ IN의 문제점은 style 정보를 완전히 지운다는 것입니다. style tr
 
 --루닛 블로그 참조
 
-### Spectral Norm
-
-
-
 
 
 <br>
+
+**읽어볼만한 글**
+
+
 

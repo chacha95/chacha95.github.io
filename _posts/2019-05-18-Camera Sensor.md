@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 이미지 센서와 Raw Bayer Pattern 
-tags: [영상처리, Raw]
+tags: [영상처리]
 ---
 
 ## Camera Sensor

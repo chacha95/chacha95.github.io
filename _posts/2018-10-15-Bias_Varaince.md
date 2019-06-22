@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bias and Variance
-tags: [machine learning, deeplearning, statistic]
+tags: [math]
 ---
 
 ## Bias and Variance trade-off

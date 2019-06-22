@@ -2,6 +2,7 @@
 layout: post
 title: Attention
 tags: [deeplearning]
+use_math: true
 ---
 
 ## CNN-based Attention

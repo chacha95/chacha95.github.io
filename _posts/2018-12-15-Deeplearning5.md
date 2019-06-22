@@ -1,118 +1,11 @@
 ---
 layout: post
-title: Training Neural Network
+title: Training Neural Net
 tags: [deeplearning]
+use_math: true
 ---
 
 ## Training Neural Network
-
-
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59672849-40b60400-91fb-11e9-9ddd-9ff58873bf03.png"></center>
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59672850-40b60400-91fb-11e9-9be7-87a08c550fe3.png"></center>
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59672851-40b60400-91fb-11e9-853b-9ba69cb1ef61.png"></center>
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59672852-40b60400-91fb-11e9-9748-c527e54d1ff8.png"></center>
-
-
-
-### Loss 함수 구성
-
-일반적으로 Cost(Loss) 함수는 다음과 같이 구성됩니다.
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59672848-401d6d80-91fb-11e9-850e-133d03da1fba.png"></center>
-
-**L1**
-
-
-
-**L2(MSE)**
-
-
-
-**Cross-Entropy**
-
-
-
-### Regularization
-
-Training 과정에서 overfitting을 막아주는 방법이다.
-
-**L1 Regularization**
-
-
-
-**L2 Regularization**
-
-가장 일반적으로 사용되는 방식입니다. 모든 파라미터에 제곱 만큼의 크기를 loss 함수에 제약을 거는 방식으로 구현됩니다.
-
-
-
-**Dropout**
-
-각 뉴런들을 p의 확률로 활성화 시켜 학습에 적용하는 방식입니다.
-
-ensemble과 비슷한 효과를 냅니다. 
-
-![](http://aikorea.org/cs231n/assets/nn2/dropout.jpeg)
-
-### Learning Rate Decay
-
-
-
-### Data Set
-
-**Data Set 구성**
-
-> 데이터셋 구성
-
-일반적으로 Data Set은 Training/Validation/Testing으로 나뉘어 집니다.
-
-여기서 **Test Set은 절대로 Training에 쓰이면 안됩니다**
-
-Data Set을 이렇게 나누는 이유는 Test Set이 모델의 Training과정 중에 쓰이는 것을 막기 위해 Training 과정이 잘 되고 있는지 아닌지 판단하는 지표가 loss 밖에 없습니다. 하지만 loss가 낮다고 해서 Test Set에서의 결과가 항상 좋은것만은 아닙니다.(그 이유는 아래서 설명)
-
-그렇기 때문에 Training 과정 중에 모델에 대해 평가를 하기 위한 Validation Set을 만드는 것입니다. 
-
-
-
-<center><img src="https://t1.daumcdn.net/cfile/tistory/9951E5445AAE1BE025"></center>
-
-**k-fold cross validation**
-
-k-fold cross validiation 기법은 data set의 수가 적을 때 정확도를 향상시키는 방법입니다. 
-
-방법은 다음과 같습니다.
-
-- Training을 k개의 fold로 나눕니다.
-- 아래는 5개의 fold로 나누었을 때
-- 한개의 fold에 있는 데이터를 다시 k개로 쪼갠 뒤, k-1개는 Train Set, 마지막 한개는 Validation Set을 지정합니다.
-- 다음 fold에서는 Validation Set을 바꿔 지정하고, 이전 fold에서 Validation 역할을 했던 Set은 다시 Training Set으로 활용합니다.
-- 이를 K번 반복합니다
-
-이러한 방법을 이용하여 적은 Training Set을 크게 만들 수 있다.
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59551217-06592680-8fb1-11e9-9adf-c8a0592101b2.png"></center>
-
-
-
-**Overfitting과 Training**
-
-Training data에 너무 overfitting하게 되버리면 오히려 Test에서의 성능이 크게 떨어집니다.
-
->  그렇다면 언제까지 학습을 해야 하는 것일까?
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59551074-022c0980-8faf-11e9-9466-5f242652d0a6.png"></center>
-
-학습시킨 모델을 Validation에 놓고 조금씩 비교하다보면 초반 loss는 떨어지나, 어느 시점부터 loss가 증가하는 것을 보입니다. 결국 Training을 무조건 지속하기보다는 Validation의에러가 증가하는 시점에 학습을 중단하는 것이 좋습니다.
-
-즉, 모델을 한번 학습 시켰다면 그것을 Validation Set으로 Error가 얼마나 내려가는지 한번 더 확인해 보는 것입니다. Validation Set이 최적의 Error를 보인다면 그 지점이 가장 학습이 잘 된 지점으로 생각하고 학습을 중단 시키면 됩니다.
-
-그리고 Test Set으로 실제 모델을 평가 하면 됩니다. 
-
-
 
 ### Data Set Preprocessing
 
@@ -149,21 +42,125 @@ eigenbasis(기저벡터) 데이터를 eigenvalue(고유값) 값으로 나누어 
 
 <br>
 
-### Gradient Clipping
+### Loss
 
-neural net에서 gradient가 폭팔하는 것을 방지하는 기법입니다. 다양한 방법이 존재하지만, 흔히 쓰이는 방법은 gradient의 L2 norm이 기준값을 초과할때(threshold /L2 Norm)을 곱해주는 것입니다. 흔히 RNN 계열에서 많이 쓰입니다.
+일반적으로 Cost(Loss) 함수는 다음과 같이 구성됩니다.
 
-이 방법의 장점은 빠르게 학습을 하면서도, gradient exploding을 막아주는 방식입니다.
+> Loss 함수
+
+![](https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png)
+
+**L1(Manhatan)**
+
+
+
+**L2(MSE)**
+
+
+
+> L1과 L2 비교
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59672849-40b60400-91fb-11e9-9ddd-9ff58873bf03.png"></center>
+
+**Cross-Entropy**
+
+[Softmax](https://chacha95.github.io/2018-11-09-Softmax/)글에 잘 설명해 두었습니다.
+
+<br>
+
+### Regularization
+
+Training 과정에서 overfitting을 막아주는 방법입니다.
+
+**L1 Regularization**
+
+
+
+**L2 Regularization**
+
+가장 일반적으로 사용되는 방식입니다. 모든 파라미터에 제곱 만큼의 크기를 loss 함수에 제약을 거는 방식으로 구현됩니다.
+
+
+
+**Dropout**
+
+각 뉴런들을 p의 확률로 활성화 시켜 학습에 적용하는 방식입니다.
+
+ensemble과 비슷한 효과를 냅니다. 
+
+![](http://aikorea.org/cs231n/assets/nn2/dropout.jpeg)
+
+
+
+### Data Set
+
+**Data Set 구성**
+
+> 데이터셋 구성
+
+일반적으로 Data Set은 Training/Validation/Testing으로 나뉘어 집니다.
+
+여기서 **Test Set은 절대로 Training에 쓰이면 안됩니다**
+
+Data Set을 이렇게 나누는 이유는 Test Set이 모델의 Training과정 중에 쓰이는 것을 막기 위해 Training 과정이 잘 되고 있는지 아닌지 판단하는 지표가 loss 밖에 없습니다. 하지만 loss가 낮다고 해서 Test Set에서의 결과가 항상 좋은것만은 아닙니다.(그 이유는 아래서 설명)
+
+그렇기 때문에 Training 과정 중에 모델에 대해 평가를 하기 위한 Validation Set을 만드는 것입니다. 
+
+
+
+<center><img src="https://t1.daumcdn.net/cfile/tistory/9951E5445AAE1BE025"></center>
+
+**k-fold cross validation**
+
+k-fold cross validiation 기법은 data set의 수가 적을 때 정확도를 향상시키는 방법입니다. 
+
+방법은 다음과 같습니다.
+
+- Training을 k개의 fold로 나눕니다.
+- 아래는 5개의 fold로 나누었을 때
+- 한개의 fold에 있는 데이터를 다시 k개로 쪼갠 뒤, k-1개는 Train Set, 마지막 한개는 Validation Set을 지정합니다.
+- 다음 fold에서는 Validation Set을 바꿔 지정하고, 이전 fold에서 Validation 역할을 했던 Set은 다시 Training Set으로 활용합니다.
+- 이를 K번 반복합니다
+
+이러한 방법을 이용하여 적은 Training Set을 크게 만들 수 있습니다.
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59551217-06592680-8fb1-11e9-9adf-c8a0592101b2.png"></center>
+
+**Overfitting과 Training**
+
+Training data에 너무 overfitting하게 되버리면 오히려 Test에서의 성능이 크게 떨어집니다.
+
+>  그렇다면 언제까지 학습을 해야 하는 것일까?
+
+<center><img src="https://user-images.githubusercontent.com/31475037/59551074-022c0980-8faf-11e9-9466-5f242652d0a6.png"></center>
+
+학습시킨 모델을 Validation에 놓고 조금씩 비교하다보면 초반 loss는 떨어지나, 어느 시점부터 loss가 증가하는 것을 보입니다. 결국 Training을 무조건 지속하기보다는 Validation의에러가 증가하는 시점에 학습을 중단하는 것이 좋습니다.
+
+즉, 모델을 한번 학습 시켰다면 그것을 Validation Set으로 Error가 얼마나 내려가는지 한번 더 확인해 보는 것입니다. Validation Set이 최적의 Error를 보인다면 그 지점이 가장 학습이 잘 된 지점으로 생각하고 학습을 중단 시키면 됩니다.
+
+그리고 Test Set으로 실제 모델을 평가 하면 됩니다. 
 
 
 
 <br>
 
-### Optimizer
+### Gradient Clipping
 
+neural net에서 gradient가 너무 작거나 크게되는 것을 방지하는 기법입니다. 다양한 방법이 존재하지만, 흔히 쓰이는 방법은 gradient의 L2 norm이 기준값을 초과할때(threshold /L2 Norm)을 곱해주는 것입니다. 흔히 RNN 계열에서 많이 쓰입니다.
 
+Gradient에 문제가 생기는 경우는 다음과 같은 경우가 대표적입니다.
 
+> 가파른 gradient를 가져 gradient exploding 현상을 초래
 
+<center><img src="https://t1.daumcdn.net/cfile/tistory/99487A3359E302CE2E" width="80%"></center>
+
+이러한 문제에 대처하는 한가지 방법은 learning rate를 매우 작게 설정하는 것입니다. 
+
+이 솔루션은 학습 속도를 매우 느리게 만들고, 잘못하면 local minima에 빠지게 만듭니다. 위의 솔루션보다 더 좋은 솔루션은 gradient clipping을 사용하는 것입니다.
+
+gradient clipping의 개념은 gradient가 최대치를 넘게되면 gradient의 크기를 재조정해서 gradient의 크기를 조정하는 것입니다. 
+
+이러한 gradient clipping은 최적화 알고리즘이 가야하는 방향은 그대로 유지하면서 업데이트되야하는 gradient의 크기를 자동으로 조절해줍니다.
 
 <br>
 

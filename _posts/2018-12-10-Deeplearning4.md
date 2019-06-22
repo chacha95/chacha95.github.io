@@ -2,6 +2,7 @@
 layout: post
 title: Activation Function
 tags: [deeplearning]
+use_math: true
 ---
 
 ## Activation Function
