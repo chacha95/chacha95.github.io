@@ -203,7 +203,7 @@ pooling 기법은 영상의 width와 hight를 절반으로 줄여주며, 가장 
 
 <br>
 
-### Classification
+### Abstraction
 
 CNN이 학습을 통해 Classification 문제를 해결하는 모습은 다음과 같이 요약되어 나타낼 수 있습니다.
 

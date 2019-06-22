@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Differentiation
+title: Differentiation
 tags: [machine learning]
 ---
 
@@ -8,7 +8,7 @@ tags: [machine learning]
 
 당신이 마라톤 선수고 처음부터 10분에 2km씩 달렸다고 가정해봅시다.
 
-이 때 속도는 2/10 = 0.2(km/분)입니다.
+이 때 속도는 2/10 = 0.2(km/분)입니다.ㄹ
 
 <span style="color:red">달린거리</span>가 <span style="color:blue">시간</span>에 대해 얼마나 변화 했는가를 계산했습니다.
 
@@ -17,6 +17,8 @@ tags: [machine learning]
 미분은 이런 **특정순간**의 변화량을 의미합니다.
 
 X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입니다.
+
+즉, 함수에서 미분의 개념이 기울기라는 것을 의미합니다.
 
 > 미분 공식
 
@@ -74,7 +76,13 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 ### gradient
 
-편미분을 변수별로 따로 계산하는게 아니라 동시에 계산하는 방식입니다.
+> gradient 표현
+
+gradient는 입력이 벡터일 때 결과가 스칼라인 함수에 대해서 입력 벡터의 각 원소 마다 편미분을 해 결과를 벡터로 내놓는 방식입니다.
+
+즉, gradient는 공간에 대한 기울기(slope)를 말합니다. 
+
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/832275c31fbf4723a0ce1df6ff0611bf264ab8eb)
 
 각 점에서의 기울기를 계산하고, 기울기 결과에 마이너스를 곱한 벡터(기울기의 반대방향)로 그림을 그려보면 다음과 같습니다.
 
@@ -82,11 +90,15 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 기울기의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향입니다. (The direction of steepest descent is the negative gradient!)
 
-즉, gradient는 공간에 대한 기울기(slope)를 말합니다.
-
 multiple dimension 벡터에서 gradient를 구하면, 각 dimension마다 gradient가 추출됩니다.
 
 <br>
+
+**읽어볼만한 글**
+
+[미분과 gradient](https://ghebook.blogspot.com/2010/07/gradient.html)
+
+[스칼라장의 기울기](https://wikidocs.net/6998)
 
 
 

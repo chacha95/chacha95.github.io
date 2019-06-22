@@ -1,5 +1,5 @@
 ---
-llayout: post
+layout: post
 title: CNN Architecture
 tags: [deeplearning]
 ---

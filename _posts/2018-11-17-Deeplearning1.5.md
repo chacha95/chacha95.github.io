@@ -10,7 +10,9 @@ tags: [deeplearning]
 
 편의상 weight와 bias를 weight라고 묶어서 말하겠습니다.
 
-[미분](https://chacha95.github.io/2018-11-01-numerical/)포스트를 읽고 읽으시는 걸 추천드립니다!
+[미분](https://chacha95.github.io/2018-11-01-numerical/)포스트를 읽고, CS231n Backpropagation강의를 듣고 읽으시는 걸 추천드립니다!
+
+(Nerual Network에 있어 가장 중요한 부분입니다)
 
 ### Loss function
 
@@ -94,17 +96,39 @@ training set 전체를 batch라고 했을 때, training set 일부를 가져온 
 
 <br>
 
-### Backpropagation
+### Backpropagation(역전파)
+
+Backpropagation은 Neural Net이 구체적으로 어떻게 학습하는지에 대한 방법론입니다. 
+
+Backpropagation은 추상적이기에 Neural Net의 학습 과정이 마법처럼 데이터를 학습해서 결과를 만든다고 생각할 수 있습니다. 
+
+하지만 Image Net task와 같이 잘 만들어진 모델과 학습데이터를 벗어나, 실제 현장에서 이를 적용하려 하면 학습이 이상적으로 되지 않고, gradient vanishing , dying ReLU와 같은 중대한 결점이 발생합니다. 
+
+따라서 우리는 Backpropagation에 대해 완전히 이해해야 하며 어떻게 Weight가 업데이트 되는지 잘 알아야 합니다.
+
+Weight가 gradient를 따라 update 되면서 학습이 된다 하는데, 그렇다면 gradient는 어떻게 구할 까요?
+
+그 gradient를 구하는 방법으로 Backpropagation이 제안되었습니다.
+
+> 간단한 예시
+
+다음과 같은 간단한 예시를 들어 봅시다.
+
+입력 값이 x, y, z 세 개이고, 결과값이 f인 예시입니다. 우리가 원하는 것은 x, y, z가 f에 미치는 변화율 입니다. 따라서 각 변수 별로의 편미분을 통해 값을 구해줍니다. 
+
+$x~2~$
 
 
 
-할일 목록
+![](https://user-images.githubusercontent.com/31475037/59961339-61d76700-9511-11e9-899c-66046a1172de.png)
 
-- 내용 정리
-- 코드 짜보기
-- 손으로 풀어보기 
 
-세가지 해보기!
+
+![](https://user-images.githubusercontent.com/31475037/59961340-61d76700-9511-11e9-9a9a-a83cca42ca09.png)
+
+
+
+![](https://user-images.githubusercontent.com/31475037/59961352-76b3fa80-9511-11e9-94c1-86c98d34c020.png)
 
 
 
@@ -114,7 +138,9 @@ training set 전체를 batch라고 했을 때, training set 일부를 가져온 
 
 [Backpropagation](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b?fbclid=IwAR0pB_YOUdMvXoLWsYyEwMp3MWxRZyadd24zxorvnAPkKXK7flbkGWaQyh8)
 
-[Backpropagation2](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b?fbclid=IwAR0pB_YOUdMvXoLWsYyEwMp3MWxRZyadd24zxorvnAPkKXK7flbkGWaQyh8)
+[Backpropagation2](<http://taewan.kim/post/backpropagation_matrix_transpose/?fbclid=IwAR1rmwOmNpYwnDNuAF8Gxv-wmWFoZ_Paiplt9u5lysr3Yk26-5u_uAd3Www>)
+
+[Backpropagation3](http://jaejunyoo.blogspot.com/2017/01/backpropagation.html)
 
 **참고 강의**
 

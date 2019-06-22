@@ -1,5 +1,5 @@
 ---
-llayout: post
+layout: post
 title: Normalization
 tags: [deeplearning]
 ---
