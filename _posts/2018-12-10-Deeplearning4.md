@@ -43,7 +43,7 @@ activation function은 대게 non-linear function을 씁니다. 활성화 함수
 
   입력 값이 일정이상 올라가면 미분값이 거의 0에 수렴하게 됩니다. 
 
-  |x|값이 커질 수록 gradient backpropagation시 미분 값이 소실 될 가능성이 큼(Saturated regime이 gradient를 죽임)
+  x의 절대 값이 커질 수록 gradient backpropagation시 미분 값이 소실 될 가능성이 큼(Saturated regime이 gradient를 죽임)
 
   > sigmoid의 도함수, x = 0에서 최대 값을 가진다.
 
