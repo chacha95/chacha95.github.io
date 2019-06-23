@@ -22,7 +22,7 @@ Normalization은 각 차원의 데이터가 동일한 범위내의 값을 갖도
 일반적으로 다음 2가지 중 하나를 선택하여 구현합니다.
 
 - 각 데이터 값을 평균 만큼 차감하고 표준 편차 값으로 나눕니다.
-- 데이터 값의 범위를 [-1, 1]로 만듭니다. 하지만 이 기법은 scale이 동일해야지 feature 학습에 도움이 줄거라는 가정하에 사용하는 것이 일반적입니다. 이미지 처리에서는 각 픽셀 값이 이미 동일한 scale(0~255)을 갖고 있는 경우가 대부분이기에 사용 하는 경우도 있고 안하는 경우도 있습니다.(e.g. pretrained VGG net은 보통 [-1, 1]로 정규화 도있다.)
+- 데이터 값의 범위를 [-1, 1]로 만듭니다. 하지만 이 기법은 scale이 동일해야지 feature 학습에 도움이 줄거라는 가정하에 사용하는 것이 일반적입니다. 이미지 처리에서는 각 픽셀 값이 이미 동일한 scale(0~255)을 갖고 있는 경우가 대부분이기에 사용 하는 경우도 있고 안하는 경우도 있습니다.(e.g. pretrained VGG net은 보통 [-1, 1]로 정규화 되어있다.)
 
 ![](http://aikorea.org/cs231n/assets/nn2/prepro1.jpeg)
 
@@ -32,33 +32,59 @@ Normalization은 각 차원의 데이터가 동일한 범위내의 값을 갖도
 
 먼저 Mean Subtraction 기법을 이용해 데이터를 정규화 시킵니다. 그리고 Covariance를 계산합니다.
 
-
+PCA를 하고난 데이터는 데이터간에 decorrelated됩니다.
 
 **Whitening**
 
-eigenbasis(기저벡터) 데이터를 eigenvalue(고유값) 값으로 나누어 정규화 하는 기법이다. Whitening 변환은 기하학적 해석은, 입력 데이터가 multivariable gaussian 분포를 따르면 whitening된 데이터는 평균은 0이고 Covariance는 단위행렬을 갖는 정규분포를 갖게된다. 
+eigenbasis(기저벡터) 데이터를 eigenvalue(고유값) 값으로 나누어 정규화 하는 기법입니다. Whitening 변환은 기하학적 해석은, 입력 데이터가 multivariable gaussian 분포를 따르면 whitening된 데이터는 평균은 0이고 Covariance는 단위행렬을 갖는 정규분포를 갖게된다. 
 
 ![](http://aikorea.org/cs231n/assets/nn2/prepro2.jpeg)
 
 <br>
 
-### Loss
+### Loss와 Regularization
 
 일반적으로 Cost(Loss) 함수는 다음과 같이 구성됩니다.
 
 > Loss 함수
 
+Distance를 이용해 정답과 Neural Net을 통해 나온 결과값을 비교하는 부분과 Generalization을 위해 쓰이는 Regularaization 부분입니다.
+
 ![](https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png)
 
-**L1(Manhatan)**
+**L1 Loss**
+
+A에서 B로 이동 할 때 각 좌표축 방향으로만 이동할 경우 계산되는 거리입니다.
+
+실제 값과 예측값의 그 차이값에 절대값을 취하는 방식입니다.
+
+다른 말로는 Least Absolute Deviations 줄여서 LAD라고도 불립니다.
+$$
+L_1 = \sum_{i=1}^n \left| y_i - f(x_i) \right |
+$$
 
 
+![](http://i.imgur.com/hXR6RFw.png)
 
-**L2(MSE)**
+**L2 Loss**
+
+두 관측치 사이의 직선 최단거리를 의미합니다.
+
+Mean Squared Error(MSE)라고도 불리며, 실제값과 예측값의 차이값에 제곱을 하는 방식입니다.
+$$
+L =\sum_{i=1}^n(y_i - f(x_i))^2
+$$
+
+
+![](https://user-images.githubusercontent.com/31475037/59828966-2acd4e00-9377-11e9-8350-8e1cbf0de444.png)
 
 
 
 > L1과 L2 비교
+
+아래 그림에서 L1과 L2의 특성에 대한 비교를 시각화 하였습니다.
+
+L1과 L2는 다음과 같은 차이가 있습니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59672849-40b60400-91fb-11e9-9ddd-9ff58873bf03.png"></center>
 
@@ -70,23 +96,52 @@ eigenbasis(기저벡터) 데이터를 eigenvalue(고유값) 값으로 나누어 
 
 ### Regularization
 
-Training 과정에서 overfitting을 막아주는 방법입니다.
+Overfitting을 방지하는 가장 확실한 방법은 Training 데이터를 늘리는 일이지만, 추가 데이터 확보가 어렵거나 불가능한 경우가 많습니다.
 
-**L1 Regularization**
-
-
-
-**L2 Regularization**
-
-가장 일반적으로 사용되는 방식입니다. 모든 파라미터에 제곱 만큼의 크기를 loss 함수에 제약을 거는 방식으로 구현됩니다.
+그러한 상황일때 Regularization 기법을 사용하면 Generalization 성능을 높이는데 도움이 됩니다.
 
 
+
+**L1 Regularization(L1 Norm)**
+
+lasso regression이라고도 합니다.
+
+기존의 loss의 가중치의 크기가 포함되면서 가중치가 너무 크지 않은 방향으로 학습되도록 합니다.
+
+모든 weight의 절댓값 만큼의 크기를 loss 함수에 제약을 거는 방식으로 구현됩니다.
+$$
+\lambda R(w) = {\frac 1 2}\lambda\left | w \right |
+$$
+
+**L2 Regularization(L2 norm)**
+
+ridge regression 이라고도 불립니다.
+
+가장 일반적으로 사용되는 방식입니다. 모든 weight의 제곱 만큼의 크기를 loss 함수에 제약을 거는 방식으로 구현됩니다.
+
+
+$$
+\lambda R(w) = {\frac 1 2} \lambda \left | w \right |^2
+$$
+
+
+**L1, L2 Regularization**
+
+L1, L2 Regularization 부분을 추가한다는 의미는, 가중치 w가 작아지도록 학습한다는 것입니다. 이는 local noise와 outlier의 영향을 더 적게 받도록 하겠다는 것입니다.
+
+
+
+> lamda값에 따른 변화
+
+lamda값이 커짐에 따라 Generalization 능력이 증가하고 있습니다.
+
+![](http://cs231n.github.io/assets/nn1/reg_strengths.jpeg)
 
 **Dropout**
 
 각 뉴런들을 p의 확률로 활성화 시켜 학습에 적용하는 방식입니다.
 
-ensemble과 비슷한 효과를 냅니다. 
+Neural Net의 모든 뉴런을 학습에 참여시키는 것이 아니라, 뉴런 중 일부를 학습 과정 중에 꺼버려 일부만 학습시키는 방식입니다.(전체 weight의 일부만을 사용하여 학습을 시킴)
 
 ![](http://aikorea.org/cs231n/assets/nn2/dropout.jpeg)
 

@@ -41,7 +41,7 @@ use_math: true
 
 즉, Loss 함수를 최소로 만들기 위해서 각 지점에서의 gradient의 반대 방향으로 가는것이 최선의 선택입니다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59837836-e2b72700-9388-11e9-8cc3-60686431b782.png" width="80%"></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/59837836-e2b72700-9388-11e9-8cc3-60686431b782.png" width="100%"></center>
 
 > 1차원 gradient 계산
 

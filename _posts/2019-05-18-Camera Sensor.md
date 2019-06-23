@@ -42,7 +42,7 @@ tags: [영상처리]
 
 > G는 R과 B의 중간이여서 둘 중 어떤 색과도 보간(interpolation)하기가 쉽다.
 
-<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/RGB_LED_Spectrum.svg/1280px-RGB_LED_Spectrum.svg.png" width="50%" height="50%"> </center>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/RGB_LED_Spectrum.svg/1280px-RGB_LED_Spectrum.svg.png" width="90%" height="50%"> </center>
 
 베이어 패턴에서 각 센서는 R, G, B 값의 밝기만을 감지하는 monochrome 화소입니다.
 

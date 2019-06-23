@@ -13,7 +13,7 @@ use_math: true
 
 > 행렬로 표현된 고양이
 
-<center><img src="http://cs231n.github.io/assets/classify.png" width="60%"></center>
+<center><img src="http://cs231n.github.io/assets/classify.png" width="90%"></center>
 
 > 컴퓨터가 이미지에 대해 인식을 잘 못하는 경우
 
