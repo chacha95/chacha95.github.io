@@ -28,15 +28,17 @@ Normalization은 각 차원의 데이터가 동일한 범위내의 값을 갖도
 
 
 
-**PCA**
+**PCA와 Whitening**
 
 먼저 Mean Subtraction 기법을 이용해 데이터를 정규화 시킵니다. 그리고 Covariance를 계산합니다.
 
 PCA를 하고난 데이터는 데이터간에 decorrelated됩니다.
 
-**Whitening**
+Whitening은 eigenbasis(기저벡터) 데이터를 eigenvalue(고유값) 값으로 나누어 정규화 하는 기법입니다. 
 
-eigenbasis(기저벡터) 데이터를 eigenvalue(고유값) 값으로 나누어 정규화 하는 기법입니다. Whitening 변환은 기하학적 해석은, 입력 데이터가 multivariable gaussian 분포를 따르면 whitening된 데이터는 평균은 0이고 Covariance는 단위행렬을 갖는 정규분포를 갖게된다. 
+Whitening 변환은 기하학적 해석은, 입력 데이터가 multivariable gaussian 분포를 따르면 whitening된 데이터는 평균은 0이고 Covariance는 단위행렬을 갖는 정규분포를 갖게됩니다.
+
+> 중앙은 PCA를 적용한 데이터 분포, 오른쪽 그림은  whitening 기법을 적용한 데이터 분포
 
 ![](http://aikorea.org/cs231n/assets/nn2/prepro2.jpeg)
 

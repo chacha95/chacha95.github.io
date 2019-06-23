@@ -23,13 +23,15 @@ activation function은 대게 non-linear function을 씁니다. 활성화 함수
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59671599-ec118980-91f8-11e9-9e1c-51d1b6fc101e.png" width="50%"></center>
 
-시그모이드 특징
+**시그모이드 특징**
 
 - 함수의 결과 값이 [0, 1] 범위
 - 중간값은 0.5
 - 매우 큰 값을 가지면 함수값은 거의 1이며 매우 작은 값을 가지면 거의 0이다
 
-단점
+
+
+**문제점**
 
 - Gradient vanishing 미분함수에 대해 x=0에서 최댓값 0.25를 가지고, input값이 일정이상 올라가면 이분값이 거의 0에 수렴하게 되며, 이는 |x|값이 커질 수록 gradient Backpropagation시 미분 값이 소실 될 가능성이 큼 (Saturated neurons이 gradient를 죽임)
 - zero-centered 되있지 않다 : 만약 모든 x값들이 같은 부호라고 가정할 시, 한 노드에 대해 모든 파라미터 w의 미분값은 모두 같은 부호를 같게된다. 따라서 같은 방향으로 update 되는데 이러한 과정은 학습을 zigzag 형태로 만들어 느리게 만드는 원인이 됨
