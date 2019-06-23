@@ -33,13 +33,13 @@ activation function은 대게 non-linear function을 씁니다. 활성화 함수
 
 **문제점**
 
-- <span style="color:red">Gradient vanishing</span> 
-
-  미분함수에 대해 x=0에서 최댓값 0.25를 가지고, input값이 일정이상 올라가면 이분값이 거의 0에 수렴하게 되며, 이는 |x|값이 커질 수록 gradient Backpropagation시 미분 값이 소실 될 가능성이 큼 (Saturated neurons이 gradient를 죽임)
-
 - <span style="color:red">zero-centered 되있지 않음</span>
 
   만약 모든 x값들이 같은 부호라고 가정할 시, 한 노드에 대해 모든 파라미터 w의 미분값은 모두 같은 부호를 같게된다. 따라서 같은 방향으로 update 되는데 이러한 과정은 학습을 zigzag 형태로 만들어 느리게 만드는 원인이 됨
+
+- <span style="color:red">Gradient vanishing</span> 
+
+  미분함수에 대해 x=0에서 최댓값 0.25를 가지고, input값이 일정이상 올라가면 이분값이 거의 0에 수렴하게 되며, 이는 |x|값이 커질 수록 gradient backpropagation시 미분 값이 소실 될 가능성이 큼 (Saturated regime이 gradient를 죽임)
 
 - <span style="color:red">exp 함수 사용시 계산 비용이 큼</span>
 
