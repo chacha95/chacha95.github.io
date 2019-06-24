@@ -17,6 +17,8 @@ activation function은 대게 non-linear function을 씁니다. 활성화 함수
 
 또한 선형함수의 미분값은 상수값이기에 입력값과 상관 없는 결과를 가집니다.
 
+<br>
+
 ### Sigmoid
 
 로지스틱 함수로도 불립니다. 

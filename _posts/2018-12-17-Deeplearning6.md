@@ -11,13 +11,15 @@ use_math: true
 
 
 
+{% include image.html url="<http://i.imgur.com/2dKCQHh.gif?1>" description="Gradient Descent Optimization Algorithms at Long Valley" %}
+
+{% include image.html url="<http://i.imgur.com/NKsFHJb.gif?1>" description="Gradient Descent Optimization Algorithms at Saddle Point" %}
+
 
 
 > Optimizer 발전 과정
 
-
-
-![](https://t1.daumcdn.net/cfile/tistory/9915A83E5AB8621703)
+![](https://image.slidesharecdn.com/random-170910154045/95/-49-638.jpg?cb=1505089848)
 
 ![](https://t1.daumcdn.net/cfile/tistory/999A2E4A5AB8601A24)
 

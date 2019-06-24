@@ -54,13 +54,6 @@ Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 
 - Batch Norm은 최적화를 하기 쉽게 만들기 위해 네트워크를 reparameterization합니다.
 - 이 방법은 모든 레이어의 평균, 크기, 활성화 함수를 독립적으로 조정할 수 있게 만듭니다.
 
-**bach normalization 정리**
-
-- loss surface를 보다 쉽게 찾음
-- 최적화를 쉽게 만듬
-- higher learning rate를 사용할 수 있게 만듬
-- 여러 작업에서 모델 성능 향상
-
 
 
 <br>
@@ -101,7 +94,7 @@ Group Norm의 경우 ImageNet Classification task에서 batch size가 32일 때 
 
 왜 GN이 LN 혹은 IN보다 효과적일까요?
 
-LN은 모든 채널이 동등하게 중요하다 라는 가정하에 정규화가 진행됩니다. 하지만 이미지의 경우 이미지 가장자리와 중심부의 중요성은 다르다는 것을 경험적으로 알 고 있습니다. 즉 여러 채널에서 서로 다르게 계싼하면 모델에 따라 유연성을 제공할 수 있습니다. 또한 이미지의 경우 각 채널은 독립된 것이 아니므로(IN) 주변 채널을 활용하여 더 정규화를 넓게 적용할 수 있습니다.
+그것은 GN이 여러 채널에서 서로 다르게 계산하기에 모델에 따른 유연성을 제공하기 때문입니다. 
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975972-7bec7480-95f9-11e9-95a8-f8cec354e3a9.png" width="50%"></center>
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Auto Encoder 
+title: Auto Encoder
 tags: [deeplearning, machinelearning]
 use_math: true
 ---

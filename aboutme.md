@@ -10,9 +10,9 @@ subtitle:
 <br>
 
 ## 관심분야
-- 딥러닝을 이용한 human pose estimation
-- 딥러닝을 이용한 3d human reconstruction
-- 컴퓨터 비전기술을 이용한 필터 어플 개발
+- 3d human reconstruction
+- Single Image Super Resolution
+- High Dynamic Range Image Processing
 - RTLS(Real Time Location System) 시스템 개발
 - 특징점 검출 discriptor 개발
 
@@ -28,8 +28,8 @@ subtitle:
 
 ## Research Project
 - 2D/3D Deep Convolutional GAN의 합성모델을 활용한 3D 체형 예측 모델 및 3D 인체 계측에 관한 연구(2018.06~) - 삼성
-- 딥러닝을 이용한 압축 비디오 화질 개선 연구(2018.04~) - ETRI
-- 딥러닝을 이용한 불교미술 채색 프로젝트(2018.03~06) - 졸업작품
+- 딥러닝을 이용한 압축 이미지 화질 개선 연구(2018.04~) - ETRI
+- 딥러닝을 이용한 불교미술 채색 프로젝트(2018.03~07) - 졸업작품
 - 지능형 영상 특징점 검출기술개발(2017.09~2018.02) - LG전자
 
 <br>
