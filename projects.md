@@ -10,26 +10,6 @@ subtitle: awesome projects!
 
 <br>
 
-## Single Image Super Resolution
-
-#### Single Image Super Resolution
-
-
-
-#### 결과
-
-
-
-
-
-#### 개발환경
-
-- Pytorch 1.0
-- Python 3.6
-- Linux 18.04
-
-<br>
-
 ## 딥러닝을 이용한 불교미술 채색
 
 #### 불교미술 채색

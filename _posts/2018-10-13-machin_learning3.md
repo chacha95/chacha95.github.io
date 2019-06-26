@@ -4,7 +4,7 @@ title: K-Nearest Neighbor(KNN)
 tags: [machine learning]
 ---
 
-## K-Nearest Neighbor
+## K-Nearest Neighbor(KNN)
 
 KNN 알고리즘은 머신러닝의 분류, 회귀에 쓰이는 대표적이면서 간단한 알고리즘 입니다. 개인 영화 추천 등에 활용됩니다.
 
