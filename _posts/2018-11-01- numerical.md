@@ -115,7 +115,7 @@ multiple dimension 벡터에서 gradient를 구하면, 각 dimension마다 gradi
 
 [스칼라장의 기울기](https://wikidocs.net/6998)
 
-
+[numerical differntiation 코드](https://github.com/chacha95/Deeplearning_example/blob/master/01.numerical_differntiation.ipynb)
 
 
 

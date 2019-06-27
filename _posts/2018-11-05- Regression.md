@@ -149,9 +149,13 @@ Logistic Regression을 부르는 다른 이름은 binary classification입니다
 
 <br>
 
-[^1]: [회귀의 어원](<https://m.blog.naver.com/PostView.nhn?blogId=wjn21&logNo=220993310138&proxyReferer=https%3A%2F%2Fwww.google.com%2F>)
+**읽어볼 만한 글**
 
-읽어볼 만한 글 : [regression](https://ratsgo.github.io/machine%20learning/2017/04/02/logistic/)
+ [regression](https://ratsgo.github.io/machine%20learning/2017/04/02/logistic/)
+
+[Linear Regression 코드](https://github.com/chacha95/Deeplearning_example/blob/master/02.Linear_Regression.ipynb)
+
+[회귀의 어원](<https://m.blog.naver.com/PostView.nhn?blogId=wjn21&logNo=220993310138&proxyReferer=https%3A%2F%2Fwww.google.com%2F>)
 
 <br>
 
