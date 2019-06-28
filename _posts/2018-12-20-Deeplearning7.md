@@ -53,7 +53,7 @@ hidden state는 직전 시점의 hidden state를 받아 업데이트 됩니다.
 
   sequence input과 sequence output의 synce를 맞춰줍니다
 
-  e.g. 비디오의 각 frame에서 우리가 label을 달고 싶은 frame을 구별 하는 경우
+  e.g. video captioning
 
 ![](https://miro.medium.com/max/700/1*XosBFfduA1cZB340SSL1hg.png)
 
