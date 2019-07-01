@@ -19,7 +19,6 @@ tags: [영상처리]
 계산이 빠르지만, 계단현상(aliasing artifact)가 많이 나타납니다.
 
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Interpolation-nearest.svg/220px-Interpolation-nearest.svg.png"></center>
-
 <br>
 
 > Bilinear Interpolation
@@ -38,15 +37,12 @@ tags: [영상처리]
 인접한 16개의 화소의 화소값과 거리에 따른 가중치(weight)의 곱을 사용하여 결정합니다
 
 <center><img src="https://user-images.githubusercontent.com/31475037/58941486-db075800-87b6-11e9-9c7d-43c790525a52.png" width="50%"></center>
-
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Interpolation-bicubic.svg/220px-Interpolation-bicubic.svg.png"></center>
-
 <br>
 
 > 그래프 모형
 
 <center><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Comparison_of_1D_and_2D_interpolation.svg/512px-Comparison_of_1D_and_2D_interpolation.svg.png" width="65%"></center>
-
 
 
 

@@ -1,5 +1,5 @@
 ---
- polayout: post
+layout: post
 title: Video Understanding
 tags: [Deeplearning, 영상처리]
 ---
@@ -156,6 +156,10 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 [What is video understanding?](https://medium.com/syncedreview/video-understanding-is-a-new-vista-for-ai-13be04416f56)
 
 [Optical Flow](https://paeton.tistory.com/entry/%EC%98%B5%ED%8B%B0%EC%B9%BC-%ED%94%8C%EB%A1%9C%EC%9A%B0-Optical-Flow)
+
+[Deep Learning for Videos: A 2018 Guide to Action Recognition](http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review)
+
+[awesome-action-recognition](https://github.com/jinwchoi/awesome-action-recognition)
 
 <br>
 
