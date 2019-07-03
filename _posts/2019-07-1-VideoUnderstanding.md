@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Video Understanding
-tags: [Deeplearning, 영상처리]
+title: Video Understanding 1
+tags: [Deeplearning, Video Understanding]
 ---
 
 ## Video Understanding
 
-최근 딥러닝을 이용해 image에 대한 classification이나 VQA(Visual Question Answer) 뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다.
+최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상 앞에 쓰이는 tumbnail에 대한 auto selection에 대한 기술이나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
 
- 특히나 YouTube에서 이런 기술들이 사용되고 있으며, 대표적으로 large-scale video annotation이나 영상 앞에 쓰이는 tumbnail에 대한 auto selection에 대한 기술들이 사용되고 있습니다.
+특히나 이 분야에서 가장 메인이 되는 분야는 video understanding을 기반으로 한 action recognition입니다. 해당 비디오에 있는 사람이 하는 action을 인식하고, 이에 대해 설명을 하거나 분류를 하는 task입니다.
 
-먼저 이런 video understanding에 대한 task에 필요한 training dataset에 대해 알아볼까요?
+video understanding task에 필요한 training dataset과 딥러닝 이전에는 어떤기술을 사용했는지에 대해 알아볼까요?
 
 <br>
 
@@ -72,10 +72,6 @@ video clip에 대한 설명을 다는 task 입니다.
 
 ![](https://user-images.githubusercontent.com/31475037/60317846-ba907f00-99ab-11e9-9ebb-b98ed7e70641.png)
 
-- VIST dataset
-
-
-
 > Challenges in Videos
 
 이미지 영역에서의 task들과는 다르게 video 영역에서 task들은 다음과 같은 특징을 지닙니다.
@@ -91,7 +87,7 @@ video clip에 대한 설명을 다는 task 입니다.
 
 ### Before Deeplearning
 
-딥러닝이 등장하기 이전에는 Video task 에서는 ME(Motion Estimation)&MC(Motion Compensation) 기법을 이용했습니다.
+딥러닝이 등장하기 이전에는 Video understanding task 에서는 ME(Motion Estimation)&MC(Motion Compensation) 기법을 이용했습니다.
 
 ME을 이용해 Motion을 예측하고 MC를 이용해 프레임 interpolation과 같은 작업을 했었습니다. 
 
@@ -143,23 +139,7 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
 <br>
 
-이제부터 소개드릴 기법은 딥러닝에 기반한 방법론들입니다.
-
-### Large-scale Video Classification with CNN
-
-
-
-
-
-<br>
-
 [What is video understanding?](https://medium.com/syncedreview/video-understanding-is-a-new-vista-for-ai-13be04416f56)
 
 [Optical Flow](https://paeton.tistory.com/entry/%EC%98%B5%ED%8B%B0%EC%B9%BC-%ED%94%8C%EB%A1%9C%EC%9A%B0-Optical-Flow)
-
-[Deep Learning for Videos: A 2018 Guide to Action Recognition](http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review)
-
-[awesome-action-recognition](https://github.com/jinwchoi/awesome-action-recognition)
-
-<br>
 

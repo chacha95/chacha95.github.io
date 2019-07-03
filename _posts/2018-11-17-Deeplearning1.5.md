@@ -42,7 +42,6 @@ use_math: true
 즉, Loss 함수를 최소로 만들기 위해서 각 지점에서의 gradient의 반대 방향으로 가는것이 최선의 선택입니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59837836-e2b72700-9388-11e9-8cc3-60686431b782.png" width="100%"></center>
-
 > 1차원 gradient 계산
 
 1차원의 gradinet를 구하는 식은 다음과 같습니다.
@@ -86,7 +85,6 @@ analytic gradient는 실제로 미분공식을 이용하여 편미분 값을 바
 아래 그림에서 흰색 부분이 처음 주어진 weight 벡터이고, 해당 지점에서 gradient를 구한 뒤 gradient를 따라 내려가는 모습입니다. 
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59034488-1af93880-88a6-11e9-8c01-5d7972ea642d.png" width="90%"></center>
-
 **Stochastic Gradient Descent**
 
 이 때 까지 우리가 봤던 방식은 training set 전체를 이용해 학습을 하는 full gradient descent 였다면, 앞으로 우리가 사용할 방식은 mini-batch를 이용한 Stochastic Gradient Descent입니다.
@@ -96,7 +94,6 @@ training set 전체를 batch라고 했을 때, training set 일부를 가져온 
 이 과정이 끝나면 이전 mini-batch와 겹치지 않는 mini-batch를 하나 가져와 다시 학습합니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59914868-4c513700-9456-11e9-9e24-8247ff49d458.png" width="90%"></center>
-
 <br>
 
 ### Backpropagation(역전파)

@@ -131,7 +131,6 @@ sigmoid를 통해 나온 결과물은 [0, 1]범위이고, 그 값이 0이면 cel
 > gate 구조
 
 <center><img src="https://user-images.githubusercontent.com/31475037/60249911-ac395900-9900-11e9-85d5-4b78831dd032.png" width="40%"></center>
-
 **Step into LSTM**
 
 LSTM으로의 첫번째 step은 바로 cell state에서 어떤 정보를 버릴지 결정하는 것입니다.

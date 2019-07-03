@@ -23,7 +23,6 @@ use_math: true
 - Gradient Exploding : error gradient가 축적되어 가중치 업데이트 시 overflow 되는 현상
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975969-7b53de00-95f9-11e9-9877-677945acba24.png" width="50%"></center>
-
 **Internal Covariance Shift**
 
 Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 Internal Covariance Shift라고 주장했습니다(경험적으로 그렇다~~) 이는 네트워크의 각 층이나 활성 함수마다 입력의 값들의 분포가 계속 바뀌는 현상을 의미합니다.
@@ -63,7 +62,6 @@ Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 
 BN과 LN은 거의 유사한 형태를 지닙니다. 위의 큐브 사진 또는 아래이 사진이 이를 시각화한 모양입니다
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975970-7b53de00-95f9-11e9-90be-30b16e722568.png" width="50%"></center>
-
 LN은 mini-batch의 feature 수가 같아야 합니다.
 
 각각 BN과 LN은 Batch 차원에서 Normalization / Feature 차원에서 Normalization 이라는 차이가 있습니다
@@ -81,7 +79,6 @@ Instance Norm은 LN과 비슷하지만 한 단계 더 나아가 평균과 표준
 Style Transfer에서 좋은 성능을 냈습니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975971-7b53de00-95f9-11e9-9d28-46b698042ee9.png" width="50%"></center>
-
 <br>
 
 ### Group Normalization
@@ -97,7 +94,6 @@ Group Norm의 경우 ImageNet Classification task에서 batch size가 32일 때 
 그것은 GN이 여러 채널에서 서로 다르게 계산하기에 모델에 따른 유연성을 제공하기 때문입니다. 
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975972-7bec7480-95f9-11e9-95a8-f8cec354e3a9.png" width="50%"></center>
-
 <br>
 
 **읽어볼만한 글**
