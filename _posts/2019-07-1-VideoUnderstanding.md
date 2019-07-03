@@ -58,7 +58,7 @@ video understanding task에 필요한 training dataset과 딥러닝 이전에는
 
 > Movie Querying
 
-video clip에 대한 설명을 다는 task 입니다.
+movie clip에 대한 설명을 다는 task 입니다.
 
 - LSMDC(Large Scale Movie Description Challenge)
 
