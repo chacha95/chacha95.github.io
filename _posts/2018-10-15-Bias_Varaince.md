@@ -50,6 +50,22 @@ test 과정에서, high variance를 가진 모델은 제대로 예측을 하지 
 
 <br>
 
+### Model Complexity
+
+편향(Bias)과 분산(Variance)는 한쪽이 증가하면 다른 한쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 경향을 보입니다.
+
+모델이 데이터를 반복 학습하는 횟수가 늘어날수록 모델의 복잡도도 따라서 늘어나게 되는데, 이것은 훈련용 데이터를 그대로 외우는 방향입니다. 즉 훈련 데이터에 overfitting이 된다는 의미이고, 이는 bias가 낮아지고 variance가 높아진다는 의미입니다.
+
+이런 문제가 생기게 되면, 학습 도중의 loss 자체는 계속해서 떨어지지만, generalization 능력이 떨어지게 되어 실제 test/validation 단에서의 능력이 떨어지게 됩니다.
+
+그렇기에 training data를 training/validation으로 나누어, 학습도중에 validation error를 측정해 validation error가 최저점인 순간 학습을 그만 두어야 합니다.
+
+> Training loss가 떨어진다고 해서 test/validation loss가 떨어지는 것은 아님
+
+![](https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI)
+
+<br>
+
 ##### 읽어볼만한 글
 
 ##### [모두연](https://modulabs-biomedical.github.io/Bias_vs_Variance)

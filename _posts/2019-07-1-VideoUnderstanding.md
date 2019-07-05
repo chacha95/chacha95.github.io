@@ -6,7 +6,7 @@ tags: [Deeplearning, Video Understanding]
 
 ## Video Understanding
 
-최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상 앞에 쓰이는 tumbnail에 대한 auto selection에 대한 기술이나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
+최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상에 달리는 subtilte에 대해 자동으로 만들어주거나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
 
 특히나 이 분야에서 가장 메인이 되는 분야는 video understanding을 기반으로 한 action recognition입니다. 해당 비디오에 있는 사람이 하는 action을 인식하고, 이에 대해 설명을 하거나 분류를 하는 task입니다.
 
@@ -143,3 +143,4 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
 [Optical Flow](https://paeton.tistory.com/entry/%EC%98%B5%ED%8B%B0%EC%B9%BC-%ED%94%8C%EB%A1%9C%EC%9A%B0-Optical-Flow)
 
+[video description review](https://arxiv.org/pdf/1806.00186.pdf)

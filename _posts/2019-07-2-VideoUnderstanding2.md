@@ -177,7 +177,6 @@ C3D는 video 분석을 위한 feature extractor로서 훌륭한 역할을 수행
 > 3D convolution이 spatiotempporal 큐브에 작동하는 모습
 
 <center><img src="http://blog.qure.ai/assets/images//actionrec/trial.gif" width="70%"></center>
-
 주요 contribution
 
 - feature extractor로서 3D Conv를 제안
@@ -196,6 +195,8 @@ long range temporal information에 대한 문제가 여전히 남아있습니다
 [Deep Learning for Videos: A 2018 Guide to Action Recognition](http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review)
 
 [awesome-action-recognition](https://github.com/jinwchoi/awesome-action-recognition)
+
+[video description review](https://arxiv.org/pdf/1806.00186.pdf)
 
 <br>
 
