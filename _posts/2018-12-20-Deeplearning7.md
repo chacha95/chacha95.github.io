@@ -1,5 +1,5 @@
 ---
-'}layout: post
+layout: post
 title: RNN(Recurrent Neural Network)
 tags: [deeplearning]
 use_math: true

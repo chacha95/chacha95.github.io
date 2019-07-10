@@ -11,8 +11,6 @@ NLP란 computer가 natural langauage(사람의 언어)를 분석하고, natural 
 
 NLP는 다음 영역의 교집합이라고도 볼 수 있습니다.
 
-
-
 대표적인 task는 다음과 같습니다.
 
 - Automatic Summarization
