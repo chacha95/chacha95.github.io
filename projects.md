@@ -4,8 +4,6 @@ title: Projects
 subtitle: awesome projects!
 ---
 
-# Project lists
-
 ## 딥러닝을 이용한 불교미술 채색
 
 #### 불교미술 채색

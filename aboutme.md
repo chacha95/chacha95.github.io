@@ -4,7 +4,6 @@ title: About me
 subtitle: 
 ---
 
-## 자기소개서
 ## 관심분야
 - 3d human reconstruction
 - Single Image Super Resolution

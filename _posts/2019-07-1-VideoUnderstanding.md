@@ -8,15 +8,15 @@ tags: [Deeplearning, Video Understanding, 영상처리]
 
 최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상에 달리는 subtilte에 대해 자동으로 만들어주거나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
 
-특히나 이 분야에서 가장 메인이 되는 분야는 video understanding을 기반으로 한 action recognition입니다. 해당 비디오에 있는 사람이 하는 action을 인식하고, 이에 대해 설명을 하거나 분류를 하는 task입니다.
+특히나 이 분야에서 가장 메인이 되는 분야는 video understanding을 기반으로 한 action classification입니다. 해당 비디오에 있는 사람이 하는 action을 인식하고, 이에 대해 분류를 하는 task입니다.
 
-video understanding task에 필요한 training dataset과 딥러닝 이전에는 어떤기술을 사용했는지에 대해 알아볼까요?
+video understanding task에 필요한 training 데이터 셋과 딥러닝 이전에는 어떤기술을 사용했는지에 대해 알아볼까요?
 
 <br>
 
 ### Video Datasets
 
-> action recognition
+> action classification
 
 비디오가 들어왔을 때 어느 action class에 속하는지 분류하는 task 입니다.
 
@@ -26,7 +26,17 @@ video understanding task에 필요한 training dataset과 딥러닝 이전에는
 
   다양한 camera motion과 object의 외형, 자세, viewpoint, 배경, illumination을 가집니다.
 
+  일반적으로 action classification에서 test용 benchmark로 쓰입니다.
+
   ![](https://user-images.githubusercontent.com/31475037/60317244-1dcce200-99a9-11e9-9d28-838437179595.png)
+
+- HMDB-51
+
+  6849개의 유튜브 video로 이루어져 있고, 51개의 action class로 나누어져 있습니다. 각 class는 최소 101개 이상의 클립으로 이뤄져 있습니다.
+
+  일반적으로 action classification에서 test용 benchmark로 쓰입니다.
+
+  ![](http://serre-lab.clps.brown.edu/wp-content/uploads/2012/08/HMDB_snapshot1.png)
 
 - Sports-1M
 
@@ -42,12 +52,14 @@ video understanding task에 필요한 training dataset과 딥러닝 이전에는
 
   650,000개의 비디오로 이루어져 있으며 700개의 human action class가 있습니다.
 
-  각 클립은 10초가량으로 이루어져 있으며 single class가 달려있습니다.
+  각 클립은 10초 가량으로 이루어져 있으며 single class가 달려있습니다.
 
   각 클립의 labeling은 사람이 했으며, 유튜브에 있는 유니크한 클립입니다.
 
-  [kinectis](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
+  최근 action classification에서 training 데이터셋으로서 de facto(산업계 표준)로 떠오르는 데이터 셋입니다.
 
+  [kinectis](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
+  
   
 
 > video classification
@@ -97,7 +109,6 @@ movie clip에 대한 설명을 다는 task 입니다.
 - 많은 training dataset을 요구한다.
 - Sequence modeling을 해야 한다(RNN, LSTM과 같은 모델이 많이 쓰임)
 - Temporal Reasoning
-- Focus on action Recognition
 
 <br>
 
@@ -147,7 +158,7 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
     이런 가정을 한 뒤, Motion Vector를 구하는데 있어 영상을 x축으로 미분하고, y축으로 미분하고, 시간축으로 미분해서 특정 식을 대입해서 Matrix를 푸는 방식입니다.
 
-    대표적인 방식으로는 Lukas-Kanade방식이 있습니다.
+    optical flow를 구하는 알고리즘으로는 Lukas-Kanade방식이 있습니다.
 
     > 초음판 영상에서 Optical Flow를 이용해 Motion Vector를 구한뒤 표시
 
@@ -159,6 +170,6 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
 [Optical Flow](https://paeton.tistory.com/entry/%EC%98%B5%ED%8B%B0%EC%B9%BC-%ED%94%8C%EB%A1%9C%EC%9A%B0-Optical-Flow)
 
-[video description review](https://arxiv.org/pdf/1806.00186.pdf)
+[Video description review](https://arxiv.org/pdf/1806.00186.pdf)
 
 [Video Datasets](https://www.di.ens.fr/~miech/datasetviz/)
