@@ -5,10 +5,6 @@ subtitle:
 ---
 
 ## 자기소개서
-컴퓨터 비전에 관해 공부하는 학생입니다
-
-<br>
-
 ## 관심분야
 - 3d human reconstruction
 - Single Image Super Resolution

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Video Understanding 1
-tags: [Deeplearning, Video Understanding]
+tags: [Deeplearning, Video Understanding, 영상처리]
 ---
 
 ## Video Understanding
@@ -16,9 +16,9 @@ video understanding task에 필요한 training dataset과 딥러닝 이전에는
 
 ### Video Datasets
 
-> Video Classification
+> action recognition
 
-비디오가 들어왔을 때 어느 class에 속하는지 분류하는 task 입니다.
+비디오가 들어왔을 때 어느 action class에 속하는지 분류하는 task 입니다.
 
 - UCF 101
 
@@ -35,6 +35,22 @@ video understanding task에 필요한 training dataset과 딥러닝 이전에는
   1,133,157개의 video들과 487개의 sports class를 가집니다.
 
   ![](https://user-images.githubusercontent.com/31475037/60317218-08f04e80-99a9-11e9-9ac1-dfb766f3139c.png)
+
+- kinetic datasets
+
+  deepmind사에서 만든 데이터셋으로 각 action class에 맞는 비디오의 유튜브 url이 들어 있습니다.
+
+  650,000개의 비디오로 이루어져 있으며 700개의 human action class가 있습니다.
+
+  각 클립은 10초가량으로 이루어져 있으며 single class가 달려있습니다.
+
+  각 클립의 labeling은 사람이 했으며, 유튜브에 있는 유니크한 클립입니다.
+
+  [kinectis](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
+
+  
+
+> video classification
 
 - **YouTube 8M**
 
@@ -144,3 +160,5 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 [Optical Flow](https://paeton.tistory.com/entry/%EC%98%B5%ED%8B%B0%EC%B9%BC-%ED%94%8C%EB%A1%9C%EC%9A%B0-Optical-Flow)
 
 [video description review](https://arxiv.org/pdf/1806.00186.pdf)
+
+[Video Datasets](https://www.di.ens.fr/~miech/datasetviz/)

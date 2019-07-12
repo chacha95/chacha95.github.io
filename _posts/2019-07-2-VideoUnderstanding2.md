@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Video Understanding 2
-tags: [Deeplearning, Video Understanding]
+tags: [Deeplearning, Video Understanding, 영상처리]
 ---
 
 ## Action Recognition
@@ -95,6 +95,8 @@ Temporal stream Convnet은 optical flow가 입력으로 들어갑니다.
 
 ![](http://blog.qure.ai/assets/images/actionrec/2stream_high.png)
 
+일반적으로 대다수의 two stream method가 one stream method보다 성능이 높게 나옵니다.
+
 하지만 이 방식도 다음과 같은 문제점이 있습니다.
 
 - 비디오의 long range temporal information 학습의 부재
@@ -177,6 +179,10 @@ C3D는 video 분석을 위한 feature extractor로서 훌륭한 역할을 수행
 > 3D convolution이 spatiotempporal 큐브에 작동하는 모습
 
 <center><img src="http://blog.qure.ai/assets/images//actionrec/trial.gif" width="70%"></center>
+> 2x2x2 C3D가 작동하는 모습, 결과물이 volume의 형태로 나온다
+
+![](https://miro.medium.com/max/700/1*ROD5gvIR8Octbo0uk6RzzA.gif)
+
 주요 contribution
 
 - feature extractor로서 3D Conv를 제안

@@ -6,10 +6,6 @@ subtitle: awesome projects!
 
 # Project lists
 
-- 제가 해왔던 프로젝트에 대한 정리글입니다
-
-<br>
-
 ## 딥러닝을 이용한 불교미술 채색
 
 #### 불교미술 채색
