@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Video Understanding 3
-tags: [Deeplearning, Video Understanding, 영상처리]
+title: I3D(Inflated 3D ConvNet)
+tags: [deeplearning, Video Understanding, 영상처리]
 ---
 
-## I3D(Inflated 3D ConvNet)
+## I3D
 
 [Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset(CVPR 2017)](https://arxiv.org/abs/1705.07750) 논문은 action classification 분야의 backbone이 되는 중 하나입니다.
 
@@ -105,7 +105,7 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 
 
 
-또 논문에선 scratch부터 학습한 경우와 ImageNet pretrained를 사용한 모델의 성능 차를 보여줌으로써 ImageNet pretrained된 모델의 사용이 옮을을 보였습니다.
+또 논문에선 scratch부터 학습한 경우와 ImageNet pretrained를 사용한 모델의 성능 차를 보여줌으로써 ImageNet pretrained된 모델의 사용이 당위성을 보였습니다.
 
 > pretrained에 따른 차이
 >
@@ -113,7 +113,11 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 
 ![](https://user-images.githubusercontent.com/31475037/61277593-7693db80-a7ed-11e9-872b-f9dbe429f31b.PNG)
 
+
+
 <br>
+
+**참고 강의**
 
 [awesome-action-recognition](https://github.com/jinwchoi/awesome-action-recognition)
 

@@ -66,7 +66,7 @@ test 과정에서, high variance를 가진 모델은 제대로 예측을 하지 
 
 <br>
 
-##### 읽어볼만한 글
+##### 참고 강의
 
 ##### [모두연](https://modulabs-biomedical.github.io/Bias_vs_Variance)
 

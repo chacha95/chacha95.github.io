@@ -202,6 +202,64 @@ Fully Cunnected Layer에서는 dot product가 이루어지는 각 노드가 각 
 
 <br>
 
+### Receptive Field in CNN
+
+receptive field(수용영역)는 CNN에서 가장 중요한 요소  중 하나입니다. CNN 자체가 고양이의 뇌가 사물을 받아들이는 방식을 모방하여 만든 모델이고, 사물을 인식하는데 receptive field가 얼마나 큰지가 인식에 지대한 영향을 미치기 때문입니다.
+
+이러한 특성때문에, 최신 CNN 구조들은 receptive field에 대해 충분히 고려하여 설계 되고 있습니다.
+
+그러나 이러한 receptive field를 어떻게 정해야 하는가에 대한 완벽한 가이드라인이 없습니다.
+
+**recpetive field는 입력 영상의 특정 영역으로 정의 됩니다.**
+
+특히나 receptive field의 feature는 **center location**과 **kernel size**로 결정됩니다. 
+
+그러나 CNN에서 receptive field 안의 모든 픽셀들이 모두 동등하게 중요하다고 여겨지진 않습니다.
+
+receptive field 안에서는 중앙에 있는 pixel 일수록 더 중요하다고 여겨집니다. 즉, feature는 특정 영역을 보는 것 뿐만 아니라, receptive field의 중앙영역을 다른 영역보다 더 집중해서 봅니다.
+
+아래 그림에서와 같이 kernel size가 늘어나면 늘어날 수록 CNN이 볼 수 있는 영역이 늘어 난다고 생각하시면 됩니다.
+
+> Convolution filter가 작동하는 모습과 receptive field
+
+![](https://mlnotebook.github.io/img/CNN/convSobel.gif)
+
+그렇다면 어떻게 해야 receptive field를 넓게 만들 수 있을까요?
+
+일반적인 방법은 크게 세가지입니다.
+
+1. kernel size를 크게 만든다.
+2. stride 값을 크게 주거나 pooling layer를 추가한다.
+3. kernel에 dilation을 사용한다.(dilation convolution 사용)
+
+첫번째 방법은 위에 그림에서처럼 간단하게 kernel size를 키워줘서 receptive field를 늘려주는 방식입니다. 그런데 receptive filter를 늘리면 parameter 수가 비약적으로 상승해 학습에 더 어려움이 생깁니다. 그렇기에 나온 방식이 큰 kernal을 작은 kernal들로 factorize하는 방식입니다.
+
+convolution factorization을 이용하면 parameter 수는 더 줄어들면서 망은 깊어지는 효과를 볼 수 있습니다.
+
+> 5x5 convolution을 3x3 convolution 2개로 factorize한 그림
+>
+> 5x5 convolution은 3x3 convolution에 비해 25/9=2.78배 연산량이 많다.
+
+![](https://user-images.githubusercontent.com/31475037/61538066-976d6280-aa73-11e9-9fa7-86ae0af87fe4.PNG)
+
+이러한 방식을 통해 큰 kernal을 균일한 3x3으로 표현하는 것이 VGGNet의 핵심아이디어가 되었습니다.
+
+또한 Google은 이 방식을 적용해 inception v2에서 연산량 절감 효과를 이뤄냈습니다.
+
+> inception v1에서 v2로의 변화
+
+![](https://user-images.githubusercontent.com/31475037/61538614-b91b1980-aa74-11e9-8817-dbf811908e06.PNG)
+
+
+
+두번째 방식은 stride를 크게 가짐으로써 convolution filter가 보는 영역을 줄여주거나, 각 pooling layer를 통해 resolution을 절반으로 줄여 CNN이 봐야하는 영역을 줄이는 방식입니다. 이러한 방식은 연산량을 크게 줄여주어 memry saving과 processing time을 크게 줄여줍니다. 하지만 그만큼 영상에서 디테일한 부분을 놓치게 되어 classification task에서는 자주 쓰이지만, Super Resolution과 같이 영상에서 디테일한 부분을 생성해야하는 네트워크에서는 잘 쓰이지 않습니다.
+
+세번째 방식은 dilation(팽창) convolution을 사용하는 방식입니다. 해당 방식을 이용하면 많은 메모리를 사용하고 느린 processing time을 가진다는 단점이 있습니다.
+
+CNN의 경우 넓은 receptive field 확보를 위해 Convolution을 여러차레 겹쳐 쌓기도 하고, Pooling layer를 이용해 영상의 크기를 줄이기도 합니다.
+
+<br>
+
 ### Abstraction
 
 CNN이 학습을 통해 Classification 문제를 해결하는 모습은 다음과 같이 요약되어 나타낼 수 있습니다.

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Video Understanding 1
-tags: [Deeplearning, Video Understanding, 영상처리]
+title: Video Dataset
+tags: [deeplearning, Video Understanding, 영상처리]
 ---
 
 ## Video Understanding
@@ -165,6 +165,8 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
     ![](https://t1.daumcdn.net/cfile/tistory/190218454FBC82311F)
 
 <br>
+
+**참고 강의**
 
 [What is video understanding?](https://medium.com/syncedreview/video-understanding-is-a-new-vista-for-ai-13be04416f56)
 

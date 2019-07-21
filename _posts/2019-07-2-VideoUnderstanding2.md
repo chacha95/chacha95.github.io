@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Video Understanding 2
-tags: [Deeplearning, Video Understanding, 영상처리]
+title: Basic of Action Recognition
+tags: [deeplearning, Video Understanding, 영상처리]
 ---
 
 ## Action Recognition
@@ -195,6 +195,8 @@ long range temporal information에 대한 문제가 여전히 남아있습니다
 게다가 C3D의 계산량 문제가 여전히 큰 문제로 지적됩니다.
 
 <br>
+
+**참고 강의**
 
 [Deep Learning for Videos: A 2018 Guide to Action Recognition](http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review)
 

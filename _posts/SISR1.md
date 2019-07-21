@@ -43,6 +43,8 @@ use_math: true
 
 <br>
 
+**참고 강의**
+
 [PR-113](https://www.youtube.com/watch?v=6Yid4dituqo)
 
 <br>
