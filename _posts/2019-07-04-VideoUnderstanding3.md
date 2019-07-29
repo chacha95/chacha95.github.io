@@ -60,7 +60,9 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 
 저자는 이러한 N x N filters를 N x N x N 필터로 바꾸는 방식을 **inflating**이라고 불렀습니다.
 
-디테일한 방식으로는 필터의 dimension을 늘려 준 뒤, weight를 1/3로 나눠줍니다.
+디테일한 방식으로는 필터의 dimension을 늘려 준 뒤, weight를 1/N로 나눠줍니다.
+
+> inflating 예시
 
 ![](https://user-images.githubusercontent.com/31475037/61213594-6e319700-a740-11e9-8730-7d4ee96b92fa.PNG)
 

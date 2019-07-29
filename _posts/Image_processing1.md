@@ -43,7 +43,4 @@ tags: [영상처리]
 > 그래프 모형
 
 <center><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Comparison_of_1D_and_2D_interpolation.svg/512px-Comparison_of_1D_and_2D_interpolation.svg.png" width="65%"></center>
-
-
-
 <br>

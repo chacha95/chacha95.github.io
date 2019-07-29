@@ -6,7 +6,7 @@ tags: [deeplearning, Video Understanding, 영상처리]
 
 ## Video Understanding
 
-최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상에 달리는 subtilte에 대해 자동으로 만들어주거나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
+최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상에 달리는 subtilte을 자동으로 만들어주거나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
 
 특히나 이 분야에서 가장 메인이 되는 분야는 video understanding을 기반으로 한 action classification입니다. 해당 비디오에 있는 사람이 하는 action을 인식하고, 이에 대해 분류를 하는 task입니다.
 
@@ -44,6 +44,8 @@ video understanding task에 필요한 training 데이터 셋과 딥러닝 이전
 
   1,133,157개의 video들과 487개의 sports class를 가집니다.
 
+  안타깝게도 해당 데이터셋은 요즘 잘 안 쓰이는것 같습니다.
+
   ![](https://user-images.githubusercontent.com/31475037/60317218-08f04e80-99a9-11e9-9ac1-dfb766f3139c.png)
 
 - kinetic datasets
@@ -52,7 +54,7 @@ video understanding task에 필요한 training 데이터 셋과 딥러닝 이전
 
   650,000개의 비디오로 이루어져 있으며 700개의 human action class가 있습니다.
 
-  각 클립은 10초 가량으로 이루어져 있으며 single class가 달려있습니다.
+  각 클립은 10초 가량으로 이루어져 있으며 single class label이 달려있습니다.
 
   각 클립의 labeling은 사람이 했으며, 유튜브에 있는 유니크한 클립입니다.
 
