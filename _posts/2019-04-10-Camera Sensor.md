@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bayer Pattern 
-tags: [영상처리]
+tags: [Image Processing]
 ---
 
 ## Camera
@@ -51,7 +51,6 @@ tags: [영상처리]
 > 베이어 패턴 필터로 생성된 raw image 데이터
 
 <center><img src="https://user-images.githubusercontent.com/31475037/58937958-ccb53e00-87ae-11e9-9272-84353e91bc8d.png"> </center>
-
 베이어 필터 패턴를 쓰는 이미지 센서는 각 화소에서 R, G, B 중 어느 한 색만을 감지할 수 있지만, 우리가 보는 카메라 영상에선는 각 화소마다 R, G, B 전체 색상을 보여줍니다. 이것이 가능한 이유는 카메라 ISP에서 각 화소마다 주변 셀들의 색상값을 interpolation(보간)해주기 때문입니다.
 
 <br>

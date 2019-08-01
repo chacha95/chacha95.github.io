@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RNN(Recurrent Neural Network)
-tags: [deeplearning]
+tags: [Deeplearning]
 use_math: true
 ---
 

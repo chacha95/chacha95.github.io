@@ -1,7 +1,7 @@
 ---
 layout: post
 title: K-Nearest Neighbor(KNN)
-tags: [machine learning, math]
+tags: [Machine Learning]
 ---
 
 ## K-Nearest Neighbor(KNN)

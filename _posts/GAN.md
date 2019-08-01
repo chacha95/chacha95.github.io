@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GAN(Generative Adversarial Network)
-tags: [deeplearning]
+tags: [Deeplearning]
 use_math: true
 ---
 

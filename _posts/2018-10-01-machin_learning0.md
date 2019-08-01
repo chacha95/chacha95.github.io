@@ -1,7 +1,7 @@
 ---
 layout: post
-title: What is machine learning
-tags: [machine learning]
+title: What is machine learning?
+tags: [Machine Learning]
 ---
 
 ## Machine Learning
@@ -17,7 +17,6 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 전통적인 접근 방법으로 문제를 풀려하면, 문제가 단순치 않아 규칙이 점점 길고 복잡해져 유지 보수하기가 굉장히 힘들어 집니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59028100-a9b18980-8895-11e9-8dbd-34105da26ad8.png" width="70%"></center>
-
 **machine learning 접근 방법**
 
 프로그램이 훨씬 짧아지고 유지보수하기 쉬우며 대부분 정확도가 더 높습니다. 또한 machine learning은 데이터 업데이트만 잘 해준다면 자동으로 변화에 대응합니다. 복잡한 문제와 대량의 데이터로부터 패턴을 분석 할 수 있습니다.
@@ -25,11 +24,9 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 > machine learning을 이용한 시스템
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59028106-ab7b4d00-8895-11e9-9a5d-9c85406c9302.png" width="70%"></center>
-
 > 머신러닝은 자동으로 변화에 대응할 수도 있음
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59028455-9521c100-8896-11e9-9b8e-d972f93f054b.png" width="80%"></center>
-
 <br>
 
 
@@ -37,12 +34,9 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
 
-
-
 > 사람 감독 유무에 따른 종류
 
 <center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
-
 **Supervised Learning(지도 학습)**
 
 훈련 데이터에 레이블(답)이 달려 있는 데이터를 이용해 학습을 시키는 방법입니다.
@@ -156,7 +150,6 @@ Training 오차는 낮지만 Test 오차가 높다면 이는 모델이 overfitti
 deeplearning은 machinelearning의 한 분야이며 deeplearning의 여러 기법들이 machinelearning의 기술로 부터 나오고 있습니다..(ensemble, boosting...)
 
 <center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="90%"></center>
-
 <br>
 
 [회귀와 분류](https://nexablue.tistory.com/entry/ML-%EB%B6%84%EB%A5%98Classification%EC%99%80-%ED%9A%8C%EA%B7%80Regression?category=728962)

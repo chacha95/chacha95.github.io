@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Differentiation
-tags: [math]
+tags: [Math]
 ---
 
 ## Differentiation(미분)
@@ -23,7 +23,6 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 > 미분 공식
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59031273-2b0d1a00-889e-11e9-89bd-77c24644d0cc.png" width="40%"></center>
-
 
 여기서 미분 방식이 크게 두 갈래로 나뉩니다.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CNN(Convolutional Neural Network)
-tags: [deeplearning]
+tags: [Deeplearning]
 use_math: true
 ---
 

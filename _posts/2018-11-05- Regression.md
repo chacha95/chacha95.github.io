@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Regression
-tags: [machine learning]
+tags: [Machine Learning]
 ---
 
 ## Regression(회귀)

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Normalization
-tags: [math deeplearning]
+title: Normalization Method
+tags: [Math, Deeplearning]
 use_math: true
 ---
 
@@ -46,8 +46,6 @@ Norm이 측정한 벡터의 크기는 원점에서 벡터 좌표까지의 거리
 
 [딥러닝을 위한 Norm](http://taewan.kim/post/norm/) 포스트를 읽으시는걸 추천드립니다.
 
-
-
 <br>
 
 **참고 강의**
@@ -55,8 +53,6 @@ Norm이 측정한 벡터의 크기는 원점에서 벡터 좌표까지의 거리
 [Medium](https://medium.com/@rrfd/standardize-or-normalize-examples-in-python-e3f174b65dfc)
 
 [Blog](https://www.statisticshowto.datasciencecentral.com/normalized/)
-
-
 
 <br>
 

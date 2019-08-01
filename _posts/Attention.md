@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Attention
-tags: [deeplearning]
+tags: [Deeplearning]
 use_math: true
 ---
 

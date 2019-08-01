@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Interpolation(보간)
-tags: [영상처리]
+tags: [Image Processing]
 ---
 
 ## Interpolation

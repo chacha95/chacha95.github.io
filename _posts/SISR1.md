@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SISR(Single Image Super Resolution) 리뷰
-tags: [deepelarning]
+tags: [Deeplearning]
 use_math: true
 ---
 

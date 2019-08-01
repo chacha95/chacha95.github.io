@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pretrained C3D ResNet in action classification
-tags: [deeplearning, Video Understanding, 영상처리]
+tags: [Deeplearning, Video Understanding]
 ---
 
 ## 3D ResNet in action classification

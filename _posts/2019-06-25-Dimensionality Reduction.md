@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dimensionality Reduction(차원 감소)
-tags: [math]
+tags: [Math]
 use_math: true
 ---
 

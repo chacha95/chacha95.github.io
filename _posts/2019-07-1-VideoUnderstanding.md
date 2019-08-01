@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Video Dataset
-tags: [deeplearning, Video Understanding, 영상처리]
+tags: [Deeplearning, Video Understanding]
 ---
 
 ## Video Understanding

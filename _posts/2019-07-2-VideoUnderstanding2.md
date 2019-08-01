@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Basic of Action Recognition
-tags: [deeplearning, Video Understanding, 영상처리]
+tags: [Deeplearning, Video Understanding]
 ---
 
 ## Action Recognition

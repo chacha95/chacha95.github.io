@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linear Classification
-tags: [deeplearning]
+tags: [Deeplearning]
 ---
 
 ## Linear Classification
