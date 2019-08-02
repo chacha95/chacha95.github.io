@@ -10,7 +10,7 @@ layout: null
 
 body {
   font-family: 'Nanum Gothic Coding', serif;
-  font-size: 16px;
+  font-size: 1px;
   color: #404040;
   position: relative;
   background-color: {{ site.page-col }};
