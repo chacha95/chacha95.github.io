@@ -2,12 +2,17 @@
 layout: null
 ---
 
+@font-face {
+	  font-family: "Gidole-Regular";
+		  src: url( '../_assets/fonts/Gidole-Regular.ttf') format( 'truetype');
+}
+
 @import url("pygment_highlights.css");
 
 /* --- General --- */
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Gidole-Regular', 'Times New Roman', serif;
   font-size: 18px;
   color: #404040;
   position: relative;
