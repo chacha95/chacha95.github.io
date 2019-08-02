@@ -2,6 +2,7 @@
 layout: post
 title: Pytorch Cheat Sheet
 tags: [Pytorch]
+font-family: Nanum Gothic Coding
 ---
 
 ## Pytorch Cheat Sheet
