@@ -12,7 +12,7 @@ layout: null
 /* --- General --- */
 
 body {
-  font-family: 'Gidole-Regular', 'Times New Roman', serif;
+  font-family: 'Gidole-Regular', 'Gidole-Regular', serif;
   font-size: 18px;
   color: #404040;
   position: relative;
