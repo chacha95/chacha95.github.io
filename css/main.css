@@ -10,7 +10,7 @@ layout: null
 
 body {
   font-family: 'Nanum Gothic Coding', serif;
-  font-size: 1px;
+  font-size: 16px;
   color: #404040;
   position: relative;
   background-color: {{ site.page-col }};
@@ -592,7 +592,7 @@ footer .theme-by {
 /* --- Pager --- */
 
 .pager li a {
-  font-family: 'Nanum Gothic Coding', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 800;
