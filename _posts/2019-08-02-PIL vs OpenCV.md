@@ -26,8 +26,6 @@ Image 관련 task에서, Pytorch를 이용해 딥러닝 모델 학습을 위한 
 - numpy 배열 인덱싱을 이용해 이미지에 대한 전처리가 가능하기에 좀 더 자유롭게 이미지 전처리 가능
 - torchvision과의 호환성이 안좋음, 그렇지만 opencv와 호환되는 torchvision [버전도 존재](https://github.com/jbohnslav/opencv_transforms). (오피셜 코드는 아닙니다)
 
-<br>
-
 **PIL**
 
 - RGB로 이미지 읽어옴
