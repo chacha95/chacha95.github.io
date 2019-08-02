@@ -2,11 +2,6 @@
 layout: null
 ---
 
-@font-face {
-	  font-family: "Gidole-Regular";
-		  src: url( '../_assets/fonts/Gidole-Regular.ttf') format( 'truetype');
-}
-
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);//google web font added
 
 @import url("pygment_highlights.css");
@@ -14,7 +9,7 @@ layout: null
 /* --- General --- */
 
 body {
-  font-family: 'Nanum Gothic Coding', 'Nanum Gothic Coding', serif;
+  font-family: 'Nanum Gothic Coding', serif;
   font-size: 18px;
   color: #404040;
   position: relative;
