@@ -43,7 +43,7 @@ Image 관련 task에서, Pytorch를 이용해 딥러닝 모델 학습을 위한 
 
 결론을 말씀드리면 PIL 라이브러리의 경우는 OpenCV보다 전체적인 성능이 떨어집니다. 하지만 PIL로 부터 fork된 Pillow-SIMD 라이브러리의 경우 OpenCV와 대등한 성능을 내거나 더 좋은 성능을 내는 항목이 많았습니다. (PIL->Pillow->Pillow-SIMD순으로 fork 되었습니다.)
 
-개인적으로는 C++에서 OpenCV를 사용하다가 넘어와서 그런지 PIL이 친숙하지 않고, 전처리하는 방식이 덜 직관적이었습니다. 또 OpenCV에서 지원하는 강력한 함수들(이미지의 binarization, alpha blending)이 지원이 되지 않아 아쉬운 느낌이 많았습니다.
+개인적으로는 C++에서 OpenCV를 사용하다가 넘어와서 그런지 PIL이 친숙하지 않고, 전처리하는 방식이 덜 직관적이었습니다. 또 OpenCV에서 지원하는 강력한 함수들(이미지의 binarization, 전통적인 Computer Vision 알고리즘)이 지원이 되지 않아 아쉬운 느낌이 많았습니다.
 
 
 
