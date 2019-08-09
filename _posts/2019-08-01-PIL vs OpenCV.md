@@ -21,17 +21,17 @@ Image 관련 task에서, Pytorch를 이용해 딥러닝 모델 학습을 위한 
 - BGR로 이미지 읽어옴
 - Video capture와 같은 기능 지원이 잘 되어있음
 - PIL에는 없는 다양한 함수들 지원(PIL에 있는 거의 모든 기능이 OpenCV에 존재)
-- cv2 함수의 입력으로 numpy함수를 넣어서 바로 사용가능(numpy와의 호환성이 좋음)
+- cv2 함수의 입력으로 numpy array를 넣어서 바로 사용가능(numpy array와의 호환성이 좋음)
 - C++에서 OpenCV를 배우고 사용시 익숙해지기 쉬움(반대도 비슷함)
-- numpy 배열 인덱싱을 이용해 이미지에 대한 전처리가 가능하기에 좀 더 자유롭게 이미지 전처리 가능
+- numpy array 인덱싱을 이용해 이미지에 대한 전처리가 가능하기에 좀 더 자유롭게 이미지 전처리 가능
 - torchvision과의 호환성이 안좋음, 그렇지만 opencv와 호환되는 torchvision [버전도 존재](https://github.com/jbohnslav/opencv_transforms). (오피셜 코드는 아닙니다)
 
 **PIL**
 
 - RGB로 이미지 읽어옴
 - torchvision에서의 지원이 잘 되어있음
-- numpy와의 암묵적 casting이 안되고, numpy를 Image array로 바꿔줘야함(은근 귀찮음)
-- numpy 배열 인덱싱을 이용해 이미지에 대한 전처리를 하던 사람은 사용시 불편함을 느낄 수 있음
+- numpy array와의 암묵적 casting이 안되고, numpy array를 Image array로 바꿔줘야함(은근 귀찮음)
+- numpy array 인덱싱을 이용해 이미지에 대한 전처리를 하던 사람은 사용시 불편함을 느낄 수 있음
 
 <br>
 

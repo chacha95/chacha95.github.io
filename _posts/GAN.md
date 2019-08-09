@@ -37,5 +37,3 @@ GAN 특징
 
 **읽어볼만한 글**
 
-[CycleGAN 저자 특강](https://tv.naver.com/v/2203900)
-

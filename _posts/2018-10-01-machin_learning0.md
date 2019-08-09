@@ -33,7 +33,6 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 ### machine learning 시스템의 종류
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
-
 > 사람 감독 유무에 따른 종류
 
 <center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
@@ -72,8 +71,6 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 지도학습은 앞에서 언급한 것 처럼 라벨링이 되어 있지 않은 데이터로부터 미래를 예측하는 학습방법입니다. 평가되어 있지 않은 데이터로부터 숨어있는 패턴이나 형태를 찾아야 하기 때문에 당연히 더 어렵습니다. 비지도학습도 데이터가 분리되어 있는지 (Categorial data) 연속적인지 (Continuous data)로 나누어 생각할 수 있습니다.
 
-대표적으로 클러스터링 (Clustering) 이 있습니다. 실제로는 그 데이터의 label이나 category가 무엇인지 알 수 없는 경우가 많기 때문에 이러한 방법이 중요하다고 볼 수 있습니다. 이외에도 차원축소(Dimentionality Reduction), Hidden Markov Model 등이 있습니다.
-
 **Reinforcemence Learning(강화 학습)**
 
 학습 환경을 관찰해서 그 결과로 보상 또는 벌점을 부여하는 방식입니다. 가장 큰 보상을 얻기 위해 최상의 전략을 스스로 학습합니다. 
@@ -83,7 +80,7 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 * Alphago
 * DQN
 
-> 실시간 점진적 학습 유무에 따라
+> 실시간 학습 유무에 따라
 
 **Batch Learning**
 

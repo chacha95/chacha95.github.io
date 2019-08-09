@@ -1,8 +1,7 @@
 ---
 layout: post
-title: Pytorch Cheat Sheet
+title: Conditional Neural Network
 tags: [Pytorch]
-font-family: Nanum Gothic Coding
 ---
 
 ## Pytorch Cheat Sheet
@@ -33,7 +32,7 @@ a = a.astype('uint8')	# uint8 자료형으로 형변환
 > np.reshape()
 
 ```python
-a = np.array([1, 2, 3, 4])			# shape = (4,)
+a = np.array([1, 2, 3, 4])	# shape = (4,)
 a = np.reshape(a, (2, 2))	# shape = (2, 2)
 a = np.reshape(a, (2, -1))	# shape = (2, 2), -1을 쓰면 알아서 shape 맞춰줌
 ```
@@ -74,7 +73,7 @@ a = np.array([1, 2, 3])
 b = np.array([2, 3, 4])
 
 np.concatenate((a,b), axis=0)	# [1, 2, 3, 2, 3, 4]
-np.concatenate((a,b), axis=1)	# errror
+np.concatenate((a,b), axis=1)	# error
 
 a = np.array([[1, 2, 3], 
               [4, 5, 6]])
@@ -135,7 +134,7 @@ cv2.resize(img, img_size)	# vid_size만큼 리사이즈 해줌
 
 ```python
 torch.ones(size)
-torch.ones(2,3) -> shape (2,3)이고 1로 가득찬 tensor 생성
+torch.ones(2,3)		# -> shape (2,3)이고 1로 가득찬 tensor 생성
 ```
 
 
@@ -147,7 +146,7 @@ x = torch.zeros(2, 4)
 
 x.shape		# (2, 4)
 x.size()	# (2, 4)
-# 정확히는 torch.Size([2, 4])의 형태로 출력됩니다.
+			# 정확히는 torch.Size([2, 4])의 형태로 출력됩니다.
 
 x.type()	# torch.LongTensor
 			# 데이터의 자료형 출력
@@ -172,6 +171,48 @@ np_arr = np.array(list_arr)				# list -> numpy array
 tensor_arr = torch.from_numpy(np_arr)	# numpy -> tensor array
 np_arr2 = np.array(tensor_arr)			# tensor -> numpy array
 ```
+
+
+
+> tensor data type casting
+
+```python
+arr = np.array([1, 2])
+arr = torch.from_numpy(arr)
+arr = arr.type(torch.float32)	# float32 casting
+arr = arr.float()				# float32 casting
+```
+
+[Tensor Data Type](https://pytorch.org/docs/stable/tensors.html)
+
+
+
+> nn.Softmax
+
+```python
+# default numpy array
+arr = np.array([[1, 2, 3, 1, 2, 1, 1, 1],
+                [1, 2, 3, 2, 1, 2, 3, 1]])
+
+# tensor로 바꿀시 torch.LongTensor로 바뀜
+arr = torch.from_numpy(arr)
+# Softmax에 사용하기 위해선 float32로 바꿔야함
+arr = arr.type(torch.float32)
+
+m = nn.Softmax(dim=1)
+output = m(arr)
+output = torch.sum(output, dim=1)
+print(output)						# [1.0000, 1.0000]
+
+```
+
+
+
+> nn.CrossEntropy
+
+[pytorch에서의 CrossEntorpy](https://github.com/rasbt/stat479-deep-learning-ss19/blob/master/L08_logistic/code/cross-entropy-pytorch.ipynb) 구현 방식
+
+
 
 
 
@@ -288,6 +329,20 @@ transforms.Compose([
 ```
 
 여러 transform들을 묶습니다.
+
+
+
+> Contigious and non-contigious tensor
+
+[Pytorch Forum](https://discuss.pytorch.org/t/contigious-vs-non-contigious-tensor/30107)
+
+
+
+
+
+> Tensor.reshape and Tensor.view()
+
+[Pytorch Forum](https://discuss.pytorch.org/t/in-pytorch-0-4-is-it-recommended-to-use-reshape-than-view-when-it-is-possible/17034)
 
 
 
