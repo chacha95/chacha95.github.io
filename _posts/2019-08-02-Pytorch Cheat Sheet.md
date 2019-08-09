@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Conditional Neural Network
+title: Pytorch Cheat Sheet
 tags: [Pytorch]
 ---
 
