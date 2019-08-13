@@ -142,7 +142,7 @@ Fast pathway는 그것의 spatial modeling 능력을 약하게 하는 대신, te
 
 > 예시 모델(ResNet-50)
 
-![](https://www.lyrn.ai/wp-content/uploads/2018/12/SlowFastNetwork-1024x507.png)
+![](https://user-images.githubusercontent.com/31475037/62919792-b0510580-bdde-11e9-8fc9-c6da4410f5b3.PNG)
 
 <br>
 

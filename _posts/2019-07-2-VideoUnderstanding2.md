@@ -179,7 +179,7 @@ C3D는 video 분석을 위한 feature extractor로서 훌륭한 역할을 수행
 <center><img src="http://blog.qure.ai/assets/images//actionrec/trial.gif" width="70%"></center>
 > 2x2x2 C3D가 작동하는 모습, 결과물이 volume의 형태로 나온다
 
-![](https://miro.medium.com/max/700/1*ROD5gvIR8Octbo0uk6RzzA.gif)
+![](https://github.com/OValery16/Tutorial-about-3D-convolutional-network/raw/master/images/3dconv.gif)
 
 주요 contribution
 
@@ -203,6 +203,8 @@ long range temporal information에 대한 문제가 여전히 남아있습니다
 [awesome-action-recognition](https://github.com/jinwchoi/awesome-action-recognition)
 
 [video description review](https://arxiv.org/pdf/1806.00186.pdf)
+
+[3D Conv tutorials](https://github.com/OValery16/Tutorial-about-3D-convolutional-network)
 
 <br>
 

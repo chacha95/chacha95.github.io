@@ -7,7 +7,9 @@ use_math: true
 
 ## CNN-based Attention
 
- --- 정지훈 강의 + icml 발표 참조 ----
+ 맨 마지막에 하는게 정신건강에 좋을듯
+
+--- 정지훈 강의 + icml 발표 참조 ----
 
 ### Attention?
 

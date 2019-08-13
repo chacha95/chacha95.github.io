@@ -338,11 +338,44 @@ transforms.Compose([
 
 
 
-
-
 > Tensor.reshape and Tensor.view()
 
 [Pytorch Forum](https://discuss.pytorch.org/t/in-pytorch-0-4-is-it-recommended-to-use-reshape-than-view-when-it-is-possible/17034)
+
+Tensor.view()는 tensor가 메모리에 저장되지 않으나 Tensor.reshape는 저장됨
+
+이는 Contigious와 non-contigious의 차이
+
+> cudnn.benchmark
+
+[Pytorch Forum](https://discuss.pytorch.org/t/what-does-torch-backends-cudnn-benchmark-do/5936/2)
+
+cudnn.benchmark 옵션을 사용하게 되면 입력사이즈가 일정할때 cudnn이 최적의 알고리즘을 찾아줌
+
+
+
+> pytorch gpu control
+
+[towardDataScientiest](https://towardsdatascience.com/speed-up-your-algorithms-part-1-pytorch-56d8a4ae7051) 글에서 gpu의 사용과 할당에 대해 자세히 설명되어 있다.
+
+```python
+# default device id는 0이지만 바꿀수 있음
+torch.cuda.set_device(2)
+# 쓰고 싶은 gpu의 id를 설정해줘야 쓸 수 있음
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,2"
+
+# gpu device를 설정해줌
+cuda0 = torch.device('cuda:0')
+cuda1 = torch.device('cuda:1')
+
+# gpu에 tesnor를 할당하는 방식 3가지
+x = torch.Tensor([1., 2.], device=cuda1)
+# Or
+x = torch.Tensor([1., 2.]).to(cuda1)
+# Or
+x = torch.Tensor([1., 2.]).cuda(cuda1)
+```
 
 
 
