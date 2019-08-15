@@ -12,7 +12,7 @@ tags: [Image Processing]
 
 > 카메라 촬영의 파이프라인
 
-![](https://user-images.githubusercontent.com/31475037/58936192-2c5d1a80-87aa-11e9-8005-60ebf39de61a.png)
+![](https://t1.daumcdn.net/cfile/tistory/215884395341F9512B)
 
 <br>
 
@@ -39,6 +39,8 @@ tags: [Image Processing]
 
 포베온 패턴은 모든 공간에 모든색을 담는 방식으로 R, G, B 삼색 모두를 담습니다. 반면 베이어 패턴은 인간의 광학적 특성에 따라 R 25% G 50% B 25%가 되도록 배치됩니다. 
 
+G가 50%인 것은 다음과같은 이유 때문입니다.
+
 > G는 R과 B의 중간이여서 둘 중 어떤 색과도 보간(interpolation)하기가 쉽다.
 
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/RGB_LED_Spectrum.svg/1280px-RGB_LED_Spectrum.svg.png" width="90%" height="50%"> </center>
@@ -54,3 +56,7 @@ tags: [Image Processing]
 베이어 필터 패턴를 쓰는 이미지 센서는 각 화소에서 R, G, B 중 어느 한 색만을 감지할 수 있지만, 우리가 보는 카메라 영상에선는 각 화소마다 R, G, B 전체 색상을 보여줍니다. 이것이 가능한 이유는 카메라 ISP에서 각 화소마다 주변 셀들의 색상값을 interpolation(보간)해주기 때문입니다.
 
 <br>
+
+**참고 글**
+
+[SamSung 블로그](https://www.samsungsemiconstory.com/642)
