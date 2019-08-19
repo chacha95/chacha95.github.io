@@ -1,11 +1,47 @@
 ---
 layout: post
-title: 여러 CNN 모델 간략 리뷰
+title: CNN 모델 리뷰
 tags: [Deeplearning]
 use_math: true
 ---
 
+## CNN 모델 리뷰
 
+중요한 CNN 모델에 대해 리뷰 합니다.
+
+### LeNet5
+
+
+
+### AlexNet
+
+
+
+### VGGNet
+
+
+
+### GoogLeNet(Inception Net)
+
+
+
+### ResNet
+
+
+
+### ResNeXt
+
+
+
+### DensNet
+
+
+
+### Squeeze Net
+
+
+
+### Mobile Net
 
 
 
@@ -17,4 +53,8 @@ use_math: true
 
 [PR34](https://www.youtube.com/watch?v=V0dLhyg5_Dw)
 
+[ETRI보고서](https://ettrends.etri.re.kr/ettrends/176/0905176005/34-2_40-50.pdf)
+[CS231N](http://cs231n.stanford.edu/slides/2019/cs231n_2019_lecture09.pdf)
+
 <br>
+

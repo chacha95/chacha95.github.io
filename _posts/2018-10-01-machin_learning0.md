@@ -33,16 +33,13 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 ### machine learning 시스템의 종류
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
-> 사람 감독 유무에 따른 종류
-
-<center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
 **Supervised Learning(지도 학습)**
 
 훈련 데이터에 레이블(답)이 달려 있는 데이터를 이용해 학습을 시키는 방법입니다.
 
 전형적인 지도학습으로는 분류가 있습니다.
 
-지도학습은 Classification(분류)와 Regression(회귀)로 나뉘어집니다. 먼저, **Classification**은 주어진 데이터를 정해진 카테고리에 따라 분류하는 문제를 말합니다.
+지도학습은 크게 Classification(분류)와 Regression(회귀)로 나뉘어집니다. 먼저, **Classification**은 주어진 데이터를 정해진 카테고리에 따라 분류하는 문제를 말합니다.
 
 예를 들어, 이메일이 스팸메일인지 아닌지를 예측한다고 하면 이메일은 스팸메일 / 정상적인 메일로 라벨링 될 수 있을 것입니다. 비슷한 예시로 암을 예측한다고 가정했을 때 이 종양이 악성종양인지 / 아닌지로 구분할 수 있습니다. 이처럼 맞다 / 아니다로 구분되는 문제를 Binary Classification 이라고 부릅니다.
 
@@ -80,7 +77,11 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 * Alphago
 * DQN
 
-> 실시간 학습 유무에 따라
+> 사람 감독 유무에 따른 구분
+
+<center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
+
+
 
 **Batch Learning**
 
@@ -132,11 +133,11 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 ### Test Set과 Training Set
 
-모델이 새로운 샘플에 얼마나 잘 일반화될지 아는 방법은 새로운 샘플에 실제로 적용해 보는 것입니다.
+모델이 새로운 샘플에 얼마나 잘 일반화될지 아는 방법은 새로운 샘플에 실제로 적용해 보는 것입니다. Training 오차는 낮지만 Test 오차가 높다면 이는 모델이 overfitting되있다는 것을 알 수 있습니다.
 
-Training 오차는 낮지만 Test 오차가 높다면 이는 모델이 overfitting되있다는 것을 알 수 있습니다.
+이론적으론 데이터의 80%는 Training에 사용하고 20%는 Test용으로 떼어 놓습니다.
 
-보통 데이터의 80%는 Training에 사용하고 20%는 Test용으로 떼어 놓습니다.
+여기에 더해 Training/Validation/Test로 데이터셋을 나누는 것이 일반적인 데이터 셋의 구성입니다.
 
 
 
