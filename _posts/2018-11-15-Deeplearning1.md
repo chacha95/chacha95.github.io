@@ -18,7 +18,7 @@ Linear Classification(선형 분류)란 쉽게 말해서 선을 이용하여 집
 
 아래 그림은 3가지 클래스에 대해 linear classification한 예시입니다.
 
-![](https://user-images.githubusercontent.com/31475037/59895096-332c9400-941e-11e9-972d-860e918152cb.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/59895096-332c9400-941e-11e9-972d-860e918152cb.png"></center>
 
 <br>
 
@@ -58,7 +58,7 @@ Loss term과 Regularization term으로 구성되어 있으며, Regularization te
 
 (Regularization의 자세한 내용은 Training 포스트에서 다루겠습니다.)
 
-![](https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png"></center>
 
 그렇다면 이런 Loss 함수를 기반으로 어떻게 Weight와 bias를 업데이트 할 까요?
 

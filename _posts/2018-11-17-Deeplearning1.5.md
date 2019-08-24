@@ -21,7 +21,7 @@ use_math: true
 
 일반적으로 Loss 함수는 다음과 같이 정의됩니다.
 
-![](https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png"></center>
 
 
 

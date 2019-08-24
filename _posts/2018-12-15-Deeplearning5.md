@@ -54,7 +54,7 @@ Whitening 변환은 기하학적 해석은, 입력 데이터가 multivariable ga
 
 Distance를 이용해 정답과 Neural Net을 통해 나온 결과값을 비교하는 부분과 Generalization을 위해 쓰이는 Regularaization 부분입니다.
 
-![](https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png"></center>
 
 **L1 Loss**
 
@@ -67,8 +67,7 @@ $$
 L_1 = \sum_{i=1}^n \left| y_i - f(x_i) \right |
 $$
 
-
-![](http://i.imgur.com/hXR6RFw.png)
+<center><img src="http://i.imgur.com/hXR6RFw.png" width="70%"></center>
 
 **L2 Loss**
 
@@ -79,8 +78,7 @@ $$
 L =\sum_{i=1}^n(y_i - f(x_i))^2
 $$
 
-
-![](https://user-images.githubusercontent.com/31475037/59828966-2acd4e00-9377-11e9-8350-8e1cbf0de444.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/59828966-2acd4e00-9377-11e9-8350-8e1cbf0de444.png"></center>
 
 
 
@@ -148,7 +146,7 @@ lamda값이 커짐에 따라 Generalization 능력이 증가하고 있습니다.
 
 Neural Net의 모든 뉴런을 학습에 참여시키는 것이 아니라, 뉴런 중 일부를 학습 과정 중에 꺼버려 일부만 학습시키는 방식입니다.(전체 weight의 일부만을 사용하여 학습을 시킴)
 
-![](http://aikorea.org/cs231n/assets/nn2/dropout.jpeg)
+<center><img src="http://aikorea.org/cs231n/assets/nn2/dropout.jpeg"></center>
 
 <br>
 

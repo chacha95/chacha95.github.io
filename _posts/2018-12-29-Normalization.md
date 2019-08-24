@@ -31,7 +31,7 @@ Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 
 
 그래서 standarization과 유사한 식으로 mini-batch 단위로 평균을 0 표준편차를 1로 만듭니다
 
-![](https://cdn-images-1.medium.com/max/1600/1*Hiq-rLFGDpESpr8QNsJ1jg.png)
+<center><img src="https://cdn-images-1.medium.com/max/1600/1*Hiq-rLFGDpESpr8QNsJ1jg.png"></center>
 
 - mini-batch의 평균 계산
 - mini-batch의 분산과 표준 편차

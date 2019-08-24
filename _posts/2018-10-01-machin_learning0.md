@@ -82,7 +82,6 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 <center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
 
 
-
 **Batch Learning**
 
 전체 데이터를 한번에 학습시키는 방식입니다.

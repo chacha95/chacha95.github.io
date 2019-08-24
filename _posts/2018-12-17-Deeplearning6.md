@@ -38,7 +38,7 @@ weight 업데이트는 크게 두 부분으로 나뉩니다.
 
 적절한 learning rate를 설정해 주어야 weight가 잘 업데이트 되고, 잘 업데이트 된 weight를 바탕으로 loss를 최소화 시킬 수 있습니다.
 
-![](https://t1.daumcdn.net/cfile/tistory/999A143359D86C022F)
+<center><img src="https://t1.daumcdn.net/cfile/tistory/999A143359D86C022F"></center>
 
 **SGD**
 
@@ -66,7 +66,7 @@ $$
 
 기존의 SGD를 이용할 경우 local minima에 빠지면 gradient가 0이 되어 더이상의 업데이트가 힘들지만, momentum 방식의 경우 기존 이동했던 방향으로의 관성을 업데이트 과정에서 더해주게 되어 이런 결과를 냅니다.
 
-![](http://www.yaldex.com/game-development/FILES/17fig09.gif)
+<center><img src="http://www.yaldex.com/game-development/FILES/17fig09.gif"></center>
 
 > Momentum을 이용한 Oscilation(진동) 현상 극복
 
@@ -74,7 +74,7 @@ SGD를 이용해 loss가 중앙의 최저점으로 이동해야 하는 상황인
 
 이럴 때 momentum을 이용하면 이전에 이동한 방향으로 관성이 생기게 되 Oscilation을 극복 하게 된다.
 
-![](https://tensorflowkorea.files.wordpress.com/2017/03/ec8aa4ed81aceba6b0ec83b7-2017-03-21-ec98a4ed9b84-3-22-52.png?w=625)
+<center><img src="https://tensorflowkorea.files.wordpress.com/2017/03/ec8aa4ed81aceba6b0ec83b7-2017-03-21-ec98a4ed9b84-3-22-52.png?w=625"></center>
 
 **Nesterov Momentum**
 
@@ -122,17 +122,17 @@ Momentum 방식과 유사하게 지금가지 계산해온 기울기의 지수평
 
 > Saddle point에서의 optimizer 성능
 
-![](http://i.imgur.com/NKsFHJb.gif?1)
+<center><img src="http://i.imgur.com/NKsFHJb.gif?1"></center>
 
 > Long Valley 에서의 optimizer 성능
 
-![](http://i.imgur.com/2dKCQHh.gif?1)
+<center><img src="http://i.imgur.com/2dKCQHh.gif?1"></center>
 
 
 
 > Optimizer 발전 과정
 
-![](https://image.slidesharecdn.com/random-170910154045/95/-49-638.jpg?cb=1505089848)
+<center><img src="https://image.slidesharecdn.com/random-170910154045/95/-49-638.jpg?cb=1505089848"></center>
 
 
 

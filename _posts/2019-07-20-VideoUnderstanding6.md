@@ -142,7 +142,7 @@ Fast pathway는 그것의 spatial modeling 능력을 약하게 하는 대신, te
 
 > 예시 모델(ResNet-50)
 
-![](https://user-images.githubusercontent.com/31475037/62919792-b0510580-bdde-11e9-8fc9-c6da4410f5b3.PNG)
+<center><img src="https://user-images.githubusercontent.com/31475037/62919792-b0510580-bdde-11e9-8fc9-c6da4410f5b3.PNG"></center>
 
 <br>
 
@@ -172,7 +172,7 @@ action calssification task에서의 결과는 다음과 같습니다. 평가 데
 
 > action classification results
 
-![](https://user-images.githubusercontent.com/31475037/61861644-5065ee00-af07-11e9-9d19-3371565c4ff6.PNG)
+<center><img src="https://user-images.githubusercontent.com/31475037/61861644-5065ee00-af07-11e9-9d19-3371565c4ff6.PNG"></center>
 
 논문에서는 indivisual한 모델을 사용했을 때의 결과도 실험을 했습니다. 
 
@@ -184,13 +184,13 @@ action calssification task에서의 결과는 다음과 같습니다. 평가 데
 
 > β값의 변화에 따른 결과
 
-![](https://user-images.githubusercontent.com/31475037/61861642-5065ee00-af07-11e9-8a29-d94907d5c907.PNG)
+<center><img src="https://user-images.githubusercontent.com/31475037/61861642-5065ee00-af07-11e9-8a29-d94907d5c907.PNG"></center>
 
 가장 흥미로웠던 것은 기존 논문들에서 입력 영상의 spatial size가 224x224 pixel 혹은 112x112 pixel 둘중 하나였는데 둘 중 어느 것이 더 효과적인지 실험을 했습니다.(이 외에도 optical flow나 gray-scale도 실험)
 
 > 여러 조건에 따른 accuracy 측정
 
-![](https://user-images.githubusercontent.com/31475037/61862919-92902f00-af09-11e9-9256-5ad4a2a1c7b2.PNG)
+<center><img src="https://user-images.githubusercontent.com/31475037/61862919-92902f00-af09-11e9-9256-5ad4a2a1c7b2.PNG"></center>
 
 <br>
 

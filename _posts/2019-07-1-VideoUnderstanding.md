@@ -28,7 +28,7 @@ video understanding task에 필요한 training 데이터 셋과 딥러닝 이전
 
   일반적으로 action classification에서 test용 benchmark로 쓰입니다.
 
-  ![](https://user-images.githubusercontent.com/31475037/60317244-1dcce200-99a9-11e9-9d28-838437179595.png)
+  <center><img src="https://user-images.githubusercontent.com/31475037/60317244-1dcce200-99a9-11e9-9d28-838437179595.png"></center>
 
 - HMDB-51
 
@@ -100,7 +100,7 @@ movie clip에 대한 설명을 다는 task 입니다.
   - Movie retrieval(영화 검색)
   - Movie Fill-in-the-Blank(QA)
 
-![](https://user-images.githubusercontent.com/31475037/60317846-ba907f00-99ab-11e9-9ebb-b98ed7e70641.png)
+<center><img src="https://user-images.githubusercontent.com/31475037/60317846-ba907f00-99ab-11e9-9ebb-b98ed7e70641.png"></center>
 
 > Challenges in Videos
 
@@ -134,7 +134,7 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
     > block 단위로 잘린 이미지
 
-    ![](https://user-images.githubusercontent.com/31475037/60324891-f08c2e00-99c0-11e9-95a0-31f02af8c001.png)
+    <center><img src="https://user-images.githubusercontent.com/31475037/60324891-f08c2e00-99c0-11e9-95a0-31f02af8c001.png"></center>
 
     t-1번째 프레임의 블록을 기준으로 t번째 프레임에서 제일 비슷한 block을 찾아줍니다.
 
@@ -148,7 +148,7 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
     이를 통해 Motion Vector를 구해준 뒤 Motion Vector를 이용해 다음 task인 MC나 Video Recognition과 같은 task를 수행합니다.
 
-    ![](https://user-images.githubusercontent.com/31475037/60324893-f08c2e00-99c0-11e9-8d2b-ee6d2f87d7b4.png)
+    <center><img src="https://user-images.githubusercontent.com/31475037/60324893-f08c2e00-99c0-11e9-8d2b-ee6d2f87d7b4.png"></center>
 
   - Optical Flow
 
@@ -164,7 +164,7 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
 
     > 초음판 영상에서 Optical Flow를 이용해 Motion Vector를 구한뒤 표시
 
-    ![](https://t1.daumcdn.net/cfile/tistory/190218454FBC82311F)
+    <center><img src="https://t1.daumcdn.net/cfile/tistory/190218454FBC82311F"></center>
 
 <br>
 

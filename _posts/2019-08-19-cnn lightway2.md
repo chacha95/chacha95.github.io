@@ -7,37 +7,11 @@ use_math: true
 
 ## CNN 모델 리뷰
 
-중요한 CNN 모델에 대해 리뷰 합니다.
-
-### LeNet5
-
-<center><img src="https://user-images.githubusercontent.com/31475037/63636147-9351e780-c6a6-11e9-80ec-df09adf20bfd.PNG"></center>
-
-### AlexNet
+### Squeeze Net
 
 
 
-### VGGNet
-
-
-
-### GoogLeNet(Inception Net)
-
-
-
-### Xception
-
-
-
-### ResNet
-
-
-
-### ResNeXt
-
-
-
-### DensNet
+### Mobile Net
 
 
 

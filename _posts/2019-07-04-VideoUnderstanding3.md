@@ -74,11 +74,11 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 
 > I3D model
 
-![](https://user-images.githubusercontent.com/31475037/61274906-b1931080-a7e7-11e9-9756-1542abc9758f.PNG)
+<center><img src="https://user-images.githubusercontent.com/31475037/61274906-b1931080-a7e7-11e9-9756-1542abc9758f.PNG"></center>
 
 > Inc. module
 
-![](https://user-images.githubusercontent.com/31475037/61275666-637f0c80-a7e9-11e9-817b-3543c5fd328c.PNG)
+<center><img src="https://user-images.githubusercontent.com/31475037/61275666-637f0c80-a7e9-11e9-817b-3543c5fd328c.PNG"></center>
 
 **Training Detail**
 

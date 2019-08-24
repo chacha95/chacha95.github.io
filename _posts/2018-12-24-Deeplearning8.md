@@ -79,7 +79,7 @@ hidden layer는 3개의 뉴런으로 이뤄져 있다고 가정해봅시다.
 
 우리의 목표는 RNN에 "h"의 1-of-k encoding된 벡터 [1, 0, 0, 0]을 입력했을 때, hidden laeyr를 거쳐 나온 output  layer에서의 값이 초록색으로 표시된 값이 제일 크게 만드는 것이 목표입니다.
 
-![](https://miro.medium.com/max/700/1*bdR_utmqOoKu_h-JyeoXYA.png)
+<center><img src="https://miro.medium.com/max/700/1*bdR_utmqOoKu_h-JyeoXYA.png"></center>
 
 그렇다면 RNN의 예측값이 정답과 같도록 만드려면 어떻게 해야 할까요?
 
@@ -118,7 +118,7 @@ The cell state는 conveyer belt와 같습니다. 전체 chain을 straight하게 
 
 > conveyer belt 처럼 지나가는 cell state
 
-![](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png)
+<center><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png"></center>
 
 LSTM은 cell state에 gate 구조를 이용해 조심스럽게 조절해가면서 정보를 추가하거나 제거해 나갑니다.
 
