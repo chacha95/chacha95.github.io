@@ -45,7 +45,6 @@ NLM이라는 이름에서 드러나듯이 영상의 주변부 (local) 만을 이
 <center><img src="https://bloglunit.files.wordpress.com/2018/01/e18489e185b3e1848fe185b3e18485e185b5e186abe18489e185a3e186ba-2018-11-15-e1848be185a9e1848ce185a5e186ab-11-07-251.png"></center>
 
 
-
 > NLM Filter 수식
 >
 > W는 normlization factor
@@ -97,7 +96,6 @@ receptive field 크기의 관점에서 보면 local operator를 여러차례 쌓
 > Self-attention
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61589712-2780e880-abe9-11e9-8485-094a1785a086.PNG"></center>
-
 ### Experiment
 
 실험을 위해서 ResNet-50 C2D 모델과 I3D 모델을 사용했습니다.
@@ -107,7 +105,6 @@ C2D 모델의 경우 기존의 ImageNet으로 pre-trained 되어있는 ResNet-50
 > C2D
 
 <center><img src="https://bloglunit.files.wordpress.com/2018/01/ec8aa4ed81aceba6b0ec83b7-2018-01-12-ec98a4ed9b84-5-52-49.png?w=447&h=379"></center>
-
 다음으로 사용한 모델은 Inflated 3D ConvNet (I3D)라고 명명한 모델입니다. 이 모델은 또 두 가지 버전으로 나뉘는데 두 버전 모두  C2D와 형태는 거의 동일하고 중간에 res-block 내부에서 최초의 1×1 conv 대신에 3x1x1 conv를 사용하는 버전 하나와 중간의 3×3 conv대신에 3x3x3 conv를 사용하는 버전 하나가 존재합니다. 이 모델역시 ImageNet으로 pre-trained되어있는 모델을 가져와서 사용하는데, Time축으로 커널의 크기가 확장된 conv의 경우에는 그대로 파라미터를 가져오면 파라미터양이 다르므로, 시간으로 파라미터를 그래도 복사해서 집어 넣되, 양이 3배 늘어난 만큼 파라미터의 값은 1/3하여 집어 넣었습니다. 
 
 
@@ -119,25 +116,21 @@ C2D 모델의 경우 기존의 ImageNet으로 pre-trained 되어있는 ResNet-50
 > Similarity 계산 방식에 따른 결과 차이
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61590949-d1b53c00-abfa-11e9-99ff-9e0e10db8570.PNG"></center>
-
 또한 non-local block을 어디에 집어넣었는냐에 따른 결과물 차이입니다.
 
 > top-5 기준에선 res5 직전에 넣어주는게 제일 좋은 성능을 보여줌
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61590950-d1b53c00-abfa-11e9-9960-7da191c48b76.PNG"></center>
-
 저자는 C2D 네트워크에 non-local block을 집어넣어 성능 및 효율성을 보여줬습니다. 특히나 별다른 구조 변경 없이 non-local block을 넣어주기만 해도 top-1 error에서 2%의 성능 향상을 가져다 준 점이 대단한거 같습니다.
 
 > non-local block의 효율성과 성능을 보여줌
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61590947-d1b53c00-abfa-11e9-8468-917ec944f09b.PNG"></center>
-
 다음으론 I3D 모델에 non-local block을 넣어준 실험결과이고요, 역시나 좋은 결과를 냈습니다.
 
 > I3D + non-local block
 
 <center><img src="https://bloglunit.files.wordpress.com/2018/01/ec8aa4ed81aceba6b0ec83b7-2018-01-15-ec98a4ed9b84-6-30-43.png?w=300&h=237"></center>
-
 다른 sota-기술들과 비교해봤을 때 놀라웠던 점은 기존 video action classification 문제에서 대다수의 모델들이 two-stream 기반의 네트워크이며, 입력으로 optical flow를 같이 넣어줬습니다. 이는 모델이 video의 motion 정보를 잘 잡아내지 못하기에 optical flow를 통해 motion 정보를 잘 포착하도록 하는 역활이었습니다. 그런데 non-local block을 사용하니 RGB 입력만으로도 기존 two-stream 방식을 뛰어넘었다는 점이 정말 인상 깊었습니다.
 
 이는 입력으로 들어오는 정보가 적음에도 불구하고 더 좋은 성능을 냈다는 의미이기 때문입니다!!!
@@ -145,7 +138,6 @@ C2D 모델의 경우 기존의 ImageNet으로 pre-trained 되어있는 ResNet-50
 > sota 기술들과 비교
 
 <center><img src="https://bloglunit.files.wordpress.com/2018/01/ec8aa4ed81aceba6b0ec83b7-2018-01-15-ec98a4ed9b84-6-36-10.png"></center>
-
 
 
 ### Conclusion
