@@ -32,7 +32,6 @@ Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 
 그래서 standarization과 유사한 식으로 mini-batch 단위로 평균을 0 표준편차를 1로 만듭니다
 
 <center><img src="https://cdn-images-1.medium.com/max/1600/1*Hiq-rLFGDpESpr8QNsJ1jg.png"></center>
-
 - mini-batch의 평균 계산
 - mini-batch의 분산과 표준 편차
 - normalize(입실론을 제외하면 standarization)
@@ -53,7 +52,7 @@ Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 
 - Batch Norm은 최적화를 하기 쉽게 만들기 위해 네트워크를 reparameterization합니다.
 - 이 방법은 모든 레이어의 평균, 크기, 활성화 함수를 독립적으로 조정할 수 있게 만듭니다.
 
-
+Batch Normalization이 어떻게 Optimization에 도움을 주는지는 [PR-134](https://www.youtube.com/watch?v=hiN0IMM50FM&t=808s)강의에서 잘 설명하고 있습니다.
 
 <br>
 
@@ -96,9 +95,17 @@ Group Norm의 경우 ImageNet Classification task에서 batch size가 32일 때 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975972-7bec7480-95f9-11e9-95a8-f8cec354e3a9.png" width="50%"></center>
 <br>
 
-**읽어볼만한 글**
+### Image의 Style과 Content
 
-[BIN](https://blog.lunit.io/2018/05/25/batch-instance-normalization/)
+Image는 크게 Style정보와 Content정보로 나뉘고 이를 기반으로 어떻게 학습을 시킬까에 대한 연구가 이루어지고 있습니다.
+
+[Batch-Instance Normalization](https://blog.lunit.io/2018/05/25/batch-instance-normalization/) 글과 [딥러닝의 비밀](https://www.youtube.com/watch?v=KUs3xng6ags) 유튜브 강의에서 이에 대해 잘 설명해주고 있습니다.
+
+
+
+<br>
+
+**읽어볼만한 글**
 
 [Group Norm](https://blog.lunit.io/2018/04/12/group-normalization/)
 

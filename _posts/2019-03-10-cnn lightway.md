@@ -192,7 +192,6 @@ ResNext는 FAIR 그룹에서 제안된 모델로, AlexNet에서 제안한 group 
 
 <center><img src="https://user-images.githubusercontent.com/31475037/63677283-9aecca00-c827-11e9-848f-ea9f5b1ef7d7.PNG"></center>
 
-
 **주요 Contribution**
 
 - cardinality 개념을 제안함
