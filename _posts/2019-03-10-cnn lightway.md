@@ -39,7 +39,8 @@ AlexNet에서는 채널을 2개로 나누어 convolution을 진행합니다.
 
 > 외곽선 위주의 채널 학습한 그룹(위), 색상, 패턴 위주의 채널 학습한 그룹(아래)
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63742179-f0ca7c00-c8d2-11e9-971d-12352d7dd3e3.PNG"</center>
+<center><img src="https://user-images.githubusercontent.com/31475037/63742179-f0ca7c00-c8d2-11e9-971d-12352d7dd3e3.PNG"></center>
+
 **주요 Contribution**
 
 - 의미있는 성능을 낸 첫 번째 CNN 모델
@@ -191,7 +192,6 @@ ResNext는 FAIR 그룹에서 제안된 모델로, AlexNet에서 제안한 group 
 > ResNext 구조
 
 <center><img src="https://user-images.githubusercontent.com/31475037/63677283-9aecca00-c827-11e9-848f-ea9f5b1ef7d7.PNG"></center>
-
 **주요 Contribution**
 
 - cardinality 개념을 제안함
