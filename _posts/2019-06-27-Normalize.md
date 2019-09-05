@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Normalization Method
-tags: [Math, Deeplearning]
+tags: [Math]
 use_math: true
 ---
 

@@ -1,12 +1,14 @@
 ---
 layout: post
 title: SlowFast Networks for Video Recognition
-tags: [Deeplearning, Video Understanding]
+tags: [Video Understanding]
 ---
 
 ## SlowFast Networks for Video Recognition
 
 이번 포스트에서는 CVPR2019 워크숍에서 열린 [AVA challenge](https://research.google.com/ava/)의 한 topic인 AVA challenge의 Action 분야에서 1등을 차지한 SlowFast Networks에 대해 알아보겠습니다.
+
+또한 이 논문은 ICCV2019에 oral 발표 예정입니다.
 
  [이 논문](https://arxiv.org/pdf/1812.03982.pdf)은 FAIR 그룹에서 쓴 논문이며, 저자에 Kaiming He가 있습니다! 논문 내용도 굉장히 좋으며, 본인들이 설계한 모델이 왜 잘 되는지에 대해 사람의 시각 시스템을 모방하였기에 잘 만들었다고 설명하고 있습니다. 특히나 요즘 딥러닝 논문들이 왜 잘되는지 이유에 대한 설명이 조금 빈약하였는데, cognitive science 측면에서 설명한 점이 인상깊었습니다.
 
@@ -48,11 +50,11 @@ spatial semantics of visual content는 느리게 변합니다. 예를 들어 손
 
 Slow pathway는 semantic information을 포착합니다.
 
-Fast pathway는 fast refreshing frame(high temporal rate)을 통해 rapidly changing motion을 포착합니다. 
+Fast pathway는 fast refreshing frame(high temporal rate)을 통해 빠르게 변하는 motion을 포착합니다. 
 
-fast pathway는 total computation의 20%를 차지할 만큼 가볍습니다. 왜냐하면 이 pathway는 더 적은 채널과 더 적은 spatial information을 포착하도록 설계되었기 때문입니다.
+Fast pathway는 전체 계산량의 20%만 차지합니다. 왜냐하면 이 pathway는 더 적은 channel과 더 적은 spatial information을 포착하도록 설계되었기 때문입니다.
 
-두 pathway는 lateral connection에의해 합쳐집니다.
+두 pathway는 lateral connection(나중에 feature가 합쳐지는 방식)에의해 합쳐집니다.
 
 논문에서는 기존의 optical flow와 RGB를 입력으로 같이 쓰는 two-stream network가 잘못됬다고 말합니다. 왜냐하면 optical flow는 hand-designed representation이고 two-stream methods는 종종 end-to-end 방식으로 잘 학습하지 못하기 때문입니다. (일반적으로 flow와 RGB 네트워크를 따로 학습시킴)
 
@@ -143,7 +145,6 @@ Fast pathway는 그것의 spatial modeling 능력을 약하게 하는 대신, te
 > 예시 모델(ResNet-50)
 
 <center><img src="https://user-images.githubusercontent.com/31475037/62919792-b0510580-bdde-11e9-8fc9-c6da4410f5b3.PNG"></center>
-
 <br>
 
 ### Experiments
@@ -173,7 +174,6 @@ action calssification task에서의 결과는 다음과 같습니다. 평가 데
 > action classification results
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61861644-5065ee00-af07-11e9-9d19-3371565c4ff6.PNG"></center>
-
 논문에서는 indivisual한 모델을 사용했을 때의 결과도 실험을 했습니다. 
 
 > Indivisual pathway
@@ -185,13 +185,11 @@ action calssification task에서의 결과는 다음과 같습니다. 평가 데
 > β값의 변화에 따른 결과
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61861642-5065ee00-af07-11e9-8a29-d94907d5c907.PNG"></center>
-
-가장 흥미로웠던 것은 기존 논문들에서 입력 영상의 spatial size가 224x224 pixel 혹은 112x112 pixel 둘중 하나였는데 둘 중 어느 것이 더 효과적인지 실험을 했습니다.(이 외에도 optical flow나 gray-scale도 실험)
+가장 흥미로웠던 것은 기존 논문들에서 입력 영상의 spatial size가 224x224 pixel 혹은 112x112 pixel 둘중 하나였는데 둘 중 어느 것이 더 효과적인지 실험을 했습니다. (이 외에도 optical flow나 gray-scale도 실험)
 
 > 여러 조건에 따른 accuracy 측정
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61862919-92902f00-af09-11e9-9256-5ad4a2a1c7b2.PNG"></center>
-
 <br>
 
 ### Conclusion

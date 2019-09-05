@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Video Dataset
-tags: [Deeplearning, Video Understanding]
+tags: [Video Understanding]
 ---
 
 ## Video Understanding
@@ -101,7 +101,6 @@ movie clip에 대한 설명을 다는 task 입니다.
   - Movie Fill-in-the-Blank(QA)
 
 <center><img src="https://user-images.githubusercontent.com/31475037/60317846-ba907f00-99ab-11e9-9ebb-b98ed7e70641.png"></center>
-
 > Challenges in Videos
 
 이미지 영역에서의 task들과는 다르게 video 영역에서 task들은 다음과 같은 특징을 지닙니다.
@@ -135,36 +134,35 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
     > block 단위로 잘린 이미지
 
     <center><img src="https://user-images.githubusercontent.com/31475037/60324891-f08c2e00-99c0-11e9-95a0-31f02af8c001.png"></center>
-
-    t-1번째 프레임의 블록을 기준으로 t번째 프레임에서 제일 비슷한 block을 찾아줍니다.
-
-    찾는 기준은 Search Range라는 윈도우를 하나 정의한 후 그 크기 안에서 가장 비슷한 블록을 찾는 방식으로 진행됩니다.
-
-    비슷함의 측정은 SAD(Sum of Absolute Difference)방식을 이용해 두 block이 얼마나 비슷한지 측정합니다.
-
-    ![](https://user-images.githubusercontent.com/31475037/60324892-f08c2e00-99c0-11e9-8c8c-2ca719c7586e.png)
-
-    > Motion Vector
-
-    이를 통해 Motion Vector를 구해준 뒤 Motion Vector를 이용해 다음 task인 MC나 Video Recognition과 같은 task를 수행합니다.
-
-    <center><img src="https://user-images.githubusercontent.com/31475037/60324893-f08c2e00-99c0-11e9-8d2b-ee6d2f87d7b4.png"></center>
-
-  - Optical Flow
-
-    Optical Flow는 다음과 같은 가정에 의해 진행이 됩니다.
-
-    - 밝기 항상성 : 어떤 객체 상의 픽셀은 프레임이 바뀌어도 그 값이 변치 않음
+t-1번째 프레임의 블록을 기준으로 t번째 프레임에서 제일 비슷한 block을 찾아줍니다.
+    
+찾는 기준은 Search Range라는 윈도우를 하나 정의한 후 그 크기 안에서 가장 비슷한 블록을 찾는 방식으로 진행됩니다.
+    
+비슷함의 측정은 SAD(Sum of Absolute Difference)방식을 이용해 두 block이 얼마나 비슷한지 측정합니다.
+    
+![](https://user-images.githubusercontent.com/31475037/60324892-f08c2e00-99c0-11e9-8c8c-2ca719c7586e.png)
+    
+> Motion Vector
+    
+이를 통해 Motion Vector를 구해준 뒤 Motion Vector를 이용해 다음 task인 MC나 Video Recognition과 같은 task를 수행합니다.
+    
+<center><img src="https://user-images.githubusercontent.com/31475037/60324893-f08c2e00-99c0-11e9-8d2b-ee6d2f87d7b4.png"></center>
+    
+- Optical Flow
+  
+  Optical Flow는 다음과 같은 가정에 의해 진행이 됩니다.
+  
+  - 밝기 항상성 : 어떤 객체 상의 픽셀은 프레임이 바뀌어도 그 값이 변치 않음
     - 시간 지속성 : 영상 내의 움직임은 많지 않음
     - 공간 일관성 : 공간적으로 서로 인접한 점들은 동일한 객체에 속할 가능성이 높음
-
-    이런 가정을 한 뒤, Motion Vector를 구하는데 있어 영상을 x축으로 미분하고, y축으로 미분하고, 시간축으로 미분해서 특정 식을 대입해서 Matrix를 푸는 방식입니다.
-
-    optical flow를 구하는 알고리즘으로는 Lukas-Kanade방식이 있습니다.
-
-    > 초음판 영상에서 Optical Flow를 이용해 Motion Vector를 구한뒤 표시
-
-    <center><img src="https://t1.daumcdn.net/cfile/tistory/190218454FBC82311F"></center>
+  
+  이런 가정을 한 뒤, Motion Vector를 구하는데 있어 영상을 x축으로 미분하고, y축으로 미분하고, 시간축으로 미분해서 특정 식을 대입해서 Matrix를 푸는 방식입니다.
+  
+  optical flow를 구하는 알고리즘으로는 Lukas-Kanade방식이 있습니다.
+  
+  > 초음판 영상에서 Optical Flow를 이용해 Motion Vector를 구한뒤 표시
+  
+  <center><img src="https://t1.daumcdn.net/cfile/tistory/190218454FBC82311F"></center>
 
 <br>
 

@@ -25,7 +25,9 @@ use_math: true
 <center><img src="https://user-images.githubusercontent.com/31475037/59975969-7b53de00-95f9-11e9-9877-677945acba24.png" width="50%"></center>
 **Internal Covariance Shift**
 
-Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 Internal Covariance Shift라고 주장했습니다(경험적으로 그렇다~~) 이는 네트워크의 각 층이나 활성 함수마다 입력의 값들의 분포가 계속 바뀌는 현상을 의미합니다.
+Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 Internal Covariance Shift라고 주장했습니다.
+
+이는 네트워크의 각 층이나 활성 함수마다 입력의 값들의 분포가 계속 바뀌는 현상을 의미합니다.
 
 ![](https://qph.fs.quoracdn.net/main-qimg-962c827a0730a481d35bca4d41fe0251)
 
@@ -41,8 +43,6 @@ Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 
 
 - backpropagation에서 parameter의 scale 영향을 받지 않으므로, learning rate를 크게 설정 할 수 있다.
 - weight regularization과 Dropout(이 방법과 성능이 같지만 느림)을 제외할 수 있어, 학습 속도를 향상시킬 수 있다.
-
-하지만 최근 주장으로는 BN의 성공은 Internal Covariance Shfit와 상관이 없다고 주장합니다. 
 
 **batch normalization이 잘되는 이유**
 
@@ -100,8 +100,6 @@ Group Norm의 경우 ImageNet Classification task에서 batch size가 32일 때 
 Image는 크게 Style정보와 Content정보로 나뉘고 이를 기반으로 어떻게 학습을 시킬까에 대한 연구가 이루어지고 있습니다.
 
 [Batch-Instance Normalization](https://blog.lunit.io/2018/05/25/batch-instance-normalization/) 글과 [딥러닝의 비밀](https://www.youtube.com/watch?v=KUs3xng6ags) 유튜브 강의에서 이에 대해 잘 설명해주고 있습니다.
-
-
 
 <br>
 
