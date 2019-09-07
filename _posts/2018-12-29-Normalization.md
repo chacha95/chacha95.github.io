@@ -27,22 +27,16 @@ use_math: true
 
 Batch Norm 논문에서는 위에서 언급된 문제의 근본적인 원인이 Internal Covariance Shift라고 주장했습니다.
 
-이는 네트워크의 각 층이나 활성 함수마다 입력의 값들의 분포가 계속 바뀌는 현상을 의미합니다.
+이는 네트워크의 각 층이나 활성 함수마다 입력의 distribution이 계속 바뀌는 현상을 의미합니다.
 
 ![](https://qph.fs.quoracdn.net/main-qimg-962c827a0730a481d35bca4d41fe0251)
 
-그래서 standarization과 유사한 식으로 mini-batch 단위로 평균을 0 표준편차를 1로 만듭니다
+> Batch Normalization
 
 <center><img src="https://cdn-images-1.medium.com/max/1600/1*Hiq-rLFGDpESpr8QNsJ1jg.png"></center>
 - mini-batch의 평균 계산
-- mini-batch의 분산과 표준 편차
-- normalize(입실론을 제외하면 standarization)
-- 스케일 조정 및 분포 조정
-
-해당 논문에서는 이 방법의 장점이 다음과 같다고 이야기 하고 있습니다.
-
-- backpropagation에서 parameter의 scale 영향을 받지 않으므로, learning rate를 크게 설정 할 수 있다.
-- weight regularization과 Dropout(이 방법과 성능이 같지만 느림)을 제외할 수 있어, 학습 속도를 향상시킬 수 있다.
+- mini-batch의 분산을 1로, 평균을 0으로 만들어줌(normalize)
+- 단순히 분산=1, 평균=0으로 고정하면 activation fucntion의 nonlinearity를 없앨 수 있기에 trainable parameter인 ᵞ(감마)과 β(베타)를 추가해줌 
 
 **batch normalization이 잘되는 이유**
 
@@ -61,13 +55,9 @@ Batch Normalization이 어떻게 Optimization에 도움을 주는지는 [PR-134]
 BN과 LN은 거의 유사한 형태를 지닙니다. 위의 큐브 사진 또는 아래이 사진이 이를 시각화한 모양입니다
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59975970-7b53de00-95f9-11e9-90be-30b16e722568.png" width="50%"></center>
-LN은 mini-batch의 feature 수가 같아야 합니다.
+BN의 경우에는 mini-batch 단위로 계산이 이뤄지며, 각 mini-batch에서 동일하게 계산합니다. 하지만 LN의 경우에는 각 feature 별 독립적으로 계산됩니다.
 
-각각 BN과 LN은 Batch 차원에서 Normalization / Feature 차원에서 Normalization 이라는 차이가 있습니다
-
-BN의 경우에는 mini-batch 단위로 계산이 이뤄지며, 각 mini-batch에서 동일하게 계산합니다. 하지만 LN의 경우에는 각 특성에 대하여 따로 계산이 이뤄지며, 각 특성에 독립적으로 계산합니다.
-
-LN은 batch 사이즈와 상관이 없습니다. 이는 RNN에서 좋은 성능을 보입니다.
+LN은 batch 사이즈와 상관이 없습니다. 이런 특성으로 RNN에서 좋은 성능을 보입니다.
 
 <br>
 
@@ -77,16 +67,18 @@ Instance Norm은 LN과 비슷하지만 한 단계 더 나아가 평균과 표준
 
 Style Transfer에서 좋은 성능을 냈습니다.
 
+작은 batch에 효과적이어서 CycleGAN같은 모델에서 좋은 효과를 냈습니다.
+
 <center><img src="https://user-images.githubusercontent.com/31475037/59975971-7b53de00-95f9-11e9-9d28-46b698042ee9.png" width="50%"></center>
 <br>
 
 ### Group Normalization
 
-IN과 LN의 중간입니다. 여기서는 채널을 그룹으로 묶어 평균과 표준편차를 구한다는 점입니다. 모든 채널이 단일 긃에 있다면 LN, 각 채널을 다른 그룹에 배치하면 IN 입니다.
+IN과 LN의 중간입니다. 여기서는 채널을 그룹으로 묶어 평균과 표준편차를 구한다는 점입니다. 모든 채널이 단일 그룹에 있다면 LN, 각 채널을 다른 그룹에 배치하면 IN 입니다.
 
 LN과 IN은 모두 공통적으로 RNN과 Style Transfer에 효과적이지만, BN에 비해 이미지 인식면에서는 성능이 좋지 못합니다.
 
-Group Norm의 경우 ImageNet Classification task에서 batch size가 32일 때 BN과 거의 근접한 성능을 냈고, 그 보다 작은 batch size에 대해서는 더 좋은 성능을 냈습니다(BN의 경우 batch size가 작아지면 성능이 안좋아짐)
+Group Norm의 경우 ImageNet Classification task에서 batch size가 32일 때 BN과 거의 근접한 성능을 냈고, 그 보다 작은 batch size에 대해서는 더 좋은 성능을 냈습니다. (BN의 경우 batch size가 작아지면 성능이 안좋아짐)
 
 왜 GN이 LN 혹은 IN보다 효과적일까요?
 
