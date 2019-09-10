@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CNN Light Way
-tags: [Deeplearning]
+tags: [Machine Learning]
 use_math: true
 ---
 

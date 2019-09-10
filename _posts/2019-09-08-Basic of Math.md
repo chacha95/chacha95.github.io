@@ -140,14 +140,18 @@ $$
 > 미분의 정의
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64474449-15b2cf00-d1b0-11e9-826c-04311109bcd4.PNG" width="40%"></center>
+
+
 **Partial Derivative(편미분)**
 
 각 variable(변수)에 대한 미분값입니다.
 
  <center><img src="https://user-images.githubusercontent.com/31475037/64474450-15b2cf00-d1b0-11e9-9882-3585f4764005.PNG" width="80%"></center>
+
+
 **Gradient**
 
-multi-variable 일 경우의 derivative 계산 방식입니다.
+Multi-variable 일 경우의 미분 계산 방식입니다.
 
 > gradient 표현
 
@@ -166,9 +170,11 @@ $$
 
 **Jacobbian**
 
-multi-variable 일 경우의 gradient의 일반화입니다.
+Multi-variable 일 경우의 gradient의 일반화입니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64474451-164b6580-d1b0-11e9-95a7-8ff4d6d8f5af.PNG" width="50%"></center>
+
+
 **Hessian**
 
 1차 미분이 아닌 2차 미분일 경우입니다.
@@ -180,7 +186,9 @@ multi-variable 일 경우의 gradient의 일반화입니다.
 
 벡터의 크기(Magnitude, Scale)를 표현하기 위한 함수입니다.
 
-vector x의 norm은 원점으로부터 point x까지의 거리라고 볼 수 있습니다.
+Vector x의 norm은 원점으로부터 point x까지의 거리라고 볼 수 있습니다.
+
+
 
 **L1 Norm**
 
@@ -188,6 +196,8 @@ L1 Norm입니다.
 $$
 \lVert x \rVert_1 \quad
 $$
+
+
 **L2 Norm**
 
 원점으로부터 벡터 포인트까지의 Euclidean distance를 나타내기에 Euclidean norm으로도 불린다.
@@ -200,7 +210,7 @@ $$
 \lVert x \rVert_2 \quad or \quad \lVert x \rVert
 $$
 
-squared L2 Norm도 자주 쓰입니다. 왜냐하면 루트 안에 들어가 있는 경우보다 꺼내져 있을 때 연산하기 편리하기 때문입니다. 예를들어 squared L2 Norm은 미분시 각각의 인자에 대해 미분 가능하지만, L2 Norm은 전체에 대해 미분해야 합니다.
+Squared L2 Norm도 자주 쓰입니다. 왜냐하면 루트 안에 들어가 있는 경우보다 꺼내져 있을 때 연산하기 편리하기 때문입니다. 예를들어 squared L2 Norm은 미분시 각각의 인자에 대해 미분 가능하지만, L2 Norm은 전체에 대해 미분해야 합니다.
 
 > squared L2 Norm
 
@@ -208,16 +218,22 @@ $$
 x^\top x
 $$
 
+
+
 **Max Norm**
 
 벡터에서 가장 큰 절대값을 norm으로 구합니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64488447-3d269c00-d283-11e9-8d81-afd74e90bf4c.PNG" width="30%"></center>
+
+
 **Frobenius Norm**
 
 벡터의 크기가 아닌 행렬의 크기를 구합니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64488448-3d269c00-d283-11e9-974b-b16736b134dd.PNG" width="30%"></center>
+
+
 **Dot Product**
 
 두 벡터의 dot product도 norm으로 표현 가능합니다.
@@ -232,23 +248,31 @@ $$
 a \cdot b = a^\top b = <a, b>
 $$
 
+
+
 **Outer product(벡터곱)**
 $$
 a \otimes b = ab^ \top
 $$
 
+
+
 **Orthogonal Vectors**
 
-innter product시 값이 0이 나와야합니다.
+Innter product시 값이 0이 나와야합니다.
 
 벡터 x와 y가 직교한다는 의미입니다.
 $$
 x \cdot y = 0, \quad(x\perp y)
 $$
+
+
 **Orthogonal matrix**
 $$
 AA^T = E, \quad A^{-1} = A^T
 $$
+
+
 **Orthonormal**
 
 orthonormal 하기 위해선 다음 2가지 조건이 만족해야합니다.
@@ -449,6 +473,8 @@ $$
 Determinant는 모든 eigenvalue의 곱과 같습니다.
 
 Determinant의 절댓값은 행렬이 공간을 얼마나 늘리고 축소시키는지에 대한 지표가 될  수 있습니다.
+
+
 
 **Properties of det**
 

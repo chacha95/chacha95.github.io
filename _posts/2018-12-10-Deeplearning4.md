@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Activation Function
-tags: [Deeplearning]
+tags: [Machine Learning]
 use_math: true
 ---
 
