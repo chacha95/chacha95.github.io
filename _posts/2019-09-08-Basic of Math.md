@@ -141,13 +141,11 @@ $$
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64474449-15b2cf00-d1b0-11e9-826c-04311109bcd4.PNG" width="40%"></center>
 
-
 **Partial Derivative(편미분)**
 
 각 variable(변수)에 대한 미분값입니다.
 
  <center><img src="https://user-images.githubusercontent.com/31475037/64474450-15b2cf00-d1b0-11e9-9882-3585f4764005.PNG" width="80%"></center>
-
 
 **Gradient**
 
@@ -173,7 +171,6 @@ $$
 Multi-variable 일 경우의 gradient의 일반화입니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64474451-164b6580-d1b0-11e9-95a7-8ff4d6d8f5af.PNG" width="50%"></center>
-
 
 **Hessian**
 
@@ -226,13 +223,11 @@ $$
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64488447-3d269c00-d283-11e9-8d81-afd74e90bf4c.PNG" width="30%"></center>
 
-
 **Frobenius Norm**
 
 벡터의 크기가 아닌 행렬의 크기를 구합니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/64488448-3d269c00-d283-11e9-974b-b16736b134dd.PNG" width="30%"></center>
-
 
 **Dot Product**
 
