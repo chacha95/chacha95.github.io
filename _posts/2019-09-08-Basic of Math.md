@@ -233,17 +233,21 @@ $$
 
 ### Product
 
-**Inner Product(내적)**
+**Inner Product**
 $$
 a \cdot b = a^\top b = <a, b>
 $$
 
 
 
-**Outer product(벡터곱)**
+
+
+**Outer product**
 $$
 a \otimes b = ab^ \top
 $$
+
+
 
 
 
@@ -257,10 +261,12 @@ x \cdot y = 0, \quad(x\perp y)
 $$
 
 
-**Orthogonal matrix**
+
+**Orthogonal Matrix**
 $$
 AA^T = E, \quad A^{-1} = A^T
 $$
+
 
 
 **Orthonormal**
@@ -338,27 +344,26 @@ e.g. 일반적인 2차원 공간의 basis는 (1,0), (0,1) 두 벡터 입니다. 
 
 ### Eigen
 
-**Eigenvector & Eigenvalue**
-
 **Eigenvector** : "벡터 x에 선형변환 A를 했을 때, 그 크기만 변하고 원래 벡터와 평행한 벡터 x는 무엇인가요?"
 
 **Eigenvalue** : "그렇다면, 그 크기는 얼마만큼 변하였나요?"
 
-아래 두 장의 그림은 원래 이미지가 옆으로 기울어진 모양으로 변하는 선형변환을 보여주고 있습니다. 이 선형 변환에서 수평 축은 그대로 수평 축으로 남기 때문에 푸른색 화살표는 방향이 변하지 않지만 붉은색 화살표는 방향이 변하게 됩니다. 따라서 푸른색 화살표는 이 변환의 **Eigenvector**가 되고 붉은색 화살표는 고유 벡터가 아니다. 또한 푸른색 화살표의 크기가 변하지 않았으므로 이 벡터의 **Eigenvalue**은 1입니다.
+아래 두 장의 그림은 원래 이미지가 옆으로 기울어진 모양으로 변하는 선형변환을 보여주고 있습니다. 이 선형 변환에서 수평 축은 그대로 수평 축으로 남기 때문에 푸른색 화살표는 방향이 변하지 않지만 붉은색 화살표는 방향이 변하게 됩니다. 따라서 푸른색 화살표만 이 선형변환의 **eigenvector**가 됩니다. 또한 푸른색 화살표의 크기가 변하지 않았으므로 이 벡터의 **eigenvalue**는 1입니다.
 
-Eigenvector의 크기가 Eigenvalue의 값입니다. 
+Eigenvector의 크기(scale)가 eigenvalue의 값입니다. 
 
 > 기하학적 의미
 
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Mona_Lisa_eigenvector_grid.png/405px-Mona_Lisa_eigenvector_grid.png"></center>
-어떤 행렬에 대해 eigenvalue는 유일하지만, eigenvector는 유일하지 않습니다.
+> Eigenvalue&eigenvalue 식
+
 $$
-\textbf A \textbf v = \lambda \textbf v \quad (\textbf v:eigenvector, \lambda:eigenvalue)
+\textbf A \textbf v = \lambda \textbf v \quad (\textbf v:eigenvector,\ \lambda:eigenvalue)
 $$
 
 Eigenvector를 구하기 위한 필요 충분 조건은 다음과 같습니다.
 
-> Eigenvectors 구하는 법
+> Eigenvector 구하는 법
 
 $$
 det(\textbf A - \lambda \textbf I) = 0
