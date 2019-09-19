@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## Training Neural Network
-
 ### Data Set Preprocessing
 
 데이터 행렬 X에 대해서 일반적으로 아래의 3가지 전처리 방식을 사용합니다.
@@ -77,7 +75,6 @@ L =\sum_{i=1}^n(y_i - f(x_i))^2
 $$
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59828966-2acd4e00-9377-11e9-8350-8e1cbf0de444.png"></center>
-
 
 > L1과 L2 비교
 

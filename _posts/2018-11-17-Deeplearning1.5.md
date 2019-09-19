@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## Optimization
-
 이번 포스트에서는 weight들이 어떻게 조정 되는지 알아 봅시다.
 
 편의상 weight와 bias를 weight라고 묶어서 말하겠습니다.
@@ -22,7 +20,6 @@ use_math: true
 일반적으로 Loss 함수는 다음과 같이 정의됩니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png"></center>
-
 ### How to optimize loss fuction?
 
 그렇다면 어떻게 하면 loss 함수를 통해 weight들을 업데이트 할 수 있을까요?

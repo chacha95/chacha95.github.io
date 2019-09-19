@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## RNN
-
 RNN은 hidden node가 방향을 가진 엣지로 연결되어 순환구조를 이루는 Neural Net의 한 종류입니다.
 
 음성, 문자, 비디오와 같이 sequantial한 데이터처리에 적합한 모델로 알려져 있습니다. 

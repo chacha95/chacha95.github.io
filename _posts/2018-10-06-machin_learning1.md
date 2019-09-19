@@ -4,8 +4,6 @@ title: SVM
 tags: [Machine Learning]
 ---
 
-## SVM(Support Vector Machine)
-
 Nerual Network(신경망)가 나오기 전에 classification(분류)에서 많이 쓰였던 machine learning(기계학습) 기법입니다.
 
 두개의 클래스가 주어졌을 때 이를 분류하는 것이 SVM의 알고리즘입니다. Street라 명명되는 부분의 support vector로 decision boundary(결정 경계)가 결정됩니다. Decision boundary를 기준으로 두 class가 나뉩니다. 이것을 binary classification(이진 분류)이라 부르기도 합니다.

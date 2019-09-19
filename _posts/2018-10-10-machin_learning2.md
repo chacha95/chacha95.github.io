@@ -4,8 +4,6 @@ title: Ensemble
 tags: [Machine Learning]
 ---
 
-## Ensemble Learning
-
 여러개의 모델을 학습, 결과를 합쳐서 예측하는 machine learning 방법입니다. 
 
 * 약한 학습기를 여러개 사용, 강한 학습기를 만드는 방식

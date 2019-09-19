@@ -5,9 +5,7 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## Neural Network
-
-> 어떻게 하면 기계가 학습해서 풀 수 있게 할까?
+**어떻게 하면 기계가 학습해서 풀 수 있게 할까?**
 
 어떻게 하면 기계가 학습해서 다음과 같은 문제를 풀 수 있을까요? 라는 질문에 답하기 위해 제안된 모델이 바로 Perceptron입니다.
 

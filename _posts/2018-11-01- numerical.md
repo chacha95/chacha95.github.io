@@ -4,8 +4,6 @@ title: Differentiation
 tags: [Math]
 ---
 
-## Differentiation(미분)
-
 당신이 마라톤 선수고 처음부터 10분에 2km씩 달렸다고 가정해봅시다.
 
 이 때 속도는 2/10 = 0.2(km/분)입니다.

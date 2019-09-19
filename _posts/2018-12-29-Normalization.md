@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## Normalization
-
 이 포스트에서는 Normalization 기법에 대해 간단히 리뷰해 보겠습니다.
 
 > 그림으로 표현된 Norm 기법

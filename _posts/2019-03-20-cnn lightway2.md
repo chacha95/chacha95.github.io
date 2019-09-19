@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## CNN Light Way
-
 이번 포스트에서는 CNN의 문제점과 이를 해결하기 위한 방안, 또 CNN을 Light(가볍게)하게 만드는 방법에 대해 알아봅시다.
 
 ### Problem of CNN

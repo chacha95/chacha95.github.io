@@ -4,8 +4,6 @@ title: SlowFast Networks for Video Recognition
 tags: [Video Understanding]
 ---
 
-## SlowFast Networks for Video Recognition
-
 이번 포스트에서는 CVPR2019 워크숍에서 열린 [AVA challenge](https://research.google.com/ava/)의 한 topic인 AVA challenge의 Action 분야에서 1등을 차지한 SlowFast Networks에 대해 알아보겠습니다.
 
 또한 이 논문은 ICCV2019에 oral 발표 예정입니다.

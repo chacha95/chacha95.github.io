@@ -4,8 +4,6 @@ title: Pytorch Cheat Sheet
 tags: [Pytorch]
 ---
 
-## Pytorch Cheat Sheet
-
 Pytorch 코딩 시 유용했던 코드 모음입니다.
 
 shape 표현시 ( ) e.g. (2, 4)

@@ -4,8 +4,6 @@ title: PIL vs OpenCV
 tags: [Pytorch]
 ---
 
-## PIL vs OpenCV
-
 Image 관련 task에서, Pytorch를 이용해 딥러닝 모델 학습을 위한 이미지를 불러올 때, 보통 OpenCV와 PIL 두 라이브러리 중 하나를 이용해 이미지를 불러옵니다.
 
 그런데 torchvision.transforms 모듈에서 지원하는게 PIL의 Image array여서 일반적으론 PIL을 많이 사용합니다. 

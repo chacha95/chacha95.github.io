@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## CNN 모델 리뷰
-
 2012년도 이후 나온 중요한 CNN 모델에 대해 간략히 리뷰합니다.
 
 이 포스트에서 모델의 depth(깊이)는 convolution layer의 개수로 셉니다.

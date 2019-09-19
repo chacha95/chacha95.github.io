@@ -4,8 +4,6 @@ title: I3D(Inflated 3D ConvNet)
 tags: [Video Understanding]
 ---
 
-## I3D
-
 [Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset(CVPR 2017)](https://arxiv.org/abs/1705.07750) 논문은 action classification 분야의 backbone이 되는 중 하나입니다.
 
 해당 논문에서는 action classification을 위한 새로운 데이터셋인 Kinetics 데이터셋을 만들고 이를 기반으로 I3D를 학습 시켰습니다.

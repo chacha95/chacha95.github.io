@@ -5,8 +5,6 @@ tags: [Image Translation]
 use_math: true
 ---
 
-## CycleGAN
-
 이번 포스트에서는 unsupervised learning의 대표 모델인 CycleGAN모델에 대해 적겠습니다.
 
 CycleGAN은 Image Translation의 대표 기술이며, CVPR 2017에 발표된 이후로 엄청난 반향을 일으켰습니다.

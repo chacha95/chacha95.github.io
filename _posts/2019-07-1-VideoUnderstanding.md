@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Video Dataset
+title: Video Understanding
 tags: [Video Understanding]
 ---
-
-## Video Understanding
 
 최근 딥러닝을 이용해 image에 대한 연구뿐만 아니라 temporal한 정보를 가진 video에 대한 연구들이 진행되고 있습니다. 대표적으로 large-scale video annotation이나 영상에 달리는 subtilte을 자동으로 만들어주거나, video에서의 사람의 행동을 이해하는 action recognition, video에서 불필요한 부분을 지워주는 video inpainting 같은 분야에서 활발히 연구되고 있습니다.
 
@@ -136,6 +134,7 @@ Video Recognition task에서는 주로 ME만을 사용했기에 ME 기술에 대
     <center><img src="https://user-images.githubusercontent.com/31475037/60324891-f08c2e00-99c0-11e9-95a0-31f02af8c001.png"></center>
 t-1번째 프레임의 블록을 기준으로 t번째 프레임에서 제일 비슷한 block을 찾아줍니다.
     
+
 찾는 기준은 Search Range라는 윈도우를 하나 정의한 후 그 크기 안에서 가장 비슷한 블록을 찾는 방식으로 진행됩니다.
     
 비슷함의 측정은 SAD(Sum of Absolute Difference)방식을 이용해 두 block이 얼마나 비슷한지 측정합니다.
@@ -143,11 +142,11 @@ t-1번째 프레임의 블록을 기준으로 t번째 프레임에서 제일 비
 ![](https://user-images.githubusercontent.com/31475037/60324892-f08c2e00-99c0-11e9-8c8c-2ca719c7586e.png)
     
 > Motion Vector
-    
+
 이를 통해 Motion Vector를 구해준 뒤 Motion Vector를 이용해 다음 task인 MC나 Video Recognition과 같은 task를 수행합니다.
     
 <center><img src="https://user-images.githubusercontent.com/31475037/60324893-f08c2e00-99c0-11e9-8d2b-ee6d2f87d7b4.png"></center>
-    
+
 - Optical Flow
   
   Optical Flow는 다음과 같은 가정에 의해 진행이 됩니다.

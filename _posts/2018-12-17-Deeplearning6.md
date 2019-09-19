@@ -5,8 +5,6 @@ tags: [Machine Learning]
 use_math: true
 ---
 
-## Training Neural Network
-
 [Optimization](https://chacha95.github.io/2018-11-17-Deeplearning1.5/)글을 먼저 읽으시면 이해에 도움이 많이 됩니다. 
 
 ### Optimizer
@@ -124,11 +122,9 @@ Momentum 방식과 유사하게 지금가지 계산해온 기울기의 지수평
 
 <center><img src="http://i.imgur.com/2dKCQHh.gif?1"></center>
 
-
 > Optimizer 발전 과정
 
 <center><img src="https://image.slidesharecdn.com/random-170910154045/95/-49-638.jpg?cb=1505089848"></center>
-
 
 학습식을 보면 수정할 수 있는 부분이 learning rate와 gradient 부분입니다.
 

@@ -5,8 +5,6 @@ tags: [Math]
 use_math: true
 ---
 
-## Basic of Math
-
 ### Scalars, Vectors, Matrices and Tensors
 
 **Scalars**

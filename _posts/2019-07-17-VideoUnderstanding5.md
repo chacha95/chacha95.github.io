@@ -4,8 +4,6 @@ title: Non-local Neural Networks
 tags: [Video Understanding]
 ---
 
-## Non-local Neural Networks
-
 이번에 소개시켜 드릴 논문은 FAIR(Facebook AI Research)에서 낸 Non local Neural Network 입니다. 해당논문은 CVPR 2018년에 발표 되었으며, 유명한 저자들의 참여와 함께, 논문에서 제안된 non-local block의 무궁무진한 활용성과 범용성 덕분에 엄청난 인기를 끌게 되었습니다.
 
 non-local block을 사용하면 기존 CNN의 locality를 줄이면서도 receptive field를 적은 계산량으로 늘릴 수 있다는 장점이 있습니다. 또 long range dependency 문제에 아주 효과적인 해결책으로 작용했으며, 대표적인 long range dependency 문제가 크게 나타났던 video action recognition 문제에서 좋은 결과를 보였습니다.
