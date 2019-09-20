@@ -5,7 +5,45 @@ tags: [3D Vision]
 use_math: true
 ---
 
-## Point and Line
+### Basic of Planar Geometry(평면, 2차원 기하학)
+
+
+
+**Point**
+
+
+
+**Line**
+
+
+
+**Homogeneous Coordinate**
+
+
+
+**DOF(Degree Of Freedom)**
+
+
+
+**Intersection of Lines**
+
+
+
+**Lines at Infinity**
+
+
+
+**Point of Infinity**
+
+
+
+**Conic: Curve, Cicle, Ellipse, Parabola, Hyperbola**
+
+
+
+**Conic and Line**
+
+
 
 
 
@@ -13,7 +51,19 @@ use_math: true
 
 ## Projective Transformation
 
+### Euclidean
 
+
+
+### Similarity
+
+
+
+### Affine
+
+
+
+### Projective
 
 
 
