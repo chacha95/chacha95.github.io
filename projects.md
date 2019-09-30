@@ -4,6 +4,18 @@ title: Projects
 subtitle: awesome projects!
 ---
 
+## 딥러닝을 활용한 교차편집 영상 생성
+
+![](https://imgur.com/G0TFJJr)
+
+
+
+## 2D/3D Deep Convolutional GAN을 활용한 3D 모델 생성
+
+
+
+
+
 ## 딥러닝을 이용한 불교미술 채색
 
 #### 불교미술 채색
