@@ -146,7 +146,6 @@ t-1번째 프레임의 블록을 기준으로 t번째 프레임에서 제일 비
 이를 통해 Motion Vector를 구해준 뒤 Motion Vector를 이용해 다음 task인 MC나 Video Recognition과 같은 task를 수행합니다.
     
 <center><img src="https://user-images.githubusercontent.com/31475037/60324893-f08c2e00-99c0-11e9-8d2b-ee6d2f87d7b4.png"></center>
-
 - Optical Flow
   
   Optical Flow는 다음과 같은 가정에 의해 진행이 됩니다.

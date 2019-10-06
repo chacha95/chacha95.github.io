@@ -4,9 +4,7 @@ title: SlowFast Networks for Video Recognition
 tags: [Video Understanding]
 ---
 
-이번 포스트에서는 CVPR2019 워크숍에서 열린 [AVA challenge](https://research.google.com/ava/)의 한 topic인 AVA challenge의 Action 분야에서 1등을 차지한 SlowFast Networks에 대해 알아보겠습니다.
-
-또한 이 논문은 ICCV2019에 oral 발표 예정입니다.
+이번 포스트에서는 CVPR2019 워크숍에서 열린 [AVA challenge](https://research.google.com/ava/)의 한 topic인 AVA challenge의 Action 분야에서 1등을 차지한 SlowFast Networks에 대해 알아보겠습니다. 또한 이 논문은 ICCV2019에 oral 발표 예정입니다.
 
  [이 논문](https://arxiv.org/pdf/1812.03982.pdf)은 FAIR 그룹에서 쓴 논문이며, 저자에 Kaiming He가 있습니다! 논문 내용도 굉장히 좋으며, 본인들이 설계한 모델이 왜 잘 되는지에 대해 사람의 시각 시스템을 모방하였기에 잘 만들었다고 설명하고 있습니다. 특히나 요즘 딥러닝 논문들이 왜 잘되는지 이유에 대한 설명이 조금 빈약하였는데, cognitive science 측면에서 설명한 점이 인상깊었습니다.
 
