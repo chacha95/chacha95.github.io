@@ -45,8 +45,6 @@ use_math: true
 
 ## Camera Model
 
-
-
 ### Pin-hole Camera
 
 

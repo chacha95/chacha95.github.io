@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CNN 모델 리뷰
-tags: [Machine Learning]
+tags: [Machine Learning, Efficeint DL]
 use_math: true
 ---
 
@@ -192,6 +192,7 @@ ResNext는 FAIR 그룹에서 제안된 모델로, AlexNet에서 제안한 group 
 **주요 Contribution**
 
 - cardinality 개념을 제안함
+- group convolution을 이용해 전체 parameter수를 많이 줄임
 
 
 
