@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pretrained C3D ResNet in action classification
+title: Pretrained C3D ResNet in action classification 리뷰
 tags: [Video Understanding]
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CycleGAN
+title: CycleGAN 리뷰
 tags: [Image Translation]
 use_math: true
 ---

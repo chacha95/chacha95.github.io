@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SlowFast Networks for Video Recognition
+title: SlowFast Networks 리뷰
 tags: [Video Understanding]
 ---
 

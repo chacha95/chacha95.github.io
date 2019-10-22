@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Basic of Action Recognition
+title: Basic of Action Recognition 리뷰
 tags: [Video Understanding]
 ---
 

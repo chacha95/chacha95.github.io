@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I3D(Inflated 3D ConvNet)
+title: I3D(Inflated 3D ConvNet) 리뷰
 tags: [Video Understanding]
 ---
 

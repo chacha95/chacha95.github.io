@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Non-local Neural Networks
+title: Non-local Neural Networks 리뷰
 tags: [Video Understanding]
 ---
 
@@ -96,6 +96,8 @@ C2D 모델의 경우 기존의 ImageNet으로 pre-trained 되어있는 ResNet-50
 
 <center><img src="https://bloglunit.files.wordpress.com/2018/01/ec8aa4ed81aceba6b0ec83b7-2018-01-12-ec98a4ed9b84-5-52-49.png?w=447&h=379"></center>
 다음으로 사용한 모델은 Inflated 3D ConvNet (I3D)라고 명명한 모델입니다. 이 모델은 또 두 가지 버전으로 나뉘는데 두 버전 모두  C2D와 형태는 거의 동일하고 중간에 res-block 내부에서 최초의 1×1 conv 대신에 3x1x1 conv를 사용하는 버전 하나와 중간의 3×3 conv대신에 3x3x3 conv를 사용하는 버전 하나가 존재합니다. 이 모델역시 ImageNet으로 pre-trained되어있는 모델을 가져와서 사용하는데, Time축으로 커널의 크기가 확장된 conv의 경우에는 그대로 파라미터를 가져오면 파라미터양이 다르므로, 시간으로 파라미터를 그래도 복사해서 집어 넣되, 양이 3배 늘어난 만큼 파라미터의 값은 1/3하여 집어 넣었습니다. 
+
+I3D에 대한 자세한 설명은 [이 포스트](https://chacha95.github.io/2019-07-04-VideoUnderstanding3/)에서 설명되어 있습니다.
 
 저자는 많은 실험을 통해 non-local block의 효율성과 성능을 보여줬는데요, 그 중 흥미로웠던 점은 similarity 계산 방식에 따른 결과 차이 였습니다.
 
