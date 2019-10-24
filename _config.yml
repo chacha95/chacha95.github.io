@@ -170,7 +170,8 @@ permalink: /:year-:month-:day-:title/
 paginate: 5
 
 # google analytics
-g-analytics=UA-146394742-1
+g-analytics: UA-146394742-1
+google_analytics: UA-146394742-1
 
 
 kramdown:
