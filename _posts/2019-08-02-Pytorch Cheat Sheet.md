@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pytorch Cheat Sheet
-tags: [Pytorch]
+tags: [Python]
 ---
 
 Pytorch 코딩 시 유용했던 코드 모음입니다.
