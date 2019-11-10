@@ -42,17 +42,17 @@ spatial semantics of visual content는 느리게 변합니다. 예를 들어 손
 반면에 모션은 물체의 identity에 비해 상대적으로 빠르게 변화됩니다. 이 부분은 저자가 제안하는 부분에서 
 빠르게 변화하는 frames을 통해 표현됩니다.
 
-이런 직관을 통해 우리는 Two-pathway SlowFast 모델을 제안합니다.
+이런 직관을 통해 저자는 Two-pathway SlowFast 모델을 제안합니다.
 
 Slow pathway는 semantic information을 포착합니다.
 
 Fast pathway는 fast refreshing frame(high temporal rate)을 통해 빠르게 변하는 motion을 포착합니다. 
 
-Fast pathway는 전체 계산량의 20%만 차지합니다. 왜냐하면 이 pathway는 더 적은 channel과 더 적은 spatial information을 포착하도록 설계되었기 때문입니다.
+Fast pathway는 전체 계산량의 20%만 차지합니다. 이 pathway는 더 적은 channel과 더 적은 spatial information을 포착하도록 설계되었습니다.
 
 두 pathway는 lateral connection(나중에 feature가 합쳐지는 방식)에의해 합쳐집니다.
 
-논문에서는 기존의 optical flow와 RGB를 입력으로 같이 쓰는 two-stream network가 잘못됬다고 말합니다. 왜냐하면 optical flow는 hand-designed representation이고 two-stream methods는 종종 end-to-end 방식으로 잘 학습하지 못하기 때문입니다. (일반적으로 flow와 RGB 네트워크를 따로 학습시킴)
+논문에서는 기존의 optical flow와 RGB를 입력으로 같이 쓰는 two-stream network가 좋지 않다고 말합니다. optical flow는 hand-designed representation이고 two-stream methods는 end-to-end 방식으로 학습하지 않기 때문입니다. (일반적으로 flow와 RGB 네트워크를 따로 학습시킴)
 
 
 
@@ -64,8 +64,7 @@ Fast pathway는 전체 계산량의 20%만 차지합니다. 왜냐하면 이 pat
 
 ### Biological derive
 
-저자의 연구는 부분적으로 retinal ganglion cells에 관한 연구에의해 영향을 받았습니다.
-관련 연구들은 사람 시각 시스템의 cell들이 80%의 Parveocellular(P-cells)와 15~20%의 Magnocellular(M-cells)로 이뤄져 있다고 말합니다.
+저자의 연구는 retinal ganglion cells에 관한 연구에의해 영향을 받았습니다. 사람 시각 시스템의 cell들이 80%의 Parveocellular(P-cells)와 15~20%의 Magnocellular(M-cells)로 이뤄져 있다고 합니다.
 
 M-cells은 high temporal frequency에 대한 연산을 하며, fast-temporal change에 반응합니다. 그러나 spatial detail이나 color에는 거의 반응을 하지 않습니다.
 
