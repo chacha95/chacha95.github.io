@@ -123,7 +123,7 @@ Fast pathway는 lower channel capacity를 가지기에 computation 양이 적어
 
 채널의 수는 Slow pathway에 비해 β만큼 줄여줍니다.
 
-우리의 실험에 의해 찾은 파라미터는 β = 1/8 입니다. 
+저자의 실험에 의해 찾은 파라미터는 β = 1/8 입니다. 
 
 이러한 low channel capacity는 spatial semantics를 표현하는 능력이 떨어집니다. 논문에서는 이를 일종의 trade-off라고 표현하고 있습니다.(temporal-spatial trade-off)
 
