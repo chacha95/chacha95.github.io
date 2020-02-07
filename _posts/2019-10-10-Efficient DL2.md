@@ -52,7 +52,7 @@ use_math: true
 
 만일 receptive field가 충분히 확보되지 않았다면 영상의 일부분만 보고 판단을 하게되고, 이로인해 머핀과 치와와를 구분하지 못하는 일이 생기게 됩니다.
 
-> Receptive Field의 중요성
+> Receptive Field의 중요성ㅛ
 
 <center><img src="https://user-images.githubusercontent.com/31475037/63749576-b2d75300-c8e6-11e9-83ff-d42f545ed8f1.PNG"></center>
 충분한 Contextual Information 확보를 위해 넓은 Receptive field가 중요하다가 바로 요점입니다.
