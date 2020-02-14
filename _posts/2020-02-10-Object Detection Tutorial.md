@@ -423,27 +423,24 @@ Faster R-CNN은 기존 R-CNN 계열의 기술들 보다 속도적인 측면, 성
 > 전통적인 feature pyramid 기법
 
 <center><img src="https://user-images.githubusercontent.com/31475037/74503142-52d77600-4f33-11ea-808d-50106668ffa7.png" width="70%"></center>
-
 CNN을 통해 feature를 뽑는 방식은 single feature map이라고 불립니다. 이미지가 있을 때 CNN을 통해 순차적으로 feature map을 뽑고 마지막 feature map에서 prediction을 하는 구조입니다. CNN은 Bottom-up 방식으로 이미지를 본다고도 불립니다.
 
 
 > CNN을 통한 feature 추출
 
-<center><img src=https://user-images.githubusercontent.com/31475037/74510810-e31fb600-4f47-11ea-896c-1dd01dea94df.png width="70%"></center>
-
+<center><img src=https://user-images.githubusercontent.com/31475037/74511677-def49800-4f49-11ea-96ff-9ed82d42dc8e.png width="70%"></center>
 
 다음으론 SSD(Single Shot Detector)에서 제안한 방식입니다. 마지막 feature map에서만 prediction을 하는 것이 아니라, 각 feature map 마다 prediction을 하는 방식으로, 중간 중간 나오는 feature map을 활용하는 방식입니다.
 
 > hierarchy한 방식
 
-<center><img src= https://user-images.githubusercontent.com/31475037/74510809-e31fb600-4f47-11ea-9b6b-53a6e773774a.png width="70%"></center>
+<center><img src= https://user-images.githubusercontent.com/31475037/74511676-de5c0180-4f49-11ea-89e1-9e1680ac08bd.png width="70%"></center>
 
 마지막으론 FPN 저자가 제안하는 방식이 있습니다. FPN의 주요 아이디어는 Bottom-up 방식의 feature 추출과 Top-down 방식의 feature 추출 두가지를 모두 사용합니다. 
 
 > FPN에서 제안하는 방식
 
-<center><img src= https://user-images.githubusercontent.com/31475037/74510807-e155f280-4f47-11ea-820b-ff353f6c770f.png width="70%"></center>
-
+<center><img src= https://user-images.githubusercontent.com/31475037/74511675-de5c0180-4f49-11ea-96fa-730c64517ead.png width="70%"></center>
 
 ### Top-down 과 Bottom-up
 
