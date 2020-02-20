@@ -295,7 +295,7 @@ Faster R-CNN의 과정은 다음과 같습니다.
 
 > Fast R-CNN
 
-![](https://user-images.githubusercontent.com/31475037/74294468-52977900-4d81-11ea-87d2-cbd12ee7fb11.gif)
+![](https://user-images.githubusercontent.com/31475037/74889922-c959f500-53c5-11ea-8fc4-0d1bd3ed1a8e.gif)
 
 
 
@@ -430,13 +430,65 @@ Detector를 학습시키는 loss는 RPN과 거의 비슷합니다. 다만 classi
 
 **Non-Maximum Suppression(NMS)**
 
-RPN이 region proposal을 해 bbox를 예측하면, 한 객체당 여러개의 bbox를 얻습니다. 이 중복 문제를 해결하기 위해서 NMS 알고리즘을 이용해 bbox의 개수를 줄입니다. NMS는 RPN에서 나온 class값(object인지 아닌지 판별하는 확률값)으로 bbox를 정렬시킨 뒤, bbox 간의 IoU가 threshold 이상이면 지우는 알고리즘입니다. 그렇게 되면 서로 겹치지 않으면서 IoU가 높은 bbox만 남게 됩니다. 논문에서 사용된 threshold 값은 0.7입니다. NMS 이후, class 값이 N번째로 큰 bbox까지만 사용합니다. 논문에서 test시에는 N값이 300, training시에는 N값이 2000입니다.
-
-
+RPN이 region proposal을 해 region을 예측하면, 한 객체당 여러개의 region를 얻습니다. 이 중복 문제를 해결하기 위해서 NMS 알고리즘을 이용해 region의 개수를 줄입니다. NMS는 RPN에서 나온 region의 class값(object인지 아닌지 판별하는 확률값)으로 판별합니다. Class 값이 threshold를 넘는 region만 남깁니다. 논문에서 사용된 threshold 값은 0.7입니다. 또 NMS 이후, class 값이 N번째로 큰 bbox까지만 사용합니다. 논문에서 test시에는 N값이 300, training시에는 N값이 2000입니다.
 
 > NMS
 
 ![](http://incredible.ai/assets/images/faster-rcnn-nms-algo.jpg)
+
+
+
+**Implemantation details**
+
+논문상에서 친절히 설명되어 있지는 않지만, 실제 구현된 코드를 통해 파악한 부분은 다음과 같습니다.
+
+- NMS
+
+  RPN 학습시 검출된 bbox 중 NMS를 통해 2000개만 남긴 뒤, 그 2000개의 bbox 중에서 256개의 bbox만 random sampling을 합니다.
+
+- bbox 크기
+
+  논문상에서 사용된 bbox의 크기가 [128, 256, 512]라고 적혀있는데 이는 입력 이미지 크기에서의 bbox 크기입니다. 따라서 실제 feature map에 적용되는 bbox 크기는 입력 이미지의 크기가 feature map 크기만큼 줄어드는 subsampling size만큼 줍니다. Feature map 상에서 사용된 bbox의 크기는  [8, 16, 32]입니다.
+
+- anchor의 수
+
+  anchor는 feature map 상 위의 모든 픽셀에 다 찍습니다.
+
+- 학습시 boundary 문제
+
+  anchor box를 칠 때, 많은 수의 anchor box들이 이미지 boundary에 있는 영역을 포함합니다. 논문에선 그러한 anchor box 들을 train시에는 사용하지 않고, test시에만 사용한다고 말합니다. 예를 들어 1000x600 이미지에서는 약 20000(60 x 40 x 9)개의 anchor가 생기는데 이중 약 6000개의 anchor만 학습에 사용한다고 합니다.
+
+Faster R-CNN의 예시는 다음과 같습니다. 입력 이미지가 800x800이라고 했을 때, CNN을 통과해 나온 feature map의 크기가 50x50이면 subsampling이 16이 됩니다. 
+
+> feature extraction
+
+![](https://miro.medium.com/max/1055/1*-kY2d--m-MauFNEsRw-2zg.png)
+
+그렇게 생성된 50x50 feature map의 각 픽셀마다 anchor를 박습니다. 생성된 anchor는 총 50x50 = 2500개 입니다.
+
+800x800 이미지 위에서 표현된 anchor는 다음과 같습니다.
+
+> image 위에서의 anchor 표현
+
+![](https://miro.medium.com/max/646/1*f-AxsYA9ys5wtiY9NDZh9Q.png)
+
+
+
+Bbox 크기가 [128, 256, 512]이라 하면, 이미지에서 적용되는 bbox는 다음과 같이 표현 가능합니다.
+
+> anchor box의 생성
+
+![](https://miro.medium.com/max/647/1*cPidpSRVUVgv3YeY9Fc11Q.png)
+
+
+
+그렇게 생성된 bbox 크기는 실제 feature map 에서는 subsampling 되어서 다음 크기로 feature map 상에서 object를 찾게 됩니다.
+
+> 생성된 bbox의 크기
+
+![](https://user-images.githubusercontent.com/31475037/74813109-155e5880-5338-11ea-8295-666afe1f9285.png)
+
+Anchor를 모든 픽셀마다 박기에 한가지 물체에 여러 bbox가 생기는 일이 많이 일어나기에 NMS같은 알고리즘을 사용해 연산량을 줄여줍니다.
 
 
 
@@ -530,4 +582,6 @@ CS231N
 [Precision and Recall에 대한 해석](https://darkpgmr.tistory.com/162)
 
 [Lunit Blog](https://blog.lunit.io/2017/06/01/r-cnns-tutorial/)
+
+[Guide of Faster R-CNN based on Pytorch Code](https://medium.com/@fractaldle/guide-to-build-faster-rcnn-in-pytorch-95b10c273439)
 
