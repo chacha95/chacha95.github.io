@@ -307,7 +307,7 @@ R-CNN과 fast R-CNN의 차이는 다음과 같습니다.
 
 > 간략히 비교해본 차이점
 
-![](https://user-images.githubusercontent.com/31475037/74124110-87d28880-4c14-11ea-9059-2a532263efce.png)
+![](https://user-images.githubusercontent.com/31475037/74906022-1bfdd600-53f3-11ea-82cb-3a25f2b271ec.png)
 
 하지만 Fast R-CNN에서는 여전히 다음과 같은 문제가 남아있습니다.
 
