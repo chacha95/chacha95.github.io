@@ -24,9 +24,7 @@ bias는 트레이닝 데이터를 바꿈에 따라서 알고리즘의 평균 정
 <center><img src="https://user-images.githubusercontent.com/31475037/59551500-8bded580-8fb5-11e9-8bff-c06a777645e4.png"></center>
 > fitting
 
-이상적인 모델은 트레이닝 데이터에서 반복되는 규칙성을 정확하게 잡아내면서도 학습되지 않은(unseen) 데이터를 잘 일반화 할 수 있는 모델입니다. 위 문장의 의미를 이해하기 위해, 같은 데이터에 다른 모델을 이용해 학습시킨 아래의 그림을 봅시다.
-
-![](https://qpho2.fs.quoracdn.net/main-qimg-7945a8dba7fa07be31d9b7ebde3886a0.webp)
+이상적인 모델은 트레이닝 데이터에서 반복되는 규칙성을 정확하게 잡아내면서도 학습되지 않은(unseen) 데이터를 잘 일반화 할 수 있는 모델입니다.
 
 **선형 모델(degree=1)은 under-fit이다**
 
@@ -43,8 +41,6 @@ bias는 트레이닝 데이터를 바꿈에 따라서 알고리즘의 평균 정
 실제로 두 가지를 동시에 만족하는 것은 불가능하며, 따라서 training data가 아닌 test data(실제 데이터)에서 좋은 성능을 내기 위해 이런 trade-off는 반드시 생길 수 밖에 없으며 이는 bias variance trade-off라 불립니다.
 
 test 과정에서, high variance를 가진 모델은 제대로 예측을 하지 못합니다. 왜냐하면 training data의 variation의 정도에 너무 민감해져, test단의 prediction에 노이즈가 생겨 잘못된 prediction을 하게 됩니다.(generiazation 능력이 떨어짐)
-
-
 
 <br>
 

@@ -4,6 +4,8 @@ title: Basic of Action Recognition 리뷰
 tags: [Video Understanding]
 ---
 
+이 포스트는 [Qure.ai Blog](http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review)글을 일부 번역했습니다.
+
 video understanding task의 대표적인 task가 action recognition입니다.
 
 action recognition에서 비디오의 전체 프레임에서 서로 다른 동작을 구별해내는 task 입니다. action은 전체 프레임 동안 이어질수도, 아닐수도 있습니다.

@@ -4,8 +4,6 @@ title: Linear Classification
 tags: [Machine Learning]
 ---
 
-[Regression](https://chacha95.github.io/2018-11-05-Regression/)포스트를 읽고 오셔야지 이해가 됩니다.
-
 Linear Classification(선형 분류)란 쉽게 말해서 선을 이용하여 집단을 두개 이상으로 분류하는 모델입니다. 
 
 이런 선을 단 한개 사용해서 두개의 class로 분류 할 경우 binary classification이라고 부릅니다.

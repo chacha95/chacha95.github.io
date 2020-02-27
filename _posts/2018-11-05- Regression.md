@@ -4,7 +4,7 @@ title: Regression
 tags: [Machine Learning]
 ---
 
-Regression[^1]이란 주어진 training 데이터로부터 가설을 세워 변수 사이의 모델(모형)을 구하는 예측을 말합니다.
+Regression이란 주어진 training 데이터로부터 가설을 세워 변수 사이의 모델(모형)을 구하는 예측을 말합니다.
 
 대표적인 예로는 주택값 예측 모델이 있습니다.
 
