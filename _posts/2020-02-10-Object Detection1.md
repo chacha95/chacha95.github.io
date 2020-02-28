@@ -89,7 +89,7 @@ Confusion matrix NxN으로 이루어진 행렬입니다. 모델 성능 평가에
 ### Recall
 
 - 한국말로는 재현율(직관적으론 검출율이라고 봐도 됨)
-- sensitiviy라고도 불림
+- 검출되야하는 물체들 중에서 제대로 검출된 것의 비율
 - 대상 물체들을 빠뜨리지 않고 얼마나 잘 잡아내는지를 나타냄
 - 실제 positive 중 정확히 positive라고 식별된 사례의 비율
 
@@ -102,7 +102,7 @@ Confusion matrix NxN으로 이루어진 행렬입니다. 모델 성능 평가에
 ### Precision
 
 - 한국말로는 정밀도
-- 검출된 결과가 얼마나 정확한지를 나타냄
+- 모든 검출 결과 중 옮게 검출한 비율
 - positive로 식별된 사례 중 실제 positive 사례의 비율
 
 > 정밀도 계산
@@ -111,23 +111,25 @@ Confusion matrix NxN으로 이루어진 행렬입니다. 모델 성능 평가에
 
 ### Precision과 Recall의 관계
 
-precision과 recall은 반비례하는 경향성을 가집니다.
-
-recall=100%를 달성하기 위해선 모든 입력에 대해 객체가 검출되도록 알고리즘을 설계하면된다. 이런 경우 당연히 precision이 떨어질 수 밖에 없습니다.
-
-반대로 precision=100%를 달성하기 위해 객체 검출의 기준을 높여버리면, recall이 떨어지게 됩니다.
+precision과 recall은 반비례하는 경향성을 가집니다. Recall=100%를 달성하기 위해선 모든 입력에 대해 객체가 검출되도록 알고리즘을 설계하면됩니다. 이런 경우 당연히 precision이 떨어질 수 밖에 없습니다. 반대로 precision=100%를 달성하기 위해 객체 검출의 기준을 높여버리면, recall이 떨어지게 됩니다.
 
 > 모든 입력에 대해 객체가 검출되도록하면 아래와 같이 아무도 없는 공간에서 사람이 검출될 수도 있다.(귀신일수도?)
 
 <center><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile10.uf.tistory.com%2Fimage%2F9982BB3A5CDE694C0E9DF1" width="70%"></center>
-그렇기에 알고리즘을 제대로 평가하기 위해선 precision-recall 그래프를 활용해야 합니다. 하지만 이 방식은 정량적 분석이 힘들기에 average precision을 이용해 평가하는 방식이 나왔습니다.
+이런 반비례 상황에서, 알고리즘을 제대로 평가하기 위해선 precision-recall 그래프를 활용해야 합니다. 먼저 Recall을 0.1 단위 증가 시켰을 때, 각 단위별 precision의 값을 구하면 precision-recall 그래프가 나오게 됩니다.
 
-아래 그래프의 면적으로 AP(Average Precision)가 계산됩니다.
+> recall을 0.1 단위로 증가시켜 precision 값을 구함
 
-> precision-recall 그래프에서 AP를 구함
+<center><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FqsCQt%2FbtqufbT4BWO%2FRgG7ha2HvpWv52sp4k4sEk%2Fimg.bmp"></center>
+이후 그래프를 살짝 변형시켜 사각형의 형태로 만들고, 해당 사각형의 넓이를 구하면 그게 **Average Precision(AP)**입니다.
 
-<center><img src="https://t1.daumcdn.net/cfile/tistory/220E10365869F5CA34"></center>
-Object Detection 관련 논문들을 읽다보면 성능평가 부분에 mAP(mean Average Precision)를 이용해 측정을 하는데, mAP는 AP 값에 대해 평균을 내준다 해서 mAP입니다. Recall을 0.1 단위 증가 시켰을 때, 각 단위별 precision의 평균값을 구하면 mAP가 나오게 됩니다.
+> 빨간색 사각형의 영역이 AP이다.
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbg73Gf%2FbtquhjDtzFh%2FETRORigF8P4dT02zB4kox1%2Fimg.png)
+
+Object detection 문제에서 object 분류시 class가 여러개면 각 클래스당 AP를 구한 다음, 그것을 모두 합한뒤 물체 클래스의 갯수로 나눠 평균값을 구하는 지표를 사용합니다. 해당 지표가 바로 mean Average Precision(mAP)입니다. 
+
+
 
 <br>
 

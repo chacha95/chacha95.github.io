@@ -54,7 +54,6 @@ subtitle: awesome projects!
 
 <center><img src="https://media.giphy.com/media/jQDxXNTddpYbBQZaTh/giphy.gif"></center>
 
-
 ### 모델
 
 제안하는 모델은 다음과 같습니다. 먼저 8개의 원본 영상을 입력으로 받습니다. 입력받은 각각의 영상은 pretrained 모델을 통과해 feature를 추출한 후, concat한 뒤 학습할 ResNext-101 모델에 넣어줍니다.
@@ -299,91 +298,3 @@ Test는 BSD test 데이터셋 중 한 장을 골랐으며, test 이미지에서 
 #### 프로젝트 페이지
 
  [Code](<https://github.com/chacha95/OpenCV_Project/tree/master/SVM>)
-
-<br>
-
-## 유니티를 이용한 RTLS(Real Time Location System) 구현
-
-이 프로젝트는 워터파크 이용객 재현 어플리케이션입니다. 워터파크 이용객의 위치 정보를 비콘에서 수신하여 중앙 서버에서 해당 정보를 받아 저장해 놓습니다. 
-
-> 워터파크 미니 맵
-
-<center><img src = "https://user-images.githubusercontent.com/31475037/58927389-505c3400-8789-11e9-92f9-0edaa9e32d92.png" width="70%">
-</center>
-
-워터파크가 폐장 한 뒤 어플리케이션(클라이언트)에서 서버에 TCP/IP 연결을 요청하고, 현재 어플리케이션 상의 시간과 방위값을 서버에 보내줍니다.
-
-> 서버 클라이언트 통신
-
-<center><img src = "https://user-images.githubusercontent.com/31475037/58927382-489c8f80-8789-11e9-9bb2-cb7583d41e2e.png" width="90%" height="80%">
-</center>
-
-
- 서버는 해당 시간대에 해당하는 사용자의 위치 정보 데이터를 클라이언트에 보내주게 됩니다. 
-
-<center><img src = "https://user-images.githubusercontent.com/31475037/58927379-463a3580-8789-11e9-92a0-5d8710a91c5e.png" width="70%" height="70%">
-    <br><caption></caption>
-</center>
-
-클라이언트는 받은 데이터를 기반으로 사용자 객체를 그려주고, 사용자들의 정보에 따른 이용자 위치 찾기, 미니맵상에서 정보 띄우기, 사용자 정보의 on/off 등의 기능을 수행합니다.
-
-
-
-#### 개발환경
-
-- C#
-- Unity
-- Python
-- Numpy
-- Window
-
-<br>
-
-#### 프로젝트 페이지
-
-[Slide](https://drive.google.com/uc?id=1Wcu35Fp16rrOiOjuFCLs2BohZsKtxlLx) | [Code](<https://github.com/chacha95/RTLS-Real-time-Location-System->)
-
-<br>
-
-## OpenGL을 활용한 행성 시뮬레이션
-
-태양계를 OpenGL을 활용해 3D로 구현해 행성을 관측하는 시뮬레이션을 구현합니다. Timer 콜백 함수를 이용해 자전과 공전주기를 설정해줍니다.
-
-구성은 scene1과 scene2로 구성되어 있으며, scene1일 때에는 특정 행성의 시점에서 태양을 바라보는 장면에서 행성들이 공전과 자전을 하는 장면을 연출합니다.
-
-> Scene 1
-
-![](https://user-images.githubusercontent.com/31475037/58870789-d03bbd00-86fb-11e9-9942-bb7a498c4405.PNG)
-
-Scene2에서는 선택된 행성의 상세 정보를 표시해줍니다.
-
-> Scene2
-
-![](https://user-images.githubusercontent.com/31475037/58870793-d0d45380-86fb-11e9-864d-e53b7df70f38.PNG)
-
-> Scene1에서 Scene2로
-
-화면안의 빨간색 박스 안을 마우스로 클릭시 scene2로 넘어가게 설정 해놓았고, scene2에서 esc를 누를시 Scene1으로 되돌아 오도록 했습니다.
-
-![](https://user-images.githubusercontent.com/31475037/58870791-d0d45380-86fb-11e9-8bc7-93bf14b3ccce.PNG)
-
-
-
-이 외의 조작법은 다음과 같습니다.
-
-![](https://user-images.githubusercontent.com/31475037/58870790-d0d45380-86fb-11e9-90ac-61cd54e77292.PNG)
-
-
-
-#### 개발환경
-
-- C++
-- OpenGL
-- Window
-
-<br>
-
-#### 프로젝트 페이지
-
-  [Code](<https://github.com/chacha95/Computer_Graphics>)
-
