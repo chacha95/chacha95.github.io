@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Object detection 데이터셋 리뷰
+title: Object Detection(객체 검출) 기초 4
 tags: [Object Detection]
 use_math: true
 ---
 
 ## Introudction
 
-Object detection에 쓰이는 데이터셋은 정말 다양하게 존재합니다. 최근에는 Google, Facebook, Micro Soft와 같은 기업들이 대규모 데이터셋들을 공개하고 있고, 공개되고 있는 데이터셋의 난이도가 올라가고 있습니다. 그 중 중요하고 자주 쓰이는 것들에 대해 포스트 해보겠습니다.
+Object detection에 쓰이는 데이터셋은 정말 다양하게 존재합니다. 최근에는 Google, Facebook, Microsoft와 같은 기업들이 대규모 데이터셋들을 공개하고 있고, 공개되고 있는 데이터셋의 난이도가 올라가고 있습니다. 그 중 중요하고 자주 쓰이는 것들에 대해 포스트 해보겠습니다.
 
 <br>
 

@@ -7,6 +7,6 @@ subtitle:
 ## 관심분야
 
 - 3d human reconstruction
-- Imahe Enhancement
+- Super Resolution
 - small object detection
 - video understanding

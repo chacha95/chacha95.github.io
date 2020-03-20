@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2-stage Detector(R-CNN 계열) 리뷰
+title: Object Detection(객체 검출) 기초 2
 tags: [Object Detection]
 use_math: true
 ---

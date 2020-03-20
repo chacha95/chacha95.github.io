@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1-stage Detector 리뷰
+title: Object Detection(객체 검출) 기초 3
 tags: [Object Detection]
 use_math: true
 ---
