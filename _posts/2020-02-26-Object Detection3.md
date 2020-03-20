@@ -5,6 +5,8 @@ tags: [Object Detection]
 use_math: true
 ---
 
+## 2-Stage detector 리뷰
+
 기존에 존재하던 R-CNN 계열의 기술들은 2-stage detector 였습니다. 2-stage detector는 객체를 검출하는 정확도 측면에선 굉장히 좋은 성능을 냈지만, 속도(FPS) 측면에서는 너무나도 느렸습니다. 실제 Real-time detection을 하기 위해선 보통 30fps정도가 필요한데 Faster R-CNN의 경우 5fps 밖에 안됬으니까요. 
 
 이런 속도 문제를 해결하기 위해 region proposal과 classification을 동시에 하는 1-stage detector가 제안되었습니다.
