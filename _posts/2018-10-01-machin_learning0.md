@@ -4,6 +4,8 @@ title: What is machine learning?
 tags: [Machine Learning]
 ---
 
+## Machine learning의 개념
+
 machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래밍하는 과학입니다.
 
 예를들면 스팸 필터는 스팸 메일과 일반 메일의 샘플을 이용해 스팸 메일을 구분하는 법을 배울 수 있게 만들어 졌습니다.
@@ -35,13 +37,11 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 훈련 데이터에 레이블(답)이 달려 있는 데이터를 이용해 학습을 시키는 방법입니다.
 
-전형적인 지도학습으로는 분류가 있습니다.
-
 지도학습은 크게 Classification(분류)와 Regression(회귀)로 나뉘어집니다. 먼저, **Classification**은 주어진 데이터를 정해진 카테고리에 따라 분류하는 문제를 말합니다.
 
-예를 들어, 이메일이 스팸메일인지 아닌지를 예측한다고 하면 이메일은 스팸메일 / 정상적인 메일로 라벨링 될 수 있을 것입니다. 비슷한 예시로 암을 예측한다고 가정했을 때 이 종양이 악성종양인지 / 아닌지로 구분할 수 있습니다. 이처럼 맞다 / 아니다로 구분되는 문제를 Binary Classification 이라고 부릅니다.
+예를 들어, 이메일이 스팸메일인지 아닌지를 예측한다고 하면 이메일은 스팸메일 / 정상적인 메일로 라벨링 될 수 있을 것입니다. 비슷한 예시로 암을 예측한다고 가정했을 때 이 종양이 악성종양인지 / 아닌지로 구분할 수 있습니다. 이처럼 맞다 / 아니다로 구분되는 문제를 **Binary Classification** 이라고 부릅니다.
 
-분류 문제가 모두 맞다 / 아니다로 구분되지는 않습니다. 예를 들어, 공부시간에 따른 전공 Pass / Fail 을 예측한다고 하면 이는 Binary Classifiaction 으로 볼 수 있습니다. 반면에, 수능 공부시간에 따른 전공 학점을 A / B / C / D / F 으로 예측하는 경우도 있습니다. 이러한 분류를 Multi-label Classification이라고 합니다.
+분류 문제가 모두 맞다 / 아니다로 구분되지는 않습니다. 예를 들어, 공부시간에 따른 전공 Pass / Fail 을 예측한다고 하면 이는 Binary Classifiaction 으로 볼 수 있습니다. 반면에, 수능 공부시간에 따른 전공 학점을 A / B / C / D / F 으로 예측하는 경우도 있습니다. 이러한 분류를 **Multi-class Classification**이라고 합니다.
 
 **Regression**은 연속된 값을 예측하는 문제를 말합니다. 주로 어떤 패턴이나 트렌드, 경향을 예측할 때 사용됩니다. Regression을 설명할 때 항상 집의 크기에 따른 매매가격을 예로 듭니다. 아까와 유사한 예를 들자면, 공부시간에 따른 전공 시험 점수를 예측하는 문제를 예로 들 수 있습니다.
 
@@ -78,28 +78,6 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 > 사람 감독 유무에 따른 구분
 
 <center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
-**Batch Learning**
-
-전체 데이터를 한번에 학습시키는 방식입니다.
-
-시스템을 훈련시키고 제품 시스템에 적용할시 더 이상의 학습 없이 실행됩니다. 
-
-새로운 데이터를 사용하려면 기존 데이터도 모두 처음부터 다시 훈련 시켜야 합니다. 
-
-일반적으로 시간과 자원을 많이 소모하며, 보통 오프라인에서 수행됩니다.
-
-
-
-**Online Learining**
-
-데이터를 순차적으로 한개씩 혹은 mini batch라 부르는 작은 묶음단위로 주입하여 시스템을 훈련시킵니다.
-
-매 학습단계가 빠르고, 비용이 적게 들어가 시스템은 데이터가 도착하는 즉시 학습할 수 있습니다.
-
-메인 메모리보다 큰 거대한 데이터 셋을 학습할 수 있습니다.
-
-데이터 일부를 읽어 들이고 훈련 단계를 수행하며, 전체 데이터가 모두 적용 될 때까지 반복합니다.
-
 <br>
 
 ### machine learning의 주요 도전 과제
@@ -126,23 +104,14 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 <br>
 
-### Test Set과 Training Set
-
-모델이 새로운 샘플에 얼마나 잘 일반화될지 아는 방법은 새로운 샘플에 실제로 적용해 보는 것입니다. Training 오차는 낮지만 Test 오차가 높다면 이는 모델이 overfitting되있다는 것을 알 수 있습니다.
-
-이론적으론 데이터의 80%는 Training에 사용하고 20%는 Test용으로 떼어 놓습니다.
-
-여기에 더해 Training/Validation/Test로 데이터셋을 나누는 것이 일반적인 데이터 셋의 구성입니다.
-
-
-
 ### Deeplearning과 MachineLearning
 
-최근들어 deeplearning의 성능이 기존 사람이 만들던 알고리즘(hand-crafted algorithm)들의 성능을 월등히 뛰어넘으면서 굉장히 주목받고 있습니다. 
+최근들어 deeplearning의 성능이 기존 사람이 만들던 알고리즘(hand-crafted algorithm)들의 성능을 월등히 뛰어넘으면서 굉장히 주목받고 있습니다.
 
-deeplearning은 machinelearning의 한 분야이며 deeplearning의 여러 기법들이 machinelearning의 기술로 부터 나오고 있습니다..(ensemble, boosting...)
+다만 이미지와 언어 처리 분야 외에 다른 분야에서는 기존 machine learning 기술 대비 월등한 성능을 내고있지는 않습니다.
 
 <center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="90%"></center>
+
 <br>
 
 [회귀와 분류](https://nexablue.tistory.com/entry/ML-%EB%B6%84%EB%A5%98Classification%EC%99%80-%ED%9A%8C%EA%B7%80Regression?category=728962)
