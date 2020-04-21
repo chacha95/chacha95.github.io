@@ -4,7 +4,7 @@ title: Bayer Pattern
 tags: [Image Processing]
 ---
 
-**카메라는 어떻게 사진을 촬영하는 것인가?**
+# 카메라는 어떻게 사진을 촬영하는 것인가?
 
 카메라 본체에서 셔터를 누르는 순간 CMOS/CCD와 같은 센서에서 인식을 해 RAW 이미지를 만들고 이를 카메라 ISP(Image Signal Processing)을 통해 우리가 눈으로 보는 영상을 만들어 냅니다.
 

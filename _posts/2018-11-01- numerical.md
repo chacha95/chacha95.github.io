@@ -1,8 +1,10 @@
 ---
 layout: post
-title: Differentiation
+title: 수치미분과 해석미분 그리고 그래디언트
 tags: [Math]
 ---
+
+## 간단한 예시
 
 당신이 마라톤 선수고 처음부터 10분에 2km씩 달렸다고 가정해봅시다.
 
