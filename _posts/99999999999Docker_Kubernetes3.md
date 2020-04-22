@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 딥러닝을 위한 Docker/Kubernetes 2
+title: 딥러닝을 위한 Docker/Kubernetes 3
 tags: [Docker/Kubernetes]
 use_math: true
 ---
 
-# Docker Swarm
+# What is Kubernetes?
 
 
 
