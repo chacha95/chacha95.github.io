@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Object Detection(객체 검출) 기초 4
+title: Object detection dataset 리뷰
 tags: [Object Detection]
 use_math: true
 ---

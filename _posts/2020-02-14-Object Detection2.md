@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Object Detection(객체 검출) 기초 2
+title: 2-Stage detector 리뷰
 tags: [Object Detection]
 use_math: true
 ---
 
-## 1-Stage detector 리뷰
+## 2-Stage detector 리뷰
 
 Selective search 이후에 나온 R-CNN 기술은 object detection 기술에 있어 굉장히 좋은 성능을 냈으며, 딥러닝을 이용한 2-stage object detection 기술의 근간이 되는 논문입니다. 보통 R-CNN계열의 모델들은 region proposal을 하는 stage와 classification을 하는 stage가 명확히 구분되어 있어 2-stage detector라고 불립니다. 
 

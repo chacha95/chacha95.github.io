@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 딥러닝을 위한 Docker/Kubernetes 1
-tags: [Docker/Kubernetes]
+title: 딥러닝을 위한 Docker
+tags: [Backend]
 use_math: true
 ---
 
