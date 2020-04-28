@@ -9,10 +9,6 @@ use_math: true
 
 [Detectron2](https://github.com/facebookresearch/detectron2)란 FAIR(Facebook Artificial Intelligence Research)에서 만든 pytorch 기반 object detection training/inference 플랫폼입니다. 
 
-FAIR에서 학습한 pretrained 모델을 API 형태로 제공합니다. 
-
-자체 데이터셋을 등록해 학습도 가능합니다.
-
 > Detectron2
 
 ![](https://miro.medium.com/max/4000/0*VbMjGBHMC6GnDKUp.png)
@@ -27,7 +23,7 @@ FAIR에서 학습한 pretrained 모델을 API 형태로 제공합니다.
 
 ![](https://user-images.githubusercontent.com/31475037/80436637-8f175180-893a-11ea-9224-68104f0d14e9.png)
 
-또 Github에 올라온 코드 중에는 잘못된 구현이나, 최적화가 안되 있는 코드가 많습니다. Detectron2는 FAIR에서 체계적으로 최적화시킨 모델이며, [benchmark](https://detectron2.readthedocs.io/notes/benchmarks.html) 상에서도 다른 코드보다 좋은 성능을 보였습니다. 
+또 Github에 올라온 코드 중에는 잘못된 구현이나, 최적화가 안되 있는 코드가 많습니다. Detectron2는 FAIR에서 체계적으로 최적화시킨 모델이며, [benchmark](https://detectron2.readthedocs.io/notes/benchmarks.html) 상에서도 다른 오픈소스보다 좋은 성능을 보였습니다. 
 
 Faster R-CNN류의 모델 뿐만 아니라, FAIR에서 최근 연구하는 논문 구현체를 Detectron2에 업데이트 하고 있어, 관련 연구를 하는 사람이면 굉장히 도움이 됩니다.
 
