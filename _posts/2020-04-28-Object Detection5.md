@@ -5,9 +5,9 @@ tags: [Object Detection]
 use_math: true
 ---
 
-# Detectron2 리뷰
+# Detectron2란?
 
-[Detectron2](https://github.com/facebookresearch/detectron2)란 FAIR(Facebook Artificial Intelligence Research)에서 만든 pytorch 기반 object detection training/inference 플랫폼입니다. 
+[Detectron2](https://github.com/facebookresearch/detectron2)란 FAIR(Facebook Artificial Intelligence Research)에서 만든 pytorch 기반 object detection과 sementic segemanation을 위한 training/inference 플랫폼입니다. 
 
 > Detectron2
 
