@@ -64,23 +64,21 @@ Confusion matrix NxN으로 이루어진 행렬입니다. 모델 성능 평가에
 
 ![](https://miro.medium.com/max/462/1*7EYylA6XlXSGBCF77j_rOA.png)
 
-- True Positive(TP)
+- **True Positive(TP)**
 
   positive로 예측을 했고, 그것이 맞았습니다.
 
-- True Negative(TN)
+- **True Negative(TN)**
 
   negative로 예측을 했지만, 그것이 맞았습니다.
 
-- False Positive(FP)
+- **False Positive(FP)**
 
   positive로 예측을 했지만, 그것이 틀렸습니다.
 
-- False Negative(FN)
+- **False Negative(FN)**
 
   negative로 예측을 했지만, 그것이 틀렸습니다.
-
-
 
 예시로 임신한 경우(positive) 또는 임신하지 않은 경우(negative) 샘플 100개의 **Recall**, **Precision**을 계산해 보겠습니다.
 
@@ -131,7 +129,9 @@ precision과 recall은 반비례하는 경향성을 가집니다. Recall=100%를
 
 Object detection 문제에서 object 분류시 class가 여러개면 각 클래스당 AP를 구한 다음, 그것을 모두 합한뒤 물체 클래스의 갯수로 나눠 평균값을 구하는 지표를 사용합니다. 해당 지표가 바로 mean Average Precision(mAP)입니다. 
 
+## Object Detection에선 왜 accuracy를 잘 사용하지 않나요?
 
+Object detection에서 평가 지표로 mAP가 처음 사용된게 VOC2007에서 였습니다. VOC 2007 데이터셋을 보면 카테고리별 개수의 차이가 큰, **dataset imbalance** 문제가 존재했습니다. 대표적으론 데이터셋 내부에 사람 category가 대다수였습니다. 이러한 데이터셋의 특성 때문에, 이를 극복하기 위해 제안된게 Confusion matrix를 이용한 mAP였고, 이후 해당 방식을 표준적인 평가지표로 사용하기 시작했습니다.
 
 <br>
 

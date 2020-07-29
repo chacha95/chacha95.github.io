@@ -5,7 +5,7 @@ tags: [Efficeint DL]
 use_math: true
 ---
 
-## 모델 경량화 방법 리뷰
+# 모델 경량화 방법
 
 이번 포스트에서는 CNN의 문제점과 이를 해결하기 위한 방안, 또 CNN을 Light(가볍게)하게 만드는 방법에 대해 알아봅시다. Quantization, Prunning, Distilltion 측면에서의 Efficeint DL이 아닌, Architecture 측면에서의 Efficeint DL을 리뷰합니다.
 
