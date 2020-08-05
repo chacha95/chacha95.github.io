@@ -16,16 +16,13 @@ baseurl: ""
 # Name of website
 title: ChaCha's blog
 
-# Short description of your site
-description: Deeplearning Researcher
-
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 # List of links in the navigation bar
 navbar-links:
   Posts: ""
-  Tags: "https://chacha95.github.io/tags" 
+  Tags: "https://chacha95.github.io/tags"
   Projects: "projects"
   About Me: "aboutme"
 nav-search: "search"
