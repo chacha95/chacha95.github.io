@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Docker
+title: 머신러닝을 위한 Docker
 tags: [Backend]
 use_math: true
 ---

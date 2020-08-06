@@ -39,6 +39,6 @@ use_math: true
 
 > detectron2 BoxMode에 관한 정보
 
-<center><img src="https://user-images.githubusercontent.com/31475037/89261584-483ba500-d669-11ea-99e0-e124f74e4869.png" width="80%"></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/89261584-483ba500-d669-11ea-99e0-e124f74e4869.png" width="90%"></center>
 
 <br>
