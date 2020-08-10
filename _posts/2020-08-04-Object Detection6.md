@@ -27,7 +27,7 @@ use_math: true
 6. detectron2의 configuration은 [fvcore](https://github.com/facebookresearch/fvcore)라는 자체 오픈소스를 통해 관리됨, 모델에 대한 정보는 model zoo 폴더에 yaml로 관리되고 있고, yaml 파일을 읽어 fvcore에 로딩하는 방식을 채택함
 7. Evaluation의 경우 COCO API를 가져다가 약간의 custom만 한 형태를 가짐 -> COCO 평가 방식을 따름
 8. detectron2의 오버헤드가 큰 부분들을 CUDA로 구현(deformable conv나 NMS threshold 등등)해 성능 향상을 이룸 -> 이 때문에 detectron2를 git을 통해 다운 받은다음에 ninja를 통해 빌드해야 사용가능 -> 개인적인 추천으론 docker-compose로 구현된 파일 다운받아 사용하는게 가장 편리 했음
-9. 전체적으로 오버헤드가 걸리는 부분을 전부 C, CUDA 등으로 구현했음. 이를 통해 기존에 있던 다른 오픈소스 대비 [월등한 성능](https://detectron2.readthedocs.io/notes/benchmarks.html)을 보였음
+9. 전체적으로 오버헤드가 걸리는 부분을 전부 CUDA로 구현했음. 이를 통해 기존에 있던 다른 오픈소스 대비 [월등한 성능](https://detectron2.readthedocs.io/notes/benchmarks.html)을 보였음
 
 <br>
 
