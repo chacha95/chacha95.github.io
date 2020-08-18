@@ -12,10 +12,8 @@ use_math: true
 3. 이미지를 읽을 때 opencv를 이용해 읽어옴 → PIL이 속도가 느리기 때문에 -> [관련 포스트](https://chacha95.github.io/2019-08-01-PIL-vs-OpenCV/)
 4. dataloader에서는 PIL을 이용해 이미지 전처리(그 과정에서 BGR -> RGB로 바꿔줌)
 5. 이미지 전처리시 crop을 할 수 있으나 기본 설정은 crop 기능을 사용하지 않음
-6. detectron2 내부에서 학습 카테고리 시작 id를 0번부터 시작하게 만듦. 예를 들어 json 파일을 열어봤을 때, category id가 1~10번이면, detectron2 내부적으로 학습시 0~9번으로 만들어 버림
 
-
-<br>
+   <br>
 
 # Train/Test
 

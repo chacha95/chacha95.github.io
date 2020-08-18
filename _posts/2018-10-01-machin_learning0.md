@@ -75,9 +75,6 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 * Alphago
 * DQN
 
-> 사람 감독 유무에 따른 구분
-
-<center><img src="https://swalloow.github.io/assets/images/ml-diagram.png" width="100%"></center>
 <br>
 
 ### machine learning의 주요 도전 과제
