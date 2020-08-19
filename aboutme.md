@@ -4,9 +4,5 @@ title: About me
 subtitle: 
 ---
 
-## 관심분야
+# Full Stack Deeplearning Engineer
 
-- 3d human reconstruction
-- Super Resolution
-- small object detection
-- video understanding
