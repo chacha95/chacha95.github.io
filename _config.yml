@@ -14,7 +14,6 @@ author: Jin Hyuck Cha
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  navbar-links:
   Posts: ""
   Tags: "https://chacha95.github.io/tags"
   Projects: "projects"
@@ -41,7 +40,7 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "ckwlsgur20@naver.com"
-  github: "https://github.com/chacha95/chacha95.github.io"
+  github: "chacha95"
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
