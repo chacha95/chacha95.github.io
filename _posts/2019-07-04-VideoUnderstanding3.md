@@ -12,13 +12,13 @@ tags: [Video Understanding]
 
 <br>
 
-### Action Classification Architecture
+## Action Classification Architecture
 
 > 논문에서 비교 실험한 구조
 
 ![](http://blog.qure.ai/assets/images/actionrec/recurrent_theme_high.png)
 
-**The old 1 : ConvNet + LSTM**
+###The old 1 : ConvNet + LSTM
 
 Image classification에서 성공했던 방법론을 다시 사용했습니다. 다만 sequntal한 video 데이터셋의 특성을 고려해 RNN계열인 LSTM 네트워크를 추가하였습니다.
 
@@ -30,7 +30,7 @@ CNN을 이용해 프레임마다 feature를 추출하고, 추출된 feature vect
 
 입력 비디오는 25fps 영상에서 1/5만큼 subsampling합니다. (사실상 5fps로 영상을 만든다는 의미)
 
-**The old 2 : 3D ConvNets**
+### The old 2 : 3D ConvNets
 
 3D ConvNets은 video modeling에서 가장 자연스러운 선택처럼 보입니다. 3D Conv를 이용해 spatiotemporal 정보를 잘 취득할 수 있습니다.
 
@@ -40,7 +40,7 @@ CNN을 이용해 프레임마다 feature를 추출하고, 추출된 feature vect
 
 해당 논문에서는 입력 영상을 16-frame, 112x112 pixel 영상으로 만들어 넣어줬습니다.
 
-**The old 3 : Two-Stream Net**
+### The old 3 : Two-Stream Net
 
 기존의 모델들이 fine한 low-level motion을 포착하기 힘들다는 점을 극복하기 위해서 입력으로 RGB 프레임과 optical flow 프레임을 같이 넣어주는 구조입니다. 이러한 low-level motion정보를 같이 넣어줌으로서, RGB 만을 넣어주는 경우보다 거의 모든 경우에서 더 높은 성능을 보였습니다.
 
@@ -64,7 +64,7 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 
 ![](https://user-images.githubusercontent.com/31475037/61213594-6e319700-a740-11e9-8730-7d4ee96b92fa.PNG)
 
-**Two 3D Streams**
+### Two 3D Streams
 
 본 논문에서는 optical flow 정보를 넣어줌으로써 motion 정보에 대해 더 잘 예측할 수 있도록 하였습니다.
 
@@ -76,7 +76,7 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 > Inc. module
 
 <center><img src="https://user-images.githubusercontent.com/31475037/61275666-637f0c80-a7e9-11e9-817b-3543c5fd328c.PNG"></center>
-**Training Detail**
+### Training Detail
 
 - ImageNet pretrained Inception-V1 사용
 - 모든 conv layer에 BN(Batch Norm), ReLU사용
@@ -87,7 +87,7 @@ ImageNet 데이터를 이용해 2d classification 문제에 대해 학습시킨 
 
 <br>
 
-### Results
+## Results
 
 > parameter 수와 input size
 

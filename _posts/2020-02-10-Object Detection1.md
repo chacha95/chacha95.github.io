@@ -5,7 +5,7 @@ tags: [Object Detection]
 use_math: true
 ---
 
-## Object Detection(객체 검출) 이란?
+# Object Detection(객체 검출) 이란?
 
 Object detection(객체 검출)은 입력 영상이 주어질 때, 영상 내에 존재하는 모든 카테고리에 대해서 classification(분류)과 localization(지역화)를 수행하는 task입니다.
 

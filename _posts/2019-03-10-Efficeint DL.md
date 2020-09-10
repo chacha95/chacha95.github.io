@@ -1,203 +1,154 @@
 ---
-layout: post
-title: CNN 모델 리뷰
-tags: [Machine Learning, Efficeint DL]
+7layout: post
+title: Sigmoid, Logit and Softmax
+tags: [Machine Learning]
 use_math: true
 ---
 
-2012년도 이후 나온 중요한 CNN 모델에 대해 간략히 리뷰합니다.
+딥러닝 모델의 마지막 노드들에 출력되는 값을 바꿀 때 왜 logit함수와 softmax를 쓸가요?
 
-이 포스트에서 모델의 depth(깊이)는 convolution layer의 개수로 셉니다.
+neural net을 이용한 classification task에
 
-### AlexNet
+서의 맨 마지막  레이어의 노드들을 생각해 봅시다.
 
-AlexNet은 2012 ILSVRC(ImageNet challenge)에서 우승한 모델입니다.
+마지막 레이어에 activation function이 없다면 그 값은 [-∞, ∞] 사이일 것입니다.
 
-해당 모델의 우승으로 소수의 그룹만 연구하던 딥러닝이라는 분야가 컴퓨터 비전을 연구하는 그룹들에 널리 알려졌습니다.
+> neural net을 이용한 classification task에서의 마지막 노드
 
-> 2012 ILSVRC 우승
+![](https://user-images.githubusercontent.com/31475037/60647965-e7480900-9e79-11e9-8360-aae2c7ed8922.PNG)
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63636148-9351e780-c6a6-11e9-8f70-cd9aca70032f.PNG"></center>
-AlexNet의 구조는 얀 르쿤 교수가 1998년에 제안한 LeNet5 구조에서 큰 변화는 없었고, Convolution filter size의 크기 변화 정도만 있었습니다.
 
-기본 구조는 2개의 GPU를 기반으로 한 병렬 구조입니다.  학습을 위해 GTX580 두개를 사용했으며, 구조적으로 3GB의 메모리에 맞게 설계되어 있습니다. (GTX 580 하나당 1.5G)
 
-> AlexNet 구조
+하지만 우리가 원하는 것은 확률 값으로 표현하는 것입니다.
 
-<center><img src="https://miro.medium.com/max/1398/1*wzflNwJw9QkjWWvTosXhNw.png"></center>
-**group convolution**
+그렇다면 마지막 레이어에 sigmoid를 통해 결과값을 뽑아낸다면 어떻게 될까요?
 
-AlexNet에서는 채널을 2개로 나누어 convolution을 진행합니다.
+안타깝게도 결과값을 다 더한값이 1이 아닌지라 원하는 확률의 형태가 아닙니다.
 
-특이한 점으로는 AlexNet의 첫번째 layer를 분석했을 때, 위 그룹은 외곽선 위주, 아래 그룹은 채널위주의 학습을 합니다.
+> sigmoid를 통해 [0, 1] 사이의 값으로 나오게 된다.
 
-연구팀은 group을 2개로 나누었을 때 가장 좋은 성능을 낸다는 것을 알아냈습니다.
+![](https://user-images.githubusercontent.com/31475037/60647966-e7e09f80-9e79-11e9-9386-5a35202902c4.PNG)
 
-이후 이러한 방법론이 발전해 ResNext라는 모델이 나오게 됩니다.
+따라서 우리가 모든 결과값을 더했을 때 1이 나오도록 만들어주기 위해서는 softmax 함수를 이용해야 합니다.
 
-> 외곽선 위주의 채널 학습한 그룹(위), 색상, 패턴 위주의 채널 학습한 그룹(아래)
+> Softmax 함수를 통해 총합이 1인 확률값으로 바꾸어준다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63742179-f0ca7c00-c8d2-11e9-971d-12352d7dd3e3.PNG"></center>
-**주요 Contribution**
+![](https://user-images.githubusercontent.com/31475037/60647968-e7e09f80-9e79-11e9-8363-3592fa75cef7.PNG)
 
-- 의미있는 성능을 낸 첫 번째 CNN 모델
-- 요새는 흔히 쓰이는 drop out 기법이나, 여러 전처리 기법을 사용
-- pooling layer의 적극적인 사용
-- group convolution의 사용 
-- non-linearity function인 ReLU의 사용
+그렇다면 softmax는 무엇일까요?
+
+softmax를 알기 위해선 sigmoid, logit, softmax 이 세개의 상관관계에대해 알아야합니다.
 
 <br>
 
-### VGGNet
+## Sigmoid, Logit and Softmax
 
-2014년 ILSVRC에서 준우승한 모델입니다.
+**Probability와 Odds**
 
-챌린지에서 준우승을 하긴 했지만, 간단한 구조와 이해와 변형이 쉬워 오히려 1등을 한 GoogleNet보다 더 많이 사용되었습니다.
+C1과 C2 classs를 구분하는 binary classificiation(이진 분류)을 생각해봅시다.
 
-> 2014 ILSVRC 준우승
+하나의 데이터 포인트 x가 주어졌을 때, 이것이 C1으로 분류될 확률을 y라고 보면, 같은 데이터가 C2로 분류될 확률은 1-y입니다. 모든 결과값의 총합을 1로 보는것이 확률이기 때문입니다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63636149-9351e780-c6a6-11e9-8451-7b9f0d9ae52f.PNG"></center>
-VGG Net 모델의 가장 큰 특징은 바로 convolution filter 크기를 3x3으로 고정하고, 망의 깊이가 깊어졌다는 것입니다.
+![](https://user-images.githubusercontent.com/31475037/60693386-0c3d8a00-9f15-11e9-8b36-be20e31d6d2b.PNG)
 
-VGGNet 연구팀은 논문에서 모델의 depth가 어떤 영향을 주는지 연구하기 위해 개발을 했다고 언급했습니다.
+해석해보자면, x가 주어졌을 때 결과값 y가 0.5보다 크면 x를 C1 클래스이고, y가 0.5보다 작다면 x를 C2 클래스라는 의미입니다.
 
-오직 깊이가 어떤 영향을 주는지 아기 위해 convolution filter 크기는 가장 간단한 3x3으로 정하고, 깊이의 영향에 대해 실험을 했습니다.
+여기서 odds라는 개념이 등장합니다. odds는 probability의 또 다른 표현법이라고 볼 수 있습니다.
 
-VGGNet은 크게 2가지로 VGG16, VGG19두가지이며, 굉장히 심플함에도 불구하고 엄청난 성능을 냈습니다.
+예를 들어 경마에서 특정 말이 이길 확률이 75%라고 한다면 odds는 0.75 / 0.25 = 3 과 같이 계산됩니다. 이것의 의미는 정수 표현을 이용한다면 3:1과 같이 표현됩니다. 즉 4게임 중에 3게임은 이기고 1게임은 진다는 의미입니다. 
 
-> VGGNet 구조
+Odds의 수식을 자세히 본다면, odds는 성공확률이 실패확률에 비해 얼마나 더 큰가입니다. 
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63636150-9351e780-c6a6-11e9-9f93-65ca4c1809c5.PNG"></center>
-**주요 Contribution**
+**즉, odds가 클수록 성공확률이 크다는 의미입니다.**
 
-- 모델이 깊을 수록 성능이 좋다는 것을 보여줌
-- 간단한 구조로 많은 연구자들이 사용함
+log를 odd에다가 붙여서 logit이라는 것을 정의합니다. odds에다가 log를 취하면 logit이 됩니다. log 변환은 통계학에서 자주 사용하는 변환으로 다음과 같은 장점을 지닙니다.
 
-<br>
+- 함수의 증감 형태, convex/concave 형태를 유지
+- 극점의 위치를 유지
+- 곱/나눗셈으로 표현된 식을 linear combination 형태로 풀어줌
 
-### GoogLeNet(Inception)
+> logit 함수(밑이 e이다)
+>
+> 밑이 e인 경우 ln으로 표현하기도 하지만, 밑이 e인 경우 밑의 표현을 생략하고 그냥 log로 표현하기도 함
+>
+> [0, 1] 확률 값을 [-inf, inf]로 보내주는 역할
 
-2014 ILSVRC에서 우승한 모델입니다.
+<center><img src="data:image/png;base64,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"></center>
+이러한 logit함수와 sigmoid(logistic) 함수는 서로 역함수 관계입니다.  
 
-CNN의 성능향상을 위한 가장 직접적인 방법은 모델의 크기를 늘리는 방법입니다.
+> logit과 sigmoid의 관계
 
-모델의 크기를 늘리는 방식은 크게 두가지로 모델의 depth를 늘리거나, 모델의 width를 늘리는 방식입니다.
+<left><img src="https://user-images.githubusercontent.com/31475037/60693385-0c3d8a00-9f15-11e9-978d-511f46ab1143.PNG"></left>
+**softmax와 sigmoid**
 
-이러한 모델의 크기가 늘어남에 따라 학습해야할 parameter가 증가하게 되며,  이에따라 overfitting이 일어날 가능성도 높아지게 됩니다. 또한 train 및 모델 사용시 계산량이 늘어나게되는 문제 또한 생기게됩니다.
+softmax 함수는 sigmoid의 일반형 입니다.
 
-이러한 계산량 및 학습시킬 parameter를 줄이기 위한 여러 기법들이 제안된 논문입니다. 실제로 AlexNet에 비해 1/12개의 parameter만을 가지고 있습니다.
+클래스가 K개일 경우를 한번 살펴봅시다.
 
-> 2014 ILSVRC 우승
+> 클래스가 K일 때의 표현
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63636149-9351e780-c6a6-11e9-8451-7b9f0d9ae52f.PNG"></center>
-GoogleNet에서 같은 layer에 서로 다른 크기를 갖는 convolution filter를 적용해 다양한 feature를 얻을 수 있도록 했습니다. 이러한 방식을 모델의 width를 넓힌다고 말합니다.
+odds를 logit을 이용해 exponential 형태로 표현해줍니다.
 
-본 연구팀이 제안한 모듈을 Inception module이라 불렀으며, Inception v2~v4까지 다양한 버전으로 추후 만들어졌습니다.
+<left><img src="https://user-images.githubusercontent.com/31475037/60700837-4b2f0800-9f34-11e9-98cf-ea1416e486bb.PNG"></left>
+> 양변을 i=1부터 K-1까지 더 함
 
-> GoogleNet 구조
+<left><img src="https://user-images.githubusercontent.com/31475037/60702811-e88d3a80-9f3a-11e9-8b13-ff540fff2ed7.PNG"></left>
+여기서 확률 표현을 C_K에 대해서 표현해주면 아래와 같습니다.
 
+<left><img src="https://user-images.githubusercontent.com/31475037/60702813-e88d3a80-9f3a-11e9-9a8d-462ba5f622c1.PNG"></left>
+<left><img src="https://user-images.githubusercontent.com/31475037/60702809-e88d3a80-9f3a-11e9-9347-faae5d23dcef.PNG"></left>
+이후 대입을 통해 최종적인 softmax 함수의 형태를 띄게 됩니다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63636151-93ea7e00-c6a6-11e9-8be1-7ab68413f35a.PNG"></center>
-GoogLeNet 팀에서 제안한 핵심적인 모듈은 바로 Inception module 입니다.
-
-일반적인 딥러닝 모델에서는 한 레이어에서 하나의 conv filter만 쓰입니다.
-
-하지만 본 연구팀에서는 한 layer에서 다양한 종류의 filter나 pooling을 이용하는 방식을 제안합니다.
-
-> (naive) Inception module
-
-<center><img src="https://i.imgur.com/VY3BkBR.png"></center>
-**1x1 conv**
-
-GoogleNet의 Inception Module에서 가장 핵심적인 부분은 바로 1x1 Conv를 이용해 Dimensionality Reduction(차원감소)를 한게 아닐까 싶습니다.
-
-1x1 Conv 사용시 출력 채널의 수가 입력채널의 수보다 작아지게 되면, DR 효과가 있기 때문입니다.
-
-본 연구팀은 NIN(Network-In-Network)논문에서 큰 영향을 받았고, 그에 따라 1x1 Conv를 사용했다고 말합니다.
-
-<center><img src="https://user-images.githubusercontent.com/31475037/59593122-527ca600-912c-11e9-9668-d8ca2e3e586f.png"></center>
-이러한 철학이 적용된 후 Inception module은 다음과 같은 구조로 바뀝니다.
-
-> 1x1 적용 이후
-
-<center><img src="https://user-images.githubusercontent.com/31475037/63636153-93ea7e00-c6a6-11e9-887f-b813cd926bc4.PNG"></center>
-1x1 Conv를 이용한 Dimensionality Reduction이 적용된 후 총 파라미터 수는 다음과 같이 변합니다.
-
-Naive Inception module에서는 총 파라미터 수가 865M개이지만, 1x1 Conv가 적용된 module에서는 358M개의 파라미터만 존재합니다.
-
-> parameter 수
-
-![](https://user-images.githubusercontent.com/31475037/63636154-93ea7e00-c6a6-11e9-94a0-2ec285cdba44.PNG)
+![](https://user-images.githubusercontent.com/31475037/60702810-e88d3a80-9f3a-11e9-99db-3d5b344545fd.PNG)
 
 
 
+> 요약하자면 다음과 같습니다
 
-
-**주요 Contribution**
-
-- 모델 경량화에 대한 중요한 실험과 구조를 제안(1x1 Conv)
-- depth 뿐만 아니라 width가 성능에 미치는 부분을 보여줌
-
-<br>
-
-### ResNet
-
-2015 ILSVRC 우승한 모델입니다.
-
-ResNet은 기존 모델들이 가지고 있었던 depth에 대한 한계를 깨부순 모델이며, 현재까지도 대다수의 모델들이 ResNet을 기반으로 파생된 모델입니다.
-
-> 2015 ILSVRC
-
-<center><img src="https://user-images.githubusercontent.com/31475037/63636156-94831480-c6a6-11e9-8821-ad0e132ea12e.PNG"></center>
-기존 모델들이 depth를 늘리면서 마주치는 문제는 크게 두가지 였습니다.
-
-- Vanishing/Exploding Gradient 문제: 모델이 깊어지게 되면서 Gradient의 전달자체가 굉장히 어렵게 되는 문제가 발생했습니다.
-- 모델이 깊어지게 되면서, 파라미터가 굉장히 많이 늘어나 overfitting 문제가 대두 되었습니다.
-
-모델의 depth를 늘리면 늘릴 수록 성능이 오르길 기대했으나, 정 반대의 현상을 나타냈습니다.
-
-아래 그림은 Cifar-10 데이터셋에 대해 학습을 한 경우인데, layer가 늘어났음에도 불구하고 56-layer의 loss가 20-layer의 loss에 비해 낮은걸 볼 수 있습니다.
-
-> Cifar-10 데이터셋에 따른 성능 차이
-
-<center><img src="https://user-images.githubusercontent.com/31475037/63676536-1cdbf380-c826-11e9-8da5-45163d51b2fa.PNG"></center>
-이러한 depth를 늘렸음에도 backpropagation이 잘 안되는 문제를 타계하기 위해, 연구팀은 Residual Learning을 제안합니다.
-
-아래 그림과 같이 Residual Block에서 입력과 출력에 있어 입력을 그대로 출력에 더해주어 backpropagation이 잘 되도록 만들었습니다. 이러한 연결을 identity mapping이라 부릅니다.
-
-> Residual Learning
-
-<center><img src="https://user-images.githubusercontent.com/31475037/63676533-1cdbf380-c826-11e9-8ba6-40c494e45819.PNG"></center>
-**주요 Contribution**
-
-- 딥러닝 모델링에 지대한 영향을 미침
-- 모델의 depth를 극한으로 깊게 만들 수 있는 방법론 제안
-- ResNet BottleNeck 구조가 연산량 감소에 굉장히 효과적
+![](https://user-images.githubusercontent.com/31475037/60703569-17a4ab80-9f3d-11e9-8b3b-10507d77d199.PNG)
 
 
 
 <br>
 
-### ResNext
+## logit을 이용한 score 값 변경
 
-ResNext는 FAIR 그룹에서 제안된 모델로, AlexNet에서 제안한 group convolution 개념을 확장했습니다.
+softmax 함수를 이용할 때 결과값에 대해 logit 함수를 취해 주는 형태를 띕니다.
 
-기존의 CNN 모델링에서 width, depth 두가지만을 많이 고려했다면, ResNext부터는 cardinality라는 개념을 제안했습니다.
+logit 함수를 통해 나온 값은 확률을 score로 변환시킨 값이고 이를 다시 softmax를 통해 확률로 바꿔주는 형태를 띄게 됩니다.
 
-예를들어 입력 채널이 256채널이고, Cardinality가 32이면, 8 채널씩 나눠서 group convolution을 진행하는 구조입니다.
+> softmax 함수
 
-> ResNext 구조
+<center><img src="https://user-images.githubusercontent.com/31475037/60707117-f0061100-9f45-11e9-8550-7231af61a8b3.PNG"></center>
 
-<center><img src="https://user-images.githubusercontent.com/31475037/63677283-9aecca00-c827-11e9-848f-ea9f5b1ef7d7.PNG"></center>
-**주요 Contribution**
+이러한 softmax with logit 함수를 이용해 확률의 값으로 표현해줍니다.
 
-- cardinality 개념을 제안함
-- group convolution을 이용해 전체 parameter수를 많이 줄임
+> 확률 값을 통해 나온 값을 one-hot encoding을 이용해 표현해준다.
+
+![](https://user-images.githubusercontent.com/31475037/60647978-e8793600-9e79-11e9-9faa-84eddc08433b.PNG)
+
+수학적으로는 0보다 큰 어떤 숫자를 사용하더라도 상관 없지만 logit함수의 밑이 e이기 때문에 e를 사용해 계산량을 줄여줍니다.
+
+> 왜 e를 사용하죠?
+
+![](https://user-images.githubusercontent.com/31475037/60647964-e7480900-9e79-11e9-991f-d729184185a1.PNG)
 
 
 
 <br>
 
-**참고강의**
+**참고 강의**
 
-CS231N
+[Softmax and logit](https://www.youtube.com/watch?v=K7HTd_Zgr3w)
+
+[logit, sigmoid, softmax](https://opentutorials.org/module/3653/22995)
+
+[logit transform](http://mathworld.wolfram.com/LogitTransformation.html)
+
+[odds ratio](http://www.incodom.kr/Odds_ratio)
+
+[logit](https://en.wikipedia.org/wiki/Logit)
+
+[자연로그](https://en.wikipedia.org/wiki/Natural_logarithm)
+
+<br>

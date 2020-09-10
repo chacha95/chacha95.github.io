@@ -12,7 +12,7 @@ video understanding task에 필요한 training 데이터 셋과 딥러닝 이전
 
 <br>
 
-### Video Datasets
+# Video Datasets
 
 > action classification
 
@@ -111,7 +111,7 @@ movie clip에 대한 설명을 다는 task 입니다.
 
 <br>
 
-### Before Deeplearning
+## Before Deeplearning
 
 딥러닝이 등장하기 이전에는 Video understanding task 에서는 ME(Motion Estimation)&MC(Motion Compensation) 기법을 이용했습니다.
 

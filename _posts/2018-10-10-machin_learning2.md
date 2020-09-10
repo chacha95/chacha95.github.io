@@ -8,9 +8,13 @@ tags: [Machine Learning]
 
 Ensemble이란, 여러개의 모델을 학습, 결과를 합쳐서 예측하는 machine learning 방법입니다. 
 
-* 약한 학습기를 여러개 사용, 강한 학습기를 만드는 방식
+- 약한 학습기를 여러개 사용, 강한 학습기를 만드는 방식
+
 * 다양한 모델의 결과를 종합, 전반적인 오류를 줄임
+
 * 각 학습기 별로 bias(편향)이 존재해 다양한 bias를 종합하여 생성하며, 이로 인해 overfitting(과적합)을 방지함
+
+  > Ensemble 모델 예시
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59009627-4ad61b00-8869-11e9-97b0-beab5af48dbb.png" width="90%"></center>
 <br>

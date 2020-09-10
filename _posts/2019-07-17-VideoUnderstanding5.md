@@ -14,7 +14,7 @@ non-local block을 사용하면 기존 CNN의 locality를 줄이면서도 recept
 
 <br>
 
-### Denoising
+## Denoising
 
 Image Processing이나 Computer Vision에서 denoising이라하면 이미지에 있는 salt pepper 노이즈를 없애주거나 aliasing과 같은 노이즈를 제거하는 것입니다. 
 
@@ -32,7 +32,7 @@ Image Processing이나 Computer Vision에서 denoising이라하면 이미지에 
 
 ​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
-**Non-local Means Filter(NLM Filter)**
+## Non-local Means Filter(NLM Filter)
 
 NLM Filter는 노이즈를 제거하기 위해 한 장의 이미지 내에서 유사한 영역을 찾아 평균을 취해주는 방식을 이용해 denoising을 해줍니다.
 
@@ -47,9 +47,7 @@ NLM이라는 이름에서 드러나듯이 영상의 주변부 (local) 만을 이
 
 ![](https://user-images.githubusercontent.com/31475037/61578931-0660bf00-ab39-11e9-9d5e-33a2ae364b45.PNG)
 
-
-
-### Non-local Neural Networks
+## Non-local Neural Networks
 
 우리가 일반적으로 사용하는 CNN의 경우 local 한 특성 만을 볼 수 있는 구조입니다. receptive field 크기의 관점에서 보면 local operator를 여러차례 쌓으면 receptive field의 크기를 키울 수는 있지만 아무리 많이 쌓더라도 한 번에 전체 영역을 살펴보는 non-local operator와 같을 수는 없습니다. 그렇기에 저자의 주장으로, 이런 non-local operator가 long range dependency를 해결해 준다고 말합니다.
 
@@ -128,7 +126,9 @@ I3D에 대한 자세한 설명은 [이 포스트](https://chacha95.github.io/201
 > sota 기술들과 비교
 
 <center><img src="https://bloglunit.files.wordpress.com/2018/01/ec8aa4ed81aceba6b0ec83b7-2018-01-15-ec98a4ed9b84-6-36-10.png"></center>
-### Conclusion
+<br>
+
+## Conclusion
 
 non-local neural net은 저자에 들어가 있는 kaiming He의 명성에 걸맞게 정말 엄청난 성능을 보였습니다.
 

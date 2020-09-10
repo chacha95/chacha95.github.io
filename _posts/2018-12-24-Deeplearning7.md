@@ -7,13 +7,15 @@ use_math: true
 
 RNN은 hidden node가 방향을 가진 엣지로 연결되어 순환구조를 이루는 Neural Net의 한 종류입니다.
 
-음성, 문자, 비디오와 같이 sequantial한 데이터처리에 적합한 모델로 알려져 있습니다. 
-
-> Vanila RNN
+음성, 문자, 비디오와 같이 sequantial한 데이터처리에 적합한 모델입니다. 
 
 녹색 박스는 hidden state, 빨간 박스는 input x, 파란 박스는 output y입니다.
 
 hidden state는 직전 시점의 hidden state를 받아 업데이트 됩니다.
+
+> Vanila RNN
+
+
 
 ![](http://i.imgur.com/s8nYcww.png)
 
@@ -88,13 +90,13 @@ hidden layer는 3개의 뉴런으로 이뤄져 있다고 가정해봅시다.
 
 <br>
 
-### LSTM(Long Shor Term Memory)
+## LSTM(Long Shor Term Memory)
 
 RNN은 관련 정보와 그 정보를 사용하는 지점 사이 거리가 멀 경우 backpropagation 시 gradient vainishing 문제가 생겨 학습이 잘 되지 않습니다.
 
 이 문제를 극복하기 위해 고안된 것이 LSTM이며 이는 RNN의 hidden state에 cell-state를 추가한 구조 입니다.(long-term dependency problem을 극복하기 위해 제안됨)
 
-**LSTM과 RNN의 구조적 차이**
+### LSTM과 RNN의 구조적 차이
 
 diagram으로 표현된 각각의 구조는 다음과 같습니다.
 
@@ -107,7 +109,7 @@ diagram으로 표현된 각각의 구조는 다음과 같습니다.
 
 그렇다면 LSTM 구조에 대해 자세히 알아볼까요?
 
-**The Core Idea of LSTM**
+### The Core Idea of LSTM
 
 LSTM의 core idea는 cell state입니다.
 
@@ -125,7 +127,7 @@ sigmoid를 통해 나온 결과물은 [0, 1]범위이고, 그 값이 0이면 cel
 > gate 구조
 
 <center><img src="https://user-images.githubusercontent.com/31475037/60249911-ac395900-9900-11e9-85d5-4b78831dd032.png" width="40%"></center>
-**Step into LSTM**
+### Step into LSTM
 
 LSTM으로의 첫번째 step은 바로 cell state에서 어떤 정보를 버릴지 결정하는 것입니다.
 

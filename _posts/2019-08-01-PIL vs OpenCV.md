@@ -12,7 +12,7 @@ Image 관련 task에서, Pytorch를 이용해 딥러닝 모델 학습을 위한 
 
 <br>
 
-### PIL vs OpenCV
+## PIL vs OpenCV
 
 **OpenCV**
 
