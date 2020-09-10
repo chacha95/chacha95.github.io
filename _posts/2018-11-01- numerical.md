@@ -4,7 +4,7 @@ title: 수치미분과 해석미분 그리고 그래디언트
 tags: [Math]
 ---
 
-## 간단한 예시
+# 미분에 대한 간략한 설명
 
 당신이 마라톤 선수고 처음부터 10분에 2km씩 달렸다고 가정해봅시다.
 
@@ -72,16 +72,17 @@ X의 **작은 변화**가 함수 f(x)를 얼마나 변화 시키냐는 의미입
 
 ### gradient
 
-> gradient 표현
-
 gradient는 입력이 벡터일 때 결과가 스칼라인 함수에 대해서 입력 벡터의 각 원소 마다 편미분을 해 결과를 벡터로 내놓는 방식입니다.
 
-즉, gradient는 공간에 대한 기울기(slope)를 말합니다. 
+즉, gradient는 공간에 대한 기울기(slope)를 말합니다.
+
+> gradient 표현 
 
 <center><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/832275c31fbf4723a0ce1df6ff0611bf264ab8eb"></center>
+그럼 간단한 예시를 풀어볼까요?
+
 > gradient  예시
 
- 그럼 간단한 예시를 풀어볼까요?
 $$
 f(x,y) = x^2 + y^2일 \ 때
 $$
@@ -93,6 +94,8 @@ $$
 
 
 각 점에서의 기울기를 계산하고, 기울기 결과에 마이너스를 곱한 벡터(기울기의 반대방향)로 그림을 그려보면 다음과 같습니다.
+
+> gradient의 표현
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59031365-6c052e80-889e-11e9-8b51-e8d7b111d797.png"></center>
 기울기의 반대방향이 가르키는 방향이 각 지점에서 함수의 출력 값을 가장 크게 줄이는 방향입니다. (The direction of steepest descent is the negative gradient!)

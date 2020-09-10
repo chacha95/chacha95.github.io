@@ -5,6 +5,8 @@ tags: [Machine Learning]
 use_math: true
 ---
 
+# CNN의 원리
+
 컴퓨터에서는 이미지는 R, G, B 3차원의 array(행렬)로 표현됩니다. 각 pixels는 0(black)-255(white)사이의 한 값으로 표현됩니다.
 
 아래 고양이 사진에서 height가 400 pixels, width가 248 pixels이고 R, G, B 3 channel을 가진 3차원 행렬로 표현됩니다.
@@ -54,7 +56,7 @@ use_math: true
 
 <br>
 
-### CNN
+## CNN
 
 > CNN의 기원
 
@@ -171,7 +173,7 @@ pooling 기법은 영상의 width와 hight를 절반으로 줄여주며, 가장 
 <center><img src="https://user-images.githubusercontent.com/31475037/59593124-527ca600-912c-11e9-9663-8af75fdff026.png"></center>
 <br>
 
-### CNN parameter vs fc parameter
+## CNN parameter vs fc parameter
 
 입력이 36x36x1의 shape를 가진 이미지가 있다 했을 때 CNN에서의 parameter 수와 FC(Fully Cunnected)만을 사용한 네트워크에서의 paramter 수를 비교해 봅시다.
 
@@ -182,7 +184,7 @@ pooling 기법은 영상의 width와 hight를 절반으로 줄여주며, 가장 
 
 <br>
 
-### Neuron 관점에서의 Conv Layer
+## Neuron 관점에서의 Conv Layer
 
 Fully Cunnected Layer에서는 dot product가 이루어지는 각 노드가 각 뉴런입니다.
 
@@ -198,7 +200,7 @@ Fully Cunnected Layer에서는 dot product가 이루어지는 각 노드가 각 
 
 <br>
 
-### Receptive Field in CNN
+## Receptive Field in CNN
 
 receptive field(수용영역)는 CNN에서 가장 중요한 요소  중 하나입니다. CNN 자체가 고양이의 뇌가 사물을 받아들이는 방식을 모방하여 만든 모델이고, 사물을 인식하는데 receptive field가 얼마나 큰지가 인식에 지대한 영향을 미치기 때문입니다.
 

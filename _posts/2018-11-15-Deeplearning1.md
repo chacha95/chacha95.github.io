@@ -4,6 +4,8 @@ title: Linear Classification
 tags: [Machine Learning]
 ---
 
+# Linear Classification이란?
+
 Linear Classification(선형 분류)란 쉽게 말해서 선을 이용하여 집단을 두개 이상으로 분류하는 모델입니다. 
 
 이런 선을 단 한개 사용해서 두개의 class로 분류 할 경우 binary classification이라고 부릅니다.
@@ -17,7 +19,7 @@ Linear Classification(선형 분류)란 쉽게 말해서 선을 이용하여 집
 <center><img src="https://user-images.githubusercontent.com/31475037/59895096-332c9400-941e-11e9-972d-860e918152cb.png"></center>
 <br>
 
-### Linear Classifier
+## Linear Classifier
 
 그렇다면 Linear Classifier는 어떻게 작동 할까요?
 

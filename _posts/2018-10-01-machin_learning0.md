@@ -4,36 +4,35 @@ title: What is machine learning?
 tags: [Machine Learning]
 ---
 
-## Machine learning의 개념
+# Machine learning의 개념
 
 machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래밍하는 과학입니다.
 
 예를들면 스팸 필터는 스팸 메일과 일반 메일의 샘플을 이용해 스팸 메일을 구분하는 법을 배울 수 있게 만들어 졌습니다.
 
-> 왜 machine learning을 사용하는가?
+<br>
 
-**전통적 접근 방법**
+## 왜 machine learning을 사용하는가?
 
 전통적인 접근 방법으로 문제를 풀려하면, 문제가 단순치 않아 규칙이 점점 길고 복잡해져 유지 보수하기가 굉장히 힘들어 집니다.
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59028100-a9b18980-8895-11e9-8dbd-34105da26ad8.png" width="70%"></center>
-**machine learning 접근 방법**
+> 전통적 접근 방식
 
+<center><img src="https://user-images.githubusercontent.com/31475037/59028100-a9b18980-8895-11e9-8dbd-34105da26ad8.png" width="70%"></center>
 프로그램이 훨씬 짧아지고 유지보수하기 쉬우며 대부분 정확도가 더 높습니다. 또한 machine learning은 데이터 업데이트만 잘 해준다면 자동으로 변화에 대응합니다. 복잡한 문제와 대량의 데이터로부터 패턴을 분석 할 수 있습니다.
 
 > machine learning을 이용한 시스템
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59028106-ab7b4d00-8895-11e9-9a5d-9c85406c9302.png" width="70%"></center>
-> 머신러닝은 자동으로 변화에 대응할 수도 있음
+> machine learning은 자동으로 변화에 대응할 수도 있음
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59028455-9521c100-8896-11e9-9b8e-d972f93f054b.png" width="80%"></center>
 <br>
 
-
-### machine learning 시스템의 종류
+## machine learning 시스템의 종류
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
-**Supervised Learning(지도 학습)**
+### Supervised Learning(지도 학습)
 
 훈련 데이터에 레이블(답)이 달려 있는 데이터를 이용해 학습을 시키는 방법입니다.
 
@@ -53,7 +52,7 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 * Decision Tree and Random Forests
 * Neural Network
 
-**Unsupervised Learning(비지도 학습)**
+### Unsupervised Learning(비지도 학습)
 
 훈련 데이터에 레이블이 없습니다. 시스템이 아무런 도움도 없이 학습을 해야 합니다.
 
@@ -62,7 +61,7 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 * Clustering
 * Visualization
 
-**Semi-Supervised Learning(준지도 학습)**
+### Semi-Supervised Learning(준지도 학습)
 
 지도학습은 앞에서 언급한 것 처럼 라벨링이 되어 있지 않은 데이터로부터 미래를 예측하는 학습방법입니다. 평가되어 있지 않은 데이터로부터 숨어있는 패턴이나 형태를 찾아야 하기 때문에 당연히 더 어렵습니다. 비지도학습도 데이터가 분리되어 있는지 (Categorial data) 연속적인지 (Continuous data)로 나누어 생각할 수 있습니다.
 
@@ -77,7 +76,7 @@ machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래
 
 <br>
 
-### machine learning의 주요 도전 과제
+## machine learning의 주요 도전 과제
 
 **충분하지 않은 훈련 데이터**
 
@@ -101,7 +100,7 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 <br>
 
-### Deeplearning과 MachineLearning
+## Deeplearning과 MachineLearning
 
 최근들어 deeplearning의 성능이 기존 사람이 만들던 알고리즘(hand-crafted algorithm)들의 성능을 월등히 뛰어넘으면서 굉장히 주목받고 있습니다.
 
@@ -109,9 +108,7 @@ Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, 
 
 <center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="90%"></center>
 
-<br>
 
-[회귀와 분류](https://nexablue.tistory.com/entry/ML-%EB%B6%84%EB%A5%98Classification%EC%99%80-%ED%9A%8C%EA%B7%80Regression?category=728962)
 
 <br>
 

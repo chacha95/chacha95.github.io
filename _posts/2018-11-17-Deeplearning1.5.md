@@ -15,12 +15,12 @@ use_math: true
 
 <br>
 
-### Loss function
+## Loss function
 
 일반적으로 Loss 함수는 다음과 같이 정의됩니다.
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59832157-3cfeba80-937e-11e9-8862-aaff57cff62f.png"></center>
-### How to optimize loss fuction?
+## How to optimize loss fuction?
 
 그렇다면 어떻게 하면 loss 함수를 통해 weight들을 업데이트 할 수 있을까요?
 
@@ -73,14 +73,14 @@ analytic gradient는 실제로 미분공식을 이용하여 편미분 값을 바
 
 <br>
 
-### Stochastic Gradient Descent
+## Stochastic Gradient Descent
 
 이렇게 구해진 gradient를 따라 weight들을 업데이트해 나가면 loss 함수의 global minima에 도달 할 수 있게 됩니다.
 
 아래 그림에서 흰색 부분이 처음 주어진 weight 벡터이고, 해당 지점에서 gradient를 구한 뒤 gradient를 따라 내려가는 모습입니다. 
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59034488-1af93880-88a6-11e9-8c01-5d7972ea642d.png" width="90%"></center>
-**Stochastic Gradient Descent**
+### Stochastic Gradient Descent
 
 이 때 까지 우리가 봤던 방식은 training set 전체를 이용해 학습을 하는 full gradient descent 였다면, 앞으로 우리가 사용할 방식은 mini-batch를 이용한 Stochastic Gradient Descent입니다.
 
@@ -91,7 +91,7 @@ training set 전체를 batch라고 했을 때, training set 일부를 가져온 
 <center><img src="https://user-images.githubusercontent.com/31475037/59914868-4c513700-9456-11e9-9e24-8247ff49d458.png" width="90%"></center>
 <br>
 
-### Backpropagation(역전파)
+## Backpropagation(역전파)
 
 Backpropagation은 Neural Net이 구체적으로 어떻게 학습하는지에 대한 방법론입니다. 
 
