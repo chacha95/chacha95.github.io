@@ -1,372 +1,99 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes1 - 기초
+title: 딥러닝을 위한 kubernetes1 - k8s 소개
 tags: [Backend]
 use_math: true
 ---
 
-# 쿠버네티스와 컨테이너
+# 배경지식
 
-Docker로 대표되는 container 기술은 host OS로부터 완전히 격리되면서 VM(Virtual Machine)에 비해 좋은 성능을 보여줬습니다. 
+> 배포 방식의 발전
 
-이에따라 MSA(Micro Service Architecture)가 부상하면서, 각각의 어플리케이션(기능)을 컨테이너로 감싸 분리시키기 시작하였습니다.
+![](https://user-images.githubusercontent.com/31475037/93745551-b3980100-fc2e-11ea-942c-b4c46ddb7fdb.png)
 
-하지만 컨테이너는 다음과 같은 문제점을 가지고 있었습니다.
+### 전통적인 배포 시대
 
-<br>
+전통적인 애플리케이션 배포는 한개의 서버에서 실행했었습니다. 한 서버에서 여러 애플리케이션 리소스 할당을 동시에 처리하기 힘들었기에 문제가 발생했습니다. 예를 들어 서버 하나에 여러 애플리케이션을 실행했을 때, 리소스 전부를 차지하는 애플리케이션이 있을 수 있고, 이로인해 다른 애플리케이션 성능이 저하되었습니다. 이에 대한 해결책으로 나온 것이, 서로 다른 여러 서버에 각 애플리케이션을 실행하는 방식이었습니다.
 
-## 컨테이너의 문제
+하지만 이러한 방식은 리소스의 활용률을 높이지 최대한 끌어내지 못했습니다.
 
-1. 컨테이너끼리 직접적인 IPC(Inter Process Communication)가 불가
-2. 컨테이너는 적절히 depoly(배포) 되야함
-4. auto scailing 불가능
-5. 분산 트래픽 처리가 어려움
+### 가상화된 배포 시대
+
+리소스 활용률을 최대한 올리기 위해서 여러대의 서버를 두는 것보다 한 개의 서버에 VM(Virtual Machine)을 만들어 가상화 시켰습니다. 가상화를 사용하면 VM간에 OS를 공유하지 않기에 애플리케이션을 격리 할 수 있었습니다.
+
+### 컨테이너 개발 시대
+
+컨테이너는 가상머신과 동일한 이점을 제공하지만, 훨씬 더 가볍고 성능이 좋았습니다. 이 중 도커는 기존 VM에서 쓰던 Hypervisor 대신에 docker engine을 사용해, 오버헤드를 최소한으로 이끌었기 때문입니다. 도커를 이용해 격리된 OS 환경과 함께 컨테이너화된 애플리케이션 개발이 가능케 되었습니다. 이를 통해 애플리케이션을 기능별로 컨테이너화 시켜 확장성을 높이는 MSA(Micro Service Architecture) 개발 방법론이 확산되었습니다.
+
+또한 컨테이너의 등장으로 애플리케이션에 일관된 환경을 제공하며, 개발자가 지속적인 배포가 가능하도록 만들어 주었고, 이로 인해 개발자가 하던 developement와 운영팀이 하던 operation이 합쳐진 **DevOps** 개발 방식이 성행하였습니다.
+
+하지만 도커와 같은 컨테이너 기술들은 다음과 같은 문제점을 가지고 있습니다.
+
+- 컨테이너끼리 IPC를 통한 communication 불가(완전 격리되있기에)
+- auto scailing 불가능
+- 분산 트래픽 처리가 어려움
+- 수많은 컨테이너를 관리하기가 어려움
 
 ### Container Management Tool
 
-위와같은 문제점들을 해결하기위해 나온것이 **container management tool**들이고, docker swarm이 처음에 나온 이후 쿠버네티스(kubernetes)가 나왔습니다.
+위와같은 문제점들을 해결하기위해 나온것이 **container management tool**들이고, docker swarm이 처음에 나온 이후 쿠버네티스(kubernetes)가 나왔고, 이젠 쿠버네티스가 업계 defecto가 되었습니다.
 
 <br>
 
-## 쿠버네티스란 무엇인가?
+# 쿠버네티스란 무엇인가?
 
-프로덕션 환경에서는 애플리케이션을 실행하는 컨테이너를 관리하고 가동 중지 시간이 없는지 확인하는 작업이 필요합니다. 쿠버네티스는 컨테이너를 쉽고 빠르게 배포/확장하고 관리를 자동화해주는 오픈소스 container managemnet tool입니다.
+프로덕션 환경에서는 애플리케이션을 실행하는 컨테이너를 관리하고 가동 중지 시간이 없는지 확인하는 작업이 필요합니다. 쿠버네티스는 컨테이너를 쉽고 빠르게 배포/확장하고 관리를 자동화해주는 **오픈소스 container management tool**입니다.
 
-### 주요 기능
+컨테이너 기반 애플리케이션들은 하나의 시스템으로 작동하도록 배포 및 구성하기가 어렵고 귀찮지만, 쿠버네티스를 이용하면 이를 손쉽게 해줍니다. 개발자는 시스템 관리자의 도움 없이도 쿠버네티스로 애플리케이션을 배포 할 수 있습니다. 운영팀은 쿠버네티스의 자동 복구 기능을 통해 편리하게 시스템 운영이 가능해졌습니다. 쿠버네티스는 하드웨어 인프라를 추상화 시켜, 개발자는 오로지 개발에만 집중할 수 있으며, 개발자가 운영팀을 거치지 않고 애플리케이션을 직접 배포하는 방식으로서 **NoOps** 개발 방식이 등장하였습니다. 즉, 하드웨어 인프라 관리 팀과 개발 팀이 완전히 분리되었습니다.
 
-**Automatic Binpacking**
+<br>
 
-각 컨테이너가 필요로 하는 CPU와 메모리(RAM)를 쿠버네티스에게 지시하면, 쿠버네티스는 컨테이너를 노드에 알맞게 리소스를 잘 사용하도록 오케스트레이션 해줍니다.
+## 주요 기능
 
-**Service Discovery & Load Balancing**
+### 리소스 최대 활용
+
+각 컨테이너가 필요로 하는 CPU와 메모리(RAM)를 쿠버네티스에게 지시하면, 쿠버네티스는 컨테이너를 노드에 알맞게 리소스를 잘 사용하도록 오케스트레이션 해줍니다. 이를 통해 하드웨어 리소스를 최대한으로 사용할 수 있습니다.
+
+또한 쿠버네티스에게 애플리케이션을 실행하도록 지시하면, 애플리케이션의 리소스 요구사항에 대한 디스크립션과 각 노드에서 사용 가능한 리소스에 따라 쿠버네티스가 애플리케이션을 실행할 가장 적합한 노드를 지정해줍니다. 
+
+### 쉬워진 배포
+
+쿠버네티스는 모든 노드를 하나의 배포 플랫폼으로 제공하기 때문에 애플리케이션 개발자는 자체적으로 애플리케이션 배포를 할 수 있으며, 클러스터를 구성하는 서버에 관해 알 필요가 없습니다. 
+
+### Service Discovery & Load Balancing
 
 쿠버네티스는 DNS 이름을 사용하거나 자체 IP 주소를 사용하여 컨테이너를 노출하고 로드 밸런싱 할 수 있습니다.
 
-**Storage Orchestration**
+### Storage Orchestration
 
-쿠버네티스를 사용하면 로컬 저장소, 공용 클라우드 공급자 등과 같이 원하는 저장소 시스템을 탑재할 수 있습니다.(혼용 사용도 가능)
+쿠버네티스를 사용하면 로컬 저장소, 공용 클라우드 공급자 등과 같이 원하는 저장소 시스템을 탑재할 수 있습니다.
 
-**Self Healing**
+### Self Healing
 
-쿠버네티스는 실행에 실패한 컨테이너를 다시 시작하거나, 컨테이너를 교체할 수 있습니다.
+쿠버네티스는 실행에 실패한 컨테이너를 다시 시작하거나, 컨테이너를 교체할 수 있습니다. 
 
-**Secret & Configuration Management**
+### Secret & Configuration Management
 
 암호, OAuth 토큰 및  SSH 키와 같은 중요한 정보를 저장, 관리하는 기능을 제공합니다.
 
-**Auto Scailing**
+### Auto Scailing
 
 쿠버네티스는 오토 스케일링 기능을 지원합니다.
 
-**Automatic Rollbacks & Rollouts**
+### Automatic Rollbacks & Rollouts
 
 자동화된 롤백과 롤아웃 기능을 제공합니다.
 
-> 쿠버네티스가 아닌것
+> 쿠버네티스가 아닌 것
 
 ![](https://user-images.githubusercontent.com/31475037/89846540-76b30600-dbbc-11ea-8418-d5b0bf0acd1d.png)
 
-> 쿠버네티스 인것
+> 쿠버네티스 인 것
 
 ![](https://user-images.githubusercontent.com/31475037/89846538-761a6f80-dbbc-11ea-9ec8-aaaf5975077a.png)
 
 <br>
 
-# k8s tutorial
+**참고 자료**
 
-## 1. Minikube를 사용한 클러스터 생성
-
-Minikube는 로컬 머신에 VM(Virtual Machine)을 만들고, 하나의 노드로 구성된 간단한 클러스터를 배포하는 가벼운 쿠버네티스 구현체입니다.
-
-**쿠버네티스는 서로 연결되어 단일 유닛처럼 동작하는 클러스터 오케스트레이션 매니지먼트 툴입니다.** 쿠버네티스의 추상화된 개념을 통해 개별 머신에 얽매이지 않고 도커로 컨테이너화된 애플리케이션을 클러스터에 배포할 수 있습니다. 모든 어플리케이션은 컨테이너화되고, 컨테이너화된 애플리케이션은 특정 머신에 직접 설치되는 예전의 배포 모델보다 유연하고 가용성이 높습니다. **쿠버네티스는 애플리케이션 컨테이너를 클러스터에 분산시키고 스케줄링하는 일을 자동화 해줍니다.**
-
-> 쿠버네티스의 구조
-
-![](https://user-images.githubusercontent.com/31475037/90489252-fe2de580-e177-11ea-8c1d-9848ecebd805.png)
-
-### 마스터(Control plane) 
-
-**마스터(control plane)**는 컨테이너 오케스트레이션 레이어입니다. 노드에게 명령을 내리는 API를 제공합니다. (원래는 마스터라 불렸지만 용어가 control plane으로 바뀜)
-
-마스터는 애플리케이션을 스케줄링하거나, 애플리케이션의 항상성을 유지하거나, 애플리케이션을 스케일링하고, 새로운 변경사항을 순서대로 반영하는 일과 같은 클러스터 내 모든 활동을 조절합니다.
-
-### 노드(Node)
-
-**노드는 쿠버네티스 클러스터 내 worker machine으로써 동작하는 VM 또는 물리적인 컴퓨터입니다.** 각 노드들은 노드를 관리하고 마스터와 통신하는 **Kubelet**이라는 에이전트를 갖습니다. 운영 트래픽을 처리하는 쿠버네티스 클러스터는 최소 세 대의 노드를 가져야합니다.
-
-**노드는 마스터가 제공하는 쿠버네티스 API를 통해서 마스터와 통신합니다.** 최종 사용자도 쿠버네티스 API를 직접 사용해서 클러스터와 상호작용할 수 있습니다.
-
-> 쿠버네티스 클러스터
-
-![](https://user-images.githubusercontent.com/31475037/89846534-74e94280-dbbc-11ea-8dd7-e8c5cb82438e.png)
-
-쿠버네티스 클러스터는 물리 및 VM 모두에 설치될 수 있습니다. 쿠버네티스 개발을 시작하려면 Minikube가 유용합니다. Minikube는 로컬 머신에 VM을 만들고 하나의 노드로 구성된 간단한 클러스터를 deployment하는 가벼운 쿠버네티스 구현체입니다.
-
-```bash
-# version 확인
-minikube version
-
-# start cluster 시작
-# kubernetes cluster가 VM 위에서 작동됨 
-minikube start
-
-# kubectl version
-# command line interface
-kubectl version
-
-# 클러스터 내 모든 node를 보여줌
-kubectl get nodes
-```
-
-<br>
-
-## 2. kubectl을 이용한 애플리케이션 deployment
-
-쿠버네티스 클러스터를 구동시키면, 그 위에 컨테이너화된 애플리케이션을 deployment할 수 있습니다. 그러기 위해선, 쿠버네티스 deployment 설정을 만들어야 합니다. Deployment는 쿠버네티스가 애플리케이션의 인스턴스를 어떻게 생성하고 업데이트해야 하는지를 지시합니다. Deployment가 만들어지면, 마스터가 해당 deployment에 포함된 애플리케이션 인스턴스가 클러스터 개별 노드에서 실행되도록 스케줄링합니다.
-
-애플리케이션 인스턴스가 생성되면, 쿠버네티스 deployment 컨트롤러는 지속적으로 인스턴스들을 모니터링합니다. 인스턴스를 구동 중인 노드가 다운되거나 삭제되면, deployment 컨트롤러가 인스턴스를 클러스터 내부의 다른 노드의 인스턴스로 교체합니다. 이런 기능을 self-healing 이라 불리며 쿠버네티스가 제공하는 기능 중 하나입니다.
-
-> 쿠버네티스 클러스터 내부 노드
-
-![](https://user-images.githubusercontent.com/31475037/89846533-73b81580-dbbc-11ea-80d0-a82b4593c50d.png)
-
-그렇다면 어떻게 쿠버네티스 마스터에게 명령을 내려 클러스터 내 노드들에게 명령을 내릴 수 있을까요? 바로 **Kubectl**이라는 쿠버네티스 CLI를 통해 가능합니다. Kubectl은 클러스터와 상호 작용하기 위해 쿠버네티스 API를 사용합니다.
-
-### kubectl
-
-kubectl을 이용해 쿠버네티스 클러스터와 통신해봅시다.
-
-```bash
-# kubectl version 확인
-kubectl version
-
-# cluster의 node들을 보는 명령어
-kubectl get nodes
-```
-
-### deploy app
-
-```bash
-# app을 deploy하는 명령어
-kubectl create deployment
-#exmple -> docker hub에서 이미지를 가져옴
-kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
-
-# deployments들을 보여줌
-kubectl get deployments
-```
-
-### view app
-
-쿠버네티스 내에서 실행되는 pod은 격리 된 private 네트워크에서 실행됩니다. 기본적으로 동일한 쿠버네티스 클러스터 내 다른 pod 및 service에서 볼 수는 있지만, 외부에서는 볼 수 없습니다.
-
-Kubectl 명령어를 통해 클러스터 내부로 연결되는 proxy를 설정 할 수 있습니다.
-
-```bash
-kubectl proxy
-```
-
-이제 host와 Kubernetes 클러스터가 연결되었습니다.
-
-프록시를 사용하면 다른 터미널에서 쿠버네티스 API에 직접 액세스 할 수 있습니다.
-
-```bash
-# curl 명령어를 통해 version 확인
-curl <http://localhost:8001/version>
-```
-
-API 서버는 프록시를 통해 액세스 할 수있는 pod name을 기반으로 각 pod에 대한 end-point를 자동으로 생성합니다.
-
-```bash
-# Pod name을 가져옴 
-export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\\n"}}{{end}}')
-# 환경 변수 POD_NAME에 저장
-echo Name of the Pod: $POD_NAME
-```
-
-<br>
-
-## 3. 앱 조사하기
-
-### Pod
-
-Pod은 하나 이상의 애플리케이션 컨테이너들의 그룹을 나타내는 쿠버네티스의 추상적 개념입니다.
-
-pod끼린 다음 자원을 공유합니다.
-
-- volume과 같은, 공유 스토리지
-- 클러스터 IP 주소와 같은, network
-- 컨테이너 이미지 버전 또는 사용할 특정 포트와 같이, 각 컨테이너가 동작하는 방식에 대한 정보
-
-Pod 내 컨테이너는 IP 주소, port를 공유하고 항상 함께 위치, 스케쥴링 되고 동일 노드 상의 컨텍스트를 공유하면서 동작합니다.
-
-> pod의 구조
-
-![](https://user-images.githubusercontent.com/31475037/90489248-fd954f00-e177-11ea-9e01-098a4ac132c5.png)
-
-Pod은 쿠버네티스 플랫폼 상에서 최소 단위가 됩니다. 우리가 쿠버네티스에서 **deployment**를 생성할 때, 그 deployment는 컨테이너 내부에서 컨테이너와 함께 pod을 생성합니다. 각 pod은 스케쥴 되어진 node에게 묶여지게 됩니다. 그리고 소멸되거나 삭제되기 전까지 해당 노드에 소속됩니다.
-
-> pod의 개념
-
-![](https://user-images.githubusercontent.com/31475037/90487998-33393880-e176-11ea-983c-cbf1dd4721c7.png)
-
-### Node
-
-Pod은 언제나 node 상에서 동작합니다. 하나의 node는 여러 개의 pod을 가질 수 있고, 마스터는 클러스터 내 node를 통해서 pod에 대한 스케쥴링을 자동으로 처리합니다.
-
-모든 쿠버네티스 노드는 최소한 다음과 같이 동작합니다.
-
-- Kubelet은, 쿠버네티스 마스터와 node간 통신을 책임지는 프로세스이며, 하나의 머신 상에서 동작하는 pod과 컨테이너를 관리함
-
-> Node의 개념
-
-![](https://user-images.githubusercontent.com/31475037/90488002-33d1cf00-e176-11ea-918e-8546dd1b7c86.png)
-
-### app config 확인
-
-```bash
-# 현재 존재하는 pod 보여줌
-kubectl get pods
-
-# pod 안의 정보 확인 -> container 정보나 ip, port 정보 등등
-kubectl describe pods
-```
-
-### show app
-
-Pod은 격리된 네트워크에서 실행되고 있으므로, 다른 터미널에서 명령을 내릴 수 있도록 pod에 대한 액세스를 proxy 해야합니다.
-
-```bash
-kubectl proxy
-export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\\n"}}{{end}}')
-echo Name of the Pod: $POD_NAME
-```
-
-### 컨테이너 log
-
-```bash
-kubectl logs $POD_NAME
-```
-
-### 컨테이너에서 명령어 실행
-
-Pod이 실행되면 컨테이너에서 직접 명령을 실행할 수 있습니다. 이를 위해 exec 명령을 사용하고 pod의 이름을 파라미터로 사용합니다.
-
-```bash
-kubectl exec $POD_NAME env
-kubectl exec -ti $POD_NAME bash
-```
-
-<br>
-
-## 4. 앱 외부로 노출하기
-
-쿠버네티스 pod은 언젠가는 죽게됩니다.(life-cycle 존재) node가 죽으면, 노드 상에서 동작하는 pod들도 종료됩니다. 이런 문제를 막기위해 replicaset 설정을 합니다.
-
-### ReplicaSet
-
-**ReplicaSet**은 앱이 지속적으로 동작할 수 있도록 새로운 pod들의 생성을 통해, 동적으로 클러스터를 미리 지정해 둔 상태로 되돌립니다.
-
-> ReplicaSet
-
-![](https://user-images.githubusercontent.com/31475037/90489243-fbcb8b80-e177-11ea-9bba-b6c77065af51.png)
-
-### Service
-
-쿠버네티스에서 **service**는 논리적인 pod set과 그 pod들에 접근할 수 있는 policy를 정의하는 추상적 개념입니다. Service는 YAML 또는 JSON을 이용하여 정의됩니다. Service가 대상으로 하는 pod set은 보통 **Label selector**에 의해 식별됩니다.
-
-비록 각 pod들이 고유 IP를 갖고 있기는 하지만, 그 IP들은 service의 도움없인 클러스터 외부로 노출 될 수 없습니다.
-
-- **ClusterIP** - 클러스터 내에서 내부 IP 에 대해 서비스를 노출해줍니다. 이 방식은 오직 클러스터 내에서만 service가 접근될 수 있도록 해줍니다.
-- **NodePort** - 노드들의 동일한 포트에 서비스를 노출시켜줍니다. 클러스터 외부로부터 service가 접근할 수 있도록 해줍니다. ClusterIP의 상위 집합입니다.
-- **LoadBalancer** - 기존 클라우드에서 외부용 로드밸런서를 생성하고 서비스에 고정된 공인 IP를 할당해줍니다. NodePort의 상위 집합입니다.
-- **ExternalName** - 이름으로 CNAME 레코드를 반환함으로써 임의의 이름을 이용하여 서비스를 노출시킵니다.
-
-> Service의 개념
-
-![](https://user-images.githubusercontent.com/31475037/90487996-32080b80-e176-11ea-941b-1a4a359583ce.png)
-
-### Create service
-
-minikube가 클러스터를 시작할 때 기본적으로 생성되는 kubernetes라는 서비스가 있습니다.
-
-새 서비스를 만들고 외부 트래픽에 노출하기 위해 NodePort를 매개 변수로 사용하여 expose 명령을 사용합니다.
-
-이제 kubernetes-bootcamp라는 실행 중 서비스가 있습니다.
-
-```bash
-# 현재 실행중인 service 확인
-kubectl get service
-
-# 외부 트래픽에 노출(NodePort 사용)
-kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
-
-# NodePort 옵션을 통해 외부에서 열린 포트를 확인
-kubectl describe services / kubernetes-bootcamp
-```
-
-### Using labels
-
-Deployment는 pod의 label을 자동으로 생성했습니다.
-
-```bash
-# label 이름 출력
-kubectl describe deployment
-
-# label을 이용해 pod 목록 출력
-kubectl get pods -l run = kubernetes-bootcamp
-```
-
-### Deleting a service
-
-```bash
-# Service를 삭제하려면 delete service 명령을 사용 가능
-kubectl delete service -l run = kubernetes-bootcamp
-
-# 애플리케이션을 종료하려면 deployment도 삭제
-kubectl exec -ti $POD_NAME curl localhost:8080
-```
-
-<br>
-
-## 5. 앱 스케일링하기
-
-트래픽이 증가하면, 사용자 요청에 맞추어 애플리케이션의 규모를 조정할 필요가 있습니다. 이 때, deployment의 replication 수를 변경하면 **스케일링**이 진행됩니다.
-
-Deployment를 scale-out하면 신규 pod이 생성되어 가용할 자원이 있는 node에 스케줄됩니다. 스케일링 기능은 desired state까지 pod의 수를 늘립니다. 쿠버네티스는 pod의 오토스케일링도 지원합니다. (**0까지 스케일링**하는 것도 가능하며, 이 경우 해당 deployment의 모든 pod이 종료됨)
-
-<br>
-
-## 6. 앱 업데이트하기
-
-사용자들은 애플리케이션이 항상 사용 가능 상태일 것이라 생각하고, 개발자들은 하루에 여러번씩 새로운 버전을 배포해야합니다.
-
-쿠버네티스에서는 이것을 **rolling update**라 부릅니다. Rolling update는 pod 인스턴스를 점진적으로 업데이트하여 deployment 업데이트가 서비스 중단 없이 이뤄지게 해줍니다.
-
-이런 rolling update는 deployment controller에 의해 관리됩니다.
-
-애플리케이션 스케일링과 유사하게, deployment가 외부로 노출되면, 서비스는 업데이트가 이루어지는 동안 오직 가용한 pod에게만 트래픽을 로드밸런스합니다.
-
-Rolling update는 다음 일을 합니다.
-
-- 하나의 환경에서 또 다른 환경으로의 애플리케이션 프로모션(컨테이너 이미지 업데이트를 통해)
-- 이전 버전으로의 **roll-back**
-- 서비스 중단 없는 애플리케이션의 CI/CD
-
-<br>
-
-## 7. Storages
-
-### **Volume(임시적인 데이터 저장)**
-
-pod에 연결되어 디렉토리 형태로 데이터를 저장 할 수 있도록 제공합니다. Pod의 container들 끼리 공유가능하며, pod의 life-cycle과 일치하여 pod 삭제시 같이 삭제됩니다.
-
-### **Persistence Volume(영구적 데이터 저장)**
-
-k8s 클러스터 관리자에 의해 제공된 저장소의 일부입니다. volume과 유사하지만 pod과는 독립적인 life-cycle을 가집니다. 사용자가 용량, 모드 필요한 정보와 함께 PVC(PersistenceVolumeClaim)를 생성하면 이에 대응하는 Persistence Volume이 생성됩니다.
-
-<br>
-
-**출처**
-
-[대화형 튜토리얼 - 클러스터 생성하기](https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/)
+[쿠버네티스란 무엇인가?](https://kubernetes.io/ko/docs/concepts/overview/what-is-kubernetes/)
