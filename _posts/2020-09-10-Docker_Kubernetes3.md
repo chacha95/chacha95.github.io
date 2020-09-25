@@ -297,3 +297,5 @@ k8s 클러스터 관리자에 의해 제공된 저장소의 일부입니다. vol
 **출처**
 
 [대화형 튜토리얼 - 클러스터 생성하기](https://kubernetes.io/ko/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/)
+
+[subicura 블로그](https://subicura.com/2019/05/19/kubernetes-basic-1.html)
