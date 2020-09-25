@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes4 - 어떻게 동작할까?
+title: 딥러닝을 위한 kubernetes4 - 동작 방식
 tags: [Backend]
 use_math: true
 ---
