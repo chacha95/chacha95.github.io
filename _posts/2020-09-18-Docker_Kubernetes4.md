@@ -194,7 +194,7 @@ Pod 내부의 container 끼리는 서로 격리되어 있기에, 기본적으론
 
 > host path예시
 
-<center><img src="https://t1.daumcdn.net/cfile/tistory/99BAD7375B1D3F100B" width=70%></center>
+<center><img src="https://user-images.githubusercontent.com/31475037/94221675-8d23df80-ff26-11ea-9ae0-d1c99e1f2185.png"></center>
 
 ### Persistent Volume(영구적 데이터 저장)
 
