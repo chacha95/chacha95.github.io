@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes4 - 쿠버네티스는 어떻게 동작할까?
+title: 딥러닝을 위한 kubernetes4 - 어떻게 동작할까?
 tags: [Backend]
 use_math: true
 ---
@@ -23,7 +23,7 @@ use_math: true
 
 ## 쿠버네티스 기술하기
 
-가장 개발자가 해야할 것은 앱 디스크립터를 기술하는 것입니다. 왜냐면 쿠버네티스가 오브젝트를 생성할 때, 오브젝트에 대한 기본 정보와 더불어, desired state를 기술한 오브젝트 spec을 적어야합니다.
+가장 개발자가 해야할 것은 앱 디스크립터를 기술하는 것입니다. 왜냐면 쿠버네티스가 오브젝트를 생성할 때, 오브젝트에 대한 기본 정보와 더불어, desired state를 기술한 오브젝트 spec이 필요합니다.
 
 다음은 가장 간단한 예제입니다.
 
@@ -51,12 +51,12 @@ status:
       ready: True
       restartCount: 0
       state:
-      	running: 
-      		startedAt: 2020-09-18T12:46:05z
-	hostIP: 10.132.0.4
-	phase: Running
-	podIP: 10.0.2.3
-	startTime: 2020-09-18-T12:46:05z
+          running: 
+                  startedAt: 2020-09-18T12:46:05z
+    hostIP: 10.132.0.4
+    phase: Running
+    podIP: 10.0.2.3
+    startTime: 2020-09-18-T12:46:05z
 ```
 
 **Metadata**: 이름, 네임스페이스, 레이블, 파드에 대한 정보를 기술
