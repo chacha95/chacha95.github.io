@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Full Stack Deep Learning 1 - 소개
+title: Full Stack Deep Learning 3 - 
 tags: [Full Stack Deep Learning]
 use_math: true
 ---
