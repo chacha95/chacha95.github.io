@@ -23,7 +23,13 @@ use_math: true
 
 ## 쿠버네티스 기술하기
 
-가장 개발자가 해야할 것은 앱 디스크립터를 기술하는 것입니다. 왜냐면 쿠버네티스가 오브젝트를 생성할 때, 오브젝트에 대한 기본 정보와 더불어, desired state를 기술한 오브젝트 spec이 필요합니다.
+개발자가 먼저 해야할 것은 앱에대한 정보를 기술하는 것입니다. 왜냐면 쿠버네티스가 오브젝트를 생성할 때, 오브젝트에 대한 기본 정보와 더불어, desired state를 기술한 오브젝트 spec이 필요합니다.
+
+이러한 환경 변수나 설정값, 오브젝트 spec들을 변수로 관리, pod가 생성될때 이 값을 넣어줄 수 있는데, 이러한 기능을 제공하는 것이 바로 **configmap**과 **secret**입니다. 
+
+### ConfigMap
+
+configmap은 키/밸류 형식으로 저장이됩니다.
 
 다음은 가장 간단한 예제입니다.
 
@@ -39,6 +45,7 @@ spec:
       ports:
       - containerPort: 8080 # 컨테이너 포트
         protocol: TCP
+      
 status:
     conditions:
     - status: "True"
@@ -69,6 +76,19 @@ status:
 
 만약, 그 인스턴스들 중 어느 하나가 문제로 인해 멈춘다면(상태 변화 발생), 쿠버네티스 시스템은 새 pod 생성을 통해 desired status(spec)와 current status(status)간의 차이에 대응합니다.
 
+### Secret
+
+Configmap이 일반적인 환경 설정 정보를 가지고 있따면, 패스워드, API 키와 같이 정보가 중요한 정보는 secret에 저장합니다. Secret은 저장된 내용을 지키기 위해서 추가 보안 기능을 제공합니다. 예를 들어 API server나 node의 파일에는 저장되지 않고, 항상 메모리에 저장되어 있기 때문에 상대적으로 접근이 어렵습니다.
+
+하나의 secret 사이즈는 최대 1Mb까지 지원되는데, 메모리에 저장되는 특성 때문에, secret을 여러개 저장하게 되면 API Server나 노드에서 이를 저장하는 kubelet의 메모리 사용량이 늘어나서 Out Of Memory와 같은 이슈를 유발할 수 있기 때문에, 보안적으로 꼭 필요한 정보만 secret에 저장하도록 하는게 좋습니다. 
+
+### 전달
+
+Configmap이나 secret에 기술된 정보를 pod에 넘기는 방법은 두가지가 있습니다.
+
+- 정의해놓은 값을 pod의 환경 변수 (Environment variable)로 넘기는 방법
+- 정의해놓은 값을 pod의 디스크 볼륨으로 마운트 하는 방법
+
 <br>
 
 ## 전체 파이프라인
@@ -77,45 +97,51 @@ status:
 
 > 전체 파이프라인
 
-![](https://user-images.githubusercontent.com/31475037/94216967-c571f080-ff1b-11ea-910e-8ed403b6db30.png)
+![](https://user-images.githubusercontent.com/31475037/94405746-f700eb00-01ab-11eb-8ec5-73b27a336aa0.png)
 
-### 1. YAML, JSON 디스크립터로 pod 생성(앱 디스크립터)
+### 1. YAML로 작성
 
-YAML파일에 쿠버네티스 오브젝트들의 Spec을 정의합니다.
+Yaml 혹은 Json 파일에 ConfigMap과 Secret을 정의합니다.
 
-### 2. 이미지를 docker hub에 push
+### 2. 이미지 push
 
 쿠버네티스에서 애플리케이션을 실행하려면, 애플리케이션을 docker image로 만들어 도커 허브에 push해야 합니다.
 
 ### 3. kubectl에게 명령
 
-Kubectl 명령어를 실행하면 kube-apiserver에 REST API로 yaml로 작성된 애플리케이션 디스크립션이 전송됩니다. kubectl이 kube-apiserver에 yaml 파일 전송시, JSON 형식으로 정보를 변환시켜 전송합니다.
+Kubectl 명령어를 실행하면 kube-apiserver에 REST API로 yaml 혹은 json으로 작성된 파일이 전송됩니다. kubectl이 kube-apiserver에 yaml 파일 전송시, JSON 형식으로 정보를 변환시켜 전송합니다.
 
 ### 4. kubectl이 kube-apiserver 호출
 
-Kube-apiserver가 앱 디스크립션을 읽고난뒤, kube-apiserver는 kube-scheduler에게 각 컨테이너에 필요한 리소스를 계산하라고 명령을 내립니다. 
+Kube-apiserver가 yaml 파일을 읽고난뒤, kube-apiserver는 kube-scheduler에게 각 컨테이너에 필요한 리소스를 계산하라고 명령을 내립니다. 
 
-### 5. pod과 노드 생성  스케쥴링
+### 5. 스케쥴링
 
-Kube-scheduler는 사용 가능한 노드에 pod을 할당합니다. 만약 사용가능한 pod이 없다면, 클러스터에 새로운 레플리카셋컨트롤러 오브젝트 생성, 레플리카셋컨트롤러는 새 pod을 생성합니다.
+Kube-scheduler는 사용 가능한 노드에 pod을 할당합니다. 
 
-### 6. kube-apiserver가 노드의 kubelet에게 명령
+### 6. 노드에 명령
 
-해당 노드의 kubelet은 pod이 스케쥴링 됐다는 것을 전달받습니다.
+kube-apiserver가 노드의 kubelet에게 명령합니다. 해당 노드의 kubelet은 pod이 스케쥴링 됐다는 것을 전달받습니다.
 
-### 7. kubelet은 container runtime에 이미지를 실행하라 명령
+### 7. kubelet은 도커에 이미지 실행하라 지시
 
-kubelet이 container runtime(도커)에게 이미지를 실행하라 명령합니다.
+kubelet이 도커(container runtime)에게 이미지를 실행하라 명령합니다.
 
-### 8. 노드에 도커 이미지가 없다면 도커 허브에서 pull 해옴(optional)
+### 7-1 일반적인 생성, 배포 방식
 
-이미지가 로컬에 없다면, 도커에게 도커 허브에서 이미지를 pull해 옵니다. 이미지를 다운한 후 도커는 컨테이너를 생성 후 실행시킵니다.
+위와 같이 kubelet이 직접 도커에 명령을 내려 이미지를 실행할 수도 있지만, 매우 번거럽고 불편합니다. 특히나 롤링 업데이트와 같은 작업을 할 경우 일일히 다 배포해 줘야 하기 때문에 굉장히 괴롭습니다. 그래서 kubelet이 docker에게 명령을 내리는 것이 아닌 kube-controller manager -> controller -> deployment -> replicaset을 이용해 pod을 생성, 관리, 배포 하는 경우가 많습니다.
 
-<br>
+> 보통 이 방식으로 배포됨
 
-위의 모든 과정에서 유저가 컨테이너 및 pod을 직접 생성하지 않습니다. 단지 앱 디스크립터에 기술할 뿐이죠. 유저가 kubectl을 이용해 run 명령을 내리면, 레플리케이션컨트롤러를 생성, 레플리케이션컨트롤러가 실제 pod을 생성합니다. 즉, 앱 디스크립터를 잘 기술하고, 도커 허브에 이미지만 올바르게 업로드하면 쿠버네티스가 모든 작업을 처리해줍니다.
+![](https://user-images.githubusercontent.com/31475037/94405060-f9167a00-01aa-11eb-9504-f949f4680f49.png)
 
+### 8. 도커 허브에서 이미지 pull
 
+도커 이미지가 해당 노드 상에 없다면, 도커 허브에서 이미지를 pull해 옵니다. 이미지를 pull해온 후 도커는 컨테이너를 생성 및 실행시킵니다.
+
+### 9. expose
+
+위의 과정을 통해 생성된 pod들은 service 오브젝트에의해 외부로 노출됩니다.
 
 <br>
 
