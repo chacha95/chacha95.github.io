@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Full Stack Deep Learning 3 - 
+title: Full Stack Deep Learning 4 - Test and Deployment
 tags: [Full Stack Deep Learning]
 use_math: true
 ---
 
-# Full Stack Deep Learning
+# Test and Deployment
 
 
 
