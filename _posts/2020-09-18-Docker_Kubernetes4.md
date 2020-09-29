@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes3 - 구성 요소
-tags: [Backend]
+title: 딥러닝을 위한 kubernetes 3 - 구성 요소
+tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---
 

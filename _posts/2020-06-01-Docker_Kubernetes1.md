@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 딥러닝을 위한 Docker
-tags: [Backend]
+tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---
 

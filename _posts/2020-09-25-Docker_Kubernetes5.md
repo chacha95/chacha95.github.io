@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes4 - 동작 방식
-tags: [Backend]
+title: 딥러닝을 위한 kubernetes 4 - 동작 방식
+tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---
 
