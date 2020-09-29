@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Full Stack Deep Learning 2 - infrastructure
+title: Full Stack Deep Learning 3 - infrastructure
 tags: [Full Stack Deep Learning]
 use_math: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Full Stack Deep Learning 3 - data management
+title: Full Stack Deep Learning 2 - data management
 tags: [Full Stack Deep Learning]
 use_math: true
 ---
@@ -23,9 +23,7 @@ Not enough data • Class imbalances • Noisy labels • Train / test from diff
 
 ## Sources
 
-Where training data comes from
-
-Most DL applications require lots of labeled data Exceptions: RL, GANs, "semi-supervised" learning Publicly available datasets = No competitive advantage But can serve as starting point
+대부분의 DL 애플리케이션에는 많은 레이블이 지정된 데이터가 필요합니다. (예외: RL, GAN, semi-supervised learning) 
 
 > 레이블링엔 돈이 많이 든다....
 
@@ -35,7 +33,7 @@ Most DL applications require lots of labeled data Exceptions: RL, GANs, "semi-su
 
 ## Labeling with UI/UX
 
-How to label proprietary data at scale
+
 
 > 
 
@@ -67,15 +65,33 @@ How to label proprietary data at scale
 
 ### Sources of labor
 
-Hire own annotators, promote best ones to quality control • Pros: secure, fast (once hired), less QC needed • Cons: expensive, slow to scale, admin overhead • ...or, crowdsource (Mechanical Turk) • Pros: cheaper, more scalable • Cons: not secure, significant QC effort required • ...or, full-service data labeling companies
+자체 애노 테이터를 고용하고 최고의 애노 테이터를 품질 관리로 승격
+• 장점 : 안전하고 빠르며 (고용 후) QC 필요 감소
+• 단점 : 비용이 많이 들고 확장 속도가 느리고 관리 오버 헤드
+
+crowdsource (Mechanical Turk)
+• 장점 : 더 저렴하고 확장 가능
+• 단점 : 안전하지 않음, 상당한 QC 노력 필요
 
 ### Service companies
 
-Data labeling requires separate software stack, temporary labor, and quality assurance. Makes sense to outsource. • Dedicate several days to selecting the best one for you: • Label gold standard data yourself • Sales calls with several contenders, ask for work sample on same data • Ensure agreement with your gold standard, and evaluate on value
+데이터 라벨링에는 별도의 소프트웨어 스택, 임시 인력 및 품질 보증이 필요합니다. 아웃소싱하는 것이 합리적입니다. 
 
-Full-service data labeling is always pricy • But some companies offer their software without labor
+• 자신에게 가장 적합한 데이터를 선택하는 데 며칠을 바칩니다. 
 
-Conclusions • outsource to full-service company if you can afford it • if not, then at least use existing software • hiring part-time makes more sense than trying to make crowdsourcing work
+• 중요한 데이터에 직접 라벨을 지정합니다. 
+
+• 여러 경쟁자와 판매 전화를 걸어 동일한 데이터에 대한 작업 샘플을 요청합니다. 
+
+풀 서비스 데이터 라벨링은 항상 비쌉니다.
+
+결론
+
+• 감당할 수있는 경우 풀 서비스 회사에 아웃소싱 
+
+• 그렇지 않은 경우 최소한 기존 소프트웨어 사용 
+
+• 크라우드 소싱 작업을 수행하는 것보다 파트 타임 고용이 더 합리적입니다.
 
 ## Data Storage
 
