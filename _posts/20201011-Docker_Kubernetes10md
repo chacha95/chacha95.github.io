@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubeflow4 - Katib
+title: 딥러닝을 위한 kubeflow 4 - Katib
 tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---

@@ -6,11 +6,11 @@ tags: [Machine Learning]
 
 # SVM이란 무엇인가?
 
-Nerual Network(신경망)가 나오기 전에 classification(분류)에서 많이 쓰였던 machine learning(기계학습) 기법입니다.
+Deeplearning 이전에 classification(분류)에서 많이 쓰이던 machine learning(기계학습) 기법입니다. (현재도 특정 분야에선 많이 쓰임)
 
-두개의 클래스가 주어졌을 때 이를 분류하는 것이 SVM의 알고리즘입니다. Street라 명명되는 부분의 support vector로 decision boundary(결정 경계)가 결정됩니다. Decision boundary를 기준으로 두 class가 나뉩니다. 이것을 binary classification(이진 분류)이라 부르기도 합니다.
+두개의 클래스가 주어졌을 때 이를 분류하는 것이 SVM 알고리즘입니다. Street라 명명되는 부분의 support vector로 decision boundary(결정 경계)가 결정됩니다. Decision boundary를 기준으로 두 class가 나뉩니다.
 
-> SVM의 기본 모델
+> SVM
 
 <center><img src="https://user-images.githubusercontent.com/31475037/59006503-40ae1f80-885d-11e9-8939-3f15846bf0f0.png" width="90%"></center>
 <br>
@@ -21,7 +21,7 @@ SVM에선 크게 두가지의 margin 모델이 존재합니다.
 
 ### Hard margin
 
-Hard margin classification은 생성되는 street의 margin을 아주 좁게 두는 방식입니다. 여기서 margin이란 두 서포트 벡터 사이의 공간입니다.
+Hard margin classification은 생성되는 street의 margin을 좁게 두는 방식입니다. 
 
 각 데이터가 클래스 별로 정확하게 분리 되어 있는 경우에 적용할 시 분류를 정확하게 할수 있습니다.  Data가 linearly separable(선형 분리 가능) 할 경우만 사용이 가능합니다. Outlier에 영향을 많이 받습니다.
 

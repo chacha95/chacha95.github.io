@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubeflow2 - 구성 요소
+title: 딥러닝을 위한 kubeflow 2 - 구성 요소
 tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---
@@ -69,7 +69,7 @@ Kubeflow에서 제공하는 학습 프레임워크는 다음과 같습니다.
 
 Katib는 머신 러닝 모델의 하이퍼 파라미터 및 뉴럴 아키텍처(Neural Architecture)를 자동으로 튜닝할 수 있는 기능을 제공합니다. Katib는 TensorFlow, PyTorch, Apache MXNet, XGBoost 등 다양한 머신 러닝 프레임 워크를 지원합니다.
 
-### Pipelines
+### Pipelines(제일 중요하게 다루기)
 
 Kubeflow 파이프라인은 컨테이너를 기반으로 확장 가능한 ent-to end 머신 러닝 워크 플로를 구축하기 위한 플랫폼입니다.
 

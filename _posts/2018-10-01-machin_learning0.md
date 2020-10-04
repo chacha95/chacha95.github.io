@@ -6,109 +6,109 @@ tags: [Machine Learning]
 
 # Machine learning의 개념
 
-machine learning은 데이터로부터 학습하도록 컴퓨터를 프로그래밍하는 과학입니다.
+Machine learning(기계 학습)은 데이터로부터 학습하도록 컴퓨터를 프로그래밍하는 방법입니다.
 
-예를들면 스팸 필터는 스팸 메일과 일반 메일의 샘플을 이용해 스팸 메일을 구분하는 법을 배울 수 있게 만들어 졌습니다.
+> AI, Machine learning, Deep learning
+
+
+
+<center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="90%"></center>
+
+
+
+예를들어스팸 필터는 스팸 메일과 일반 메일의 샘플을 이용해, 스팸 메일을 구분하는 법을 배우고 이를 구분합니다.
 
 <br>
 
 ## 왜 machine learning을 사용하는가?
 
-전통적인 접근 방법으로 문제를 풀려하면, 문제가 단순치 않아 규칙이 점점 길고 복잡해져 유지 보수하기가 굉장히 힘들어 집니다.
+전통적인 접근 방법으로 문제를 풀려하면, 문제가 단순치 않아 문제를 정의하기 쉽지 않고, 규칙이 점차 길고 복잡해져 유지 보수하기 힘들어 집니다.
 
 > 전통적 접근 방식
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59028100-a9b18980-8895-11e9-8dbd-34105da26ad8.png" width="70%"></center>
-프로그램이 훨씬 짧아지고 유지보수하기 쉬우며 대부분 정확도가 더 높습니다. 또한 machine learning은 데이터 업데이트만 잘 해준다면 자동으로 변화에 대응합니다. 복잡한 문제와 대량의 데이터로부터 패턴을 분석 할 수 있습니다.
+<center><img src="https://user-images.githubusercontent.com/31475037/59028100-a9b18980-8895-11e9-8dbd-34105da26ad8.png"></center>
+
+그에 비해 machine learning의 경우 데이터셋 구축 및 모델 학습 pipeline을 잘 구축한다면, 모델이 특정 패턴을 찾아 문제를 해결합니다. 또한 모델 학습 pipeline의 경우 첫 구축이 어렵지, 이후 시스템 유지보수가 상대적으로 쉽습니다.
 
 > machine learning을 이용한 시스템
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59028106-ab7b4d00-8895-11e9-9a5d-9c85406c9302.png" width="70%"></center>
-> machine learning은 자동으로 변화에 대응할 수도 있음
+<center><img src="https://user-images.githubusercontent.com/31475037/59028106-ab7b4d00-8895-11e9-9a5d-9c85406c9302.png"></center>
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59028455-9521c100-8896-11e9-9b8e-d972f93f054b.png" width="80%"></center>
 <br>
 
-## machine learning 시스템의 종류
+# machine learning 시스템의 종류
 
-<center><img src="https://user-images.githubusercontent.com/31475037/59027794-eaf56980-8894-11e9-8829-acd3264fb66d.png" width="50%"></center>
-### Supervised Learning(지도 학습)
+## Supervised Learning(지도 학습)
 
-훈련 데이터에 레이블(답)이 달려 있는 데이터를 이용해 학습을 시키는 방법입니다.
+Supervised learning은 훈련 데이터에 레이블(답)이 달려 있는 데이터를 이용해 학습하는 방법입니다. 
 
-지도학습은 크게 Classification(분류)와 Regression(회귀)로 나뉘어집니다. 먼저, **Classification**은 주어진 데이터를 정해진 카테고리에 따라 분류하는 문제를 말합니다.
-
-예를 들어, 이메일이 스팸메일인지 아닌지를 예측한다고 하면 이메일은 스팸메일 / 정상적인 메일로 라벨링 될 수 있을 것입니다. 비슷한 예시로 암을 예측한다고 가정했을 때 이 종양이 악성종양인지 / 아닌지로 구분할 수 있습니다. 이처럼 맞다 / 아니다로 구분되는 문제를 **Binary Classification** 이라고 부릅니다.
-
-분류 문제가 모두 맞다 / 아니다로 구분되지는 않습니다. 예를 들어, 공부시간에 따른 전공 Pass / Fail 을 예측한다고 하면 이는 Binary Classifiaction 으로 볼 수 있습니다. 반면에, 수능 공부시간에 따른 전공 학점을 A / B / C / D / F 으로 예측하는 경우도 있습니다. 이러한 분류를 **Multi-class Classification**이라고 합니다.
-
-**Regression**은 연속된 값을 예측하는 문제를 말합니다. 주로 어떤 패턴이나 트렌드, 경향을 예측할 때 사용됩니다. Regression을 설명할 때 항상 집의 크기에 따른 매매가격을 예로 듭니다. 아까와 유사한 예를 들자면, 공부시간에 따른 전공 시험 점수를 예측하는 문제를 예로 들 수 있습니다.
-
-대표적 supervised learning 방식은 다음과 같습니다
+대표적인 supervised learning 방법은 다음과 같습니다
 
 * Linear Regression(회귀)
 * Logistic Regression(분류)
 * Support Vector Machine
-* Decision Tree and Random Forests
+* Random Forests
 * Neural Network
 
-### Unsupervised Learning(비지도 학습)
 
-훈련 데이터에 레이블이 없습니다. 시스템이 아무런 도움도 없이 학습을 해야 합니다.
+
+여기서 지도학습은 크게 Classification(분류)와 Regression(회귀)로 나뉘어집니다. 
+
+### Classification
+
+먼저, **Classification**은 주어진 데이터를 정해진 카테고리에 따라 분류하는 문제를 말합니다.
+
+예를 들어, 이메일이 스팸메일인지 아닌지를 예측한다고 하면 이메일은 **스팸메일**, **정상 메일**로 라벨링 될 수 있을 것입니다. 비슷한 예시로 암을 예측한다고 가정했을 때 이 종양이 **악성 종양인지** , **아닌지로** 구분할 수 있습니다. 이처럼 **맞다**, **아니다**로 구분되는 문제를 **Binary Classification** 이라고 부릅니다.
+
+그러나 분류 문제가 모두 **맞다**, **아니다**로 구분되진 않습니다. 예를 들어, 공부시간에 따른 전공 **Pass**, **Fail**을 예측한다 가정해 봅시다. 이는 Binary Classifiaction 으로 볼 수 있습니다. 반면, 전공 시험 성적에 따른 학점을 **A, B, C, D, F** 네가지 class로 예측해야하는 경우도 있습니다. 이러한 분류를 **Multi-class Classification**이라고 합니다.
+
+### Regression
+
+**Regression**은 연속된 값을 예측하는 문제를 말합니다. 주로 어떤 패턴이나 트렌드, 경향을 예측할 때 사용됩니다.  
+
+<br>
+
+## Unsupervised Learning(비지도 학습)
+
+훈련 데이터에 레이블이 없습니다. 시스템이 레이블된 데이터 없이 학습을 해야 합니다.
 
 대표적인 unsupervised learning 방식은 다음과 같습니다
 
 * Clustering
-* Visualization
 
-### Semi-Supervised Learning(준지도 학습)
+<br>
 
-지도학습은 앞에서 언급한 것 처럼 라벨링이 되어 있지 않은 데이터로부터 미래를 예측하는 학습방법입니다. 평가되어 있지 않은 데이터로부터 숨어있는 패턴이나 형태를 찾아야 하기 때문에 당연히 더 어렵습니다. 비지도학습도 데이터가 분리되어 있는지 (Categorial data) 연속적인지 (Continuous data)로 나누어 생각할 수 있습니다.
+## Reinforcemence Learning(강화 학습)
 
-**Reinforcemence Learning(강화 학습)**
-
-학습 환경을 관찰해서 그 결과로 보상 또는 벌점을 부여하는 방식입니다. 가장 큰 보상을 얻기 위해 최상의 전략을 스스로 학습합니다. 
+가장 큰 보상을 얻기 위해 최상의 전략을 스스로 학습하는 방식입니다. 보통 simulation 환경에서 학습을 합니다. 
 
 대표적 방식은 다음과 같습니다
 
-* Alphago
 * DQN
 
 <br>
 
-## machine learning의 주요 도전 과제
+# Machine learning의 주요 도전 과제
 
-**충분하지 않은 훈련 데이터**
+### 충분하지 않은 데이터
 
-machin learning 알고리즘이 잘 작동하려면 데이터가 굉장히 많아야 합니다.
+Machin learning  모델이 잘 학습되려면, 데이터가 굉장히 많아야 합니다.
 
-아주 간단한 문제에서라도 수천개의 데이터가 필요합니다.
+아주 간단한 문제일지라도 수천개의 데이터가 필요합니다.
 
-**대표성 없는 훈련 데이터**
+### 대표성 없는 학습 데이터
 
-일반화가 잘되려면 우리가 일반화하기 원하는 새로운 사례를 훈련 데이터가 잘 대표하는것이 중요합니다.
+모델이 성공적으로 예측하려면,  대표성 있는 학습 데이터가 필요합니다.
 
-**낮은 품질의 데이터**
+### 낮은 품질의 데이터
 
-훈련 데이터가 에러, 이상치, 잡음으로 가득하다면 machine learning 알고리즘이 데이터의 패턴을 파악하기 힘듭니다.
+학습 데이터가 error로 가득하다면 machine learning 모델이 잘 동작하지 않습니다.
 
-따라서 훈련 데이터의 전처리에 많은 시간을 투자해야 합니다.
+### Overfitting(과적합)
 
-**Overfitting(과적합)**
+Overfitting은 모델이 학습 데이터의 정답은 잘 맞추지만, Generalization(일반성)이 떨어지는 경우를 말합니다. 
 
-Overfitting은 모델이 훈련 데이터의 정답을 너무 잘 맞추지만, Generalization(일반성)이 떨어지는 경우를 말합니다. 과대적합을 막기위해 Regularization(정규화)와 같은 기법을 많이 씁니다.
-
-<br>
-
-## Deeplearning과 MachineLearning
-
-최근들어 deeplearning의 성능이 기존 사람이 만들던 알고리즘(hand-crafted algorithm)들의 성능을 월등히 뛰어넘으면서 굉장히 주목받고 있습니다.
-
-다만 이미지와 언어 처리 분야 외에 다른 분야에서는 기존 machine learning 기술 대비 월등한 성능을 내고있지는 않습니다.
-
-<center><img src="https://www.sumologic.com/wp-content/uploads/compare_AI_ML_DL.png" width="90%"></center>
-
-
+Overfitting을 막기위해 Regularization(정규화) 기법을 많이 씁니다.
 
 <br>
 

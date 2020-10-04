@@ -1,23 +1,27 @@
 ---
 layout: post
-title: Full Stack Deep Learning 3 - infrastructure
+title: Full Stack Deep Learning 3 - Development and ML Train
 tags: [Full Stack Deep Learning]
 use_math: true
 ---
 
-# Infrastructure
-
-ML project의 생태계는 광활합니다. 거의 대부분이 open source로 이루어져 있으며, 블럭처럼 연동해서 쓸 수 있죠.
-
-다양한 infra가 있지만 docker + k8s + kubeflow만 보겠습니다.
+# Development and ML Train
 
 
 
-> 
+>  Development and ML Train
 
-![](https://user-images.githubusercontent.com/31475037/92835763-97b68300-f416-11ea-9054-f5dc424e0501.png)
+![](https://user-images.githubusercontent.com/31475037/94698935-bdc7a700-0374-11eb-8a34-6fce194aa790.PNG)
 
 
+
+
+
+![](https://miro.medium.com/max/3460/1*13uV1HSrv5NefuFo85lkrg.png)
+
+
+
+정말 다양한 툴들이 있지만, infrastructure를 위한 docker + kubernetes + kubeflow조합만 리뷰하겠습니다.
 
 > 
 
