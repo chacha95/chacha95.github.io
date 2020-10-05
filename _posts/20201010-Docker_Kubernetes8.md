@@ -83,4 +83,3 @@ Kubeflow 파이프라인은 컨테이너를 기반으로 확장 가능한 ent-to
 
 [Kubeflow doc](https://www.kubeflow.org/docs/)
 
-[Full Stack Deep Learning](https://course.fullstackdeeplearning.com/)
