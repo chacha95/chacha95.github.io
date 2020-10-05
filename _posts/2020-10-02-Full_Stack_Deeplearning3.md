@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Full Stack Deep Learning 3 - ML Development and Deployment
+title: Full Stack Deep Learning 3 - ML Development(개발) and Deployment(배포)
 tags: [Full Stack Deep Learning]
 use_math: true
 ---
 
 # ML Development
 
-ML Infrastrutes는 사용자가 ML 학습 및 개발을 쉽게 할 수 있게 리소스를 관리해 주는것이 목적입니다. 여러 ML 모델을 학습시켜야하는 복잡한 시스템에선 필연적으로 리소스 관리 문제가 발생합니다. 특히 리소스 할당에 대해 각 팀별 infra를 운영해 낭비되는 리소스 없이 자원을 쓰도록 도와주는 resource managemnet tool을 사용합니다. 
+ML Development를 위한 tool들은 사용자가 ML train 및 development를 쉽게 할 수 있게 리소스를 관리 및 지원 해주는것이 목적입니다. 이런 tool이 필요한 이유로는 여러 ML 모델을 train하고 관리하는 복잡한 시스템에선 필연적으로 리소스 관리 문제가 발생하기 때문입니다. 특히 리소스 할당에 대해 각 팀별 infra를 운영하게되면 낭비되는 리소스가 발생할 수 있지만, 통합 관리를 통해 낭비되는 리소스 없도록 resource managemnet tool을 사용합니다. 
 
 Resource Managemnet에는 다양한 툴들이 있지만, docker + kubernetes + kubeflow 조합만 리뷰하겠습니다. 
 
