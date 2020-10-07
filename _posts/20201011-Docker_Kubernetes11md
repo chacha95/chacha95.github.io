@@ -92,8 +92,6 @@ Katib 사용자 인터페이스를 사용하면, Experiment 을 제출하고 결
 
 Kubeflow 대시보드 화면의 왼쪽 메뉴에서 Katib를 클릭하면 접속할 수 있습니다.
 
-![img](https://www.kangwoo.kr/wp-content/uploads/2020/03/katib01-01-1024x566.png)
-
 # 하이퍼 파라미터 및 하이퍼 파라미터 튜닝
 
 하이퍼 파라미터는 모델 학습 프로세스를 제어하는 변수로서, 학습을 수행하기 위해 사전에 설정해야 하는 값들입니다. 예를 든다면 Learning rate, Batch Size, Regularization Strength 등이 있습니다.
@@ -105,8 +103,6 @@ Kubeflow 대시보드 화면의 왼쪽 메뉴에서 Katib를 클릭하면 접속
 자동화된 하이퍼 파라미터 튜닝 시스템은 대상의 목표 값을 이루기 위한 최적의 변수 값을 찾기 위해서 노력합니다. 일반적으로 모델의 정확성(accuracy)을 대상으로 사용합니다.
 
 예를 들어 Katib의 다음 그래프는 다양한 하이퍼 파라미터 값의 조합 (learning_rate, dropout)에 따른 정확도를 보여 줍니다.
-
-![img](https://www.kangwoo.kr/wp-content/uploads/2020/03/katib02-01-1024x554.png)
 
 Katib는 Experiment이라 부르는 하이퍼 파라미터 튜닝 작업을 실행합니다. 실행된 Experiment는 Trial 이라고 부르는 학습 작업을 여러번 실행합니다.
 
