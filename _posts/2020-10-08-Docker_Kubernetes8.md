@@ -29,10 +29,12 @@ Rancher가 앱과 서비스를 실행하는 downstream user cluster를 프로비
 
 ### Cluster Controller
 
-- downstream cluster의 리소스를 관리 합니다.
-- downstream cluster의 **current state**를 **desired state**로 만듭니다.
-- cluster에 대한 액세스 정책을 구성합니다.
-- RKE나 클라우드 기반의 GKE와 같은 cluster를 프로비저닝합니다.
+Rancher server에 있으며, downstream cluster를 관리합니다.
+
+- downstream cluster의 리소스 관리
+- downstream cluster의 **current state**를 **desired state**로 만듬
+- cluster에 대한 액세스 정책을 구성
+- RKE나 클라우드 기반의 GKE와 같은 cluster를 프로비저닝함
 
 ### Cluster Agent
 
