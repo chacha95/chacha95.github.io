@@ -1,150 +1,108 @@
 ---
 layout: post
-title: 딥러닝을 위한 Rancher 1 - overview
+title: 딥러닝을 위한 Kubeflow 1 - 소개
 tags: [Backend, Full Stack Deep Learning, Kubeflow]
 use_math: true
 ---
 
-# Rancher?
+# 배경지식
 
-Kubernetes는 이제 컨테이너 management tool에서 de facto(업계 표준)가 되었습니다. 이런 상황에서 Rancher는 Kubernetes를 위한 컨테이너 관리 플랫폼으로 시작되었습니다.
+현실에서 ML 모델을 만들어 서비스에 적용시키는 일은, 모델을 만드는 시간보다 데이터 수집과 분석 그리고 모델 튜닝에 더 많은 시간이 소모되며, 점점 더 시스템이 복잡해 졌습니다. 그래서 이런 과정을 묶어 파이프라인으로 구축하게 됩니다. 그런데 이러한 파이프라인이 늘어나고, 시스템이 더더욱 복잡해지자 유지보수가 힘들어지기 시작하자 kubeflow와 같은 '**ML 플랫폼**'이 등장하였습니다. 
 
-<br>
+> production level의 ML project에서 순수 ML 모델 개발은 5%도 채 안됨
 
-# Rancher 2.0
+![](https://user-images.githubusercontent.com/31475037/94651765-f1cea800-0333-11eb-8d34-761ee240d7d8.png)
 
-Rancher는 **"Deliver Kubernetes-as-a-Service"**라는 슬로건으로 표현 가능합니다.
 
-Rancher 사용자는 Rancher Kubernetes Engine (RKE) 또는 클라우드 Kubernetes 서비스(GKE, AKS, EKS)를 사용하여 Kubernetes 클러스터를 만들 수 있습니다. 
-
-Rancher 사용자는 Kubernetes 배포 또는 설치 프로그램을 사용하여 생성 된 기존 Kubernetes 클러스터를 가져오고 관리 할 수도 있습니다.
-
-하나의 Rancher 서버 설치는 동일한 UI에서 수천 개의 Kubernetes 클러스터와 수천 개의 노드를 관리 할 수 있습니다.
-
-Rancher 2.0 구조는 아래와 같습니다.
-
-> Rancher2.0 Architecture
-
-![](https://user-images.githubusercontent.com/31475037/95277257-55069000-0888-11eb-9bdd-a5c9051f5cb9.png)
 
 <br>
 
-## 언제 써야 할까?
+# Kubeflow의 등장
 
-개발 환경에서 웹-인터넷 접속이 느리고 방화벽으로 막혀있는환경
+Kubeflow는 kubernetes 위에서 돌아가는 오픈 소스들을 가져다 붙여 쓸수 있는 확장형 **ML 플랫폼** 입니다. 그렇기에 data scientiest, ML engineer, ML researcher 모두에게 필요한 요소들을 제공합니다.
 
-규정상 특정 클라우드에 종속적이지않고싶다
+### data scientiest
 
-On-premise 환경에서 Kubernetes를 쓰거나 On-premise와 여러 Cloud 벤더를 섞어서 써야할 때
+Data 전처리를 위한 ML pipeline을 구축하고, 실험하려는 data scientiest를 위한 기능을 제공합니다.
 
-<br>
+### ML engineer
 
-## Rancher for Dev
+개발, 테스트 및 production level 서비스를 위해 다양한 환경에 ML 시스템을 배포하도록 기능을 지원합니다.
 
-### Rancher
+### ML researcher
 
-Rancher를 사용하면 Kubernetes를 쉽게 관리 할 수 있습니다. 이제 컨테이너, Istio 서비스 메시 및 클라우드 네이티브 워크로드에 대한 향상된 보안을 완벽하게 지원하는 Rancher는, 개발자가 더 빠르고 확실하게 혁신 할 수 있도록 지원합니다.
+jupyter notebook을 기본으로 하여 tesnorflow, pytorch, MXNet 등을 이용하여 모델 개발이 가능합니다.
 
-### RKE
+> kubeflow Architecture
 
-RKE는 전적으로 컨테이너 내에서 실행되고 복잡한 설치에 대한 불만을 해결해줍니다. RKE를 사용하면 Kubernetes 운영이 쉽게 자동화되고 실행중인 운영 체제 및 플랫폼과 완전히 독립적입니다.
+![](https://www.kubeflow.org/docs/images/kubeflow-overview-platform-diagram.svg)
 
-### K3S
-
-K3s는 IoT 내부 또는 네트워크 edge에서 production 워크로드를 실행하기 위해 구축 된 경량 Kubernetes 입니다. K3s는 x86 및 Arm 프로세서 모두에 대해 40MB 미만 단일 바이너리로 패키징되어 있으며, Raspberry Pi는 물론이고, AWS a1.4xlarge 32GiB 서버와 같이 큰 서버에서도 잘 동작합니다.
-
-### LONGHORN
-
-Longhorn은 Kubernetes 용으로 구축된 오픈소스 분산 블록 스토리지입니다. Rancher Labs에서 시작했지만 Longhorn은 이제 CNCF가 관리하는 프로젝트입니다. 데이터를 관리하고 환경을 운영하는 데 필요한 리소스를 줄여줍니다.
+이번 포스트에선 다른 부분보다는 전체 시스템의 구성 및 배포, 즉 ML engineer로서의 요소를 많이 다루겠습니다.
 
 <br>
 
-## 주요 기능
+## ML Workflow
 
-Rancher는 제어되는 모든 Kubernetes 클러스터에 대해 RBAC 기반 중앙 집중식 인증, 액세스 제어, 모니터링, 로깅을 지원합니다.
+ML workflow는 ML 실험과 개발을 보다 간편하게 하기 위해 제공되는 툴입니다. 크게 두가지 단계로 나뉘어져 있습니다.
 
-Rancher는 DevOps 엔지니어가 애플리케이션 워크로드를 관리 할 수있는 직관적인 UI를 제공합니다.
+### Experimental phase
 
-사용자는 Rancher 사용을 위해 Kubernetes에 대한 깊은 지식이 필요치 않습니다.
+실험 단계에서는 초기 가정을 기반으로 실험을 통해 모델을 개발합니다. 
 
-Rancher 카탈로그에는 보안, 모니터링, 컨테이너, 스토리지, 네트워킹 드라이버 등 Helm을 이용해 다양한 클라우드 네이티브 에코 시스템 툴들을 제공합니다.
+보통 다음 업무를 진행합니다.
 
-### Rancher Kubernetes Engine (RKE)
+- ML 시스템으로 해결하려는 문제를 식별
+- ML 모델 학습에 필요한 데이터를 수집하고 분석 
+- ML 프레임 워크와 모델을 선택하고 모델 초기 버전 제작
 
-On-Premise 서버에 Kubernetes 클러스터를 설치하는 가장 쉬운 방법
+### Production phase
 
-### 통합 클러스터 관리
+프로덕션 단계에서는 실험으로 만들어진 모델을 production level에서 사용할 수 있도록 개발합니다.
 
-GKE, EKS, AKS와 같은 클라우드 Kubernetes 클러스터는 물론 On-premise로 설치된 Kubernetes 클러스터까지 통합 관리 해줍니다.
+보통 다음 업무를 진행합니다.
 
-### Kubernetes 클러스터 프로비저닝
+- 학습에 알맞게 데이터 변환
+- ML 모델의 성능을 모니터링
+- ML 모델 fintune
 
-Rancher API 서버는 기존 노드에서 Kubernetes를 프로비저닝하거나 Kubernetes 업그레이드를 수행 할 수 있습니다.
+> 예시
 
-### 보안 및 계정 관리
-
-**사용자 관리**
-
-Rancher API 서버는 로컬 사용자뿐 아니라 Active Directory 또는 GitHub와 같은 외부 인증 공급자에 해당하는 사용자 ID를 관리합니다.
-
-**인증**
-
-Rancher API 서버는 액세스 제어 및 보안 정책을 관리합니다.
-
-### 앱 카탈로그
-
-앱 카탈로그를 Helm 연동을 통해서 지원
-
-Rancher는 반복적으로 애플리케이션을 쉽게 배포 할 수 있도록 Helm 차트 카탈로그 기능을 제공합니다.
-
-### 프로젝트 관리
-
-프로젝트는 클러스터 내 여러 네임 스페이스 및 액세스 제어 정책의 그룹입니다. 프로젝트는 Kubernetes 개념이 아닌 Rancher 개념으로, 여러 네임 스페이스를 그룹으로 관리하고 그 안에서 Kubernetes 작업을 수행 할 수 있습니다. 
-
-### 파이프 라인
-
-파이프 라인을 설정하면 개발자가 가능한 빠르고 효율적으로 새로운 소프트웨어를 제공 할 수 있습니다. Rancher 내에서 각 Rancher 프로젝트에 대한 파이프 라인을 구성 할 수 있습니다.(외부 CI / CD 툴을 쓸 수도 있음)
-
-### Istio
-
-Istio와의 통합은 Rancher 운영자가 Istio를 개발자에게 제공합니다.
-
-### 모니터링
-
-프로메테우스, 그라파나 기반 모니터링 제공
-
-Prometheus와의 통합을 통해 클러스터 노드, Kubernetes 구성 요소 및 소프트웨어 배포의 상태와 프로세스를 모니터링 할 수 있습니다. 
-
-### Alert(경고)
-
-지표에 따른 알람 기능도 제공한다.
-
-클러스터와 애플리케이션을 정상 상태로 유지하는 alert 기능을 제공합니다.
-
-### 로깅
-
-자체 로깅 시스템은 없고, 외부 로깅 시스템과 연동
-
-ELK, Splunk를 지원하며, Kafka를 통해 로그를 빼내거나 Syslog/fluentd를 이용해서 로그 서버에 전송
-
-Rancher는 Kubernetes 클러스터 외부에 존재하는 다양한 로깅 도구를 사용 가능합니다
+![](https://www.kubeflow.org/docs/images/kubeflow-gcp-e2e-tutorial-simplified.svg)
 
 <br>
 
-#### 용어 설명
+## Kubeflow 특징
 
-**프로비저닝**
+Kubeflow는 새로운 툴들을 만들기보단 kubernetes 오픈소스 생태계에 있는 툴을 가져와 쓸수 있게 만들었습니다. 
 
-사용자의 요구에 맞게 시스템 자원을 할당, 배치, 배포해 두었다가 필요 시 시스템을 즉시 사용할 수 있는 상태로 미리 준비해 두는 것을 말한다.
+Cloud나 On-Premise 환경에 상관 없이 동일한 환경에서 개발할 수 있기 때문에 특정 벤더나 플랫폼에 종속되지 않습니다. 예를들어 모델 학습은 On-premise에서 학습을하고, 학습된 모델은 cloud에 올려 서비스하는 일도 가능합니다.
 
-**워크로드**
+> Cloud only
 
-워크로드란 고객 대면 애플리케이션이나 백엔드 프로세스 같이 비즈니스 가치를 창출하는 리소스 및 코드 모음을 말합니다.
+![](https://user-images.githubusercontent.com/31475037/95158521-bf5ef800-07d6-11eb-8a15-0b95aec3dda5.png)
+
+
+
+> On-premise와 cloud를 혼용해서 사용
+
+![](https://user-images.githubusercontent.com/31475037/95158516-bec66180-07d6-11eb-9016-46e7b77d7ec4.png) 
+
+<br>
+
+Kubeflow의 특징을 요약하자면 다음과 같습니다. 
+
+- 다양한 인프라에 쉽고 반복 가능한 배포 (예 : local pc에서 실험한 다음 클라우드에 배포)
+- 요구에 따라 가능한 스케일링(auto scailing)
+- 전체 ML 개발 과정 통합 관리, On-premise/cloud 제한 없이 배포 지원 
+- ML 워크플로우를 제공하며, 여기서 ML 워크플로우라는 오픈소스는 ML project의 라이프사이클을 관리하는 오픈소스이며, kubeflow는 kubernetes 환경에서 ML 워크플로우를 관리, 배포, 확장하게 도와주는 ML 플랫폼임
+- kubernetes 위에서 돌기에 kubernetes 생태계에 있는 오픈소스를 가져와 사용 가능(Argo, Prometheus...)
+- kubernetes가 업계 de facto(표준)가 된 지금, 강력한 확장성을 지님
+- kubeflow는 웹으로 접속하는 GUI를 제공해 편리한 UI/UX를 제공함
 
 <br>
 
 **참조 강의**
 
-[AWSKRUG 컨테이너 소모임 Rancher 기본 입문](https://www.slideshare.net/HyunminKim5/awskrug-rancher)
+[Kubeflow 101](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x)
 
-[Rancher doc](https://rancher.com/products/)
+[Kubeflow doc](https://www.kubeflow.org/docs/)
