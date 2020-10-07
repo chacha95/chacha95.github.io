@@ -5,7 +5,7 @@ tags: [Backend, Full Stack Deep Learning, Kubeflow]
 use_math: true
 ---
 
-# Rancher
+# Rancher Architecture
 
 
 
