@@ -40,7 +40,7 @@ use_math: true
 
 ### Container Management Tool
 
-위와같은 문제점들을 해결하기위해 나온것이 **container management tool**들이고, docker swarm이 처음에 나온 이후 쿠버네티스(kubernetes)가 나왔고, 이젠 쿠버네티스가 업계 defecto가 되었습니다.
+위와같은 문제점들을 해결하기위해 나온것이 **container management tool**들이고, docker swarm이 처음에 나온 이후 쿠버네티스(kubernetes)가 나왔고, 이젠 쿠버네티스가 업계 de fecto(업계 표준)가 되었습니다.
 
 다음 영상을 보면 어떤 배경에서 K8S가 나타났는가에대해 자세히 설명해줍니다.
 

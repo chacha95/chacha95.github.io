@@ -7,17 +7,21 @@ use_math: true
 
 # Service Mesh
 
-Service Mesh를 이해하기 위해선 MSA의 장단점에 대해 알아야 합니다.
+Service Mesh를 이해하기 위해선 MSA(Micro Service Architecture)의 장단점에 대해 알아야 합니다.
 
-MSA(Micro Service Architecture)는 여러 장점을 가졌지만, 많은 단점도 가졌습니다. MSA는 기능을 서비스 단위로 잘게 나누다 보니, 시스템이 커지면 커질수록 서비스간 관리가 힘들어집니다. 특히, 서비스간 전체적인 연결 구조를 파악하기 어려워, 이로 인해 장애가 났을때, 어느 서비스에서 장애가 났는지 추적이 어려워집니다.
+MSA는 장점도 많지만, 단점도 많습니다. 
+
+MSA는 기능을 서비스 단위로 잘게 나누다 보니, 시스템이 커지면 커질수록 서비스간 관리가 힘들어집니다. 특히, 서비스간 전체적 연결 구조 파악이 어려워, 이로 인한 장애가 났을때 어느 서비스에서 장애가 났는지 추적이 어려워집니다.
 
 이런 MSA의 단점을 개선하기 위해 service mesh 기술이 나왔습니다. Service mesh는 소프트웨어 계층이 아니라 인프라 측면에서 MSA의 문제를 해결하기 위해 나왔습니다.
 
 Service mesh를 이해하기 위해선 다음 개념들을 알아야 합니다.
 
+
+
 <br>
 
- ## 프록시 
+## 프록시 
 
 프록시란 '**대리**'라는 의미로 네트워크 기술에서는 중요한 개념이며, 보통 서버의 대라자 역할을 하는 서버를 의미합니다.
 
@@ -57,13 +61,39 @@ MSA의 등장으로 개발 패러다임이 바뀌는 가운데 여러 design pat
 
 Service mesh는 소프트웨어 계층이 아니라 인프라 측면에서 MSA의 문제를 해결하기 위해 나왔습니다.
 
-Proxy 기술은 서비스의 트래픽을 네트워크 단(L3, L4 layer)에서 통제할 수 있게 하고, Client의 요구에 따라 proxy단에서 라우팅서비스도 가능케 할 수 있습니다. 그러나 TCP기반(L3, L4 layer)의 proxy로는 한계가 있었습니다. 특히나 MSA가 커지면서 서비스들은 네트워크를 통해 더 많은 통신이 필요했습니다.
+기존 대다수 Proxy 기술들은 서비스 트래픽을 네트워크 단(L3, L4 layer)에서 통제했습니다. 그러나 네트워크 기반(L3, L4 layer)의 proxy로는 MSA 구조에선 기능이 부족했습니다. 특히나 MSA가 커졌을 때, 서비스들은 네트워크를 통해 더 많은 통신이 필요 했고, 이를 load balancing 해줄 기능이 필요했습니다.
 
-이렇게 커져가는 MSA에서 L3, L4기반의 프록시들만으론 모든 요청을 처리하기 어려워졌고, **L7 proxy**가 나왔습니다.
+이렇게 커져가는 MSA 패러다임 속에서 **L7 layer proxy** 기능이 추가된 envoy proxy가 나왔습니다.
 
 > 커져가는 MSA 
 
 ![](https://www.abhishek-tiwari.com/assets/images/Network-of-Microservices.jpg)
+
+<br>
+
+## Envoy proxy
+
+Envoy proxy는 MSA를 위해 설계된 고성능 분산 c++ 프록시입니다. 기존의 **L3/L4 layer proxy**를 **L7 layer proxy** 까지 확장시켰습니다. 
+
+다음 기능들을 지원합니다.
+
+### 고성능 및 독립적
+
+Envoy proxy는 c++로 구현된 메모리 사용량이 적은 고성능 서버입니다.
+
+특정 플랫폼에 종속되지 않습니다. 이로인해 모든 프로그래밍 언어, 프레임워크와 함께 실행될 수 있으며 네트워크 인프라를 추상화 시킵니다.
+
+### L7 layer proxy
+
+L3/L4/L7 layer proxy를 사용합니다. L7 layer에서 HTTP,  gRPC, WebSocket 및 TCP 트래픽에 대한 라우팅 규칙을 사용하여 보다 세분화된 트래픽 관리를 합니다.
+
+### 보안 및 인증
+
+보안 정책을 시행하고 구성 API를 통해 정의된 액세스 제어 및 속도를 제한합니다.
+
+
+
+그 외에도 **Dynamic service discovery**, **L7 layer Load balancing**, **HTTP/2, gRPC**를 지원합니다.
 
 <br>
 
@@ -77,39 +107,11 @@ Service mesh의 기본 아키텍처는 서비스끼리 직접통신하는 것이
 
 ## Istio Architecture
 
-Istio의 구조는 크게 두가지 components로 이뤄져 있습니다. **Data plane**으로 envoy proxy, **control plane**으로 Istio를 사용합니다.
-
-###  Envoy proxy
-
-여러 L7 layer proxy 중에서 Istio에서 쓰이는 envoy proxy를 소개 드립니다. Envoy proxy는 MSA의 Application과 Service를 위해 설계된 고성능 분산 c++ 프록시입니다. 기존의 L3/L4 proxy를 L7 까지 확장시킨 proxy입니다. TCP프록시, HTTP프록시, TLS인증과 같은 다양한 작업을 지원합니다.
-
-다음 기능들을 합니다.
-
-**고성능 및 독립적**
-
-Envoy proxy는 c++로 구현된 메모리 사용량이 적은 고성능 서버입니다.
-
-특정 플랫폼에 종속되지 않습니다. 이로인해 모든 프로그래밍 언어, 프레임워크와 함께 실행될 수 있으며 네트워크 인프라를 추상화 시킵니다.
-
-**L7 layer proxy**
-
-L3/L4 layer proxy를 쓰면서, L7 layer proxy를 추가적으로 사용합니다. L7 layer에서 HTTP, gRPC, WebSocket 및 TCP 트래픽에 대한 라우팅 규칙을 사용하여 보다 세분화된 traffic control을 합니다.
-
-**보안 및 인증**
-
-보안 정책을 시행하고 구성 API를 통해 정의된 액세스 제어 및 속도를 제한합니다.
-
-**Dynamic service discovery**
-
-**Load balancing**
-
-**HTTP/2, gRPC proxy 지원**
-
-<br>
+Istio의 구조는 크게 두가지 components로 이뤄져 있습니다. **Data plane**으로 envoy proxy, **control plane**으로 Istiod를 사용합니다.
 
 ### Istiod
 
-Istiod는 service discovery, configuration(설정), certificatie(인증) 관리 합니다. 
+Istiod는 service discovery, configuration(설정), certificatie(인증)를 관리 합니다. 
 
 Istiod는 다음 components로 구성됩니다.
 
@@ -184,7 +186,7 @@ FaaS는 애플리케이션을 기능별로 여러 함수로 쪼갠뒤 매우 거
 
 ## Knative란?
 
-현재 쿠버네티스가 de-facto가 되는 와중에 쿠버네티스 자체는 안정되어가고 있지만, 이를 현업에 적용하기에는 까다로운 부분들이 많이 존재합니다. 예를들어 stateless(무상태) 서비스를 하나 구축한다 하더라도 Deployment, Ingress, Service 등의 쿠버네티스 리소스를 정의해서 배포해야 합니다. 그런데 이런 설정을 일일이 다 하기에는 일반 개발자들에게 부담이 됩니다.
+현재 쿠버네티스가 de fecto(업계 표준)가 되는 와중에 쿠버네티스 자체는 안정되어가고 있지만, 이를 현업에 적용하기에는 까다로운 부분들이 많이 존재합니다. 예를들어 stateless(무상태) 서비스를 하나 구축한다 하더라도 Deployment, Ingress, Service 등의 쿠버네티스 리소스를 정의해서 배포해야 합니다. 그런데 이런 설정을 일일이 다 하기에는 일반 개발자들에게 부담이 됩니다.
 
 그래서 서버에 복잡한 설정 없이 stateless 서비스나 간단한 event 서비스 등을 구축하는 방법으로 위에서 설명한 serverless 서비스가 나타났습니다(FaaS). AWS의 람다(Lambda)나, GCP의 Function이 대표적입니다. 그런데 이런 serverless 서비스들은 특정 클라우드 플랫폼에 의존성을 가지고 있는데, 이런 문제를 해결하기 위해 나온 오픈소스 serverless 솔루션이 Knative 입니다.   
 
