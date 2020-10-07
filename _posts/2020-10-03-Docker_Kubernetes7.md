@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubeflow 1 - 소개
-tags: [Backend, Full Stack Deep Learning]
+title: 딥러닝을 위한 Kubeflow 1 - 소개
+tags: [Backend, Full Stack Deep Learning, Kubeflow]
 use_math: true
 ---
 

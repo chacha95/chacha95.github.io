@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes 1 - 소개
+title: 딥러닝을 위한 Kubernetes 1 - 소개
 tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---

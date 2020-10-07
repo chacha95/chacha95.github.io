@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubeflow 2 - 구성 요소
-tags: [Backend, Full Stack Deep Learning]
+title: 딥러닝을 위한 Kubeflow 2 - 구성 요소
+tags: [Backend, Full Stack Deep Learning, Kubeflow]
 use_math: true
 ---
 

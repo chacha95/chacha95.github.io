@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes 5 - Service Mesh와 Knative
+title: 딥러닝을 위한 Kubernetes 5 - Service Mesh와 Knative
 tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---
