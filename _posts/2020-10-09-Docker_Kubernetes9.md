@@ -19,9 +19,9 @@ use_math: true
 
 # Kubeflow의 등장
 
-Kubeflow는 kubernetes 위에서 돌아가는 오픈 소스들을 가져다 붙여 쓸수 있는 확장형 **ML 플랫폼** 입니다. 그렇기에 data scientiest, ML engineer, ML researcher 모두에게 필요한 요소들을 제공합니다.
+Kubeflow는 kubernetes 위에서 돌아가는 오픈 소스들을 가져다 붙여 쓸수 있는 확장형 **ML 플랫폼** 입니다. Kubeflow는 간결한 CLI interface, 직관적인 대시 보드와 여러 클라우드와 On-premise를 섞어 사용 가능한 구조를 지녔기에 굉장히 핫합니다. 또한 Data scientiest, ML engineer, ML researcher 모두에게 필요한 요소들을 제공합니다.
 
-### data scientiest
+### Data scientiest
 
 Data 전처리를 위한 ML pipeline을 구축하고, 실험하려는 data scientiest를 위한 기능을 제공합니다.
 
@@ -101,8 +101,36 @@ Kubeflow의 특징을 요약하자면 다음과 같습니다.
 
 <br>
 
+# Kubeflow: The Answer to ML in Kubernetes?
+
+ML(Machine Learning) 라이프 사이클의 각 단계를 지원하는 툴들과 합쳐진 Kubeflow는 ML 표준화 분야에선 타의 추종을 불허합니다. 그렇다면 Kubeflow는 몇 달 만에 Kubernetes/production level ML 환경을 근본적으로 바꿀까요? 이상적으론 가능하지만 그렇지 않을 수도 있습니다.
+
+> Kubeflow 추상화된 강력한 기능들
+
+![](https://user-images.githubusercontent.com/31475037/96206125-364c7b80-0fa3-11eb-90de-5ec120184341.png)
+
+<br>
+
+## ML과 Kubernetes의 만남
+
+Kubernetes와 ML은 각기 러닝커브가 굉장히 높습니다. 두가지 모두 포괄적으로 이해하는 engineer는 거의 없습니다. Kubeflow가 Kubernetes 수준의 편리성을 제공하려면, 서로의 분야에 대해 이해가 필요합니다. 대다수의 Kubernetes engineer는 vanilla Kubernetes에 Kubeflow를 설치했을 뿐입니다. 반면 대다수의 ML engineer는 kubernetes에 대한 이해도가 떨어져 제대로 사용하지도 못합니다.
+
+> ML과 Kubernetes = kubeflow
+
+<center><img src="https://user-images.githubusercontent.com/31475037/96206122-351b4e80-0fa3-11eb-84af-cbd1cf825800.png"></center>
+
+<br>
+
+## ML 및 kubernetes 다음 단계
+
+Kubeflow는 infra를 추상화하고 ML pipelines의 사용 편의성에 중점을 둡니다.하지만 Kubeflow는 아직 미성숙 단계이며, 대규모 팀에서 사용하기 위해선 세부적 설정이 필요합니다. 최종적으론 ML engineer, developer, data scientiest, operator 모두를위한 '**모든 사람을위한 클라우드 네이티브 ML**'이 탄생 할 수 있다는 것은 분명합니다.
+
+<br>
+
 **참조 강의**
 
 [Kubeflow 101](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x)
 
 [Kubeflow doc](https://www.kubeflow.org/docs/)
+
+[Kubeflow: The Answer to AI and ML in Kubernetes?](https://rancher.com/blog/2020/kubeflow-answer-to-ai-ml/)
