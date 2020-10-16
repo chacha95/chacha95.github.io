@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubeflow 3 - Katib
+title: 딥러닝을 위한 Kubeflow 5 - Katib
 tags: [Backend, Full Stack Deep Learning, Kubeflow]
 use_math: true
 ---
@@ -8,8 +8,6 @@ use_math: true
 # Katib 살펴보기
 
 Katib는 Kubeflow 컴포넌트로서, 하이퍼 파라미터(Hyperparameter) 튜닝 및 신경망 아키텍처 탐색(Neural Architecture Search)을 위한 쿠버네티스 기반의 시스템입니다. Katib는 TensorFlow, PyTorch, Apache MXNet, XGBoost 등 다양한 머신러닝 프레임워크를 지원합니다.
-
-Kubeflow의 컴포넌트인 Katib 시스템에 대해서 이해하고, 하이퍼 파라미터 튜닝하는 방법에 대해서 알아 보도록 하겠습니다. 예제에 사용한 Katib 버전은 0.8 입니다.
 
 # Katib의 개념
 
