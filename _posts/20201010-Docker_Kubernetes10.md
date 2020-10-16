@@ -125,17 +125,3 @@ auto scailing, networking, status check, 서버 구성의 복잡성을 캡슐화
 
 [Kubeflow doc](https://www.kubeflow.org/docs/)
 
-
-
-
-
-
-
-<br>
-
-**참조 강의**
-
-[Kubeflow 101](https://www.youtube.com/playlist?list=PLIivdWyY5sqLS4lN75RPDEyBgTro_YX7x)
-
-[Kubeflow doc](https://www.kubeflow.org/docs/)
-
