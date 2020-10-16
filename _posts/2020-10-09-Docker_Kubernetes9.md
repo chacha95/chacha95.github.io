@@ -115,7 +115,7 @@ ML(Machine Learning) 라이프 사이클의 각 단계를 지원하는 툴들과
 
 Kubernetes와 ML은 각기 러닝커브가 굉장히 높습니다. 두가지 모두 포괄적으로 이해하는 engineer는 거의 없습니다. Kubeflow가 Kubernetes 수준의 편리성을 제공하려면, 서로의 분야에 대해 이해가 필요합니다. 대다수의 Kubernetes engineer는 vanilla Kubernetes에 Kubeflow를 설치했을 뿐입니다. 반면 대다수의 ML engineer는 kubernetes에 대한 이해도가 떨어져 제대로 사용하지도 못합니다.
 
-> ML과 Kubernetes = kubeflow
+> ML + Kubernetes = kubeflow가 최종적으로 원하는 Architecture
 
 <center><img src="https://user-images.githubusercontent.com/31475037/96206122-351b4e80-0fa3-11eb-84af-cbd1cf825800.png"></center>
 
