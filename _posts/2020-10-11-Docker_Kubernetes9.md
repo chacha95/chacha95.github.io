@@ -19,7 +19,7 @@ use_math: true
 
 # Kubeflow의 등장
 
-Kubeflow는 kubernetes 위에서 돌아가는 오픈 소스들을 가져다 붙여 쓸수 있는 확장형 **ML 플랫폼** 입니다. Kubeflow는 간결한 CLI interface, 직관적인 대시 보드와 여러 클라우드와 On-premise를 섞어 사용 가능한 구조를 지녔기에 굉장히 핫합니다. 또한 Data scientiest, ML engineer, ML researcher 모두에게 필요한 요소들을 제공합니다.
+Kubeflow는 kubernetes 위에서 돌아가는 오픈 소스들을 가져다 붙여 쓸수 있는 확장형 **ML 플랫폼** 입니다. Kubeflow는 간결한 CLI interface, 직관적인 대시 보드와 여러 클라우드와 On-premise를 섞어 사용 가능한 구조를 지녔기에 굉장히 핫합니다. 또한 **Data scientiest**, **ML engineer**, **ML researcher** 모두에게 필요한 요소들을 제공합니다.
 
 ### Data scientiest
 
@@ -31,13 +31,11 @@ Data 전처리를 위한 ML pipeline을 구축하고, 실험하려는 data scien
 
 ### ML researcher
 
-jupyter notebook을 기본으로 하여 tesnorflow, pytorch, MXNet 등을 이용하여 모델 개발이 가능합니다.
+Jupyter notebook을 기본으로 하여 tesnorflow, pytorch, MXNet 등을 이용하여 모델 개발이 가능합니다.
 
 > kubeflow Architecture
 
 ![](https://www.kubeflow.org/docs/images/kubeflow-overview-platform-diagram.svg)
-
-이번 포스트에선 다른 부분보다는 전체 시스템의 구성 및 배포, 즉 ML engineer로서의 요소를 많이 다루겠습니다.
 
 <br>
 
@@ -105,7 +103,7 @@ Kubeflow의 특징을 요약하자면 다음과 같습니다.
 
 ML(Machine Learning) 라이프 사이클의 각 단계를 지원하는 툴들과 합쳐진 Kubeflow는 ML 표준화 분야에선 타의 추종을 불허합니다. 그렇다면 Kubeflow는 몇 달 만에 Kubernetes/production level ML 환경을 근본적으로 바꿀까요? 이상적으론 가능하지만 그렇지 않을 수도 있습니다.
 
-> Kubeflow 추상화된 강력한 기능들
+> Kubeflow 내부는 여러 툴들을 연동해 추상화를 시켰음
 
 ![](https://user-images.githubusercontent.com/31475037/96206125-364c7b80-0fa3-11eb-90de-5ec120184341.png)
 
@@ -113,7 +111,7 @@ ML(Machine Learning) 라이프 사이클의 각 단계를 지원하는 툴들과
 
 ## ML과 Kubernetes의 만남
 
-Kubernetes와 ML은 각기 러닝커브가 굉장히 높습니다. 두가지 모두 포괄적으로 이해하는 engineer는 거의 없습니다. Kubeflow가 Kubernetes 수준의 편리성을 제공하려면, 서로의 분야에 대해 이해가 필요합니다. 대다수의 Kubernetes engineer는 vanilla Kubernetes에 Kubeflow를 설치했을 뿐입니다. 반면 대다수의 ML engineer는 kubernetes에 대한 이해도가 떨어져 제대로 사용하지도 못합니다.
+Kubernetes와 ML은 각기 러닝 커브가 굉장히 높습니다. 두 가지 모두 포괄적으로 이해하는 engineer는 거의 없습니다. Kubeflow가 Kubernetes 수준의 편리성을 제공하려면, 서로의 분야에 대해 이해가 필요합니다. 대다수의 Kubernetes engineer는 vanilla Kubernetes에 Kubeflow를 설치했을 뿐입니다. 반면 대다수의 ML engineer는 kubernetes에 대한 이해도가 떨어져 제대로 사용하지도 못합니다.
 
 > ML + Kubernetes = kubeflow가 최종적으로 원하는 Architecture
 
