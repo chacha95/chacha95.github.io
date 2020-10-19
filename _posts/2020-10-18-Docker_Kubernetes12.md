@@ -70,31 +70,9 @@ PyTorch의 편의성과 효율성 덕분에 연구 분야에선 많이 채택되
 
 <br>
 
-## Pytorch Model Serving Strategies
-
-실제 ML system에서 Jupyter 노트북에서 단순히 모델 inference를 하는 것 이상 필요합니다. 대표적으로 모델의 inference 결과를 다른 애플리케이션에 전달해주기 위해 API를 설계합니다. 
-
-일반적으로 다음 접근 방식 중 하나를 사용할 수 있습니다.
-
-### Direct embedding
-
-모바일과 같은 애플리케이션 설정에서 프로그램의 일부로서 모델을 직접 호출합니다. 그러나 이러한 환경에선 Python 을 쓰지 않고, (Pytorch) C ++를 사용합니다. 모바일을 사용하거나 로봇과 같은 임베디드 시스템에서 작업하는 경우 HW을 직접 제어할 수 있고, 성능적으로 우수한 C++을 사용하는 것이 좋기 때문입니다. 
-
-예를들어 모바일의 경우 **ONNX**로서 Pytorch로 학습된 모델을 ONNX로 변환하고, 이를 Caffe2로 변환해 모바일에 임베딩 할 수 있습니다. 그러나 ONNX는 본질적으로 몇몇 제한이 있으며, 실제로 프로덕션에서 쓰기에 적합하지 않을 수 있습니다. 그렇기에 C ++ API에서 PyTorch 모델에 대한 inference을 실행하는 것이 올바른 솔루션이 될 수 있습니다.
-
-### Model microservices(MSA)
-
-서버 모델을 사용하고 여러 모델을 관리하는 경우, 일반적으로 Docker와 같은 일종의 패키징 메커니즘을 사용하여 각 개별 모델 (또는 각 개별 모델 버전)을 별도의 서비스로 분할합니다. 해당 서비스는 HTTP를 통한 JSON 또는 gRPC와 같은 RPC 기술을 사용하여 서비스를 통해 네트워크에 액세스 할 수 있습니다.
-
-### Model servers
-
-모델을 관리하고 제공하기 위해 빌드 된 애플리케이션입니다. 이를 통해 여러 모델을 업로드하고 각 모델에 대한 end-point를 설정합니다. 모델 관리 및 제공에 대한 전체 문제를 해결하는데 도움이되는 다른 기능이 포함되어 있습니다. 여기에는 metric, visualization, data preprocessing 등이 포함되 있습니다. 
-
-<br>
-
 ## TorchServe Architecture
 
-**Front-end** : TorchServe의 요청 / 응답을 처리하는 component입니다. 서빙 컴포넌트의이 부분은 클라이언트로부터 오는 요청 / 응답을 모두 처리하고 모델의 lifecycle를 관리합니다.
+**Front-end** : TorchServe의 요청 / 응답을 처리하는 component입니다. 서빙 component 부분은 클라이언트로부터 오는 요청 / 응답을 모두 처리하고 모델의 lifecycle를 관리합니다.
 
 **Worker process:** 모델에 대한 inference를 실행합니다.
 
