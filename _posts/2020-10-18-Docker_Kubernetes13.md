@@ -1,7 +1,7 @@
 ---
-layout: post
-title: 딥러닝을 위한 Kubeflow 5 - Katib
-tags: [Backend, Full Stack Deep Learning, Kubeflow]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      layout: post
+title: 딥러닝을 위한 kubernets - Katib
+tags: [Backend, Full Stack Deep Learning]
 use_math: true
 ---
 
