@@ -117,6 +117,14 @@ Katib는 Hyperparameter tunning and NAS(Neural Architecture Search)를 하는 to
 
 자세한 내용은 [다음포스트](https://chacha95.github.io/2020-10-18-Docker_Kubernetes13/)에서 다루도록 하겠습니다.
 
+
+
+<br>
+
+*Artifacts: 학습 프로세스에서 생성되는 outputs을 일컫습니다. 예를 들어 model artifacts는 학습된 model weights를 의미합니다.*
+
+
+
 <br>
 
 **참조 강의**
