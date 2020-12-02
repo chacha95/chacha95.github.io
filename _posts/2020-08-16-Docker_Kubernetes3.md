@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 딥러닝을 위한 Kubernetes 2 - 튜토리얼
-tags: [Backend, Full Stack Deep Learning]
+tags: [Full Stack Deep Learning]
 use_math: true
 ---
 
