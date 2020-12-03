@@ -7,7 +7,7 @@ use_math: true
 
 [Optimization](https://chacha95.github.io/2018-11-17-Deeplearning1.5/)글을 먼저 읽으시면 이해에 도움이 많이 됩니다. 
 
-### Optimizer
+# Optimizer
 
 Neural Network의 weight들을 업데이트 하면서 우리는 Loss 함수의 값을 최소로 만드는 것이 우리의 목표입니다.
 
