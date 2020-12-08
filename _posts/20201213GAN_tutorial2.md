@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GAN tutoria2
+title: GAN 튜토리얼 2
 tags: [Machine Learning]
 use_math: true
 ---
