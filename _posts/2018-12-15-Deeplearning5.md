@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Training Neural Net
-tags: [Deeplearning]
+tags: [Machine Learning]
 use_math: true
 ---
 
