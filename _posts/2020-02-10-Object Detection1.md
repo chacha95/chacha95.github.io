@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Object Detection(객체 검출) 기초 1
+title: Object Detection(객체 검출) 1
 tags: [Object Detection]
 use_math: true
 ---

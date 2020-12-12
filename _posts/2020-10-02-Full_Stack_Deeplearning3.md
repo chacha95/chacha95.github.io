@@ -1,87 +1,115 @@
 ---
 layout: post
-title: Full Stack Deep Learning 3 - ML Development(개발) and Deployment(배포)
-tags: [Full Stack Deep Learning]
+title: Full Stack Deep Learning 1 - 소개
+tags: [MLOps]
 use_math: true
 ---
 
-# ML Development
+# 왜 많은 production level의 ML project가 망하는가?
 
-ML Development를 위한 tool들은 사용자가 ML train 및 development를 쉽게 할 수 있게 도와줍니다. Development를 돕기 위해서 resource management tool도 존재하며, 이 tool들을 이용해 리소스 낭비를 막습니다.  Development tool들은 워낙 유명하니 다루지 않고, Resource managemnet tool에서 docker + kubernetes + kubeflow 조합만 리뷰하겠습니다. 
+2012년부터 딥러닝은 이미지 인식에서 음성 인식, 로봇 공학 및 오디오 합성에 이르기까지 다양한 컴퓨팅 작업에서 놀라운 발전을 이루었습니다. 딥러닝은 자율 주행 차량, 실시간 번역 및 음성 지원과 같은 이전에는 불가능했던 새로운 기술을 구현하고 기존 소프트웨어 범주를 재정의 할 수있는 잠재력을 가지고 있습니다.
 
->  Resource management and development tool
-
-![](https://user-images.githubusercontent.com/31475037/94698935-bdc7a700-0374-11eb-8a34-6fce194aa790.PNG)
+하지만 research 영역에서 ML이 이룬 성과와는 달리, 현실에서 ML을 적용하기에는 너무나도 큰 **난관**들이 존재합니다. 
 
 <br>
 
-## Dokcer
+## 1. Research <<<(GAP)>>> Real-World
 
-Docker는 VM(Virtual Machine)보다 가볍게 OS를 격리하는 방식입니다.  
+Research와 Real-World 사이의 GAP이 너무 심해 실제 production으로 쓰지 못합니다.
 
-Docker에 대한 자세한 사항은 이 [포스트](https://chacha95.github.io/2020-06-07-Docker_Kubernetes1/) 참조 바랍니다.
+예를들어, Research에서는 label이 0 또는 1로 정확히 정의되지만, 현실에선 label이 정확히 정의되지 않는 경우가 더 많습니다. 또한 research에서는 70% 이상의 성능만 나온다면 다음 task로 넘어가지만, 현실에선 90%의 성능도 충분하지 않습니다.
 
-> Docker
+또한 성능 측정을 위한 metric(지표)가 명확히 정의되있지 않은 경우도 많아 어떤 모델이 우수한지 알 수 없는 경우도 많습니다.
 
-![](https://user-images.githubusercontent.com/31475037/92835760-971dec80-f416-11ea-848c-97eb1119a7c1.png)
+> Research와 Real-World에는 차이가 존재
 
-<br>
+![](https://user-images.githubusercontent.com/31475037/94651761-f09d7b00-0333-11eb-92c4-f7f4cb448d23.png)
 
-## Kubernetes
 
-Kubernetes 등장 이전에, docker가 OS 격리를 통해 개별의 마이크로 서비스를 처리하는 법을 향상시켰습니다. 이에따라 MSA(Micro Service Architecture) 방법론이 점차 퍼지면서 수십, 수백개의 컨테이너를 처리해야되는 상황이 왔습니다. 전체 docker 컨테이너를 조절하는 컨테이너 오케스트레이션 tool(container management tool)에 대한 수요가 높아지면서, kubernetes를 비롯한 많은 tool들이 나타났지만, 결국엔 kubernetes가 de fecto(업계 표준)가 되었습니다. 
 
-자세한 사항은 이 [포스트](https://chacha95.github.io/2020-08-09-Docker_Kubernetes2/) 참조 바랍니다.
+Research에서는 simulation 상황 같이 한정된 조건이나 잘 정제된 데이터셋을 이용해 모델 학습만을 한다면, 현실에서는 변하는 상황에 맞춰 모델이 예측을 해야 합니다.
 
-> Kubernetes
+대표적으로 RL(Reinforcement Learning)이 그렇습니다.
 
-![](https://user-images.githubusercontent.com/31475037/92835758-96855600-f416-11ea-9643-506c8fbee134.png)
+![](https://user-images.githubusercontent.com/31475037/92843090-51b1ed00-f41f-11ea-9828-b5e1ffdf853a.png)
 
-<br>
+현실에선 실제 사람이 보기에도 잘 모르는 것을 모델이 예측해야 하는 경우도 생깁니다.
 
-## Kubeflow
+> 사람이 봐도 힘든 물체를 모델이 예측해야 함
 
-Kubeflow는 kubernetes 위에서 동작하는 ML workflow tool 입니다. 기존에 분리 되어있던 ML 개발환경을 통합 관리하게 만들었습니다.  Kubeflow는 kubernetes 생태계에서 사용되는 여러 앱들을 연동해 사용 가능합니다. ML을 학습시키는 pipeline에서부터, 학습된 모델을 배포하는 KFServing이나 TFserving 등을 지원하며, 프로메테우스와 그라파나와 같은 모니터링 tool을 통해 모니터링 할 수 있습니다. 자세한 내용은 [다른 포스트](https://chacha95.github.io/2020-10-09-Docker_Kubernetes9/)에서 다루기로 하겠습니다.
+![](https://user-images.githubusercontent.com/31475037/92843084-4fe82980-f41f-11ea-9b1e-90f92b2b6a30.png)
 
-> Kubeflow
+그 중에서도 가장 극명히 차이 나는 부분은 ML pipeline을 구축하는 것입니다. 연구실에서 COCO나 ImageNet 데이터셋과 같이 잘 차려진 데이터를 모델에 넣어 학습을 돌리면 됩니다. 잘 차려진 밥상위에 숟가락만 얹으면 되는군요.
 
-![](https://user-images.githubusercontent.com/31475037/92835754-95542900-f416-11ea-90ed-5f6cba666f31.png)
+하지만 현실에선 잘 차려진 데이터도 없을 뿐더러, 데이터 수집부터 모델링까지 모든 부분을 해야합니다.
 
-<br>
+> 꿈에서 깨어나세요....
 
-# ML Deployment
+![](https://user-images.githubusercontent.com/31475037/92835771-99804680-f416-11ea-8586-e78c079b3c2f.png)
 
-모든 학습된 ML 모델의 목표는 실제 돌아가는 system에 맞춰 배포(deployment)하는 것입니다. 이 부분은 임베디드, 웹 등등 다양한 환경에서 배포해야하기에 조건이 너무나도 다양하기에 자세히 다루지는 않고, CI와 모니터링만 간단히 다루겠습니다.
+그래서 production level의 ML에서 순수한 model research에 들어가는 비중은 약 5%라고 합니다.
 
-> Deployment
+> ML research(ML core)는 정말 극소수 부분만을 차지함
 
-![](https://user-images.githubusercontent.com/31475037/95016201-6b47fc80-068c-11eb-8f46-0ecff7bfff3a.PNG)
+![](https://user-images.githubusercontent.com/31475037/94651765-f1cea800-0333-11eb-8d34-761ee240d7d8.png)
 
 <br>
 
-## CI(Continous Intergration)
+## 2. Cost 측면
 
-CI는 업데이트 된 모델이 배포되기 전에 새 코드가 git 저장소에 push 될 때마다 자동으로 코드를 build해 test 해주는 기능을 말합니다.
+Production으로서의 ML project는 결국엔 "**돈을 벌 수 있는가?**"가 핵심입니다. BM(Business Model)을 세우고 cost(돈, 시간 등등...) 대비한 수익이 얼마인지 따져봐야합니다.
 
-보통 다음 업무를 합니다. 
+가장 심플하게 따져볼 수 있는 비용에 의한 cost를 생각해봅시다.
 
-- Build & Packaging
-- 새로운 코드 변경 사항이 정기적으로 빌드 및 테스트되어 공유 리포지토리에 병합됨
-- 다수의 개발자가 동시에 애플리케이션 개발과 관련된 코드 작업을 할 경우, 서로 충돌할 수 있는 문제를 test 해줌
-- 언제든 최신 Build를 바로 배포 가능하게 함
+### Accuracy에 따른 cost
 
-대표적인 tool로는 **Jenkins**가 있습니다.
+모델의 평가 지표가 Accuracy라고 가정했을 때, Accuracy를 올리기 위해 데이터를 수집하고, 모델을 학습하는 비용이 올라갑니다. 그런데 accuracy를 올리기 위한 cost는 linear하게 증가하는게 아니라 exponential하게 증가합니다. 따라서 accuracy가 99%일때 0.1% 올리는데 투자한 비용 대비 그만한 수익을 낼 수 있는가에 대한 고려가 필요합니다.
+
+![](https://user-images.githubusercontent.com/31475037/92834745-55407680-f415-11ea-852f-0df58b7b9e29.png)
+
+### Data 수집에 따른 Cost
+
+Real-world에서는 잘 차려진 데이터가 없기에, 대다수의 경우 데이터 수집부터 시작해야 합니다. 그렇기에 데이터 수집을 위한 선순환 구조의 생태계 구성이 중요합니다. 하지만 이러한 순환 구조를 만들기 위해선 cost가 들게 됩니다.
+
+![](https://user-images.githubusercontent.com/31475037/92834802-6b4e3700-f415-11ea-9ecf-e4031c7faeec.gif)
 
 <br>
 
-## Monitoring
+## 3. Team management
 
-Serving 시스템, ML pipeline에서 리소스를 모니터링 하는 것은 매우 중요합니다. 모니터링 시스템은 문제가 발생 했을 때 log를 남기고, 개발자는 이를 통해 버그를 수정 할 수 있습니다. 또한 낭비되는 자원이 없는지, 현재 있는 자원을 최대한 활용하고 있는지도 모니터링 합니다.
+실패 원인 중 많은 사람들이 간과하는 부분이 바로 team management입니다. 
 
-대표적인 tool로는 **프로메테우스**와 **그라파나**가 존재합니다.
+ML 개발 방법론의 경우 기존 software 개발 방법론과는 다르며, ML 기반의 소프트웨어 개발 방법론을 Andrej Karpathy가 [Software 2.0](https://medium.com/@karpathy/software-2-0-a64152b37c35)이라 정의했습니다. 이에 따른 새로운 role들이 생겨나기 시작했으나, 아직 미성숙한 시장이기에 어떻게 협업을 해야 하고 업무 분담을 할 것인가에 대해 제대로 정의된 것이 없습니다. 실제로 ML engineer와 ML researcher를 완벽히 구분해서 채용하는 회사는 많지 않은 것같습니다. 
+
+넓게 정의해 보면 아래와 같습니다.
+
+![](https://user-images.githubusercontent.com/31475037/92840008-9045a880-f41b-11ea-96dd-f8b2830c700f.png)
+
+그렇다면 각 role 별 필요한 skil은 어떨까요?
+
+![](https://user-images.githubusercontent.com/31475037/92840215-c84ceb80-f41b-11ea-8a7e-92be66e0bb1c.gif)
+
+<br>
+
+# Lifecycle
+
+Production에서의 lifecycle은 어떻게 될까요? 
+
+![](https://user-images.githubusercontent.com/31475037/92833692-14942d80-f414-11ea-8d90-f3dc80e63fb3.gif)
+
+<br>
+
+## ML 생태계
+
+위에서 설명한 Production level의 ML project를 구현하기 위한 오픈소스들이 시중에 많이 풀려있습니다. 특히나 MSA(Micro Service Architecture) 개발 방법론과 맞물려, 각각의 기능들에 필요한 오픈소스만 가져와 블럭처럼 조립해 쓸 수 있습니다.
+
+> 다양한 오픈소스가 존재함
+
+![](https://user-images.githubusercontent.com/31475037/92835763-97b68300-f416-11ea-9054-f5dc424e0501.png)
 
 <br>
 
 **참고 강의**
 
-[Full Stack Deep Learning](https://course.fullstackdeeplearning.com/)
+ [Full Stack Deep Learning](https://course.fullstackdeeplearning.com/)
+

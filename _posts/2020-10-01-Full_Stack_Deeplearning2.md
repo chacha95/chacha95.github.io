@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Full Stack Deep Learning 2 - Data 관리
-tags: [Full Stack Deep Learning]
+tags: [MLOps]
 use_math: true
 ---
 

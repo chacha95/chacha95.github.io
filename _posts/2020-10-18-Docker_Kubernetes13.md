@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 딥러닝을 위한 Kubeflow 5 - Katibe
-tags: [Full Stack Deep Learning]
+tags: [MLOps]
 use_math: true
 ---
 

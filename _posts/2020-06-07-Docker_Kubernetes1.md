@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 딥러닝을 위한 Docker
-tags: [Full Stack Deep Learning]
+title: 딥러닝을 위한 Docker 1
+tags: [MLOps]
 use_math: true
 ---
 

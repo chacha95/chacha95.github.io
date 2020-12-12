@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 딥러닝을 위한 Kubernetes 6 - MicroK8s
-tags: [Full Stack Deep Learning]
+tags: [MLOps]
 use_math: true
 ---
 
