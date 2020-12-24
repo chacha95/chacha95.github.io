@@ -121,7 +121,7 @@ Katib는 Hyperparameter tunning and NAS(Neural Architecture Search)를 하는 to
 
 <br>
 
-*Artifacts: 학습 프로세스에서 생성되는 outputs을 일컫습니다. 예를 들어 model artifacts는 학습된 model weights를 의미합니다.*
+*Artifacts: 학습 프로세스 혹은 전체 pipeline에서 생성되는 outputs을 일컫습니다. 예를 들어 model artifacts는 학습된 model weights를 의미합니다.*
 
 
 
