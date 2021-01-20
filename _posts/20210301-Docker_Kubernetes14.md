@@ -21,8 +21,6 @@ Kubectl 명령어를 실행하면 kube-apiserver에 REST API로 yaml 혹은 json
 
 
 
-
-
 <br>
 
 **참조 강의**

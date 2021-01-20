@@ -179,7 +179,7 @@ Pod 내부의 container 끼리는 서로 격리되어 있기에, 기본적으론
 
 컨테이너 내 저장되어 있는 파일은 임시적인 상태입니다. 만약 컨테이너가 꺼지고 삭제가 되면, 컨테이너 내부에 있던 파일들은 삭제가 됩니다. 
 
-영구적인 파일 저장을 위해선 PV(Persistent Volume) 혹은 host path를 사용해야 합니다. 쿠버네티스 클러스터 관리자에 의해 제공된 저장소이며, volume과 유사하지만 pod과는 독립적인 life-cycle을 가집니다. 사용자가 용량, 모드 필요한 정보와 함께 PVC(PersistenceVolumeClaim)를 생성하면 이에 대응하는 PV가 생성됩니다.
+영구적인 파일 저장을 위해선 PV(Persistent Volume) 혹은 host path를 사용해야 합니다. 쿠버네티스 클러스터 관리자에 의해 제공된 저장소이며, volume과 유사하지만 pod과는 독립적인 life-cycle을 가집니다. 사용자가 용량, 모드 필요한 정보와 함께 PVC(Persistence Volume Claim)를 생성하면 이에 대응하는 PV가 생성됩니다.
 
 그렇다면 host path대신 PV를 쓰면 어떤 이점이 있을까요?
 
