@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Full Stack Deep Learning 3 - ML Development(개발) and Deployment(배포)
-tags: [Full Stack Deep Learning]
+tags: [MLOps]
 use_math: true
 ---
 
