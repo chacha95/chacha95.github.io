@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubeflow 5 - Katibe
+title: MLOps를 위한 Kubeflow 5 - Katibe
 tags: [MLOps]
 use_math: true
 ---

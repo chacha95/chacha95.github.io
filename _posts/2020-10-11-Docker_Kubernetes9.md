@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubeflow 1 - 소개
+title: MLOps를 위한 Kubeflow 1 - 소개
 tags: [MLOps]
 use_math: true
 ---

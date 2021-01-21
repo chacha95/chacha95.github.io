@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 MLflow
+title: MLOps를 위한 MLflow
 tags: [MLOps]
 use_math: true
 ---

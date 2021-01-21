@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Rancher 1 - overview
+title: MLOps를 위한 Rancher 1 - overview
 tags: [MLOps]
 use_math: true
 ---

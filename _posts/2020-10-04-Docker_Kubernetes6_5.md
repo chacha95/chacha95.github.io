@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubernetes 6 - MicroK8s
+title: MLOps를 위한 Kubernetes 6 - MicroK8s
 tags: [MLOps]
 use_math: true
 ---

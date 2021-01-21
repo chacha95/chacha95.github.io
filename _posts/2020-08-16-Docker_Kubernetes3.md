@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubernetes 2 - 튜토리얼
+title: MLOps를 위한 Kubernetes 2 - 튜토리얼
 tags: [MLOps]
 use_math: true
 ---

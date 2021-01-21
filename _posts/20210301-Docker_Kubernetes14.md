@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 kubernetes 7 - kubectl
+title: MLOps를 위한 kubernetes 7 - kubectl
 tags: [MLOps]
 use_math: true
 ---

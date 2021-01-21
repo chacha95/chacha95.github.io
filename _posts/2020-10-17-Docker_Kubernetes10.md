@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubeflow 2 - components
+title: MLOps를 위한 Kubeflow 2 - components
 tags: [MLOps]
 use_math: true
 ---

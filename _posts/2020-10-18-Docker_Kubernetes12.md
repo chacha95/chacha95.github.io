@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubeflow 4 - Model Serving
+title: MLOps를 위한 Kubeflow 4 - Model Serving
 tags: [MLOps]
 use_math: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubeflow 3 - Pipelines란?
+title: MLOps를 위한 Kubeflow 3 - Pipelines란?
 tags: [MLOps]
 use_math: true
 ---

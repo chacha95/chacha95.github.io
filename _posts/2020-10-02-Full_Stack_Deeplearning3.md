@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Full Stack Deep Learning 3 - ML Development(개발) and Deployment(배포)
+title: MLOps를 위한 full stack deeplearning 강의 3 - dev & deploy
 tags: [MLOps]
 use_math: true
 ---
