@@ -4,5 +4,7 @@ title: About me
 subtitle: 
 ---
 
-# Full Stack Deeplearning Engineer
+# MLOps Engineer
+
+**I Love Docker + Kubernetes + Pytorch(Detectron2 Platform)~~**
 
