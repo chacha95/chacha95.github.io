@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 위한 Kubernetes 5 - Service Mesh와 Knative
+title: MLOps을 위한 Kubernetes 5 - Service Mesh와 Knative
 tags: [MLOps]
 use_math: true
 ---
