@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps Zero to Hero 11 - Katibe
+title: MLOps Zero to Hero 13 - Katibe
 tags: [MLOps]
 use_math: true
 ---

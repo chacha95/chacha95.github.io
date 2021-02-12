@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps Zero to Hero 10 - kubeflow model Serving
+title: MLOps Zero to Hero 12 - kubeflow model Serving
 tags: [MLOps]
 use_math: true
 ---

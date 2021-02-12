@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps Zero to Hero 9 - kubeflow pipelines
+title: MLOps Zero to Hero 11 - kubeflow pipelines
 tags: [MLOps]
 use_math: true
 ---

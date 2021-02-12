@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps Zero to Hero 8 - kubeflow components
+title: MLOps Zero to Hero 10 - kubeflow components
 tags: [MLOps]
 use_math: true
 ---

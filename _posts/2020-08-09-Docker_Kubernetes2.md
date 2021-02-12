@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps Zero to Hero 2 - Kubernetes란?
+title: MLOps Zero to Hero 3 - Kubernetes란?
 tags: [MLOps]
 use_math: true
 ---

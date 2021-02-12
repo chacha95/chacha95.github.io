@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps Zero to Hero 3 - Kubernetes 튜토리얼
+title: MLOps Zero to Hero 4 - Kubernetes 튜토리얼
 tags: [MLOps]
 use_math: true
 ---
