@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubernetes 6 - MicroK8s
+title: MLOps Zero to Hero 7 - MicroK8s
 tags: [MLOps]
 use_math: true
 ---

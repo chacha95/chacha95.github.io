@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubeflow 5 - Katibe
+title: MLOps Zero to Hero 11 - Katibe
 tags: [MLOps]
 use_math: true
 ---

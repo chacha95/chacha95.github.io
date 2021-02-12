@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubeflow 4 - Model Serving
+title: MLOps Zero to Hero 10 - kubeflow model Serving
 tags: [MLOps]
 use_math: true
 ---

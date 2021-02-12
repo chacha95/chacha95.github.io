@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubernetes 1 - 소개
+title: MLOps Zero to Hero 2 - Kubernetes란?
 tags: [MLOps]
 use_math: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubeflow 3 - Pipelines란?
+title: MLOps Zero to Hero 9 - kubeflow pipelines
 tags: [MLOps]
 use_math: true
 ---

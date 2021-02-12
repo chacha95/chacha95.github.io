@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Rancher 1 - overview
+title: Rancher란?
 tags: [MLOps]
 use_math: true
 ---

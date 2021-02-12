@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubeflow 2 - components
+title: MLOps Zero to Hero 8 - kubeflow components
 tags: [MLOps]
 use_math: true
 ---

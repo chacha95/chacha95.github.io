@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubernetes 4 - 동작 방식
+title: MLOps Zero to Hero 5 - Kubernetes 동작 방식
 tags: [MLOps]
 use_math: true
 ---

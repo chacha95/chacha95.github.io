@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Kubernetes 2 - 튜토리얼
+title: MLOps Zero to Hero 3 - Kubernetes 튜토리얼
 tags: [MLOps]
 use_math: true
 ---

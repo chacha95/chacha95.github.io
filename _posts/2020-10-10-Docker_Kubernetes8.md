@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 Rancher 2 - Rancher 구조
+title: Rancher 구조
 tags: [MLOps]
 use_math: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MLOps를 위한 full stack deeplearning 강의 2 - Data 관리
+title: full stack deeplearning 강의 2 - Data 관리
 tags: [MLOps]
 use_math: true
 ---
